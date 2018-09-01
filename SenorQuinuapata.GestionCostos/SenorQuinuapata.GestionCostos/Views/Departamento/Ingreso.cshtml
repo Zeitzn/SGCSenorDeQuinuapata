@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Ingreso";
+}
+
+<h2>Ingresos</h2>
+
+<div class="col-md-6">
+    <div class="small">
+        <h4 style="color:darkgreen">Ingresos</h4>
+
+        @using (Html.BeginForm("", "", FormMethod.Post, new { id = "ingreso-form" }))
+
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label>Movimiento</label>
+                <select class="form-control">
+                    <option value="value">Ingreso</option>
+                    <option value="value">Salida</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fecha</label>
+                <input type="date" name="name" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Origen</label>
+                <select class="form-control">
+                    <option value="value">Nace</option>
+                    <option value="value">Departamento I</option>
+                    <option value="value">Departamento II</option>
+                    <option value="value">Departamento III</option>
+                    <option value="value">Departamento IV</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Código de Origen</label>
+                <input type="date" name="name" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Género</label>
+                <select class="form-control">
+                    <option value="Gazapo">Gazapo</option>
+                    <option value="Hembra">Hembra</option>
+                    <option value="Macho">Macho</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Destino</label>
+                <select class="form-control">
+                    <option value="value">Nace</option>
+                    <option value="value">Departamento I</option>
+                    <option value="value">Departamento II</option>
+                    <option value="value">Departamento III</option>
+                    <option value="value">Departamento IV</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Código de Destino</label>
+                <input type="date" name="name" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Género</label>
+                <select class="form-control">
+                    <option value="Gazapo">Gazapo</option>
+                    <option value="Hembra">Hembra</option>
+                    <option value="Macho">Macho</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Cantidad</label>
+                <input type="number" name="name" value="" class="form-control" />
+            </div>
+        }
+    </div>
+
+</div>
+
+<div class="col-md-6">
+    <div class="small">
+        <h4 style="color:darkgreen">Consumo de la Producción</h4>
+        @using (Html.BeginForm("", "", FormMethod.Post, new { id = "ingreso-form" }))
+
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label>Elemento de costo</label>
+                <select class="form-control">
+                    <option value="value">MD</option>
+                    <option value="value">MI</option>
+                </select>
+            </div>
+        }
+    </div>
+
+</div>
+
+
