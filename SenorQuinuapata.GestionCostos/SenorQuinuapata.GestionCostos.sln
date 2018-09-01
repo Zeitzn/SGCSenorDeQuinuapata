@@ -5,6 +5,20 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestionCostos", "SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos.csproj", "{98660B54-FFEF-4FE5-9F91-043210F03414}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{A5F3B750-2D8A-49DD-806A-358054B43E09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{CAB14D6A-8A60-40CA-A191-9517AEB79BE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{26819265-FC6D-4481-ACF8-14A9F15C9B16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{8A72E936-152F-4D44-BF7A-A26637F645B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestioCostos.BusinessLogic", "SenorQuinuapata.GestioCostos.BusinessLogic\SenorQuinuapata.GestioCostos.BusinessLogic.csproj", "{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestionCostos.DataAccess", "SenorQuinuapata.GestionCostos.DataAccess\SenorQuinuapata.GestionCostos.DataAccess.csproj", "{A990BD4E-B36D-477E-A82B-89DDE5A002E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestionCostos.Entities", "SenorQuinuapata.GestionCostos.Entities\SenorQuinuapata.GestionCostos.Entities.csproj", "{43D02611-AE57-4413-B593-DD3156AA6A86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +29,27 @@ Global
 		{98660B54-FFEF-4FE5-9F91-043210F03414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98660B54-FFEF-4FE5-9F91-043210F03414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98660B54-FFEF-4FE5-9F91-043210F03414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A990BD4E-B36D-477E-A82B-89DDE5A002E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A990BD4E-B36D-477E-A82B-89DDE5A002E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A990BD4E-B36D-477E-A82B-89DDE5A002E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A990BD4E-B36D-477E-A82B-89DDE5A002E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D02611-AE57-4413-B593-DD3156AA6A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D02611-AE57-4413-B593-DD3156AA6A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D02611-AE57-4413-B593-DD3156AA6A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D02611-AE57-4413-B593-DD3156AA6A86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98660B54-FFEF-4FE5-9F91-043210F03414} = {A5F3B750-2D8A-49DD-806A-358054B43E09}
+		{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE} = {CAB14D6A-8A60-40CA-A191-9517AEB79BE8}
+		{A990BD4E-B36D-477E-A82B-89DDE5A002E3} = {26819265-FC6D-4481-ACF8-14A9F15C9B16}
+		{43D02611-AE57-4413-B593-DD3156AA6A86} = {8A72E936-152F-4D44-BF7A-A26637F645B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9664A76B-C7C8-4C69-978D-DF9220595B3B}
