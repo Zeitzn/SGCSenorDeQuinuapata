@@ -48,12 +48,12 @@ namespace SenorQuinuapata.GestionCostos.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Ingrese el correo electrónico")]
         [Display(Name = "Correo electrónico")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Ingrese la contraseña")]
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
         public string Password { get; set; }
