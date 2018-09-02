@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="~/assets/template/images/favicon.ico" type="image/ico" />
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title</title>
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
     <!-- Bootstrap -->
@@ -28,6 +28,12 @@
     <link href="~/assets/template/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="~/assets/template/build/css/custom.min.css" rel="stylesheet">
+    @* DATATABLES *@
+    <link href="~/assets/DataTables/datatables.css" rel="stylesheet" />
+
+
+    
+    
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -57,19 +63,26 @@
                             <ul class="nav side-menu">
                                 <li>
                                     <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Principal @*<span class="fa fa-chevron-down"></span>*@</a>
-                                   
+
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Registros <span class="fa fa-chevron-down"></span></a>
+                                    <a href="@Url.Action("Index","Departamento")"><i class="fa fa-edit"></i> Operaciones @*<span class="fa fa-chevron-down"></span>*@</a>
+
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-edit"></i> Departamentos <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="@Url.Action("Ingreso","Departamento")">Ingresos</a></li>
-                                        <li><a href="form_advanced.html">Consumo de producción</a></li>                                       
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=1 })">Lactancia</a></li>
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=2 })">Recría</a></li>
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=3 })">Engorde</a></li>
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=4 })">Descarte</a></li>
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=5 })">Mortalidad</a></li>
                                     </ul>
                                 </li>
-                                
+
                             </ul>
                         </div>
-                       
+
                     </div>
                     <!-- /sidebar menu -->
                     <!-- /menu footer buttons -->
@@ -123,12 +136,12 @@
                                     </li>
                                     <li><a href="javascript:;">Help</a></li>
                                     <li>
-                                        
+
                                         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                                         {
                                             @Html.AntiForgeryToken()
 
-                                        <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out pull-right"></i> Salir</a>                                            
+                                            <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out pull-right"></i> Salir</a>
 
                                         }
 
@@ -265,6 +278,13 @@
     <script src="~/assets/template/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="~/assets/template/build/js/custom.min.js"></script>
+    @* DATATABLES *@
+    <script src="~/assets/DataTables/datatables.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+    </script>
 
 </body>
 </html>

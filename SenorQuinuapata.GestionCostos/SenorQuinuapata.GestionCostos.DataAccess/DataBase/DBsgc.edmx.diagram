@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e0d3f568a99748cf85258d7a0f2c0ba9" Name="Diagram1">
+      <Diagram DiagramId="1f4ede0ac49948199bbef5060695f87a" Name="Diagram1">
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Departamento" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Movimiento_departamento" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="bd_sgcquinuapataModel.fk_departamento_movimiento_departamento" ManuallyRouted="false" />

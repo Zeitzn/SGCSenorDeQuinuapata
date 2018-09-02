@@ -1,0 +1,35 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.DepartamentoViewModel
+@*@model IEnumerable<SenorQuinuapata.GestionCostos.DataAccess.DataBase.Departamento>*@
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.nombre)*@
+            Nombree
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.ListDepartamento) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

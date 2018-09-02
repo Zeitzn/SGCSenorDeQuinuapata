@@ -1,47 +1,45 @@
-﻿
+﻿@model SenorQuinuapata.GestionCostos.Entities.Request.MovimientoDepartamentoRequest
 @{
-    ViewBag.Title = "Ingreso";
+    ViewBag.Title = "Operaciones";
 }
 
-<h2>Ingresos</h2>
-
 <div class="col-md-6">
-    <div class="small">
+    <div class="small well">
         <h4 style="color:darkgreen">Ingresos</h4>
 
-        @using (Html.BeginForm("", "", FormMethod.Post, new { id = "ingreso-form" }))
+        @using (Html.BeginForm("Register", "Departamento", FormMethod.Post, new { id = "ingreso-form" }))
 
         {
             @Html.AntiForgeryToken()
 
             <div class="form-group">
                 <label>Movimiento</label>
-                <select class="form-control">
-                    <option value="value">Ingreso</option>
-                    <option value="value">Salida</option>
+                <select class="form-control" name="movimiento">
+                    <option value="ingreso">Ingreso</option>
+                    <option value="salida">Salida</option>
                 </select>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label>Fecha</label>
                 <input type="date" name="name" value="" class="form-control" />
-            </div>
+            </div>*@
             <div class="form-group">
                 <label>Origen</label>
-                <select class="form-control">
-                    <option value="value">Nace</option>
-                    <option value="value">Departamento I</option>
-                    <option value="value">Departamento II</option>
-                    <option value="value">Departamento III</option>
-                    <option value="value">Departamento IV</option>
+                <select class="form-control" name="origen">
+                    <option value="Nace">Nace</option>
+                    <option value="1">Departamento I</option>
+                    <option value="2">Departamento II</option>
+                    <option value="3">Departamento III</option>
+                    <option value="4">Departamento IV</option>                    
                 </select>
             </div>
             <div class="form-group">
                 <label>Código de Origen</label>
-                <input type="date" name="name" value="" class="form-control" />
+                <input type="text" name="codigo_origen" value="" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Género</label>
-                <select class="form-control">
+                <select class="form-control" name="genero">
                     <option value="Gazapo">Gazapo</option>
                     <option value="Hembra">Hembra</option>
                     <option value="Macho">Macho</option>
@@ -49,17 +47,18 @@
             </div>
             <div class="form-group">
                 <label>Destino</label>
-                <select class="form-control">
-                    <option value="value">Nace</option>
-                    <option value="value">Departamento I</option>
-                    <option value="value">Departamento II</option>
-                    <option value="value">Departamento III</option>
-                    <option value="value">Departamento IV</option>
+                <select class="form-control" name="id_departamento">                    
+                    <option value="1">Departamento I</option>
+                    <option value="2">Departamento II</option>
+                    <option value="3">Departamento III</option>
+                    <option value="4">Departamento IV</option>
+                    <option value="5">Venta</option>
+                    <option value="6">Activo</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Código de Destino</label>
-                <input type="date" name="name" value="" class="form-control" />
+                <input type="text" name="codigo_destino" value="" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Género</label>
@@ -71,7 +70,14 @@
             </div>
             <div class="form-group">
                 <label>Cantidad</label>
-                <input type="number" name="name" value="" class="form-control" />
+                @*<input type="number" name="" value="" class="form-control" />*@
+                @Html.EditorFor(model => model.ingreso, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ingreso, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                
+                <input type="submit" name="name" value="Registrar" class="btn btn-primary" />
             </div>
         }
     </div>
@@ -79,7 +85,7 @@
 </div>
 
 <div class="col-md-6">
-    <div class="small">
+    <div class="small well">
         <h4 style="color:darkgreen">Consumo de la Producción</h4>
         @using (Html.BeginForm("", "", FormMethod.Post, new { id = "ingreso-form" }))
 

@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{8A72E936-152F-4D44-BF7A-A26637F645B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestioCostos.BusinessLogic", "SenorQuinuapata.GestioCostos.BusinessLogic\SenorQuinuapata.GestioCostos.BusinessLogic.csproj", "{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestionCostos.BusinessLogic", "SenorQuinuapata.GestioCostos.BusinessLogic\SenorQuinuapata.GestionCostos.BusinessLogic.csproj", "{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenorQuinuapata.GestionCostos.DataAccess", "SenorQuinuapata.GestionCostos.DataAccess\SenorQuinuapata.GestionCostos.DataAccess.csproj", "{A990BD4E-B36D-477E-A82B-89DDE5A002E3}"
 EndProject

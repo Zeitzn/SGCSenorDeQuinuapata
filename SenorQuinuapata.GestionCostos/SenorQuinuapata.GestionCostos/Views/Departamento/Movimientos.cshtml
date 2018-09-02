@@ -1,0 +1,69 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.DepartamentoViewModel
+@{
+    ViewBag.Title = "Movimientos";
+}
+
+
+<table class="table table-bordered small" id="table">
+    <thead>
+        <tr>
+            <td>FECHA</td>
+            <td>EDAD</td>
+            <td>GÉNERO</td>
+            <td>CÓDIGO</td>
+            <td>INGRESO</td>
+            <td>SALIDA</td>
+            <td>SALDO</td>
+            <td>% AVANCE</td>
+            <td>Q. EQUIVALENTE</td>
+            <td>C/U MD</td>
+            <td>C/U MOD</td>
+            <td>C/U CIF</td>
+            <td>C/U TOTAL</td>
+            <td>C/U COSTO TOTAL</td>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td>FECHA</td>
+            <td>EDAD</td>
+            <td>GÉNERO</td>
+            <td>CÓDIGO</td>
+            <td>INGRESO</td>
+            <td>SALIDA</td>
+            <td>SALDO</td>
+            <td>% AVANCE</td>
+            <td>Q. EQUIVALENTE</td>
+            <td>C/U MD</td>
+            <td>C/U MOD</td>
+            <td>C/U CIF</td>
+            <td>C/U TOTAL</td>
+            <td>C/U COSTO TOTAL</td>
+        </tr>
+    </tfoot>
+
+    <tbody>
+       @foreach (var item in Model.ListMovimientoDepartamento)
+       {
+        <tr>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha)</td>
+            <td class="text-center">@item.edad</td>
+            <td class="text-center">@item.genero</td>
+            <td class="text-center">@item.departamento</td>
+            <td class="text-center">@item.ingreso</td>
+            <td class="text-center">@item.salida</td>
+            <td class="text-center">@item.saldo</td>
+            <td class="text-center">@item.avance</td>
+            <td class="text-center">@item.q_equivalente</td>
+            <td class="text-right">@item.cu_md</td>
+            <td class="text-right">@item.cu_mod</td>
+            <td class="text-right">@item.cu_cif</td>
+            <td class="text-right">@item.cu_total</td>
+            <td class="text-right">@item.costo_total</td>
+        </tr>
+       }            
+
+
+    </tbody>
+</table>
+

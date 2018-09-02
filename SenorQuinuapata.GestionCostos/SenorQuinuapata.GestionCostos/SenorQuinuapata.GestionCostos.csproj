@@ -220,12 +220,46 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DepartamentoViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables\datatables.css" />
+    <Content Include="assets\DataTables\datatables.js" />
+    <Content Include="assets\DataTables\datatables.min.css" />
+    <Content Include="assets\DataTables\datatables.min.js" />
     <Content Include="assets\images\cooperativa.jpg" />
     <Content Include="assets\personalizados\css\AdminLTE.min.css" />
     <Content Include="assets\personalizados\css\login.css" />
@@ -4556,7 +4590,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
-    <Content Include="Views\Departamento\Ingreso.cshtml" />
+    <Content Include="Views\Departamento\Index.cshtml" />
+    <Content Include="Views\Departamento\Lista.cshtml" />
+    <Content Include="Views\Departamento\Movimientos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4581,6 +4617,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SenorQuinuapata.GestioCostos.BusinessLogic\SenorQuinuapata.GestionCostos.BusinessLogic.csproj">
+      <Project>{4890D8EF-A6BD-48B8-8CE2-7FB8E5B1A2DE}</Project>
+      <Name>SenorQuinuapata.GestionCostos.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SenorQuinuapata.GestionCostos.DataAccess\SenorQuinuapata.GestionCostos.DataAccess.csproj">
+      <Project>{a990bd4e-b36d-477e-a82b-89dde5a002e3}</Project>
+      <Name>SenorQuinuapata.GestionCostos.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SenorQuinuapata.GestionCostos.Entities\SenorQuinuapata.GestionCostos.Entities.csproj">
+      <Project>{43D02611-AE57-4413-B593-DD3156AA6A86}</Project>
+      <Name>SenorQuinuapata.GestionCostos.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
