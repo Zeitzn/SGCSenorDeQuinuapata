@@ -96,7 +96,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Store_procedures\Update\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SenorQuinuapata.GestionCostos.Entities\SenorQuinuapata.GestionCostos.Entities.csproj">
       <Project>{43D02611-AE57-4413-B593-DD3156AA6A86}</Project>
