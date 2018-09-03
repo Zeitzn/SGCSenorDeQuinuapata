@@ -4,13 +4,29 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bd_sgcquinuapataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bd_sgcquinuapataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Departamento">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="nombre" Type="char" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="edad" Type="int" />
+          <Property Name="genero" Type="varchar" MaxLength="7" />
+          <Property Name="codigo_origen" Type="varchar" MaxLength="5" />
+          <Property Name="codigo_destino" Type="varchar" MaxLength="5" />
+          <Property Name="lactancia" Type="int" />
+          <Property Name="recria" Type="int" />
+          <Property Name="engorde" Type="int" />
+          <Property Name="descarte" Type="int" />
+          <Property Name="mortalidad" Type="int" />
         </EntityType>
         <EntityType Name="Movimiento_departamento">
           <Key>
@@ -46,14 +62,14 @@
         </Association>
         <EntityContainer Name="bd_sgcquinuapataModelStoreContainer">
           <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingreso" EntityType="Self.Ingreso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movimiento_departamento" EntityType="Self.Movimiento_departamento" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_departamento_movimiento_departamento" Association="Self.fk_departamento_movimiento_departamento">
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Movimiento_departamento" EntitySet="Movimiento_departamento" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bd_sgcquinuapataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -105,7 +121,24 @@
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Movimiento_departamento" EntitySet="Movimiento_departamento" />
           </AssociationSet>
+          <EntitySet Name="Ingreso" EntityType="bd_sgcquinuapataModel.Ingreso" />
         </EntityContainer>
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="genero" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="codigo_origen" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="codigo_destino" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="lactancia" Type="Int32" />
+          <Property Name="recria" Type="Int32" />
+          <Property Name="engorde" Type="Int32" />
+          <Property Name="descarte" Type="Int32" />
+          <Property Name="mortalidad" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -138,6 +171,23 @@
                 <ScalarProperty Name="cu_cif" ColumnName="cu_cif" />
                 <ScalarProperty Name="cu_total" ColumnName="cu_total" />
                 <ScalarProperty Name="costo_total" ColumnName="costo_total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingreso">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Ingreso">
+              <MappingFragment StoreEntitySet="Ingreso">
+                <ScalarProperty Name="mortalidad" ColumnName="mortalidad" />
+                <ScalarProperty Name="descarte" ColumnName="descarte" />
+                <ScalarProperty Name="engorde" ColumnName="engorde" />
+                <ScalarProperty Name="recria" ColumnName="recria" />
+                <ScalarProperty Name="lactancia" ColumnName="lactancia" />
+                <ScalarProperty Name="codigo_destino" ColumnName="codigo_destino" />
+                <ScalarProperty Name="codigo_origen" ColumnName="codigo_origen" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

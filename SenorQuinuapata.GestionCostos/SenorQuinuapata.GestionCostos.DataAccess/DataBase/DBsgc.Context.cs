@@ -27,5 +27,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.DataBase
     
         public virtual DbSet<Departamento> Departamento { get; set; }
         public virtual DbSet<Movimiento_departamento> Movimiento_departamento { get; set; }
+        public virtual DbSet<Ingreso> Ingreso { get; set; }
     }
 }

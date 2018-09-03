@@ -14,7 +14,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
         private readonly bd_sgcquinuapataEntities db = new bd_sgcquinuapataEntities();
 
         //private readonly 
-
+        #region no transaccional
         public IEnumerable<DepartamentoResponse> List()
         {
             var result = new List<DepartamentoResponse>();
@@ -47,5 +47,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
+        #endregion
     }
 }

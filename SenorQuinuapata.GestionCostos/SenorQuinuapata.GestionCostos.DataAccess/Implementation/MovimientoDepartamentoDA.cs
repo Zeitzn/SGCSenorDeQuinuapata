@@ -13,6 +13,8 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
     public class MovimientoDepartamentoDA : IMovimientoDepartamentoDA
     {
         public readonly bd_sgcquinuapataEntities db = new bd_sgcquinuapataEntities();
+
+        
         #region no transaccional
 
         public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamento(int id)
@@ -43,7 +45,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
 
                        })
                        
-                       ).ToList();
+                       ).OrderByDescending(d=>d.id).ToList();
 
                        return result;
 
@@ -55,10 +57,30 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
 
             }
         }
+        public int ExistsMovimientoDepartamento(string fecha, int id_departamento)
+        {
+            DateTime _fecha = Convert.ToDateTime(fecha);
+                int exist = 0;
+               
+                Movimiento_departamento mov = new Movimiento_departamento();
+                using (var ctx=new bd_sgcquinuapataEntities())
+                {
+                    mov =ctx.Movimiento_departamento.Where(x => x.fecha == _fecha && x.id_departamento == id_departamento).SingleOrDefault();
+
+                    if (mov!=null)
+                    {
+                        exist = mov.id;
+                    }
+                }
+
+                return exist;
+           
+        }
+
         #endregion
 
         #region transaccional
-        public void RegisterMovimientoDepartento(MovimientoDepartamentoRequest request)
+        public void RegisterMovimientoDepartamento(MovimientoDepartamentoRequest request)
         {
             try
             {
@@ -89,6 +111,28 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             }
             finally
             {
+                db.Dispose();
+            }
+        }
+
+        public void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida)
+        {
+            try
+            {
+                Movimiento_departamento est = db.Movimiento_departamento.Where(c => c.id == id).FirstOrDefault();
+
+                int? nueva_cantidad = est.ingreso + cantidad;
+
+                int? nuevo_saldo = nueva_cantidad - salida;
+
+                est.ingreso = nueva_cantidad;
+                est.saldo = nuevo_saldo;
+
+                db.SaveChanges();
+            }
+            finally
+            {
+
                 db.Dispose();
             }
         }

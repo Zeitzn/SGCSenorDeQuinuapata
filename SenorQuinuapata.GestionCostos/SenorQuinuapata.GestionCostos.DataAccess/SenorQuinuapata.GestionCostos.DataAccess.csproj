@@ -68,12 +68,17 @@
     <Compile Include="DataBase\Departamento.cs">
       <DependentUpon>DBsgc.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\Ingreso.cs">
+      <DependentUpon>DBsgc.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Movimiento_departamento.cs">
       <DependentUpon>DBsgc.tt</DependentUpon>
     </Compile>
     <Compile Include="Implementation\DepartamentoDA.cs" />
+    <Compile Include="Implementation\IngresoDA.cs" />
     <Compile Include="Implementation\MovimientoDepartamentoDA.cs" />
     <Compile Include="Interface\IDepartamentoDA.cs" />
+    <Compile Include="Interface\IIngresoDA.cs" />
     <Compile Include="Interface\IMovimientoDepartamentoDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

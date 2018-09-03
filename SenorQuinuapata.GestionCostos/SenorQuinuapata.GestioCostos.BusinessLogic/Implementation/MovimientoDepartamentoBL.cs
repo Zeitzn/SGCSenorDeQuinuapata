@@ -15,19 +15,31 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
         private readonly MovimientoDepartamentoDA _MovimientoDepartamentoDA = new MovimientoDepartamentoDA();
 
 
+
+
         #region no transaccional
+        public int ExistsMovimientoDepartamento(string fecha, int id_departamento)
+        {
+            return _MovimientoDepartamentoDA.ExistsMovimientoDepartamento(fecha, id_departamento);
+        }
         public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamento(int id)
         {
             return _MovimientoDepartamentoDA.ListMovimientoDepartamento(id);
         }
+               
 
         #endregion
 
 
-        #region no transaccional
-        public void RegisterMovimientoDepartento(MovimientoDepartamentoRequest request)
+        #region transaccional
+        public void RegisterMovimientoDepartamento(MovimientoDepartamentoRequest request)
         {
-            _MovimientoDepartamentoDA.RegisterMovimientoDepartento(request);
+            _MovimientoDepartamentoDA.RegisterMovimientoDepartamento(request);
+        }
+
+        public void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida)
+        {
+            _MovimientoDepartamentoDA.UpdateMovimientoDepartamento(id,cantidad,salida);
         }
 
         #endregion

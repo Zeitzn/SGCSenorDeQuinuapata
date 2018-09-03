@@ -1,0 +1,60 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.IngresoViewModel
+@{
+    ViewBag.Title = "Ingresos";
+}
+
+
+<table class="table table-bordered small" id="table">
+    <thead>
+        <tr>
+            <td>FECHA</td>
+            <td>EDAD</td>
+            <td>GÉNERO</td>
+            <td>CÓDIGO ORIGEN</td>
+            <td>CÓDIGO DESTINO</td>
+            <td>LACTANCIA</td>
+            <td>RECRÍA</td>
+            <td>ENGORDE</td>
+            <td>DESCARTE</td>
+            <td>MORTALIDAD</td>
+            
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td>FECHA</td>
+            <td>EDAD</td>
+            <td>GÉNERO</td>
+            <td>CÓDIGO ORIGEN</td>
+            <td>CÓDIGO DESTINO</td>
+            <td>LACTANCIA</td>
+            <td>RECRÍA</td>
+            <td>ENGORDE</td>
+            <td>DESCARTE</td>
+            <td>MORTALIDAD</td>
+
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in Model.ListIngreso)
+        {
+        <tr>
+            <td>@item.fecha</td>
+            <td>@item.edad</td>
+            <td>@item.genero</td>
+            <td>@item.codigo_origen</td>
+            <td>@item.codigo_destino</td>
+            <td>@item.lactancia</td>
+            <td>@item.recria</td>
+            <td>@item.engorde</td>
+            <td>@item.descarte</td>
+            <td>@item.mortalidad</td>
+
+        </tr>
+        }
+
+
+    </tbody>
+</table>
+

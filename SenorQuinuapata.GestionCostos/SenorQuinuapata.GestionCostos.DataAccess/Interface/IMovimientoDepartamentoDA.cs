@@ -11,7 +11,12 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
     public interface IMovimientoDepartamentoDA
     {
         IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamento(int id);
-        void RegisterMovimientoDepartento(MovimientoDepartamentoRequest request);
+
+        void RegisterMovimientoDepartamento(MovimientoDepartamentoRequest request);
+
+        void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida);
+
+        int ExistsMovimientoDepartamento(string fecha, int id_departamento);
         
     }
 }

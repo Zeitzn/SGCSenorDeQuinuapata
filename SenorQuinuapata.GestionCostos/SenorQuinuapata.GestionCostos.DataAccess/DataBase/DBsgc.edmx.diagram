@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Departamento" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Movimiento_departamento" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="bd_sgcquinuapataModel.fk_departamento_movimiento_departamento" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Ingreso" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

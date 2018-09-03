@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SenorQuinuapata.GestioCostos.BusinessLogic</RootNamespace>
-    <AssemblyName>SenorQuinuapata.GestioCostos.BusinessLogic</AssemblyName>
+    <AssemblyName>SenorQuinuapata.GestionCostos.BusinessLogic</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\DepartamentoBL.cs" />
+    <Compile Include="Implementation\IngresoBL.cs" />
     <Compile Include="Implementation\MovimientoDepartamentoBL.cs" />
     <Compile Include="Interface\IDepartamentoBL.cs" />
+    <Compile Include="Interface\IIngresoBL.cs" />
     <Compile Include="Interface\IMovimientoDepartamentoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
