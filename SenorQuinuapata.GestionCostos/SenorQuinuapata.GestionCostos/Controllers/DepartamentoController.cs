@@ -4,6 +4,7 @@ using SenorQuinuapata.GestioCostos.BusinessLogic.Implementation;
 using SenorQuinuapata.GestionCostos.BusinessLogic.Implementation;
 using SenorQuinuapata.GestionCostos.DataAccess.DataBase;
 using SenorQuinuapata.GestionCostos.Entities.Request;
+using SenorQuinuapata.GestionCostos.Entities.Response;
 using SenorQuinuapata.GestionCostos.Models;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             //try
             //{
                 request.fecha = DateTime.Now;
+
                 request.avance = 0;
                 request.costo_total = 0;
                 request.cu_cif = 0;
@@ -55,7 +57,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                     if (origen=="Nace")
                     {
                         request.genero = "Gazapo";
-                        request.id_departamento = 1;
+                        //request.id_departamento = 1;
 
                         _ingreso.Ingreso = new IngresoRequest()
                         {
@@ -66,9 +68,10 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                             genero = request.genero,
 
                         };
-                        int id_movimiento=_MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento);
+                        MovimientoDepartamentoResponse mov = new MovimientoDepartamentoResponse();
+                         mov=_MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento);
 
-                        if (id_movimiento==0)
+                        if (mov.id==0)
                         {
                            
                             _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
@@ -76,14 +79,48 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                         }
                         else
                         {
+                        //request.saldo = mov.ingreso - mov.salida;
+                        request.salida = mov.salida;
                         _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
-                        _MovimientoDepartamentoBL.UpdateMovimientoDepartamento(id_movimiento, request.ingreso,request.salida);
+                            _MovimientoDepartamentoBL.UpdateMovimientoDepartamento(mov.id, request.ingreso,request.salida);
+                            
 
                         }
 
                        
                         
-                    }    
+                    }
+
+                if (origen == "1")
+                {
+                    if (request.id_departamento==2)
+                    {
+                        int _origen = Convert.ToInt32(origen);
+                        int? salida = request.ingreso;
+                        int? saldo = 0;                        
+
+                        foreach (var item in _MovimientoDepartamentoBL.ListMovimientoDepartamento(_origen))
+                        {                            
+
+                            if (item.ingreso>0)
+                            {
+                                if (item.saldo>=salida)
+                                {
+
+                                    saldo = item.saldo - salida;
+
+                                    salida += item.salida;                                    
+
+                                    _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id,salida, saldo);
+
+                                    //_MovimientoDepartamentoBL.RegisterMovimientoDepartamento(request);
+                                    break;
+                                }
+                            }
+                        }
+
+                    }
+                }
                    
                 }
 

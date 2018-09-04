@@ -4,6 +4,7 @@ using SenorQuinuapata.GestionCostos.Entities.Request;
 using SenorQuinuapata.GestionCostos.Entities.Response;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,56 +25,79 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 var result = new List<MovimientoDepartamentoResponse>();
                 using (db)
                 {
-                    result = (
-                       db.Movimiento_departamento.Where(c=>c.id_departamento==id).Select(x => new MovimientoDepartamentoResponse()
-                       {
-                           id = x.id,
-                           avance = x.avance,
-                           costo_total = x.costo_total,
-                           cu_cif = x.cu_cif,
-                           cu_md = x.cu_md,
-                           cu_mod = x.cu_mod,
-                           cu_total = x.cu_total,
-                           departamento = x.Departamento.nombre,
-                           edad = x.edad,
-                           fecha = x.fecha,
-                           genero = x.genero,
-                           ingreso = x.ingreso,
-                           q_equivalente = x.q_equivalente,
-                           saldo = x.saldo,
-                           salida = x.salida
+                    //result = (
+                    //   db.Movimiento_departamento.Where(c => c.id_departamento == id).Select(x => new MovimientoDepartamentoResponse()
+                    //   {
+                    //       id = x.id,
+                    //       avance = x.avance,
+                    //       costo_total = x.costo_total,
+                    //       cu_cif = x.cu_cif,
+                    //       cu_md = x.cu_md,
+                    //       cu_mod = x.cu_mod,
+                    //       cu_total = x.cu_total,
+                    //       departamento = x.Departamento.nombre,
+                    //       edad = x.edad,
+                    //       fecha = x.fecha,
+                    //       genero = x.genero,
+                    //       ingreso = x.ingreso,
+                    //       q_equivalente = x.q_equivalente,
+                    //       saldo = x.saldo,
+                    //       salida = x.salida
 
-                       })
+                    //   })
+                    //   ).OrderByDescending(c => c.id).ToList();
+
+                    //   return result;
+                    result = db.Database.SqlQuery<MovimientoDepartamentoResponse>("sp_movimiento_departamento_list @id_departamento",
+
+                        new SqlParameter("@id_departamento", id)
                        
-                       ).OrderByDescending(d=>d.id).ToList();
 
-                       return result;
+                        ).ToList();
 
-                       
                 }
+                return result;
             }
             finally
             {
-
+                db.Dispose();
             }
         }
-        public int ExistsMovimientoDepartamento(string fecha, int id_departamento)
+        public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento)
         {
             DateTime _fecha = Convert.ToDateTime(fecha);
                 int exist = 0;
                
                 Movimiento_departamento mov = new Movimiento_departamento();
+                MovimientoDepartamentoResponse result = new MovimientoDepartamentoResponse();
                 using (var ctx=new bd_sgcquinuapataEntities())
                 {
                     mov =ctx.Movimiento_departamento.Where(x => x.fecha == _fecha && x.id_departamento == id_departamento).SingleOrDefault();
 
-                    if (mov!=null)
-                    {
-                        exist = mov.id;
-                    }
+                if (mov != null)
+                {
+                    result.id = mov.id;
+                    result.avance = mov.avance;
+                    result.costo_total = mov.costo_total;
+                    result.cu_cif = mov.cu_cif;
+                    result.cu_md = mov.cu_md;
+                    result.cu_mod = mov.cu_mod;
+                    result.cu_total = mov.cu_total;
+                    result.edad = mov.edad;
+                    result.saldo = mov.saldo;
+                    result.salida = mov.salida;
+                    result.ingreso = mov.ingreso;
+                }
+                else
+                {
+                    result.id = 0;
                 }
 
-                return exist;
+            
+
+                }
+
+                return result;
            
         }
 
@@ -133,6 +157,31 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             finally
             {
 
+                db.Dispose();
+            }
+        }
+
+        public void UpdateSalidaSaldo(int origen, int? salida, int? saldo)
+        {
+            try
+            {
+               
+                using (var ctx=new bd_sgcquinuapataEntities())
+                {
+                    
+                    ctx.Database.SqlQuery<MovimientoDepartamentoResponse>("sp_salida_saldo_upd @id_movimiento_departamento, @salida, @saldo",
+
+                        new SqlParameter("@id_movimiento_departamento", origen),
+                        new SqlParameter("@salida", salida),
+                        new SqlParameter("@saldo", saldo)
+
+
+                        ).ToList();
+
+                }                
+            }
+            finally
+            {
                 db.Dispose();
             }
         }

@@ -96,9 +96,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Store_procedures\Update\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SenorQuinuapata.GestionCostos.Entities\SenorQuinuapata.GestionCostos.Entities.csproj">
       <Project>{43D02611-AE57-4413-B593-DD3156AA6A86}</Project>
@@ -116,6 +114,9 @@
       <DependentUpon>DBsgc.edmx</DependentUpon>
       <LastGenOutput>DBsgc.cs</LastGenOutput>
     </Content>
+    <Content Include="Store_procedures\List\sp_movimiento_departamento_list.sql" />
+    <Content Include="Store_procedures\Update\sp_actualizar_edad.sql" />
+    <Content Include="Store_procedures\Update\sp_salida_saldo_upd.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

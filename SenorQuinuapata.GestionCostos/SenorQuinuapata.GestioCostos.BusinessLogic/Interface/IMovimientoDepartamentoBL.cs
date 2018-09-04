@@ -15,6 +15,8 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Interface
 
         void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida);
 
-        int ExistsMovimientoDepartamento(string fecha, int id_departamento);
+        MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento);
+
+        void UpdateSalidaSaldo(int orige, int? salida, int? saldo);
     }
 }

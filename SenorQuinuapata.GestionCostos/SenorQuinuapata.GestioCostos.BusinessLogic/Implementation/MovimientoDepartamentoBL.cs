@@ -18,7 +18,7 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
 
 
         #region no transaccional
-        public int ExistsMovimientoDepartamento(string fecha, int id_departamento)
+        public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento)
         {
             return _MovimientoDepartamentoDA.ExistsMovimientoDepartamento(fecha, id_departamento);
         }
@@ -40,6 +40,11 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
         public void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida)
         {
             _MovimientoDepartamentoDA.UpdateMovimientoDepartamento(id,cantidad,salida);
+        }
+
+        public void UpdateSalidaSaldo(int origen, int? salida, int? saldo)
+        {
+            _MovimientoDepartamentoDA.UpdateSalidaSaldo(origen,salida,saldo);
         }
 
         #endregion

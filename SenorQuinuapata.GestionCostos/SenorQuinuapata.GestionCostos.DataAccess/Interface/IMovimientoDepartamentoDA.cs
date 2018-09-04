@@ -16,7 +16,10 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
 
         void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida);
 
-        int ExistsMovimientoDepartamento(string fecha, int id_departamento);
-        
+        MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento);
+
+        void UpdateSalidaSaldo(int origen,int? salida, int? saldo);
+
+
     }
 }

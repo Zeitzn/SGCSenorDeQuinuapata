@@ -7,6 +7,7 @@
 <table class="table table-bordered small" id="table">
     <thead>
         <tr>
+            <td>#</td>
             <td>FECHA</td>
             <td>EDAD</td>
             <td>GÉNERO</td>
@@ -25,6 +26,7 @@
     </thead>
     <tfoot>
         <tr>
+            <td>#</td>
             <td>FECHA</td>
             <td>EDAD</td>
             <td>GÉNERO</td>
@@ -46,6 +48,7 @@
        @foreach (var item in Model.ListMovimientoDepartamento)
        {
         <tr>
+            <td class="text-center">@item.id</td>
             <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha)</td>
             <td class="text-center">@item.edad</td>
             <td class="text-center">@item.genero</td>

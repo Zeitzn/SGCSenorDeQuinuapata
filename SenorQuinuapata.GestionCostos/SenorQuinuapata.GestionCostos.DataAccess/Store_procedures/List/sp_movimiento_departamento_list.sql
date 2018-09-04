@@ -9,19 +9,21 @@ GO
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
--- Test: exec sp_actualizar_edad
+-- Test: exec sp_movimiento_departamento_list 1
 -- =============================================
-ALTER PROCEDURE [dbo].[sp_actualizar_edad] 	
+alter PROCEDURE [dbo].[sp_movimiento_departamento_list] 	
+(
+@p_id_departamento int
+)
 AS
 BEGIN
 set dateformat ymd
 declare @v_hoy date = getdate()
 
-	--select * from Movimiento_departamento;	
-
-	update Movimiento_departamento
-	set 	
-	edad=DATEDIFF(day,fecha,@v_hoy) 
-	,avance=ROUND((((DATEDIFF(day,fecha,@v_hoy)+1)*100/85+75)),0)
-	where ingreso>0
+	select d.nombre as departamento,md.*
+	from Movimiento_departamento md
+	inner join Departamento d
+	on md.id_departamento=@p_id_departamento
+	where d.id=1
+	order by md.id desc
 END
