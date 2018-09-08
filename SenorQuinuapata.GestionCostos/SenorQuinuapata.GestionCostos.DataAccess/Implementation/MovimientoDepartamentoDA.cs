@@ -105,7 +105,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             }
         }
 
-        public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento)
+        public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento,string genero)
         {
             DateTime _fecha = Convert.ToDateTime(fecha);
                 int exist = 0;
@@ -114,7 +114,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 MovimientoDepartamentoResponse result = new MovimientoDepartamentoResponse();
                 using (var ctx=new bd_sgcquinuapataEntities())
                 {
-                    mov =ctx.Movimiento_departamento.Where(x => x.fecha == _fecha && x.id_departamento == id_departamento).SingleOrDefault();
+                    mov =ctx.Movimiento_departamento.Where(x => x.fecha == _fecha && x.id_departamento == id_departamento && x.genero==genero).SingleOrDefault();
 
                 if (mov != null)
                 {
@@ -129,6 +129,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                     result.saldo = mov.saldo;
                     result.salida = mov.salida;
                     result.ingreso = mov.ingreso;
+                    result.genero = mov.genero;
                 }
                 else
                 {
@@ -169,9 +170,13 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                     salida = request.salida
                 };
 
-                db.Movimiento_departamento.Add(movimiento);
+                using (var ctx=new bd_sgcquinuapataEntities())
+                {
+                    ctx.Movimiento_departamento.Add(movimiento);
 
-                db.SaveChanges();
+                    ctx.SaveChanges();
+                }
+                
                 
 
             }

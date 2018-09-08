@@ -56,7 +56,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 {
                     if (origen=="Nace")
                     {
-                        request.avance = 0;
+                        //request.avance = 0;
                         request.costo_total = 0;
                         request.cu_cif = 0;
                         request.cu_md = 0;
@@ -78,8 +78,9 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                             genero = request.genero,
 
                         };
+
                         MovimientoDepartamentoResponse mov = new MovimientoDepartamentoResponse();
-                         mov=_MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento);
+                         mov=_MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento,request.genero);
 
                         if (mov.id==0)
                         {
@@ -125,7 +126,42 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
                                     _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id,salida, saldo);
 
+                                    //ENVIO DE DATOS AL DEPARTAMENTO 2
+
+                                    _ingreso.Ingreso = new IngresoRequest()
+                                    {
+                                        codigo_destino = "RE001",
+                                        codigo_origen = "LA001",
+                                        recria = request.ingreso,
+                                        fecha = request.fecha,
+                                        genero = request.genero,
+
+                                    };
+
+                                    MovimientoDepartamentoResponse mov = new MovimientoDepartamentoResponse();
+                                    mov = _MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento, request.genero);
+
+                                    if (mov.id == 0)
+                                    {
+                                        request.saldo = salida-item.salida;
+                                        request.edad = 0;
+                                        request.salida = 0;
+                                        request.costo_total = 0;
+                                        request.cu_cif = 0;
+                                        request.cu_md = 0;
+                                        request.cu_mod = 0;
+                                        request.cu_total = 0;
+                                        request.q_equivalente = 0;
+
+                                        _MovimientoDepartamentoBL.RegisterMovimientoDepartamento(request);
+
+                                        _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+                                        
+                                    }
+
                                     
+
+                                    // FIN ENVIO DE DATOS AL DEPARTAMENTO 2
                                     break;
                                 }
                                 else

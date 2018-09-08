@@ -18,9 +18,9 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
 
 
         #region no transaccional
-        public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento)
+        public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento, string genero)
         {
-            return _MovimientoDepartamentoDA.ExistsMovimientoDepartamento(fecha, id_departamento);
+            return _MovimientoDepartamentoDA.ExistsMovimientoDepartamento(fecha, id_departamento,genero);
         }
         public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamento(int id)
         {

@@ -66,7 +66,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                         engorde = request.engorde,
                         fecha = request.fecha,
                         genero = request.genero,
-                        lactancia = request.lactancia,
+                        lactancia = request.lactancia,                        
                         mortalidad = request.mortalidad,
                         recria = request.recria
                     };
