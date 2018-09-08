@@ -190,9 +190,9 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
         {
             try
             {
-                using (db)
+                using (var ctx=new bd_sgcquinuapataEntities())
                 {
-                    Movimiento_departamento est = db.Movimiento_departamento.Where(c => c.id == id).FirstOrDefault();
+                    Movimiento_departamento est = ctx.Movimiento_departamento.Where(c => c.id == id).FirstOrDefault();
 
                     int? nueva_cantidad = est.ingreso + cantidad;
 
@@ -201,7 +201,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                     est.ingreso = nueva_cantidad;
                     est.saldo = nuevo_saldo;
 
-                    db.SaveChanges();
+                    ctx.SaveChanges();
                 }
             }
             finally

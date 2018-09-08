@@ -36,25 +36,14 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         {
             //try
             //{
-                request.fecha = DateTime.Now;
-
-                //request.avance = 0;
-                //request.costo_total = 0;
-                //request.cu_cif = 0;
-                //request.cu_md = 0;
-                //request.cu_mod = 0;
-                //request.cu_total = 0;
-                //request.edad = 0;
-                //request.q_equivalente = 0;
-                //request.salida = 0;
-                //request.saldo = request.ingreso - request.salida;
+            request.fecha = DateTime.Now;
 
             string fecha_actual= DateTime.Now.ToShortDateString();
 
             IngresoViewModel _ingreso = new IngresoViewModel();
-                if (movimiento == "ingreso")
-                {
-                    if (origen=="Nace")
+            if (movimiento == "ingreso")
+            {
+                if (origen=="Nace")
                     {
                         //request.avance = 0;
                         request.costo_total = 0;
@@ -104,7 +93,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
                 if (origen == "1")
                 {
-                    if (request.id_departamento==2)
+                    if (request.id_departamento==2 || request.id_departamento == 3 || request.id_departamento == 4)
                     {
                         int _origen = Convert.ToInt32(origen);
                         int? salida = request.ingreso;
@@ -130,16 +119,36 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
                                     _ingreso.Ingreso = new IngresoRequest()
                                     {
-                                        codigo_destino = "RE001",
+                                        //codigo_destino = "RE001",
                                         codigo_origen = "LA001",
-                                        recria = request.ingreso,
+                                        //recria = request.ingreso,
                                         fecha = request.fecha,
                                         genero = request.genero,
 
                                     };
 
+                                    switch (request.id_departamento)
+                                    {
+                                        case 2:
+                                            _ingreso.Ingreso.codigo_destino = "RE001";
+                                            _ingreso.Ingreso.recria = request.ingreso;
+                                            break;
+                                        case 3:
+                                            _ingreso.Ingreso.codigo_destino = "EN001";
+                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            break;
+                                        case 4:
+                                            _ingreso.Ingreso.codigo_destino = "DE001";
+                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
                                     MovimientoDepartamentoResponse mov = new MovimientoDepartamentoResponse();
                                     mov = _MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento, request.genero);
+
+                                    //En caso de que sea la primera vez que se registra en este dep en el dia
 
                                     if (mov.id == 0)
                                     {
@@ -156,10 +165,18 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                         _MovimientoDepartamentoBL.RegisterMovimientoDepartamento(request);
 
                                         _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
-                                        
+
+                                    }
+                                    else
+                                    {
+                                        request.salida = mov.salida;
+                                        _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+                                        _MovimientoDepartamentoBL.UpdateMovimientoDepartamento(mov.id, request.ingreso, request.salida);
+
+
                                     }
 
-                                    
+
 
                                     // FIN ENVIO DE DATOS AL DEPARTAMENTO 2
                                     break;
@@ -177,20 +194,217 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
                     }
                 }
-                   
+
+                if (origen == "2")
+                {
+                    if (request.id_departamento == 3 || request.id_departamento == 4)
+                    {
+                        int _origen = Convert.ToInt32(origen);
+                        int? salida = request.ingreso;
+                        int? saldo, _salida, _saldo = 0;
+
+
+
+                        foreach (var item in _MovimientoDepartamentoBL.ListMovimientoDepartamentoReverse(_origen))
+                        {
+
+                            if (item.ingreso > 0)
+                            {
+                                if (item.genero==request.genero)
+                                {
+                                    if (item.saldo >= salida)
+                                    {
+
+                                        saldo = item.saldo - salida;
+
+                                        salida += item.salida;
+
+                                        _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id, salida, saldo);
+
+                                        //ENVIO DE DATOS AL DEPARTAMENTO 3
+
+                                        _ingreso.Ingreso = new IngresoRequest()
+                                        {
+                                            //codigo_destino = "RE001",
+                                            codigo_origen = "RE001",
+                                            //recria = request.ingreso,
+                                            fecha = request.fecha,
+                                            genero = request.genero,
+
+                                        };
+
+                                        switch (request.id_departamento)
+                                        {
+
+                                            case 3:
+                                                _ingreso.Ingreso.codigo_destino = "EN001";
+                                                _ingreso.Ingreso.engorde = request.ingreso;
+                                                break;
+                                            case 4:
+                                                _ingreso.Ingreso.codigo_destino = "DE001";
+                                                _ingreso.Ingreso.engorde = request.ingreso;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+
+                                        MovimientoDepartamentoResponse mov = new MovimientoDepartamentoResponse();
+                                        mov = _MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento, request.genero);
+
+                                        //En caso de que sea la primera vez que se registra en este dep en el dia
+
+                                        if (mov.id == 0)
+                                        {
+                                            request.saldo = salida - item.salida;
+                                            request.edad = 0;
+                                            request.salida = 0;
+                                            request.costo_total = 0;
+                                            request.cu_cif = 0;
+                                            request.cu_md = 0;
+                                            request.cu_mod = 0;
+                                            request.cu_total = 0;
+                                            request.q_equivalente = 0;
+
+                                            _MovimientoDepartamentoBL.RegisterMovimientoDepartamento(request);
+
+                                            _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+
+                                        }
+                                        else
+                                        {
+                                            request.salida = mov.salida;
+                                            _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+                                            _MovimientoDepartamentoBL.UpdateMovimientoDepartamento(mov.id, request.ingreso, request.salida);
+
+
+                                        }
+
+
+
+                                        // FIN ENVIO DE DATOS AL DEPARTAMENTO 3
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        salida -= item.saldo;
+
+                                        _salida = item.salida + item.saldo;
+
+                                        _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id, _salida, _saldo);
+                                    }
+                                }
+                                
+                            }
+                        }
+
+                    }
                 }
 
+                if (origen == "3")
+                {
+                    if (request.id_departamento == 4)
+                    {
+                        int _origen = Convert.ToInt32(origen);
+                        int? salida = request.ingreso;
+                        int? saldo, _salida, _saldo = 0;
+
+
+
+                        foreach (var item in _MovimientoDepartamentoBL.ListMovimientoDepartamentoReverse(_origen))
+                        {
+
+                            if (item.ingreso > 0)
+                            {
+                                if (item.genero == request.genero)
+                                {
+                                    if (item.saldo >= salida)
+                                    {
+
+                                        saldo = item.saldo - salida;
+
+                                        salida += item.salida;
+
+                                        _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id, salida, saldo);
+
+                                        //ENVIO DE DATOS AL DEPARTAMENTO 4
+
+                                        _ingreso.Ingreso = new IngresoRequest()
+                                        {
+                                            //codigo_destino = "RE001",
+                                            codigo_origen = "EN001",
+                                            //recria = request.ingreso,
+                                            fecha = request.fecha,
+                                            genero = request.genero,
+
+                                        };
+
+                                        switch (request.id_departamento)
+                                        {                                            
+                                            case 4:
+                                                _ingreso.Ingreso.codigo_destino = "DE001";
+                                                _ingreso.Ingreso.engorde = request.ingreso;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+
+                                        MovimientoDepartamentoResponse mov = new MovimientoDepartamentoResponse();
+                                        mov = _MovimientoDepartamentoBL.ExistsMovimientoDepartamento(fecha_actual, request.id_departamento, request.genero);
+
+                                        //En caso de que sea la primera vez que se registra en este dep en el dia
+
+                                        if (mov.id == 0)
+                                        {
+                                            request.saldo = salida - item.salida;
+                                            request.edad = 0;
+                                            request.salida = 0;
+                                            request.costo_total = 0;
+                                            request.cu_cif = 0;
+                                            request.cu_md = 0;
+                                            request.cu_mod = 0;
+                                            request.cu_total = 0;
+                                            request.q_equivalente = 0;
+
+                                            _MovimientoDepartamentoBL.RegisterMovimientoDepartamento(request);
+
+                                            _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+
+                                        }
+                                        else
+                                        {
+                                            request.salida = mov.salida;
+                                            _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+                                            _MovimientoDepartamentoBL.UpdateMovimientoDepartamento(mov.id, request.ingreso, request.salida);
+
+
+                                        }
+
+
+
+                                        // FIN ENVIO DE DATOS AL DEPARTAMENTO 4
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        salida -= item.saldo;
+
+                                        _salida = item.salida + item.saldo;
+
+                                        _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id, _salida, _saldo);
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
                
-                return RedirectToAction("Index");
-            //}
-            //catch (Exception e)
-            //{
-            //    var a = e.Message.ToString();
-            //    return View("Index", request);
-            //}            
-
-
-         
+            return RedirectToAction("Index");
+                     
         }
 
 
