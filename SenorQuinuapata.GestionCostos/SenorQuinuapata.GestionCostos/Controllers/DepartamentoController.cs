@@ -38,16 +38,16 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             //{
                 request.fecha = DateTime.Now;
 
-                request.avance = 0;
-                request.costo_total = 0;
-                request.cu_cif = 0;
-                request.cu_md = 0;
-                request.cu_mod = 0;
-                request.cu_total = 0;
-                request.edad = 0;
-                request.q_equivalente = 0;
-                request.salida = 0;
-                request.saldo = request.ingreso - request.salida;
+                //request.avance = 0;
+                //request.costo_total = 0;
+                //request.cu_cif = 0;
+                //request.cu_md = 0;
+                //request.cu_mod = 0;
+                //request.cu_total = 0;
+                //request.edad = 0;
+                //request.q_equivalente = 0;
+                //request.salida = 0;
+                //request.saldo = request.ingreso - request.salida;
 
             string fecha_actual= DateTime.Now.ToShortDateString();
 
@@ -56,6 +56,16 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 {
                     if (origen=="Nace")
                     {
+                        request.avance = 0;
+                        request.costo_total = 0;
+                        request.cu_cif = 0;
+                        request.cu_md = 0;
+                        request.cu_mod = 0;
+                        request.cu_total = 0;
+                        request.edad = 0;
+                        request.q_equivalente = 0;
+                        request.salida = 0;
+                        request.saldo = request.ingreso - request.salida;
                         request.genero = "Gazapo";
                         //request.id_departamento = 1;
 
@@ -97,9 +107,11 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                     {
                         int _origen = Convert.ToInt32(origen);
                         int? salida = request.ingreso;
-                        int? saldo = 0;                        
+                        int? saldo, _salida,_saldo=0;
+                        
 
-                        foreach (var item in _MovimientoDepartamentoBL.ListMovimientoDepartamento(_origen))
+
+                        foreach (var item in _MovimientoDepartamentoBL.ListMovimientoDepartamentoReverse(_origen))
                         {                            
 
                             if (item.ingreso>0)
@@ -113,8 +125,16 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
                                     _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id,salida, saldo);
 
-                                    //_MovimientoDepartamentoBL.RegisterMovimientoDepartamento(request);
+                                    
                                     break;
+                                }
+                                else
+                                {
+                                    salida -= item.saldo;
+
+                                    _salida = item.salida + item.saldo;
+
+                                    _MovimientoDepartamentoBL.UpdateSalidaSaldo(item.id,_salida,_saldo);
                                 }
                             }
                         }
@@ -147,8 +167,6 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
             return View(movimientos);
         }
-
-
 
         //PRUEBAAAA
         public ActionResult Lista()

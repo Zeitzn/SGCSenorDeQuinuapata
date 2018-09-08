@@ -25,5 +25,5 @@ declare @v_hoy date = getdate()
 	inner join Departamento d
 	on md.id_departamento=@p_id_departamento
 	where d.id=1
-	order by md.id desc
+	order by md.fecha desc
 END

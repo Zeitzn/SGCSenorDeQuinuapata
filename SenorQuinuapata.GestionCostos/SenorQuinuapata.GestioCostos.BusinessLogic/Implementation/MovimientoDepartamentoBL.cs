@@ -26,7 +26,12 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
         {
             return _MovimientoDepartamentoDA.ListMovimientoDepartamento(id);
         }
-               
+
+        public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamentoReverse(int id)
+        {
+            return _MovimientoDepartamentoDA.ListMovimientoDepartamentoReverse(id);
+        }
+
 
         #endregion
 
@@ -35,6 +40,11 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
         public void RegisterMovimientoDepartamento(MovimientoDepartamentoRequest request)
         {
             _MovimientoDepartamentoDA.RegisterMovimientoDepartamento(request);
+        }
+
+        public void RegisterNextMovimientoDepartamento(MovimientoDepartamentoRequest request)
+        {
+            _MovimientoDepartamentoDA.RegisterNextMovimientoDepartamento(request);
         }
 
         public void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida)
@@ -46,6 +56,8 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
         {
             _MovimientoDepartamentoDA.UpdateSalidaSaldo(origen,salida,saldo);
         }
+
+       
 
         #endregion
     }

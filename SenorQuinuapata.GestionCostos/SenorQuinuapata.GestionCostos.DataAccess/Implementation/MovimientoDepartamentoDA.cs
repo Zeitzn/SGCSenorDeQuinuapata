@@ -63,6 +63,48 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
+
+        public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamentoReverse(int id)
+        {
+            try
+            {
+                var result = new List<MovimientoDepartamentoResponse>();
+                using (db)
+                {
+                    result = (
+                       db.Movimiento_departamento.Where(c => c.id_departamento == id).Select(x => new MovimientoDepartamentoResponse()
+                       {
+                           id = x.id,
+                           avance = x.avance,
+                           costo_total = x.costo_total,
+                           cu_cif = x.cu_cif,
+                           cu_md = x.cu_md,
+                           cu_mod = x.cu_mod,
+                           cu_total = x.cu_total,
+                           departamento = x.Departamento.nombre,
+                           edad = x.edad,
+                           fecha = x.fecha,
+                           genero = x.genero,
+                           ingreso = x.ingreso,
+                           q_equivalente = x.q_equivalente,
+                           saldo = x.saldo,
+                           salida = x.salida
+
+                       })
+                       ).ToList();
+
+                    //   return result;
+
+
+                }
+                return result;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+        }
+
         public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento)
         {
             DateTime _fecha = Convert.ToDateTime(fecha);
@@ -143,21 +185,24 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
         {
             try
             {
-                Movimiento_departamento est = db.Movimiento_departamento.Where(c => c.id == id).FirstOrDefault();
+                using (db)
+                {
+                    Movimiento_departamento est = db.Movimiento_departamento.Where(c => c.id == id).FirstOrDefault();
 
-                int? nueva_cantidad = est.ingreso + cantidad;
+                    int? nueva_cantidad = est.ingreso + cantidad;
 
-                int? nuevo_saldo = nueva_cantidad - salida;
+                    int? nuevo_saldo = nueva_cantidad - salida;
 
-                est.ingreso = nueva_cantidad;
-                est.saldo = nuevo_saldo;
+                    est.ingreso = nueva_cantidad;
+                    est.saldo = nuevo_saldo;
 
-                db.SaveChanges();
+                    db.SaveChanges();
+                }
             }
             finally
             {
 
-                db.Dispose();
+                //db.Dispose();
             }
         }
 
@@ -184,6 +229,11 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             {
                 db.Dispose();
             }
+        }
+
+        public void RegisterNextMovimientoDepartamento(MovimientoDepartamentoRequest request)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

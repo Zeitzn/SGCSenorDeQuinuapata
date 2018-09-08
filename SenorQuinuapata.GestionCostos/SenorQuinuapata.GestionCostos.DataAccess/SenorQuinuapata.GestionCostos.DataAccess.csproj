@@ -114,6 +114,7 @@
       <DependentUpon>DBsgc.edmx</DependentUpon>
       <LastGenOutput>DBsgc.cs</LastGenOutput>
     </Content>
+    <Content Include="Store_procedures\Insert\sp_ingreso_departamento_ins.sql" />
     <Content Include="Store_procedures\List\sp_movimiento_departamento_list.sql" />
     <Content Include="Store_procedures\Update\sp_actualizar_edad.sql" />
     <Content Include="Store_procedures\Update\sp_salida_saldo_upd.sql" />

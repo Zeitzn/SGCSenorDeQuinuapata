@@ -11,11 +11,13 @@ GO
 -- Description:	<Description,,>
 -- Test: exec sp_movimiento_departamento_list 1
 -- =============================================
-alter PROCEDURE [dbo].[sp_salida_saldo_upd] 	
+create PROCEDURE [dbo].[sp_ingreso_departamento_ins] 	
 (
 @p_id_movimiento_departamento int,
 @p_salida int,
-@p_saldo int
+@p_saldo int,
+@p_id_sgte_departamento int,
+@p_genero varchar(7)
 )
 AS
 BEGIN
@@ -26,6 +28,8 @@ declare @v_hoy date = getdate()
 	set salida=@p_salida,saldo=@p_saldo
 	where id=@p_id_movimiento_departamento
 
+	insert into movimiento_departamento(fecha,edad,genero,id_departamento,ingreso,salida,saldo,avance,q_equivalente,cu_md,cu_mod,cu_cif,cu_total,costo_total)
+	values(@v_hoy,0,@p_genero,@p_id_sgte_departamento,@p_salida,0,0,0,0,0,0,0,0,0)
 
 END
 
