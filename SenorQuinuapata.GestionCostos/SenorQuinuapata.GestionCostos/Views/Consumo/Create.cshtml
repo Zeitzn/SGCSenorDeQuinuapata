@@ -1,89 +1,7 @@
-﻿@model SenorQuinuapata.GestionCostos.Entities.Request.MovimientoDepartamentoRequest
+﻿@model SenorQuinuapata.GestionCostos.Entities.Request.ConsumoRequest
 @{
-    ViewBag.Title = "Operaciones";
+    ViewBag.Title = "Registrar consumo";
 }
-
-<div class="col-md-6">
-    <div class="small well">
-        <h4 style="color:darkgreen">Ingresos</h4>
-
-        @using (Html.BeginForm("Register", "Departamento", FormMethod.Post, new { id = "ingreso-form" }))
-
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-group">
-                <label>Movimiento</label>
-                <select class="form-control" name="movimiento">
-                    <option value="ingreso">Ingreso</option>
-                    <option value="salida">Salida</option>
-                </select>
-            </div>
-            @*<div class="form-group">
-                    <label>Fecha</label>
-                    <input type="date" name="name" value="" class="form-control" />
-                </div>*@
-            <div class="form-group">
-                <label>Origen</label>
-                <select class="form-control" name="origen">
-                    <option value="Nace">Nace</option>
-                    <option value="1">Lactancia</option>
-                    <option value="2">Recría</option>
-                    <option value="3">Engorde</option>
-                    <option value="4">Descarte</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Código de Origen</label>
-                <input type="text" name="codigo_origen" value="" class="form-control" />
-            </div>
-            @*<div class="form-group">
-                    <label>Género</label>
-                    <select class="form-control" name="genero">
-                        <option value="Gazapo">Gazapo</option>
-                        <option value="Hembra">Hembra</option>
-                        <option value="Macho">Macho</option>
-                    </select>
-                </div>*@
-            <div class="form-group">
-                <label>Destino</label>
-                <select class="form-control" name="id_departamento">
-                    <option value="1">Lactancia</option>
-                    <option value="2">Recría</option>
-                    <option value="3">Engorde</option>
-                    <option value="4">Descarte</option>
-                    <option value="5">Mortalidad</option>
-                    <option value="6">Venta</option>
-                    <option value="7">Reproductor (Activo biológico)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Código de Destino</label>
-                <input type="text" name="codigo_destino" value="" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label>Género</label>
-                <select class="form-control" name="genero">
-                    <option value="Gazapo">Gazapo</option>
-                    <option value="Hembra">Hembra</option>
-                    <option value="Macho">Macho</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Cantidad</label>
-                @*<input type="number" name="" value="" class="form-control" />*@
-                @Html.EditorFor(model => model.ingreso, new { htmlAttributes = new { @class = "form-control", required = "true" } })
-                @Html.ValidationMessageFor(model => model.ingreso, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-
-                <input type="submit" name="name" value="Registrar" class="btn btn-primary" />
-            </div>
-        }
-    </div>
-
-</div>
 
 <div class="col-md-6">
     <div class="small well">
@@ -95,9 +13,9 @@
 
             <div class="form-group">
                 <label>Elemento de costo:</label>
-                <select class="form-control">
-                    <option value="1">MD</option>
-                    <option value="2">MI</option>
+                <select class="form-control" name="tipo">
+                    <option value="md">MD</option>
+                    <option value="mi">MI</option>
                 </select>
             </div>
 
@@ -110,7 +28,7 @@
                 <label>Producto:</label>
                 <div class="col-md-12">
                     <div class="col-md-10">
-                        <input type="text" class="form-control pull-left" name="nombre_producto" value="" id="id_nombre_producto" />
+                        <input type="text" class="form-control pull-left" name="nombre_producto" value="" id="id_nombre_producto" disabled/>
                         <input type="hidden" name="id_producto" value="" id="id_id_producto" />
                     </div>
 
@@ -124,12 +42,12 @@
 
             <div class="form-group">
                 <label>Código del producto:</label>
-                <input type="text" class="form-control" name="codigo_producto" value="" id="id_codigo_producto" />
+                <input type="text" class="form-control" name="codigo_producto" value="" id="id_codigo_producto" disabled/>
             </div>
 
             <div class="form-group">
                 <label>Cantidad:</label>
-                <input type="number" class="form-control" name="cantidad" value="" id="id_codigo_producto" />
+                <input type="number" class="form-control" name="cantidad" value="" id="id_cantidad" />
             </div>
 
             <div class="form-group">
@@ -139,29 +57,24 @@
 
             <div class="form-group">
                 <label>Costo Total:</label>
-                <input type="text" class="form-control" name="costo_total" value="" id="id_ct" />
+                <input type="text" class="form-control" name="" value="" id="id_ct" disabled/>
+                <input type="hidden" class="form-control" name="total" value="" id="id_costo_total" />
             </div>
 
             <div class="form-group">
                 <label>Destino:</label>
-                <select class="form-control">
+                <select class="form-control" name="id_departamento">
                     <option value="1">Lactancia</option>
                     <option value="2">Recría</option>
                     <option value="3">Engorde</option>
                     <option value="4">Descarte</option>
                     <option value="7">Reproductor (Activo biológico)</option>
                 </select>
-            </div>
-
-            <div class="form-group">
-                <label>Código de destino:</label>
-                <input type="text" class="form-control" name="codigo_destino" value="" id="id_codigo_destino" />
-                <input type="hidden" name="id_departamento" value="" id="id_id_departamento" />
-            </div>
+            </div>            
 
             <div class="form-group">
 
-                <input type="submit" value="Registrar" />
+                <input type="submit" value="Registrar" class="btn btn-primary" />
             </div>
 
 
@@ -250,7 +163,7 @@
 @section scripts{
 
     <script>
-        function cargarProducto(id, nombre,codigo) {
+        function cargarProducto(id, nombre, codigo) {
             $("#id_codigo_producto").val(codigo);
             $("#id_id_producto").val(id);
             $("#id_nombre_producto").val(nombre);
@@ -259,7 +172,18 @@
             $("#modalProductos").modal('hide');
         }
 
+        $("#id_cu").keyup(function () {
+
+            var cu = $("#id_cu").val();
+            var cant = $("#id_cantidad").val();
+
+            $("#id_ct").val(cu * cant);
+            $("#id_costo_total").val(cu * cant);
+        })
+
     </script>
 
 
 }
+
+

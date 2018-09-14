@@ -32,11 +32,19 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
             return _MovimientoDepartamentoDA.ListMovimientoDepartamentoReverse(id);
         }
 
+        
+
 
         #endregion
 
 
         #region transaccional
+
+        public bool MakeMovimiento(MovimientoDepartamentoRequest request, IngresoRequest _ingreso, string origen)
+        {
+            throw new NotImplementedException();
+        }
+
         public void RegisterMovimientoDepartamento(MovimientoDepartamentoRequest request)
         {
             _MovimientoDepartamentoDA.RegisterMovimientoDepartamento(request);

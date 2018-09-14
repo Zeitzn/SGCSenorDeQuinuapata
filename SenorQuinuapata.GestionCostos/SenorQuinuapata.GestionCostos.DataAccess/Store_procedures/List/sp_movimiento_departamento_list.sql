@@ -24,6 +24,6 @@ declare @v_hoy date = getdate()
 	from Movimiento_departamento md
 	inner join Departamento d
 	on md.id_departamento=@p_id_departamento
-	where d.id=1
+	where d.id=@p_id_departamento
 	order by md.fecha desc
 END

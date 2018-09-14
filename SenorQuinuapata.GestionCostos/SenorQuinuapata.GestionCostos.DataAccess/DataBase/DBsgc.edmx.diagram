@@ -4,11 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1f4ede0ac49948199bbef5060695f87a" Name="Diagram1">
-        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Departamento" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Movimiento_departamento" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="1f4ede0ac49948199bbef5060695f87a" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Departamento" Width="1.5" PointX="1.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Movimiento_departamento" Width="1.5" PointX="3.375" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="bd_sgcquinuapataModel.fk_departamento_movimiento_departamento" ManuallyRouted="false" />
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Ingreso" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Producto" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Consumo" Width="1.5" PointX="7.625" PointY="3" />
+        <AssociationConnector Association="bd_sgcquinuapataModel.fk_departamento_consumo" />
+        <AssociationConnector Association="bd_sgcquinuapataModel.fk_producto_consumo" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Flujo_unidades_departamento" Width="1.5" PointX="0.75" PointY="0.5" />
+        <AssociationConnector Association="bd_sgcquinuapataModel.fk_departaento_flujo_unidades_departamento" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

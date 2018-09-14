@@ -23,5 +23,7 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Interface
         void UpdateSalidaSaldo(int orige, int? salida, int? saldo);
 
         void RegisterNextMovimientoDepartamento(MovimientoDepartamentoRequest request);
+
+        bool MakeMovimiento(MovimientoDepartamentoRequest request, IngresoRequest _ingreso, string origen);
     }
 }

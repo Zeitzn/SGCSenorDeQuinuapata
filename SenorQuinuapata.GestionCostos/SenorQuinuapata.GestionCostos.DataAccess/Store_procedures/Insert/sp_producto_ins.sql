@@ -9,20 +9,20 @@ GO
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
--- Test: exec sp_actualizar_edad
+-- Test: 
 -- =============================================
-ALTER PROCEDURE [dbo].[sp_actualizar_edad] 	
+create PROCEDURE [dbo].[sp_producto_ins] 	
+(
+
+@p_codigo varchar(10),
+@p_nombre varchar(10)
+)
 AS
 BEGIN
-set dateformat ymd
-declare @v_hoy date = getdate()
 
-	--select * from Movimiento_departamento;	
+insert into producto(codigo,nombre) values (@p_codigo, @p_nombre)
 
-	update Movimiento_departamento
-	set 	
-	edad=DATEDIFF(day,fecha,@v_hoy) 
-	,avance=ROUND((((DATEDIFF(day,fecha,@v_hoy)+1)*100/85+75)),0)
-	,q_equivalente=(saldo*avance)/100
-	where ingreso>0
+	
+
 END
+

@@ -1,0 +1,29 @@
+﻿@model SenorQuinuapata.GestionCostos.Entities.Request.ProductoRequest
+@{
+    ViewBag.Title = "Registrar Nuevo Producto";
+}
+
+<h2>Registrar Nuevo Producto</h2>
+
+<div class="col-md-6">
+    @using (Html.BeginForm("Create", "Producto", FormMethod.Post, new { id = "ingreso-form" }))
+
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label>Código:</label>
+            <input type="text" name="codigo" class="form-control" value="@ViewBag.Codigo" />
+        </div>
+
+        <div class="form-group">
+            <label>Nonmbre:</label>
+            <input type="text" name="nombre" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-primary btn-sm" />
+        </div>
+    }
+</div>
+

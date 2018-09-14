@@ -1,0 +1,51 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.ConsumoViewModel
+@{
+    ViewBag.Title = "Consumo";
+}
+
+
+@*<a href="~/Producto/Create" class="btn btn-primary btn-sm">Nuevo</a>
+<hr />*@
+
+<table id="table" class="table table-bordered small">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>FECHA</td>
+            <td>CANTIDAD</td>
+            <td>CODIGO</td>
+            <td>DESCRIPCIÓN</td>
+            <td>CODIGO DE DESTINO</td>
+            <td>MD</td>
+            <td>MI</td>            
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td>#</td>
+            <td>FECHA</td>
+            <td>CANTIDAD</td>
+            <td>CODIGO</td>
+            <td>DESCRIPCIÓN</td>
+            <td>CODIGO DE DESTINO</td>
+            <td>MD</td>
+            <td>MI</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model.ListConsumo)
+        {
+        <tr>
+            <td class="text-center">@item.id</td>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha)</td>
+            <td class="text-center">@item.cantidad</td>
+            <td class="text-center">@item.codigo_producto</td>
+            <td>@item.nombre_producto</td>
+            <td class="text-center">@item.codigo_departamento</td>
+            <td class="text-right">@item.md</td>
+            <td class="text-right">@item.mi</td>
+        </tr>
+        }
+
+    </tbody>
+</table>

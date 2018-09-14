@@ -12,25 +12,19 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Departamento
+    public partial class Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Departamento()
+        public Producto()
         {
-            this.Movimiento_departamento = new HashSet<Movimiento_departamento>();
             this.Consumo = new HashSet<Consumo>();
-            this.Flujo_unidades_departamento = new HashSet<Flujo_unidades_departamento>();
         }
     
         public int id { get; set; }
         public string nombre { get; set; }
-        public string descripcion { get; set; }
+        public string codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movimiento_departamento> Movimiento_departamento { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consumo> Consumo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Flujo_unidades_departamento> Flujo_unidades_departamento { get; set; }
     }
 }

@@ -1,0 +1,91 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.ProductoViewModel
+@{
+    ViewBag.Title = "Productos";
+}
+
+
+<a href="~/Producto/Create" class="btn btn-primary btn-sm">Nuevo</a>
+<hr />
+
+<table id="table" class="table table-bordered small">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>CÓDIGO</td>
+            <td>NOMBRE</td>
+            @*<td>ACCIONES</td>*@
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td>#</td>
+            <td>CÓDIGO</td>
+            <td>NOMBRE</td>
+            @*<td>ACCIONES</td>*@
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model.ListIProducto)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.codigo</td>
+                <td>@item.nombre</td>
+
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+    @*<script type="text/javascript">  
+           
+   
+        //$(document).ready(function () {
+
+        //    $.ajax({
+        //        type: "GET",
+        //        url: "/Producto/List",
+        //        //dataType: "json",
+        //        success: searchSuccess
+
+
+        //    })
+        //});
+
+
+        //function searchSuccess(data) {
+
+            
+        //    for (var i in data) {
+        //        result = '<tr>' +
+        //            '<td>' + i.id +'</td>' +
+                    
+        //            '</tr>';
+
+        //        $('#t_body').append(result);
+        //    }
+
+            //for (var i = 0; i < data.length; i++) {
+
+            //    result = '<tr>' +
+            //        '<td>' + data.ListIProducto[i].nombre + '</td>' +
+            //        '<td>' + i + '</td>' +
+            //        '<td>' + i + '</td>' +
+
+            //        '</tr>';
+
+            //    $('#t_body').append(result);
+            //}
+            //console.log(data.ListIProducto[0].id);
+           
+        @*}
+
+    </script>*@
+

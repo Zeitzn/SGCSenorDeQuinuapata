@@ -25,29 +25,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 var result = new List<MovimientoDepartamentoResponse>();
                 using (db)
                 {
-                    //result = (
-                    //   db.Movimiento_departamento.Where(c => c.id_departamento == id).Select(x => new MovimientoDepartamentoResponse()
-                    //   {
-                    //       id = x.id,
-                    //       avance = x.avance,
-                    //       costo_total = x.costo_total,
-                    //       cu_cif = x.cu_cif,
-                    //       cu_md = x.cu_md,
-                    //       cu_mod = x.cu_mod,
-                    //       cu_total = x.cu_total,
-                    //       departamento = x.Departamento.nombre,
-                    //       edad = x.edad,
-                    //       fecha = x.fecha,
-                    //       genero = x.genero,
-                    //       ingreso = x.ingreso,
-                    //       q_equivalente = x.q_equivalente,
-                    //       saldo = x.saldo,
-                    //       salida = x.salida
-
-                    //   })
-                    //   ).OrderByDescending(c => c.id).ToList();
-
-                    //   return result;
+                    
                     result = db.Database.SqlQuery<MovimientoDepartamentoResponse>("sp_movimiento_departamento_list @id_departamento",
 
                         new SqlParameter("@id_departamento", id)
@@ -108,7 +86,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
         public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento,string genero)
         {
             DateTime _fecha = Convert.ToDateTime(fecha);
-                int exist = 0;
+                //int exist = 0;
                
                 Movimiento_departamento mov = new Movimiento_departamento();
                 MovimientoDepartamentoResponse result = new MovimientoDepartamentoResponse();

@@ -62,11 +62,16 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Principal @*<span class="fa fa-chevron-down"></span>*@</a>
+                                    <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Principal</a>
 
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Index","Departamento")"><i class="fa fa-edit"></i> Operaciones @*<span class="fa fa-chevron-down"></span>*@</a>
+                                    @*<a href="@Url.Action("Index","Departamento")"><i class="fa fa-edit"></i> Operaciones</a>*@
+                                    <a><i class="fa fa-edit"></i> Registro<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="@Url.Action("RegisterIngreso","Departamento")">Ingresos</a></li>
+                                        <li><a href="@Url.Action("Create","Consumo")">Consumo</a></li>                                       
+                                    </ul>
 
                                 </li>
                                 <li>
@@ -77,11 +82,22 @@
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=3 })">Engorde</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=4 })">Descarte</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=5 })">Mortalidad</a></li>
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=6 })">Ventas</a></li>
                                     </ul>
                                 </li>
 
                                 <li>
-                                    <a href="@Url.Action("Index","Ingreso")"><i class="fa fa-edit"></i> Ingresos @*<span class="fa fa-chevron-down"></span>*@</a>
+                                    <a href="@Url.Action("Index","Ingreso")"><i class="fa fa-edit"></i> Ingresos</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("Index","Producto")"><i class="fa fa-edit"></i> Productos</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("Index","Consumo")"><i class="fa fa-edit"></i> Consumo</a>
 
                                 </li>
 
@@ -290,6 +306,6 @@
             $('#table').DataTable();
         });
     </script>
-
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -5,12 +5,48 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="bd_sgcquinuapataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Consumo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="id_producto" Type="int" />
+          <Property Name="id_departamento" Type="int" />
+          <Property Name="md" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="mi" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="tipo" Type="varchar" MaxLength="2" />
+          <Property Name="total" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
         <EntityType Name="Departamento">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="nombre" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Flujo_unidades_departamento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_departamento" Type="int" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="unidades_iniciales_proceso" Type="int" />
+          <Property Name="unidades_agregados_nacidos" Type="int" />
+          <Property Name="unidades_transferidas_recria" Type="int" />
+          <Property Name="unidades_finales_proceso" Type="int" />
+          <Property Name="unidades_transferidas_mortalidad" Type="int" />
+          <Property Name="unidades_recibidas_lactancia" Type="int" />
+          <Property Name="unidades_transferidas_ventas" Type="int" />
+          <Property Name="unidades_transferidas_engorde" Type="int" />
+          <Property Name="unidades_recibidas_recria" Type="int" />
+          <Property Name="unidades_transferidas_descarte" Type="int" />
+          <Property Name="unidades_transferidas_activo" Type="int" />
+          <Property Name="unidades_recibidas_engorde" Type="int" />
+          <Property Name="unidades_recibidas_activo" Type="int" />
         </EntityType>
         <EntityType Name="Ingreso">
           <Key>
@@ -48,6 +84,38 @@
           <Property Name="cu_total" Type="decimal" Precision="10" Scale="2" />
           <Property Name="costo_total" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="fk_departaento_flujo_unidades_departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+          <End Role="Flujo_unidades_departamento" Type="Self.Flujo_unidades_departamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Flujo_unidades_departamento">
+              <PropertyRef Name="id_departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_departamento_consumo">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+          <End Role="Consumo" Type="Self.Consumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Consumo">
+              <PropertyRef Name="id_departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_departamento_movimiento_departamento">
           <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
           <End Role="Movimiento_departamento" Type="Self.Movimiento_departamento" Multiplicity="*" />
@@ -60,13 +128,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_producto_consumo">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+          <End Role="Consumo" Type="Self.Consumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Consumo">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="bd_sgcquinuapataModelStoreContainer">
+          <EntitySet Name="Consumo" EntityType="Self.Consumo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Flujo_unidades_departamento" EntityType="Self.Flujo_unidades_departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ingreso" EntityType="Self.Ingreso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movimiento_departamento" EntityType="Self.Movimiento_departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_departaento_flujo_unidades_departamento" Association="Self.fk_departaento_flujo_unidades_departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Flujo_unidades_departamento" EntitySet="Flujo_unidades_departamento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_departamento_consumo" Association="Self.fk_departamento_consumo">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Consumo" EntitySet="Consumo" />
+          </AssociationSet>
           <AssociationSet Name="fk_departamento_movimiento_departamento" Association="Self.fk_departamento_movimiento_departamento">
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Movimiento_departamento" EntitySet="Movimiento_departamento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_producto_consumo" Association="Self.fk_producto_consumo">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Consumo" EntitySet="Consumo" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -80,6 +175,9 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Movimiento_departamento" Relationship="Self.fk_departamento_movimiento_departamento" FromRole="Departamento" ToRole="Movimiento_departamento" />
+          <NavigationProperty Name="Consumo" Relationship="bd_sgcquinuapataModel.fk_departamento_consumo" FromRole="Departamento" ToRole="Consumo" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Flujo_unidades_departamento" Relationship="bd_sgcquinuapataModel.fk_departaento_flujo_unidades_departamento" FromRole="Departamento" ToRole="Flujo_unidades_departamento" />
         </EntityType>
         <EntityType Name="Movimiento_departamento">
           <Key>
@@ -122,6 +220,21 @@
             <End Role="Movimiento_departamento" EntitySet="Movimiento_departamento" />
           </AssociationSet>
           <EntitySet Name="Ingreso" EntityType="bd_sgcquinuapataModel.Ingreso" />
+          <EntitySet Name="Producto" EntityType="bd_sgcquinuapataModel.Producto" />
+          <EntitySet Name="Consumo" EntityType="bd_sgcquinuapataModel.Consumo" />
+          <AssociationSet Name="fk_departamento_consumo" Association="bd_sgcquinuapataModel.fk_departamento_consumo">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Consumo" EntitySet="Consumo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_producto_consumo" Association="bd_sgcquinuapataModel.fk_producto_consumo">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Consumo" EntitySet="Consumo" />
+          </AssociationSet>
+          <EntitySet Name="Flujo_unidades_departamento" EntityType="bd_sgcquinuapataModel.Flujo_unidades_departamento" />
+          <AssociationSet Name="fk_departaento_flujo_unidades_departamento" Association="bd_sgcquinuapataModel.fk_departaento_flujo_unidades_departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Flujo_unidades_departamento" EntitySet="Flujo_unidades_departamento" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Ingreso">
           <Key>
@@ -139,6 +252,89 @@
           <Property Name="descarte" Type="Int32" />
           <Property Name="mortalidad" Type="Int32" />
         </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Consumo" Relationship="bd_sgcquinuapataModel.fk_producto_consumo" FromRole="Producto" ToRole="Consumo" />
+        </EntityType>
+        <EntityType Name="Consumo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="id_producto" Type="Int32" />
+          <Property Name="id_departamento" Type="Int32" />
+          <Property Name="md" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="mi" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Departamento" Relationship="bd_sgcquinuapataModel.fk_departamento_consumo" FromRole="Consumo" ToRole="Departamento" />
+          <NavigationProperty Name="Producto" Relationship="bd_sgcquinuapataModel.fk_producto_consumo" FromRole="Consumo" ToRole="Producto" />
+          <Property Name="tipo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <Association Name="fk_departamento_consumo">
+          <End Type="bd_sgcquinuapataModel.Departamento" Role="Departamento" Multiplicity="0..1" />
+          <End Type="bd_sgcquinuapataModel.Consumo" Role="Consumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Consumo">
+              <PropertyRef Name="id_departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_producto_consumo">
+          <End Type="bd_sgcquinuapataModel.Producto" Role="Producto" Multiplicity="0..1" />
+          <End Type="bd_sgcquinuapataModel.Consumo" Role="Consumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Consumo">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Flujo_unidades_departamento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_departamento" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="unidades_iniciales_proceso" Type="Int32" />
+          <Property Name="unidades_agregados_nacidos" Type="Int32" />
+          <Property Name="unidades_transferidas_recria" Type="Int32" />
+          <Property Name="unidades_finales_proceso" Type="Int32" />
+          <Property Name="unidades_transferidas_mortalidad" Type="Int32" />
+          <Property Name="unidades_recibidas_lactancia" Type="Int32" />
+          <Property Name="unidades_transferidas_ventas" Type="Int32" />
+          <Property Name="unidades_transferidas_engorde" Type="Int32" />
+          <Property Name="unidades_recibidas_recria" Type="Int32" />
+          <Property Name="unidades_transferidas_descarte" Type="Int32" />
+          <Property Name="unidades_transferidas_activo" Type="Int32" />
+          <Property Name="unidades_recibidas_engorde" Type="Int32" />
+          <Property Name="unidades_recibidas_activo" Type="Int32" />
+          <NavigationProperty Name="Departamento" Relationship="bd_sgcquinuapataModel.fk_departaento_flujo_unidades_departamento" FromRole="Flujo_unidades_departamento" ToRole="Departamento" />
+        </EntityType>
+        <Association Name="fk_departaento_flujo_unidades_departamento">
+          <End Type="bd_sgcquinuapataModel.Departamento" Role="Departamento" Multiplicity="0..1" />
+          <End Type="bd_sgcquinuapataModel.Flujo_unidades_departamento" Role="Flujo_unidades_departamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Flujo_unidades_departamento">
+              <PropertyRef Name="id_departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -148,6 +344,7 @@
           <EntitySetMapping Name="Departamento">
             <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Departamento">
               <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
@@ -187,6 +384,52 @@
                 <ScalarProperty Name="genero" ColumnName="genero" />
                 <ScalarProperty Name="edad" ColumnName="edad" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consumo">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Consumo">
+              <MappingFragment StoreEntitySet="Consumo">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="mi" ColumnName="mi" />
+                <ScalarProperty Name="md" ColumnName="md" />
+                <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Flujo_unidades_departamento">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Flujo_unidades_departamento">
+              <MappingFragment StoreEntitySet="Flujo_unidades_departamento">
+                <ScalarProperty Name="unidades_recibidas_activo" ColumnName="unidades_recibidas_activo" />
+                <ScalarProperty Name="unidades_recibidas_engorde" ColumnName="unidades_recibidas_engorde" />
+                <ScalarProperty Name="unidades_transferidas_activo" ColumnName="unidades_transferidas_activo" />
+                <ScalarProperty Name="unidades_transferidas_descarte" ColumnName="unidades_transferidas_descarte" />
+                <ScalarProperty Name="unidades_recibidas_recria" ColumnName="unidades_recibidas_recria" />
+                <ScalarProperty Name="unidades_transferidas_engorde" ColumnName="unidades_transferidas_engorde" />
+                <ScalarProperty Name="unidades_transferidas_ventas" ColumnName="unidades_transferidas_ventas" />
+                <ScalarProperty Name="unidades_recibidas_lactancia" ColumnName="unidades_recibidas_lactancia" />
+                <ScalarProperty Name="unidades_transferidas_mortalidad" ColumnName="unidades_transferidas_mortalidad" />
+                <ScalarProperty Name="unidades_finales_proceso" ColumnName="unidades_finales_proceso" />
+                <ScalarProperty Name="unidades_transferidas_recria" ColumnName="unidades_transferidas_recria" />
+                <ScalarProperty Name="unidades_agregados_nacidos" ColumnName="unidades_agregados_nacidos" />
+                <ScalarProperty Name="unidades_iniciales_proceso" ColumnName="unidades_iniciales_proceso" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
