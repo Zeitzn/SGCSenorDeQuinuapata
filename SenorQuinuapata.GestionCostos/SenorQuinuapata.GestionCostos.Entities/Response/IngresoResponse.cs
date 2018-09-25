@@ -28,6 +28,8 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
 
         public int? descarte { get; set; }
 
+        public int? venta { get; set; }
+
         public int? mortalidad { get; set; }
     }
 }

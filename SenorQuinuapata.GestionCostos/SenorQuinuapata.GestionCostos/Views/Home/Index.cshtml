@@ -2,4 +2,29 @@
     ViewBag.Title = "Principal";
 }
 
-ss
+<div class="row">
+    <div class="col-md-6">
+        <form action="/Departamento/ReportDemo" method="get">
+
+            <div class="form-group">
+                <label>Departamento:</label>
+                <select class="form-control" name="id_departamento">
+                    <option value="1">Lactancia</option>
+                    <option value="2">Recría</option>
+                    <option value="3">Engorde</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Reporte:</label>
+                <select class="form-control" name="tipo_reporte">
+                    <option value="1">Flujo de unidades</option>
+                    <option value="2">Consumo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="name" value="Generar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -35,7 +35,8 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                             genero = x.genero,
                             lactancia = x.lactancia,
                             mortalidad = x.mortalidad,
-                            recria = x.recria
+                            recria = x.recria,
+                            venta=x.venta
                         }).OrderByDescending(c => c.id).ToList()
                         
                         );
@@ -68,7 +69,8 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                         genero = request.genero,
                         lactancia = request.lactancia,                        
                         mortalidad = request.mortalidad,
-                        recria = request.recria
+                        recria = request.recria,
+                        venta=request.venta
                     };
 
                     db.Ingreso.Add(ingreso);

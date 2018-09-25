@@ -63,6 +63,7 @@
           <Property Name="engorde" Type="int" />
           <Property Name="descarte" Type="int" />
           <Property Name="mortalidad" Type="int" />
+          <Property Name="venta" Type="int" />
         </EntityType>
         <EntityType Name="Movimiento_departamento">
           <Key>
@@ -251,6 +252,7 @@
           <Property Name="engorde" Type="Int32" />
           <Property Name="descarte" Type="Int32" />
           <Property Name="mortalidad" Type="Int32" />
+          <Property Name="venta" Type="Int32" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -374,6 +376,7 @@
           <EntitySetMapping Name="Ingreso">
             <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Ingreso">
               <MappingFragment StoreEntitySet="Ingreso">
+                <ScalarProperty Name="venta" ColumnName="venta" />
                 <ScalarProperty Name="mortalidad" ColumnName="mortalidad" />
                 <ScalarProperty Name="descarte" ColumnName="descarte" />
                 <ScalarProperty Name="engorde" ColumnName="engorde" />

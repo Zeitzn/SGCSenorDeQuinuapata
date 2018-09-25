@@ -10,5 +10,6 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Interface
     public interface IDepartamentoBL
     {
         IEnumerable<DepartamentoResponse> List();
+        IEnumerable<FlujoUnidadesDepartamentoResponse> ListReportDemo(int id_departamento);
     }
 }

@@ -25,5 +25,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.DataBase
         public Nullable<int> engorde { get; set; }
         public Nullable<int> descarte { get; set; }
         public Nullable<int> mortalidad { get; set; }
+        public Nullable<int> venta { get; set; }
     }
 }

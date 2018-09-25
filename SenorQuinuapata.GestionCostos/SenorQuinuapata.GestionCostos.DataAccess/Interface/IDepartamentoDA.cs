@@ -10,5 +10,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
     public interface IDepartamentoDA
     {
         IEnumerable<DepartamentoResponse> List();
+
+        IEnumerable<FlujoUnidadesDepartamentoResponse> ListReportDemo(int id_departamento);
     }
 }

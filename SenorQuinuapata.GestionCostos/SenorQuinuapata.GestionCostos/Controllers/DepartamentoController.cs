@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using BuenaVista.Caja.Web.Helper;
+using Ninject;
 using SenorQuinuapata.GestioCostos.BusinessLogic.Implementation;
 //using SenorQuinuapata.GestioCostos.BusinessLogic.Implementation;
 using SenorQuinuapata.GestionCostos.BusinessLogic.Implementation;
@@ -24,21 +25,6 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
 
         private readonly bd_sgcquinuapataEntities db = new bd_sgcquinuapataEntities();
-
-
-        // GET: Registro
-        //public ActionResult Operacion(int id)
-        //{
-        //    ViewBag.ListProductos = _ProductoBL.List();
-        //    if (id==1)
-        //    {
-        //        return View("RegistroIngreso");
-        //    }            
-
-        //    return View("RegistroConsumo");
-        //}
-
-
 
         public ActionResult RegisterIngreso()
         {
@@ -75,6 +61,11 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                     codigo_destino = "LA001",
                     codigo_origen = "LA001",
                     lactancia = request.ingreso,
+                    engorde = 0,
+                    recria=0,
+                    mortalidad=0,
+                    descarte=0,
+                    venta=0,
                     fecha = request.fecha,
                     genero = request.genero,
 
@@ -148,18 +139,38 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                     case 2:
                                         _ingreso.Ingreso.codigo_destino = "RE001";
                                         _ingreso.Ingreso.recria = request.ingreso;
+                                        _ingreso.Ingreso.lactancia = 0;                                        
+                                        _ingreso.Ingreso.engorde = 0;
+                                        _ingreso.Ingreso.descarte = 0;
+                                        _ingreso.Ingreso.mortalidad = 0;
+                                        _ingreso.Ingreso.venta = 0;
                                         break;
                                     case 3:
                                         _ingreso.Ingreso.codigo_destino = "EN001";
                                         _ingreso.Ingreso.engorde = request.ingreso;
+                                        _ingreso.Ingreso.lactancia = 0;
+                                        _ingreso.Ingreso.recria = 0;                                       
+                                        _ingreso.Ingreso.descarte = 0;
+                                        _ingreso.Ingreso.mortalidad = 0;
+                                        _ingreso.Ingreso.venta = 0;
                                         break;
                                     case 4:
                                         _ingreso.Ingreso.codigo_destino = "DE001";
                                         _ingreso.Ingreso.descarte = request.ingreso;
+                                        _ingreso.Ingreso.lactancia = 0;
+                                        _ingreso.Ingreso.recria = 0;
+                                        _ingreso.Ingreso.engorde = 0;                                       
+                                        _ingreso.Ingreso.mortalidad = 0;
+                                        _ingreso.Ingreso.venta = 0;
                                         break;
                                     case 5:
                                         _ingreso.Ingreso.codigo_destino = "MO001";
                                         _ingreso.Ingreso.mortalidad = request.ingreso;
+                                        _ingreso.Ingreso.lactancia = 0;
+                                        _ingreso.Ingreso.recria = 0;
+                                        _ingreso.Ingreso.engorde = 0;
+                                        _ingreso.Ingreso.descarte = 0;
+                                        _ingreso.Ingreso.venta = 0;
                                         break;
                                     default:
                                         break;
@@ -259,18 +270,38 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                         case 3:
                                             _ingreso.Ingreso.codigo_destino = "EN001";
                                             _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.mortalidad = 0;
+                                            _ingreso.Ingreso.venta = 0;
                                             break;
                                         case 4:
                                             _ingreso.Ingreso.codigo_destino = "DE001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.descarte = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.mortalidad = 0;
+                                            _ingreso.Ingreso.venta = 0;
                                             break;
                                         case 5:
                                             _ingreso.Ingreso.codigo_destino = "MO001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.mortalidad = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.venta = 0;
                                             break;
                                         case 6:
                                             _ingreso.Ingreso.codigo_destino = "VE001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.venta = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.mortalidad = 0;
                                             break;
                                         default:
                                             break;
@@ -370,15 +401,30 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                     {
                                         case 4:
                                             _ingreso.Ingreso.codigo_destino = "DE001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.descarte = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.mortalidad = 0;
+                                            _ingreso.Ingreso.venta = 0;
                                             break;
                                         case 5:
                                             _ingreso.Ingreso.codigo_destino = "MO001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.mortalidad = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.venta = 0;
                                             break;
                                         case 6:
                                             _ingreso.Ingreso.codigo_destino = "VE001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.venta = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.mortalidad = 0;
                                             break;
                                         default:
                                             break;
@@ -478,7 +524,12 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                     {
                                         case 5:
                                             _ingreso.Ingreso.codigo_destino = "MO001";
-                                            _ingreso.Ingreso.engorde = request.ingreso;
+                                            _ingreso.Ingreso.mortalidad = request.ingreso;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.venta = 0;
                                             break;
                                         default:
                                             break;
@@ -559,7 +610,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             return View(movimientos);
         }
 
-        //PRUEBAAAA
+        #region prueba
         public ActionResult Lista()
         {
 
@@ -570,5 +621,77 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
             return View(/*db.Departamento.ToList()*/departamentos);
         }
+
+        [HttpGet]
+        public ActionResult ReportDemo(int id_departamento,int tipo_reporte)
+        {
+           
+
+            if (id_departamento==1 && tipo_reporte==1)
+            {
+                var oList = _DepartamentoBL.ListReportDemo(1);
+
+                var reportViewModel = new ReportViewModel()
+                {
+                    FileName = "~/Reports/ReportDemo2.rdlc",
+                    ReportTitle = "ReportePrueba2",
+                    Format = ReportViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+            else if (id_departamento == 2 && tipo_reporte == 1)
+            {
+                var oList = _DepartamentoBL.ListReportDemo(2);
+
+                var reportViewModel = new ReportViewModel()
+                {
+                    FileName = "~/Reports/ReportRecria.rdlc",
+                    ReportTitle = "ReportePrueba2",
+                    Format = ReportViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+            else
+            {
+                return RedirectToAction("Home/Index");
+            }
+
+           
+
+            
+
+        }
+        #endregion
+
     }
 }

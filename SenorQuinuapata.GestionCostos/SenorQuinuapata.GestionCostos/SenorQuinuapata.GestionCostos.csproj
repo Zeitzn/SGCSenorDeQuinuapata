@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
     </Reference>
@@ -212,6 +213,21 @@
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="bd_sgcquinuapataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bd_sgcquinuapataDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_sgcquinuapataDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bd_sgcquinuapataDataSetAll.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_sgcquinuapataDataSetAll.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ConsumoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -222,6 +238,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ReportViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ConsumoViewModel.cs" />
     <Compile Include="Models\DepartamentoViewModel.cs" />
@@ -230,6 +247,11 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProductoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -4552,6 +4574,43 @@
     <Content Include="assets\template\vendors\validator\.bower.json" />
     <Content Include="assets\template\vendors\validator\README.md" />
     <Content Include="assets\template\vendors\validator\validator.jquery.json" />
+    <Content Include="bd_sgcquinuapataDataSet.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="bd_sgcquinuapataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_sgcquinuapataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bd_sgcquinuapataDataSet.xss">
+      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="bd_sgcquinuapataDataSet2.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="bd_sgcquinuapataDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_sgcquinuapataDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bd_sgcquinuapataDataSet2.xss">
+      <DependentUpon>bd_sgcquinuapataDataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="bd_sgcquinuapataDataSetAll.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSetAll.xsd</DependentUpon>
+    </Content>
+    <None Include="bd_sgcquinuapataDataSetAll.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_sgcquinuapataDataSetAll.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bd_sgcquinuapataDataSetAll.xss">
+      <DependentUpon>bd_sgcquinuapataDataSetAll.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4612,7 +4671,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="assets\personalizados\js\" />
     <Folder Include="DataSets\" />
-    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -4647,6 +4705,12 @@
       <Project>{43D02611-AE57-4413-B593-DD3156AA6A86}</Project>
       <Name>SenorQuinuapata.GestionCostos.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\ReportDemo.rdlc" />
+    <EmbeddedResource Include="Reports\ReportEngorde.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRecria.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDemo2.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
