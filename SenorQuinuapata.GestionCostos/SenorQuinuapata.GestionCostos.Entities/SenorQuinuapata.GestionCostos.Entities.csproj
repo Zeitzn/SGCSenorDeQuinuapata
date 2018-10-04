@@ -49,6 +49,7 @@
     <Compile Include="Request\ProductoRequest.cs" />
     <Compile Include="Response\ConsumoResponse.cs" />
     <Compile Include="Response\DepartamentoResponse.cs" />
+    <Compile Include="Response\CostoUnitarioDepartamentoResponse.cs" />
     <Compile Include="Response\FlujoUnidadesDepartamentoResponse.cs" />
     <Compile Include="Response\IngresoResponse.cs" />
     <Compile Include="Response\MovimientoDepartamentoResponse.cs" />

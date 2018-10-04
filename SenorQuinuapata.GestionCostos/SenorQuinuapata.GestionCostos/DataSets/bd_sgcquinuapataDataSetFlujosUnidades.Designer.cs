@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SenorQuinuapata.GestionCostos {
+namespace SenorQuinuapata.GestionCostos.DataSets {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace SenorQuinuapata.GestionCostos {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("bd_sgcquinuapataDataSetAll")]
+    [global::System.Xml.Serialization.XmlRootAttribute("bd_sgcquinuapataDataSetFlujosUnidades")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class bd_sgcquinuapataDataSetAll : global::System.Data.DataSet {
+    public partial class bd_sgcquinuapataDataSetFlujosUnidades : global::System.Data.DataSet {
         
         private sp_flujo_unidades_departamento_descarte_listDataTable tablesp_flujo_unidades_departamento_descarte_list;
         
@@ -36,7 +36,7 @@ namespace SenorQuinuapata.GestionCostos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bd_sgcquinuapataDataSetAll() {
+        public bd_sgcquinuapataDataSetFlujosUnidades() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -47,7 +47,7 @@ namespace SenorQuinuapata.GestionCostos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected bd_sgcquinuapataDataSetAll(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected bd_sgcquinuapataDataSetFlujosUnidades(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -172,7 +172,7 @@ namespace SenorQuinuapata.GestionCostos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            bd_sgcquinuapataDataSetAll cln = ((bd_sgcquinuapataDataSetAll)(base.Clone()));
+            bd_sgcquinuapataDataSetFlujosUnidades cln = ((bd_sgcquinuapataDataSetFlujosUnidades)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -271,9 +271,9 @@ namespace SenorQuinuapata.GestionCostos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "bd_sgcquinuapataDataSetAll";
+            this.DataSetName = "bd_sgcquinuapataDataSetFlujosUnidades";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/bd_sgcquinuapataDataSetAll.xsd";
+            this.Namespace = "http://tempuri.org/bd_sgcquinuapataDataSetFlujosUnidades.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablesp_flujo_unidades_departamento_descarte_list = new sp_flujo_unidades_departamento_descarte_listDataTable();
@@ -321,7 +321,7 @@ namespace SenorQuinuapata.GestionCostos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            bd_sgcquinuapataDataSetAll ds = new bd_sgcquinuapataDataSetAll();
+            bd_sgcquinuapataDataSetFlujosUnidades ds = new bd_sgcquinuapataDataSetFlujosUnidades();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -386,13 +386,11 @@ namespace SenorQuinuapata.GestionCostos {
             
             private global::System.Data.DataColumn columnunidades_iniciales_proceso;
             
-            private global::System.Data.DataColumn columnunidades_recibidas_recria;
+            private global::System.Data.DataColumn columnunidades_recibidas_engorde;
             
             private global::System.Data.DataColumn columnunidades_transferidas_ventas;
             
-            private global::System.Data.DataColumn columnunidades_transferidas_descarte;
-            
-            private global::System.Data.DataColumn columnunidades_transferidas_activo;
+            private global::System.Data.DataColumn columnunidades_recibidas_activo;
             
             private global::System.Data.DataColumn columnunidades_finales_proceso;
             
@@ -443,9 +441,9 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn unidades_recibidas_recriaColumn {
+            public global::System.Data.DataColumn unidades_recibidas_engordeColumn {
                 get {
-                    return this.columnunidades_recibidas_recria;
+                    return this.columnunidades_recibidas_engorde;
                 }
             }
             
@@ -459,17 +457,9 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn unidades_transferidas_descarteColumn {
+            public global::System.Data.DataColumn unidades_recibidas_activoColumn {
                 get {
-                    return this.columnunidades_transferidas_descarte;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn unidades_transferidas_activoColumn {
-                get {
-                    return this.columnunidades_transferidas_activo;
+                    return this.columnunidades_recibidas_activo;
                 }
             }
             
@@ -534,14 +524,13 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sp_flujo_unidades_departamento_descarte_listRow Addsp_flujo_unidades_departamento_descarte_listRow(int unidades_iniciales_proceso, int unidades_recibidas_recria, int unidades_transferidas_ventas, int unidades_transferidas_descarte, int unidades_transferidas_activo, int unidades_finales_proceso, int unidades_transferidas_mortalidad, int q_equivalente) {
+            public sp_flujo_unidades_departamento_descarte_listRow Addsp_flujo_unidades_departamento_descarte_listRow(int unidades_iniciales_proceso, int unidades_recibidas_engorde, int unidades_transferidas_ventas, int unidades_recibidas_activo, int unidades_finales_proceso, int unidades_transferidas_mortalidad, int q_equivalente) {
                 sp_flujo_unidades_departamento_descarte_listRow rowsp_flujo_unidades_departamento_descarte_listRow = ((sp_flujo_unidades_departamento_descarte_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         unidades_iniciales_proceso,
-                        unidades_recibidas_recria,
+                        unidades_recibidas_engorde,
                         unidades_transferidas_ventas,
-                        unidades_transferidas_descarte,
-                        unidades_transferidas_activo,
+                        unidades_recibidas_activo,
                         unidades_finales_proceso,
                         unidades_transferidas_mortalidad,
                         q_equivalente};
@@ -568,10 +557,9 @@ namespace SenorQuinuapata.GestionCostos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnunidades_iniciales_proceso = base.Columns["unidades_iniciales_proceso"];
-                this.columnunidades_recibidas_recria = base.Columns["unidades_recibidas_recria"];
+                this.columnunidades_recibidas_engorde = base.Columns["unidades_recibidas_engorde"];
                 this.columnunidades_transferidas_ventas = base.Columns["unidades_transferidas_ventas"];
-                this.columnunidades_transferidas_descarte = base.Columns["unidades_transferidas_descarte"];
-                this.columnunidades_transferidas_activo = base.Columns["unidades_transferidas_activo"];
+                this.columnunidades_recibidas_activo = base.Columns["unidades_recibidas_activo"];
                 this.columnunidades_finales_proceso = base.Columns["unidades_finales_proceso"];
                 this.columnunidades_transferidas_mortalidad = base.Columns["unidades_transferidas_mortalidad"];
                 this.columnq_equivalente = base.Columns["q_equivalente"];
@@ -582,14 +570,12 @@ namespace SenorQuinuapata.GestionCostos {
             private void InitClass() {
                 this.columnunidades_iniciales_proceso = new global::System.Data.DataColumn("unidades_iniciales_proceso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_iniciales_proceso);
-                this.columnunidades_recibidas_recria = new global::System.Data.DataColumn("unidades_recibidas_recria", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidades_recibidas_recria);
+                this.columnunidades_recibidas_engorde = new global::System.Data.DataColumn("unidades_recibidas_engorde", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_recibidas_engorde);
                 this.columnunidades_transferidas_ventas = new global::System.Data.DataColumn("unidades_transferidas_ventas", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_transferidas_ventas);
-                this.columnunidades_transferidas_descarte = new global::System.Data.DataColumn("unidades_transferidas_descarte", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidades_transferidas_descarte);
-                this.columnunidades_transferidas_activo = new global::System.Data.DataColumn("unidades_transferidas_activo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidades_transferidas_activo);
+                this.columnunidades_recibidas_activo = new global::System.Data.DataColumn("unidades_recibidas_activo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_recibidas_activo);
                 this.columnunidades_finales_proceso = new global::System.Data.DataColumn("unidades_finales_proceso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_finales_proceso);
                 this.columnunidades_transferidas_mortalidad = new global::System.Data.DataColumn("unidades_transferidas_mortalidad", typeof(int), null, global::System.Data.MappingType.Element);
@@ -597,10 +583,9 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnq_equivalente = new global::System.Data.DataColumn("q_equivalente", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnq_equivalente);
                 this.columnunidades_iniciales_proceso.ReadOnly = true;
-                this.columnunidades_recibidas_recria.ReadOnly = true;
+                this.columnunidades_recibidas_engorde.ReadOnly = true;
                 this.columnunidades_transferidas_ventas.ReadOnly = true;
-                this.columnunidades_transferidas_descarte.ReadOnly = true;
-                this.columnunidades_transferidas_activo.ReadOnly = true;
+                this.columnunidades_recibidas_activo.ReadOnly = true;
                 this.columnunidades_finales_proceso.ReadOnly = true;
                 this.columnunidades_transferidas_mortalidad.ReadOnly = true;
                 this.columnq_equivalente.ReadOnly = true;
@@ -671,7 +656,7 @@ namespace SenorQuinuapata.GestionCostos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bd_sgcquinuapataDataSetAll ds = new bd_sgcquinuapataDataSetAll();
+                bd_sgcquinuapataDataSetFlujosUnidades ds = new bd_sgcquinuapataDataSetFlujosUnidades();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1024,7 +1009,7 @@ namespace SenorQuinuapata.GestionCostos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bd_sgcquinuapataDataSetAll ds = new bd_sgcquinuapataDataSetAll();
+                bd_sgcquinuapataDataSetFlujosUnidades ds = new bd_sgcquinuapataDataSetFlujosUnidades();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1347,7 +1332,7 @@ namespace SenorQuinuapata.GestionCostos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bd_sgcquinuapataDataSetAll ds = new bd_sgcquinuapataDataSetAll();
+                bd_sgcquinuapataDataSetFlujosUnidades ds = new bd_sgcquinuapataDataSetFlujosUnidades();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1685,7 +1670,7 @@ namespace SenorQuinuapata.GestionCostos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bd_sgcquinuapataDataSetAll ds = new bd_sgcquinuapataDataSetAll();
+                bd_sgcquinuapataDataSetFlujosUnidades ds = new bd_sgcquinuapataDataSetFlujosUnidades();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1777,18 +1762,18 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int unidades_recibidas_recria {
+            public int unidades_recibidas_engorde {
                 get {
                     try {
-                        return ((int)(this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_recriaColumn]));
+                        return ((int)(this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_engordeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_recibidas_recria\' de la tabla \'sp_flujo_unidades" +
-                                "_departamento_descarte_list\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_recibidas_engorde\' de la tabla \'sp_flujo_unidade" +
+                                "s_departamento_descarte_list\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_recriaColumn] = value;
+                    this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_engordeColumn] = value;
                 }
             }
             
@@ -1811,35 +1796,18 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int unidades_transferidas_descarte {
+            public int unidades_recibidas_activo {
                 get {
                     try {
-                        return ((int)(this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_descarteColumn]));
+                        return ((int)(this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_activoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_descarte\' de la tabla \'sp_flujo_uni" +
-                                "dades_departamento_descarte_list\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_recibidas_activo\' de la tabla \'sp_flujo_unidades" +
+                                "_departamento_descarte_list\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_descarteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int unidades_transferidas_activo {
-                get {
-                    try {
-                        return ((int)(this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_activoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_activo\' de la tabla \'sp_flujo_unida" +
-                                "des_departamento_descarte_list\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_activoColumn] = value;
+                    this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_activoColumn] = value;
                 }
             }
             
@@ -1908,14 +1876,14 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isunidades_recibidas_recriaNull() {
-                return this.IsNull(this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_recriaColumn);
+            public bool Isunidades_recibidas_engordeNull() {
+                return this.IsNull(this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_engordeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setunidades_recibidas_recriaNull() {
-                this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_recriaColumn] = global::System.Convert.DBNull;
+            public void Setunidades_recibidas_engordeNull() {
+                this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_engordeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1932,26 +1900,14 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isunidades_transferidas_descarteNull() {
-                return this.IsNull(this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_descarteColumn);
+            public bool Isunidades_recibidas_activoNull() {
+                return this.IsNull(this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_activoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setunidades_transferidas_descarteNull() {
-                this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_descarteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isunidades_transferidas_activoNull() {
-                return this.IsNull(this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_activoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setunidades_transferidas_activoNull() {
-                this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_transferidas_activoColumn] = global::System.Convert.DBNull;
+            public void Setunidades_recibidas_activoNull() {
+                this[this.tablesp_flujo_unidades_departamento_descarte_list.unidades_recibidas_activoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2782,7 +2738,7 @@ namespace SenorQuinuapata.GestionCostos {
         }
     }
 }
-namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters {
+namespace SenorQuinuapata.GestionCostos.DataSets.bd_sgcquinuapataDataSetFlujosUnidadesTableAdapters {
     
     
     /// <summary>
@@ -2907,10 +2863,9 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "sp_flujo_unidades_departamento_descarte_list";
             tableMapping.ColumnMappings.Add("unidades_iniciales_proceso", "unidades_iniciales_proceso");
-            tableMapping.ColumnMappings.Add("unidades_recibidas_recria", "unidades_recibidas_recria");
+            tableMapping.ColumnMappings.Add("unidades_recibidas_engorde", "unidades_recibidas_engorde");
             tableMapping.ColumnMappings.Add("unidades_transferidas_ventas", "unidades_transferidas_ventas");
-            tableMapping.ColumnMappings.Add("unidades_transferidas_descarte", "unidades_transferidas_descarte");
-            tableMapping.ColumnMappings.Add("unidades_transferidas_activo", "unidades_transferidas_activo");
+            tableMapping.ColumnMappings.Add("unidades_recibidas_activo", "unidades_recibidas_activo");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso", "unidades_finales_proceso");
             tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad", "unidades_transferidas_mortalidad");
             tableMapping.ColumnMappings.Add("q_equivalente", "q_equivalente");
@@ -2939,7 +2894,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_descarte_listDataTable dataTable) {
+        public virtual int Fill(bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_descarte_listDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2952,9 +2907,9 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_descarte_listDataTable GetData() {
+        public virtual bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_descarte_listDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_descarte_listDataTable dataTable = new bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_descarte_listDataTable();
+            bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_descarte_listDataTable dataTable = new bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_descarte_listDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3114,7 +3069,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_engorde_listDataTable dataTable) {
+        public virtual int Fill(bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_engorde_listDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3127,9 +3082,9 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_engorde_listDataTable GetData() {
+        public virtual bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_engorde_listDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_engorde_listDataTable dataTable = new bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_engorde_listDataTable();
+            bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_engorde_listDataTable dataTable = new bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_engorde_listDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3287,7 +3242,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_lactancia_listDataTable dataTable) {
+        public virtual int Fill(bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_lactancia_listDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3300,9 +3255,9 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_lactancia_listDataTable GetData() {
+        public virtual bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_lactancia_listDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_lactancia_listDataTable dataTable = new bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_lactancia_listDataTable();
+            bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_lactancia_listDataTable dataTable = new bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_lactancia_listDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3461,7 +3416,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_recria_listDataTable dataTable) {
+        public virtual int Fill(bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_recria_listDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3474,9 +3429,9 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_recria_listDataTable GetData() {
+        public virtual bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_recria_listDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_recria_listDataTable dataTable = new bd_sgcquinuapataDataSetAll.sp_flujo_unidades_departamento_recria_listDataTable();
+            bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_recria_listDataTable dataTable = new bd_sgcquinuapataDataSetFlujosUnidades.sp_flujo_unidades_departamento_recria_listDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3550,7 +3505,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(bd_sgcquinuapataDataSetAll dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(bd_sgcquinuapataDataSetFlujosUnidades dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -3560,7 +3515,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(bd_sgcquinuapataDataSetAll dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(bd_sgcquinuapataDataSetFlujosUnidades dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -3570,7 +3525,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(bd_sgcquinuapataDataSetAll dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(bd_sgcquinuapataDataSetFlujosUnidades dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -3604,7 +3559,7 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetAllTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(bd_sgcquinuapataDataSetAll dataSet) {
+        public virtual int UpdateAll(bd_sgcquinuapataDataSetFlujosUnidades dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

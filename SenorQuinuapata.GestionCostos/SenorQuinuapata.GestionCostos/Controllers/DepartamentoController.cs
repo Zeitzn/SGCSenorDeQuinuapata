@@ -484,7 +484,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
             if (origen == "4")
             {
-                if (request.id_departamento == 5)
+                if (request.id_departamento == 5 || request.id_departamento == 6)
                 {
                     int _origen = Convert.ToInt32(origen);
                     int? salida = request.ingreso;
@@ -530,6 +530,15 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            break;
+                                        case 6:
+                                            _ingreso.Ingreso.codigo_destino = "VE001";
+                                            _ingreso.Ingreso.mortalidad = 0;
+                                            _ingreso.Ingreso.lactancia = 0;
+                                            _ingreso.Ingreso.recria = 0;
+                                            _ingreso.Ingreso.engorde = 0;
+                                            _ingreso.Ingreso.descarte = 0;
+                                            _ingreso.Ingreso.venta = request.ingreso;
                                             break;
                                         default:
                                             break;
@@ -623,18 +632,23 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReportDemo(int id_departamento,int tipo_reporte)
+        public ActionResult ReportFlujoUnidades(int id_departamento,int tipo_reporte,DateTime fecha_inicio,DateTime fecha_fin)
         {
-           
+
+            string fecha_inicial = fecha_inicio.ToShortDateString();
+            string fecha_final = fecha_fin.ToShortDateString();
+
+
+            //REPORTES DE FLUJO DE UNIDADES
 
             if (id_departamento==1 && tipo_reporte==1)
             {
-                var oList = _DepartamentoBL.ListReportDemo(1);
+                var oList = _DepartamentoBL.ListReportFlujoUnidades(1,fecha_inicial,fecha_final);
 
                 var reportViewModel = new ReportViewModel()
                 {
-                    FileName = "~/Reports/ReportDemo2.rdlc",
-                    ReportTitle = "ReportePrueba2",
+                    FileName = "~/Reports/ReportLactancia.rdlc",
+                    ReportTitle = "ReporteLactancia",
                     Format = ReportViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };
@@ -656,12 +670,12 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             }
             else if (id_departamento == 2 && tipo_reporte == 1)
             {
-                var oList = _DepartamentoBL.ListReportDemo(2);
+                var oList = _DepartamentoBL.ListReportFlujoUnidades(2, fecha_inicial, fecha_final);
 
                 var reportViewModel = new ReportViewModel()
                 {
                     FileName = "~/Reports/ReportRecria.rdlc",
-                    ReportTitle = "ReportePrueba2",
+                    ReportTitle = "ReporteRecria",
                     Format = ReportViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };
@@ -672,6 +686,90 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
                 //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
                 reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+            else if (id_departamento == 3 && tipo_reporte == 1)
+            {
+                var oList = _DepartamentoBL.ListReportFlujoUnidades(3, fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportViewModel()
+                {
+                    FileName = "~/Reports/ReportEngorde.rdlc",
+                    ReportTitle = "ReporteEngorde",
+                    Format = ReportViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+            else if (id_departamento == 4 && tipo_reporte == 1)
+            {
+                var oList = _DepartamentoBL.ListReportFlujoUnidades(4, fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportViewModel()
+                {
+                    FileName = "~/Reports/ReportDescarte.rdlc",
+                    ReportTitle = "ReporteDescarte",
+                    Format = ReportViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+
+            //REPORTES DE CONSUMO
+
+            else if (id_departamento == 1 && tipo_reporte == 2)
+            {
+                var oList = _DepartamentoBL.ListReportCostoUnitarioDepartamento(1, fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportConsumoViewModel()
+                {
+                    FileName = "~/Reports/ReportConsumoLactancia.rdlc",
+                    ReportTitle = "ReporteConsumoLactancia",
+                    Format = ReportConsumoViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportConsumoViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
 
                 var renderedBytes = reportViewModel.RenderReport();
 

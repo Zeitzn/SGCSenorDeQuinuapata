@@ -1969,7 +1969,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -2506,18 +2505,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="bd_sgcquinuapataDataSet2">
+    <DataSource Name="bd_sgcquinuapataDataSetFlujosUnidades">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>39c64ebb-15ae-4f1b-a689-5d142cd072e7</rd:DataSourceID>
+      <rd:DataSourceID>7ddd4997-596f-489e-b156-509593e1b9a5</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>bd_sgcquinuapataDataSet2</DataSourceName>
+        <DataSourceName>bd_sgcquinuapataDataSetFlujosUnidades</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2547,8 +2546,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>bd_sgcquinuapataDataSet2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSet2.xsd</rd:SchemaPath>
+        <rd:DataSetName>bd_sgcquinuapataDataSetFlujosUnidades</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetFlujosUnidades.xsd</rd:SchemaPath>
         <rd:TableName>sp_flujo_unidades_departamento_lactancia_list</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

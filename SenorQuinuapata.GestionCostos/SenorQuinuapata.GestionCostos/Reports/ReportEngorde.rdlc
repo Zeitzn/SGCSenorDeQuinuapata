@@ -185,14 +185,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="unidades_recibidas_lactancia">
+                    <Textbox Name="unidades_recibidas_recria">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_recibidas_lactancia.Value)</Value>
+                              <Value>=Sum(Fields!unidades_recibidas_recria.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -201,7 +201,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_recibidas_lactancia</rd:DefaultName>
+                      <rd:DefaultName>unidades_recibidas_recria</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -237,7 +237,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox38">
+                    <Textbox Name="Textbox58">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -253,7 +253,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox38</rd:DefaultName>
+                      <rd:DefaultName>Textbox58</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -294,7 +294,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox2">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -310,7 +310,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -403,6 +403,115 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="unidades_transferidas_descarte">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!unidades_transferidas_descarte.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>unidades_transferidas_descarte</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox114">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -455,14 +564,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="unidades_transferidas_engorde">
+                    <Textbox Name="unidades_transferidas_activo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_engorde.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_activo.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -471,7 +580,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_transferidas_engorde</rd:DefaultName>
+                      <rd:DefaultName>unidades_transferidas_activo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -730,14 +839,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox110">
+                    <Textbox Name="Textbox115">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_iniciales_proceso.Value + Fields!unidades_recibidas_lactancia.Value</Value>
+                              <Value>=Fields!unidades_iniciales_proceso.Value + Fields!unidades_recibidas_recria.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -784,14 +893,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox111">
+                    <Textbox Name="Textbox120">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_engorde.Value+ Fields!unidades_transferidas_mortalidad.Value+ Fields!unidades_finales_proceso.Value</Value>
+                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_descarte.Value+ Fields!unidades_transferidas_activo.Value+ Fields!unidades_transferidas_mortalidad.Value+ Fields!unidades_finales_proceso.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1023,6 +1132,60 @@
               <TablixHeader>
                 <Size>9.59083cm</Size>
                 <CellContents>
+                  <Textbox Name="Textbox1">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Unidades recibidas del departamento II (Recría)</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox1</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>DarkGreen</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <TopBorder>
+                        <Color>DarkGreen</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </TopBorder>
+                      <BottomBorder>
+                        <Color>DarkGreen</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </BottomBorder>
+                      <LeftBorder>
+                        <Color>DarkGreen</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </LeftBorder>
+                      <RightBorder>
+                        <Color>DarkGreen</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </RightBorder>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>9.59083cm</Size>
+                <CellContents>
                   <Textbox Name="Textbox28">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
@@ -1030,7 +1193,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades recibidas del departamento I (Lactancia)</Value>
+                            <Value>Unidades transferidas al área de ventas</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -1084,7 +1247,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades transferidas al área de ventas</Value>
+                            <Value>Unidades transferidas al departamento IV (Descarte)</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -1138,7 +1301,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades transfertidas al departamento III (Engorde)</Value>
+                            <Value>Unidades transferidas como Activos Biológicos</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -1192,7 +1355,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades finales en proceso en el departamento II (Recría)</Value>
+                            <Value>Unidades finales en proceso en el departamento III (Engorde)</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -1246,7 +1409,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades perdidas en el departamento II (Mortalidad)</Value>
+                            <Value>Unidades perdidas en el departamento III (Mortalidad)</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -1350,7 +1513,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>1.4448cm</Top>
         <Left>0.61859cm</Left>
-        <Height>4.8cm</Height>
+        <Height>5.4cm</Height>
         <Width>13.85cm</Width>
         <Style>
           <Border>
@@ -1387,7 +1550,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>1.1. Flujo de unidades del departamento II (Recría)</Value>
+                <Value>1.1. Flujo de unidades del departamento III (Engorde)</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>White</Color>
@@ -1652,14 +1815,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="unidades_transferidas_engorde1">
+                    <Textbox Name="unidades_transferidas_descarte1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_engorde.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_descarte.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1668,7 +1831,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_transferidas_engorde1</rd:DefaultName>
+                      <rd:DefaultName>unidades_transferidas_descarte1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -1704,14 +1867,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="unidades_transferidas_engorde2">
+                    <Textbox Name="unidades_transferidas_descarte2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_engorde.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_descarte.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1720,7 +1883,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_transferidas_engorde2</rd:DefaultName>
+                      <rd:DefaultName>unidades_transferidas_descarte2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -1756,14 +1919,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="unidades_transferidas_engorde3">
+                    <Textbox Name="unidades_transferidas_descarte3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_engorde.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_descarte.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1772,7 +1935,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_transferidas_engorde3</rd:DefaultName>
+                      <rd:DefaultName>unidades_transferidas_descarte3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -1813,7 +1976,168 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="q_equivalente2">
+                    <Textbox Name="unidades_transferidas_activo1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!unidades_transferidas_activo.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>unidades_transferidas_activo1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="unidades_transferidas_activo2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!unidades_transferidas_activo.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>unidades_transferidas_activo2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="unidades_transferidas_activo3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!unidades_transferidas_activo.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>unidades_transferidas_activo3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="q_equivalente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1829,7 +2153,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>q_equivalente2</rd:DefaultName>
+                      <rd:DefaultName>q_equivalente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -1917,7 +2241,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="q_equivalente">
+                    <Textbox Name="q_equivalente2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1933,7 +2257,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>q_equivalente</rd:DefaultName>
+                      <rd:DefaultName>q_equivalente2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -2142,7 +2466,61 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_engorde.Value + Fields!unidades_transferidas_mortalidad.Value + Fields!q_equivalente.Value</Value>
+                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_descarte.Value + Fields!unidades_transferidas_mortalidad.Value + Fields!q_equivalente.Value+ Fields!unidades_transferidas_activo.Value</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox110</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox123">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_descarte.Value + Fields!unidades_transferidas_mortalidad.Value + Fields!q_equivalente.Value + Fields!unidades_transferidas_activo.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2196,61 +2574,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_engorde.Value + Fields!unidades_transferidas_mortalidad.Value + Fields!q_equivalente.Value</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox110</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox120">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_engorde.Value + Fields!unidades_transferidas_mortalidad.Value + Fields!q_equivalente.Value</Value>
+                              <Value>=Fields!unidades_transferidas_ventas.Value + Fields!unidades_transferidas_descarte.Value + Fields!unidades_transferidas_mortalidad.Value + Fields!q_equivalente.Value + Fields!unidades_transferidas_activo.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2491,7 +2815,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades vendidas</Value>
+                            <Value>Unidades transferidas al inventario de productos terminados</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -2537,6 +2861,60 @@
               <TablixHeader>
                 <Size>9.59083cm</Size>
                 <CellContents>
+                  <Textbox Name="Textbox35">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Unidades transferidas al departamento de descarte</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox35</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>Green</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <TopBorder>
+                        <Color>Green</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </TopBorder>
+                      <BottomBorder>
+                        <Color>Green</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </BottomBorder>
+                      <LeftBorder>
+                        <Color>Green</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </LeftBorder>
+                      <RightBorder>
+                        <Color>Green</Color>
+                        <Style>Solid</Style>
+                        <Width>1pt</Width>
+                      </RightBorder>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>9.59083cm</Size>
+                <CellContents>
                   <Textbox Name="Textbox31">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
@@ -2544,7 +2922,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades transferidas al departamento III (Engorde)</Value>
+                            <Value>Unidades transferidas como Activos Biológicos</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -2652,7 +3030,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades perdídas (Mortalidad en Recría)</Value>
+                            <Value>Unidades perdídas (Mortalidad en Engorde)</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -2754,9 +3132,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>7.48584cm</Top>
+        <Top>8.12084cm</Top>
         <Left>0.61859cm</Left>
-        <Height>3.6cm</Height>
+        <Height>4.2cm</Height>
         <Width>15.8873cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -2794,7 +3172,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>1.2. Producción equivalente del departamento II (Recría)</Value>
+                <Value>1.2. Producción equivalente del departamento III (Engorde)</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>White</Color>
@@ -2805,7 +3183,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>6.70945cm</Top>
+        <Top>7.34445cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>15.8873cm</Width>
@@ -2883,18 +3261,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="bd_sgcquinuapataDataSetAll">
+    <DataSource Name="bd_sgcquinuapataDataSetFlujosUnidades">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>5454f1fc-9219-46c5-9718-99d52d25a184</rd:DataSourceID>
+      <rd:DataSourceID>875da5e9-0cb1-44ba-a4f1-078816803a6b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>bd_sgcquinuapataDataSetAll</DataSourceName>
+        <DataSourceName>bd_sgcquinuapataDataSetFlujosUnidades</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2902,24 +3280,28 @@
           <DataField>unidades_iniciales_proceso</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_recibidas_lactancia">
-          <DataField>unidades_recibidas_lactancia</DataField>
+        <Field Name="unidades_recibidas_recria">
+          <DataField>unidades_recibidas_recria</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_transferidas_ventas">
           <DataField>unidades_transferidas_ventas</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_transferidas_engorde">
-          <DataField>unidades_transferidas_engorde</DataField>
+        <Field Name="unidades_transferidas_descarte">
+          <DataField>unidades_transferidas_descarte</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_transferidas_mortalidad">
-          <DataField>unidades_transferidas_mortalidad</DataField>
+        <Field Name="unidades_transferidas_activo">
+          <DataField>unidades_transferidas_activo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_finales_proceso">
           <DataField>unidades_finales_proceso</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_transferidas_mortalidad">
+          <DataField>unidades_transferidas_mortalidad</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="q_equivalente">
@@ -2928,12 +3310,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>bd_sgcquinuapataDataSetAll</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetAll.xsd</rd:SchemaPath>
-        <rd:TableName>sp_flujo_unidades_departamento_recria_list</rd:TableName>
+        <rd:DataSetName>bd_sgcquinuapataDataSetFlujosUnidades</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetFlujosUnidades.xsd</rd:SchemaPath>
+        <rd:TableName>sp_flujo_unidades_departamento_engorde_list</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>sp_flujo_unidades_departamento_recria_listTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>sp_flujo_unidades_departamento_engorde_listTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

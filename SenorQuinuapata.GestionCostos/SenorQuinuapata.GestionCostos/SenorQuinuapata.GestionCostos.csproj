@@ -213,20 +213,15 @@
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="bd_sgcquinuapataDataSet.Designer.cs">
+    <Compile Include="bd_sgcquinuapataDataSetCostos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+      <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="bd_sgcquinuapataDataSet2.Designer.cs">
+    <Compile Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bd_sgcquinuapataDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="bd_sgcquinuapataDataSetAll.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bd_sgcquinuapataDataSetAll.xsd</DependentUpon>
+      <DependentUpon>bd_sgcquinuapataDataSetFlujosUnidades.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ConsumoController.cs" />
@@ -238,6 +233,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ReportConsumoViewModel.cs" />
     <Compile Include="Helpers\ReportViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ConsumoViewModel.cs" />
@@ -3744,7 +3740,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="db.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -4574,38 +4569,27 @@
     <Content Include="assets\template\vendors\validator\.bower.json" />
     <Content Include="assets\template\vendors\validator\README.md" />
     <Content Include="assets\template\vendors\validator\validator.jquery.json" />
-    <Content Include="bd_sgcquinuapataDataSet.xsc">
-      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    <Content Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSetFlujosUnidades.xsd</DependentUpon>
     </Content>
-    <None Include="bd_sgcquinuapataDataSet.xsd">
+    <Content Include="bd_sgcquinuapataDataSetCostos.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
+    </Content>
+    <None Include="bd_sgcquinuapataDataSetCostos.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bd_sgcquinuapataDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>bd_sgcquinuapataDataSetCostos.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="bd_sgcquinuapataDataSet.xss">
-      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    <Content Include="bd_sgcquinuapataDataSetCostos.xss">
+      <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
     </Content>
-    <Content Include="bd_sgcquinuapataDataSet2.xsc">
-      <DependentUpon>bd_sgcquinuapataDataSet2.xsd</DependentUpon>
-    </Content>
-    <None Include="bd_sgcquinuapataDataSet2.xsd">
+    <None Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bd_sgcquinuapataDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>bd_sgcquinuapataDataSetFlujosUnidades.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="bd_sgcquinuapataDataSet2.xss">
-      <DependentUpon>bd_sgcquinuapataDataSet2.xsd</DependentUpon>
-    </Content>
-    <Content Include="bd_sgcquinuapataDataSetAll.xsc">
-      <DependentUpon>bd_sgcquinuapataDataSetAll.xsd</DependentUpon>
-    </Content>
-    <None Include="bd_sgcquinuapataDataSetAll.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bd_sgcquinuapataDataSetAll.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="bd_sgcquinuapataDataSetAll.xss">
-      <DependentUpon>bd_sgcquinuapataDataSetAll.xsd</DependentUpon>
+    <Content Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.xss">
+      <DependentUpon>bd_sgcquinuapataDataSetFlujosUnidades.xsd</DependentUpon>
     </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -4670,7 +4654,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\personalizados\js\" />
-    <Folder Include="DataSets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -4707,10 +4690,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reports\ReportDemo.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDescarte.rdlc" />
     <EmbeddedResource Include="Reports\ReportEngorde.rdlc" />
+    <EmbeddedResource Include="Reports\ReportConsumoLactancia.rdlc" />
     <EmbeddedResource Include="Reports\ReportRecria.rdlc" />
-    <EmbeddedResource Include="Reports\ReportDemo2.rdlc" />
+    <EmbeddedResource Include="Reports\ReportLactancia.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1138,7 +1138,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Unidades transfertidas al departamento III (Engorde)</Value>
+                            <Value>Unidades transferidas al departamento III (Engorde)</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
@@ -2883,18 +2883,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="bd_sgcquinuapataDataSetAll">
+    <DataSource Name="bd_sgcquinuapataDataSetFlujosUnidades">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>5454f1fc-9219-46c5-9718-99d52d25a184</rd:DataSourceID>
+      <rd:DataSourceID>fa0c97d6-ec1f-48ad-9dbe-bfe75881393f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>bd_sgcquinuapataDataSetAll</DataSourceName>
+        <DataSourceName>bd_sgcquinuapataDataSetFlujosUnidades</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2928,8 +2928,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>bd_sgcquinuapataDataSetAll</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetAll.xsd</rd:SchemaPath>
+        <rd:DataSetName>bd_sgcquinuapataDataSetFlujosUnidades</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetFlujosUnidades.xsd</rd:SchemaPath>
         <rd:TableName>sp_flujo_unidades_departamento_recria_list</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
