@@ -2301,7 +2301,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_recria.Value*3</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_recria.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -3492,7 +3492,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_mortalidad.Value * 3</Value>
+                              <Value>=Sum(Fields!unidades_finales_proceso.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -4718,7 +4718,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_mortalidad.Value * 3</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -4761,6 +4761,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
