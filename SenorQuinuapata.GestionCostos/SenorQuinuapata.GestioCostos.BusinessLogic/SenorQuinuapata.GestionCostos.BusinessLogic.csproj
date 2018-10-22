@@ -53,12 +53,14 @@
     <Compile Include="Implementation\IngresoBL.cs" />
     <Compile Include="Implementation\MovimientoDepartamentoBL.cs" />
     <Compile Include="Implementation\ConsumoBL.cs" />
+    <Compile Include="Implementation\PersonaBL.cs" />
     <Compile Include="Implementation\ProductoBL.cs" />
     <Compile Include="Interface\IDepartamentoBL.cs" />
     <Compile Include="Interface\IFlujoUnidadesDepartamentoBL.cs" />
     <Compile Include="Interface\IIngresoBL.cs" />
     <Compile Include="Interface\IMovimientoDepartamentoBL.cs" />
     <Compile Include="Interface\IConsumoBL.cs" />
+    <Compile Include="Interface\IPersonaBL.cs" />
     <Compile Include="Interface\IProductoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

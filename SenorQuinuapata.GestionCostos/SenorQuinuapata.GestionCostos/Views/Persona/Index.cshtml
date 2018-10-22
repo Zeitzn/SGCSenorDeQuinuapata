@@ -1,0 +1,40 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.PersonaViewModel
+@{
+    ViewBag.Title = "Personal";
+}
+
+
+<h2>Lista de Personal</h2>
+<a href="~/Persona/Create" class="btn btn-primary btn-sm">Registrar</a>
+<hr />
+
+<table class="table table-bordered table-hover small" id="table">
+    <thead>
+        <tr>
+            <td class="text-center">DNI</td>
+            <td class="text-center">NOMBRE COMPLETO</td>
+            <td class="text-center">CARGO</td>
+            <td class="text-center">TELEFONO</td>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td class="text-center">DNI</td>
+            <td class="text-center">NOMBRE COMPLETO</td>
+            <td class="text-center">CARGO</td>
+            <td class="text-center">TELEFONO</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model.ListPersona)
+        {
+            <tr>
+                <td class="text-center">@item.dni</td>
+                <td class="">@item.apellido_paterno @item.apellido_materno @item.nombres</td>
+                <td class="text-center">@item.cargo</td>
+                <td class="text-center">@item.telefono</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

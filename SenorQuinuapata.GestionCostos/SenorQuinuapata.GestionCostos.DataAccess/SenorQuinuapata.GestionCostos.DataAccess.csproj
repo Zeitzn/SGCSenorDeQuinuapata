@@ -50,6 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase\Activo_biologico.cs">
+      <DependentUpon>DBsgc.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Asistencia.cs">
+      <DependentUpon>DBsgc.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Cargo.cs">
+      <DependentUpon>DBsgc.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Consumo.cs">
       <DependentUpon>DBsgc.tt</DependentUpon>
     </Compile>
@@ -80,6 +89,9 @@
     <Compile Include="DataBase\Movimiento_departamento.cs">
       <DependentUpon>DBsgc.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\Persona.cs">
+      <DependentUpon>DBsgc.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Producto.cs">
       <DependentUpon>DBsgc.tt</DependentUpon>
     </Compile>
@@ -88,9 +100,11 @@
     <Compile Include="Implementation\IngresoDA.cs" />
     <Compile Include="Implementation\MovimientoDepartamentoDA.cs" />
     <Compile Include="Implementation\ConsumoDA.cs" />
+    <Compile Include="Implementation\PersonaDA.cs" />
     <Compile Include="Implementation\ProductoDA.cs" />
     <Compile Include="Interface\IConsumoDA.cs" />
     <Compile Include="Interface\IFlujoUnidadesDepartamentoDA.cs" />
+    <Compile Include="Interface\IPersonaDA.cs" />
     <Compile Include="Interface\IProductoDA.cs" />
     <Compile Include="Interface\IDepartamentoDA.cs" />
     <Compile Include="Interface\IIngresoDA.cs" />
@@ -132,6 +146,8 @@
     <Content Include="Store_procedures\Insert\sp_producto_ins.sql" />
     <Content Include="Store_procedures\Insert\sp_ingreso_departamento_ins.sql" />
     <Content Include="Store_procedures\List\sp_consumo_list.sql" />
+    <Content Include="Store_procedures\List\sp_activo_biologico_list.sql" />
+    <Content Include="Store_procedures\List\sp_persona_list.sql" />
     <Content Include="Store_procedures\List\sp_producto_list.sql" />
     <Content Include="Store_procedures\List\sp_movimiento_departamento_list.sql" />
     <Content Include="Store_procedures\Update\sp_actualizar_edad.sql" />

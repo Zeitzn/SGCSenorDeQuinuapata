@@ -1,0 +1,62 @@
+﻿@model SenorQuinuapata.GestionCostos.Entities.Request.PersonaRequest
+@{
+    ViewBag.Title = "Registrar Nuevo Personal";
+}
+
+<h2>Registrar Nuevo Personal</h2>
+
+<div class="col-md-6">
+    <div>
+        <h6 class="text-success">@ViewBag.SuccessRegister</h6>
+    </div>
+    @using (Html.BeginForm("Create", "Persona", FormMethod.Post, new { id = "ingreso-form" }))
+
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label>Nombres:</label>
+            <input type="text" name="nombres" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label>Apellido Paterno:</label>
+            <input type="text" name="apellido_paterno" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label>Apellido Materno:</label>
+            <input type="text" name="apellido_materno" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label>DNI:</label>
+            <input type="text" name="dni" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label>Dirección:</label>
+            <input type="text" name="direccion" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label>Teléfono:</label>
+            <input type="text" name="telefono" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label>Cargo:</label>
+            <select class="form-control" name="id_cargo" required>
+                <option value="">--Seleccionar--</option>
+                <option value="1">Ayuda</option>
+                <option value="2">Filmon</option>
+                <option value="3">Ingeniero</option>
+                <option value="4">Veterinario</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-primary btn-sm" />
+        </div>
+    }
+</div>

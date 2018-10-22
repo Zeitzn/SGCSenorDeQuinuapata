@@ -48,12 +48,9 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
-
-
         #endregion
 
         #region reportes
-
         public IEnumerable<FlujoUnidadesDepartamentoResponse> ListReportFlujoUnidades(int id_departamento,string fecha_inicial,string fecha_final)
         {
             var result = new List<FlujoUnidadesDepartamentoResponse>();
@@ -130,33 +127,33 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
 
                         ).ToList();
                     }
-                    //else if (id_departamento == 2)
-                    //{
-                    //    result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_recria_list @fecha_inicial, @fecha_final",
+                    else if (id_departamento == 2)
+                    {
+                        result = ctx.Database.SqlQuery<CostoUnitarioDepartamentoResponse>("sp_costo_unitario_departamento_recria_list @fecha_inicial, @fecha_final",
 
-                    //    new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
-                    //    new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
-                    //    ).ToList();
-                    //}
-                    //else if (id_departamento == 3)
-                    //{
-                    //    result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_engorde_list @fecha_inicial, @fecha_final",
+                        ).ToList();
+                    }
+                    else if (id_departamento == 3)
+                    {
+                        result = ctx.Database.SqlQuery<CostoUnitarioDepartamentoResponse>("sp_costo_unitario_departamento_engorde_list @fecha_inicial, @fecha_final",
 
-                    //    new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
-                    //    new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
-                    //    ).ToList();
-                    //}
-                    //else if (id_departamento == 4)
-                    //{
-                    //    result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_descarte_list @fecha_inicial, @fecha_final",
+                        ).ToList();
+                    }
+                    else if (id_departamento == 4)
+                    {
+                        result = ctx.Database.SqlQuery<CostoUnitarioDepartamentoResponse>("sp_costo_unitario_departamento_descarte_list @fecha_inicial, @fecha_final",
 
-                    //    new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
-                    //    new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
-                    //    ).ToList();
-                    //}
+                        ).ToList();
+                    }
                     else
                     {
                         result = null;

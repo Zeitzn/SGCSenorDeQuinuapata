@@ -3,8 +3,8 @@
     ViewBag.Title = "Movimientos";
 }
 
-
-<table class="table table-bordered small" id="table">
+@*<button class="btn btn-primary btn-sm">ENVIAR A ACTIVOS BIOLÓGICOS</button>*@
+<table class="table table-bordered small table-hover" id="table">
     <thead>
         <tr>
             <td>#</td>
@@ -22,6 +22,10 @@
             <td>C/U CIF</td>
             <td>C/U TOTAL</td>
             <td>C/U COSTO TOTAL</td>
+            @if (ViewBag.Departamento == 3)
+            {
+                <td>ENVIAR A ACTIVOS</td>
+            }
         </tr>
     </thead>
     <tfoot>
@@ -41,6 +45,10 @@
             <td>C/U CIF</td>
             <td>C/U TOTAL</td>
             <td>C/U COSTO TOTAL</td>
+            @if (ViewBag.Departamento == 3)
+            {
+                <td>ENVIAR A ACTIVOS</td>
+            }
         </tr>
     </tfoot>
 
@@ -63,6 +71,20 @@
             <td class="text-right">@item.cu_cif</td>
             <td class="text-right">@item.cu_total</td>
             <td class="text-right">@item.costo_total</td>
+            @if (ViewBag.Departamento == 3)
+            {
+                if (item.saldo > 0)
+                {
+                    <td>
+                        <button type="button" onclick="getCodigo(@item.id,'@item.genero',@item.saldo)" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">ENVIAR</button>
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
+
+            }
         </tr>
        }            
 
@@ -70,3 +92,155 @@
     </tbody>
 </table>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Enviar a Activos Biológicos</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("RegisterActivoBiologico", "Departamento", FormMethod.Post, new { id = "activo-biologico-form" }))
+
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    <input type="hidden" name="id_movimiento" id="id_movimiento" class="form-control" />
+
+                    <div class="form-group">
+
+                        <label id="id_message_show" class="text-primary"> </label>
+                        <input id="id_message" type="hidden" />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Género:</label>
+                        <input type="text" id="id_genero_show" class="form-control" disabled required />
+                        <input type="hidden" name="genero" id="id_genero" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Raza:</label>
+                        <select class="form-control" name="raza" id="id_ubicacion" required>
+                            <option value="">-- Seleccionar --</option>
+                            <option value="Andino 1">Andino 1</option>
+                            <option value="Andino 2">Andino 2</option>
+                            <option value="Andino 3">Andino 3</option>
+                            
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ubicación:</label>
+                        <select class="form-control" name="ubicacion" id="id_ubicacion" required>
+                            <option value="">-- Seleccionar --</option>
+                            <option value="01">Poza 01</option>
+                            <option value="02">Poza 02</option>
+                            <option value="03">Poza 03</option>
+                            <option value="04">Poza 04</option>
+                            <option value="05">Poza 05</option>
+                            <option value="06">Poza 06</option>
+                            <option value="07">Poza 07</option>
+                            <option value="08">Poza 08</option>
+                            <option value="09">Poza 09</option>
+                            <option value="10">Poza 10</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cantidad:</label>
+                        <input type="number" name="cantidad" id="id_ubicacion" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" id="id_submit" value="Guardar" class="btn btn-primary btn-sm" />
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    
+<script>
+
+    function getCodigo(id, genero,saldo) {
+
+        $("#id_genero_show").val(genero);
+        $("#id_genero").val(genero);
+
+        $("#id_movimiento").val(id);
+
+        $("#id_message_show").html("El saldo en este movimiento es de " + saldo);
+        $("#id_message").val(saldo);
+        //$.ajax({
+        //    method: "get",
+        //    type: "json",
+        //    url: "/Departamento/CodeActivoBiologico",
+        //    success: function (data) {
+
+        //        $("#id_codigo_show").val(data);
+        //        $("#id_codigo").val(data);
+
+                
+
+        //    }
+        //});
+
+        
+    }
+
+    $("#activo-biologico-form").on("submit", function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            method: "post",
+            //type: "json",
+            url: "/Departamento/RegisterActivoBiologico",
+            data: $("#activo-biologico-form").serialize(),
+            success: function (data) {
+                if (data == "success") {
+                    alert("El registro se ha realizado con éxito");
+                } else {
+                    alert("Hubo un error en el registro, por favor intentelo nuevamente");
+                }
+
+                location.reload();
+            },
+            error: function () {
+                console.log("error de prueba");
+            }
+
+        });        
+
+    });
+
+    //$("#id_cantidad").keypress(function () {
+
+    //    var val_max = $("#id_message").val();
+    //    var val_input = $("#id_cantidad").val();
+
+    //    if (val_input>val_max) {
+    //        $("#id_submit").attr("disabled","true");
+    //    }
+    //})
+
+
+
+    
+
+</script>    
+    
+    
+}

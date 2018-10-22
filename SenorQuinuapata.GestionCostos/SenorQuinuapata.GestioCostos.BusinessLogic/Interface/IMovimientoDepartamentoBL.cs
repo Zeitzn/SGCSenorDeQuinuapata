@@ -20,10 +20,12 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Interface
 
         MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento,string genero);
 
-        void UpdateSalidaSaldo(int orige, int? salida, int? saldo);
-
-        void RegisterNextMovimientoDepartamento(MovimientoDepartamentoRequest request);
+        void UpdateSalidaSaldo(int orige, int? salida, int? saldo);       
 
         bool MakeMovimiento(MovimientoDepartamentoRequest request, IngresoRequest _ingreso, string origen);
+
+        void RegisterActivoBiologico(int id_movimiento, string genero, int cantidad,string ubicacion,string raza);
+
+        IEnumerable<ActivoBiologicoResponse> ListActivoBiologico();
     }
 }

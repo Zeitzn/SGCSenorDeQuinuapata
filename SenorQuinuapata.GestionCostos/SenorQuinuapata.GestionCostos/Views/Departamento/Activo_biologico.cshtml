@@ -1,0 +1,79 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.DepartamentoViewModel
+@{
+    ViewBag.Title = "Movimientos";
+}
+<h2>Activos Biológicos</h2>
+
+<table class="table table-bordered table-hover small" id="table">
+    <thead>
+        <tr>
+            <td>CÓDIGO</td>
+            <td>FECHA DE INGRESO</td>
+            <td>FECHA FINAL</td>
+            <td>UBICACION</td>
+            <td>GÉNERO</td>
+            <td>NÚMERO DE PARTO</td>
+            <td>FECHA INICIAL DE EMPADRE</td>
+            <td>FECHA FIN DE EMPADRE</td>
+            <td>RAZA</td>
+            <td>VALOR</td>
+            <td>TASA DE DEPRECIACIÓN</td>
+            <td>DEPRECIACIÓN ACUMULADA</td>
+            <td>DEPRECIACION DIARIA</td>
+            <td>ESTADO</td>
+            <td>VALOR NETO</td>
+            <td>ENVIAR</td>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td>CÓDIGO</td>
+            <td>FECHA DE INGRESO</td>
+            <td>FECHA FINAL</td>
+            <td>UBICACION</td>
+            <td>GÉNERO</td>
+            <td>NÚMERO DE PARTO</td>
+            <td>FECHA INICIAL DE EMPADRE</td>
+            <td>FECHA FIN DE EMPADRE</td>
+            <td>RAZA</td>
+            <td>VALOR</td>
+            <td>TASA DE DEPRECIACIÓN</td>
+            <td>DEPRECIACIÓN ACUMULADA</td>
+            <td>DEPRECIACION DIARIA</td>
+            <td>ESTADO</td>
+            <td>VALOR NETO</td>
+            <td>ENVIAR</td>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in Model.ListActivoBiologico)
+        {
+        <tr>
+            <td class="text-center">@item.codigo</td>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_ingreso)</td>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_salida)</td>
+            <td class="text-center">@item.ubicacion</td>
+            <td class="text-center">@item.genero</td>
+            <td class="text-center">@item.numero_parto</td>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</td>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</td>
+            <td>@item.raza</td>
+            <td class="text-right">S/ @item.valor_inicial</td>
+            <td class="text-center">@item.tasa_depreciacion %</td>
+            <td class="text-right">S/ @item.depreciacion_acumulada</td>
+            <td class="text-right">S/ @item.depreciacion_diaria</td>
+            <td>@item.estado</td>
+            <td class="text-right">S/ @item.valor_neto</td>
+            <td class="text-center">
+                <a href="#" class="text-primary">Descarte</a>
+                <br />
+                -
+                <br />
+                <a href="#" class="text-danger">Mortalidad</a>
+            </td>
+            
+        </tr>
+        }
+    </tbody>
+</table>

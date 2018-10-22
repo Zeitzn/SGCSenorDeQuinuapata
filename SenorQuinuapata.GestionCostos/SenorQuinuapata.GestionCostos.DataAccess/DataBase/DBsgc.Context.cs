@@ -31,5 +31,9 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.DataBase
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Consumo> Consumo { get; set; }
         public virtual DbSet<Flujo_unidades_departamento> Flujo_unidades_departamento { get; set; }
+        public virtual DbSet<Cargo> Cargo { get; set; }
+        public virtual DbSet<Persona> Persona { get; set; }
+        public virtual DbSet<Asistencia> Asistencia { get; set; }
+        public virtual DbSet<Activo_biologico> Activo_biologico { get; set; }
     }
 }

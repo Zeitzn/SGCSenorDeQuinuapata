@@ -16,5 +16,7 @@ namespace SenorQuinuapata.GestionCostos.Models
         public MovimientoDepartamentoRequest RegisterMovimientoDepartamento { get; set; }
 
         public FlujoUnidadesDepartamentoRequest flujoUnidadesDepartamento { get; set; }
+        
+        public IEnumerable<ActivoBiologicoResponse> ListActivoBiologico { get; set; }
     }
 }

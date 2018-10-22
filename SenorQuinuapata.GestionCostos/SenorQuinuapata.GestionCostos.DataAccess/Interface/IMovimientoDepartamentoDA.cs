@@ -21,8 +21,16 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
         MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento,string genero);
 
         void UpdateSalidaSaldo(int origen, int? salida, int? saldo);
+        
+        string CodeActivoBiologico();
 
-        void RegisterNextMovimientoDepartamento(MovimientoDepartamentoRequest request);
+        void RegisterActivoBiologico(ActivoBiologicoRequest activo, string codigo);
+
+        void UpdateDescarte(int id_movimiento,int cantidad);
+
+        IEnumerable<ActivoBiologicoResponse> ListActivoBiologico();
+
+
 
 
     }

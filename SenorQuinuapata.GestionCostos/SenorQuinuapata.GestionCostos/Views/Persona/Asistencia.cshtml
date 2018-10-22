@@ -1,0 +1,91 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.PersonaViewModel
+@{
+    ViewBag.Title = "Personal";
+}
+<h2>Asistencia de personal</h2>
+
+<form action="/Persona/ReportAsistencia" method="get">
+    <h6>@*Asistencia Mensual*@</h6>
+    
+    <div class="col-md-2">
+        <div class="form-group">
+            @*<div class="col-md-3">
+                <label>DNI del Personal:</label>
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="dni" value="" class="form-control" />
+            </div>*@
+           
+                <select class="form-control" name="mes">
+                    <option value="">-- Mes --</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            
+
+        </div>        
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <input type="submit" name="name" value="Generar" class="btn btn-danger btn-sm" />
+        </div>
+    </div>
+        
+
+    
+
+</form>
+
+<hr />
+<p class="text-success">Fecha de Hoy: @DateTime.Now.ToShortDateString()</p>
+<table class="table table-bordered table-hover small" id="table">
+    <thead>
+        <tr>
+            <td class="text-center">DNI</td>
+            <td class="text-center">NOMBRE COMPLETO</td>
+            <td class="text-center">CARGO</td>
+            <td class="text-center">ASISTENCIA</td>
+            <td class="text-center">MARCAR</td>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td class="text-center">DNI</td>
+            <td class="text-center">NOMBRE COMPLETO</td>
+            <td class="text-center">CARGO</td>
+            <td class="text-center">ASISTENCIA</td>
+            <td class="text-center">MARCAR</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model.ListPersona)
+        {
+        <tr @((item.asistencia).Equals("A")? "class=text-success":"" )>
+            <td class="text-center">@item.dni</td>
+            <td class="">@item.apellido_paterno @item.apellido_materno @item.nombres</td>
+            <td class="text-center">@item.cargo</td>
+            <td class="text-center">@item.asistencia</td>
+            <td class="text-center">
+                @if ((item.asistencia).Equals("F"))
+                {
+                    <a href="@Url.Action("MarcarAsistencia","Persona", new { id=item.id })" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-check"></span></a>
+                }
+
+            </td>
+
+        </tr>
+
+        }
+    </tbody>
+</table>

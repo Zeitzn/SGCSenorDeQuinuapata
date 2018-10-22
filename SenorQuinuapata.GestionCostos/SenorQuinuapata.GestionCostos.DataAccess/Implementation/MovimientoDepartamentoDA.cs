@@ -18,6 +18,25 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
         
         #region no transaccional
 
+        public IEnumerable<ActivoBiologicoResponse> ListActivoBiologico()
+        {
+            try
+            {
+                var result = new List<ActivoBiologicoResponse>();
+                using (var ctx= new bd_sgcquinuapataEntities())
+                {
+
+                    result = ctx.Database.SqlQuery<ActivoBiologicoResponse>("sp_activo_biologico_list").ToList();
+
+                }
+                return result;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+        }
+
         public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamento(int id)
         {
             try
@@ -41,7 +60,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
-
         public IEnumerable<MovimientoDepartamentoResponse> ListMovimientoDepartamentoReverse(int id)
         {
             try
@@ -82,7 +100,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
-
         public MovimientoDepartamentoResponse ExistsMovimientoDepartamento(string fecha, int id_departamento,string genero)
         {
             DateTime _fecha = Convert.ToDateTime(fecha);
@@ -121,10 +138,133 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 return result;
            
         }
+        public string CodeActivoBiologico()
+        {
+
+            try
+            {
+                string codigo = "";
+                int id;
+                using (var ctx = new bd_sgcquinuapataEntities())
+                {
+                    var result = ctx.Activo_biologico.OrderByDescending(x => x.id).FirstOrDefault();
+
+                    if (result == null)
+                    {
+                        id = 0;
+                    }
+                    else
+                    {
+                        id = result.id;
+                    }
+
+                    int subcodigo = id + 1;
+                    string cod_cuy; ;
+                    if (subcodigo < 10)
+                    {
+                        cod_cuy = "AC00000";
+                    }
+                    else if (subcodigo >= 10 && subcodigo < 100)
+                    {
+                        cod_cuy = "AC0000";
+                    }
+                    else if (subcodigo >= 100 && subcodigo < 1000)
+                    {
+                        cod_cuy = "AC000";
+                    }
+                    else if (subcodigo >= 1000 && subcodigo < 10000)
+                    {
+                        cod_cuy = "AC00";
+                    }
+                    else if (subcodigo >= 10000 && subcodigo < 100000)
+                    {
+                        cod_cuy = "AC0";
+                    }
+                    else
+                    {
+                        cod_cuy = "AC";
+                    }
+
+                    codigo = cod_cuy + subcodigo;
+
+                }
+
+                return codigo;
+            }
+            catch (Exception e)
+            {
+                string error = e.Message;
+
+                return error;
+            }
+            
+        }
 
         #endregion
 
         #region transaccional
+
+        public void UpdateDescarte(int id_movimiento, int cantidad)
+        {
+            try
+            {
+                using (var ctx = new bd_sgcquinuapataEntities())
+                {
+                    Movimiento_departamento _movimiento = ctx.Movimiento_departamento.Where(x => x.id == id_movimiento).FirstOrDefault();
+                    int? saldo_inicial = _movimiento.saldo;
+                    int? salida_inicial = _movimiento.salida;
+
+                    _movimiento.saldo = saldo_inicial - cantidad;
+                    _movimiento.salida = salida_inicial + cantidad;
+
+                    ctx.SaveChanges();
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                string error = e.Message;
+            }
+        }
+
+        public void RegisterActivoBiologico(ActivoBiologicoRequest activo, string codigo)
+        {
+            try
+            {
+                using (var ctx=new bd_sgcquinuapataEntities())
+                {
+                    ctx.Activo_biologico.Add(
+                    new Activo_biologico()
+                    {
+                        codigo=codigo,
+                        depreciacion_acumulada=activo.depreciacion_acumulada,
+                        depreciacion_diaria=activo.depreciacion_diaria,
+                        estado=activo.estado,
+                        fecha_fin_empadre=activo.fecha_fin_empadre,
+                        fecha_ingreso=activo.fecha_ingreso,
+                        fecha_inicio_empadre=activo.fecha_inicio_empadre,
+                        fecha_salida=activo.fecha_salida,
+                        genero=activo.genero,
+                        numero_parto=activo.numero_parto,
+                        observacion=activo.observacion,
+                        raza=activo.raza,
+                        tasa_depreciacion=activo.tasa_depreciacion,
+                        ubicacion=activo.ubicacion,
+                        valor_inicial=activo.valor_inicial,
+                        valor_neto=activo.valor_neto
+                    }    
+                    );       
+
+                    ctx.SaveChanges();
+                }
+            }
+            catch(Exception e)
+            {
+                string error = e.Message;
+            }
+            
+        }
         public void RegisterMovimientoDepartamento(MovimientoDepartamentoRequest request)
         {
             try
@@ -163,7 +303,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
-
         public void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida)
         {
             try
@@ -188,7 +327,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 //db.Dispose();
             }
         }
-
         public void UpdateSalidaSaldo(int origen, int? salida, int? saldo)
         {
             try
@@ -213,11 +351,8 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
-
-        public void RegisterNextMovimientoDepartamento(MovimientoDepartamentoRequest request)
-        {
-            throw new NotImplementedException();
-        }
+        
+        
 
         #endregion
     }

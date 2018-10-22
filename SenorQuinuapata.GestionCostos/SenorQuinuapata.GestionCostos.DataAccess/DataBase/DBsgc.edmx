@@ -5,6 +5,46 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="bd_sgcquinuapataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activo_biologico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="8" />
+          <Property Name="fecha_ingreso" Type="date" />
+          <Property Name="fecha_salida" Type="date" />
+          <Property Name="ubicacion" Type="varchar" MaxLength="50" />
+          <Property Name="genero" Type="varchar" MaxLength="10" />
+          <Property Name="numero_parto" Type="int" />
+          <Property Name="fecha_inicio_empadre" Type="date" />
+          <Property Name="fecha_fin_empadre" Type="date" />
+          <Property Name="raza" Type="varchar" MaxLength="100" />
+          <Property Name="valor_inicial" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="tasa_depreciacion" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="depreciacion_acumulada" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="depreciacion_diaria" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+          <Property Name="valor_neto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="observacion" Type="text" />
+        </EntityType>
+        <EntityType Name="Asistencia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_persona" Type="int" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="estado" Type="char" MaxLength="1" />
+          <Property Name="sueldo" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="sueldo" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
         <EntityType Name="Consumo">
           <Key>
             <PropertyRef Name="id" />
@@ -64,6 +104,7 @@
           <Property Name="descarte" Type="int" />
           <Property Name="mortalidad" Type="int" />
           <Property Name="venta" Type="int" />
+          <Property Name="activo" Type="int" />
         </EntityType>
         <EntityType Name="Movimiento_departamento">
           <Key>
@@ -85,6 +126,20 @@
           <Property Name="cu_total" Type="decimal" Precision="10" Scale="2" />
           <Property Name="costo_total" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="200" />
+          <Property Name="dni" Type="varchar" MaxLength="8" />
+          <Property Name="telefono" Type="varchar" MaxLength="15" />
+          <Property Name="id_cargo" Type="int" />
+          <Property Name="asistencia" Type="char" MaxLength="1" />
+        </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="id" />
@@ -93,6 +148,18 @@
           <Property Name="nombre" Type="varchar" MaxLength="200" />
           <Property Name="codigo" Type="varchar" MaxLength="10" />
         </EntityType>
+        <Association Name="fk_asistencia_persona">
+          <End Role="Persona" Type="Self.Persona" Multiplicity="0..1" />
+          <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Asistencia">
+              <PropertyRef Name="id_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_departaento_flujo_unidades_departamento">
           <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
           <End Role="Flujo_unidades_departamento" Type="Self.Flujo_unidades_departamento" Multiplicity="*" />
@@ -129,6 +196,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_persona_cargo">
+          <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+          <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="id_cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_producto_consumo">
           <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
           <End Role="Consumo" Type="Self.Consumo" Multiplicity="*" />
@@ -142,12 +221,20 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="bd_sgcquinuapataModelStoreContainer">
+          <EntitySet Name="Activo_biologico" EntityType="Self.Activo_biologico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Consumo" EntityType="Self.Consumo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Flujo_unidades_departamento" EntityType="Self.Flujo_unidades_departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ingreso" EntityType="Self.Ingreso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movimiento_departamento" EntityType="Self.Movimiento_departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_asistencia_persona" Association="Self.fk_asistencia_persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Asistencia" EntitySet="Asistencia" />
+          </AssociationSet>
           <AssociationSet Name="fk_departaento_flujo_unidades_departamento" Association="Self.fk_departaento_flujo_unidades_departamento">
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Flujo_unidades_departamento" EntitySet="Flujo_unidades_departamento" />
@@ -159,6 +246,10 @@
           <AssociationSet Name="fk_departamento_movimiento_departamento" Association="Self.fk_departamento_movimiento_departamento">
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Movimiento_departamento" EntitySet="Movimiento_departamento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_persona_cargo" Association="Self.fk_persona_cargo">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="Persona" EntitySet="Persona" />
           </AssociationSet>
           <AssociationSet Name="fk_producto_consumo" Association="Self.fk_producto_consumo">
             <End Role="Producto" EntitySet="Producto" />
@@ -236,6 +327,18 @@
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Flujo_unidades_departamento" EntitySet="Flujo_unidades_departamento" />
           </AssociationSet>
+          <EntitySet Name="Cargo" EntityType="bd_sgcquinuapataModel.Cargo" />
+          <EntitySet Name="Persona" EntityType="bd_sgcquinuapataModel.Persona" />
+          <AssociationSet Name="fk_persona_cargo" Association="bd_sgcquinuapataModel.fk_persona_cargo">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <EntitySet Name="Asistencia" EntityType="bd_sgcquinuapataModel.Asistencia" />
+          <AssociationSet Name="fk_asistencia_persona" Association="bd_sgcquinuapataModel.fk_asistencia_persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Asistencia" EntitySet="Asistencia" />
+          </AssociationSet>
+          <EntitySet Name="Activo_biologico" EntityType="bd_sgcquinuapataModel.Activo_biologico" />
         </EntityContainer>
         <EntityType Name="Ingreso">
           <Key>
@@ -253,6 +356,7 @@
           <Property Name="descarte" Type="Int32" />
           <Property Name="mortalidad" Type="Int32" />
           <Property Name="venta" Type="Int32" />
+          <Property Name="activo" Type="Int32" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -337,6 +441,88 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sueldo" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Persona" Relationship="bd_sgcquinuapataModel.fk_persona_cargo" FromRole="Cargo" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dni" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="id_cargo" Type="Int32" />
+          <NavigationProperty Name="Cargo" Relationship="bd_sgcquinuapataModel.fk_persona_cargo" FromRole="Persona" ToRole="Cargo" />
+          <Property Name="asistencia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Asistencia1" Relationship="bd_sgcquinuapataModel.fk_asistencia_persona" FromRole="Persona" ToRole="Asistencia" />
+        </EntityType>
+        <Association Name="fk_persona_cargo">
+          <End Type="bd_sgcquinuapataModel.Cargo" Role="Cargo" Multiplicity="0..1" />
+          <End Type="bd_sgcquinuapataModel.Persona" Role="Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="id_cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Asistencia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_persona" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Persona" Relationship="bd_sgcquinuapataModel.fk_asistencia_persona" FromRole="Asistencia" ToRole="Persona" />
+          <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="sueldo" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <Association Name="fk_asistencia_persona">
+          <End Type="bd_sgcquinuapataModel.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="bd_sgcquinuapataModel.Asistencia" Role="Asistencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Asistencia">
+              <PropertyRef Name="id_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Activo_biologico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="fecha_salida" Type="DateTime" Precision="0" />
+          <Property Name="ubicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="genero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="numero_parto" Type="Int32" />
+          <Property Name="fecha_inicio_empadre" Type="DateTime" Precision="0" />
+          <Property Name="fecha_fin_empadre" Type="DateTime" Precision="0" />
+          <Property Name="raza" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="valor_inicial" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="tasa_depreciacion" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="depreciacion_acumulada" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="depreciacion_diaria" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="valor_neto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -376,6 +562,7 @@
           <EntitySetMapping Name="Ingreso">
             <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Ingreso">
               <MappingFragment StoreEntitySet="Ingreso">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="venta" ColumnName="venta" />
                 <ScalarProperty Name="mortalidad" ColumnName="mortalidad" />
                 <ScalarProperty Name="descarte" ColumnName="descarte" />
@@ -433,6 +620,64 @@
                 <ScalarProperty Name="unidades_iniciales_proceso" ColumnName="unidades_iniciales_proceso" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cargo">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Cargo">
+              <MappingFragment StoreEntitySet="Cargo">
+                <ScalarProperty Name="sueldo" ColumnName="sueldo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persona">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="asistencia" ColumnName="asistencia" />
+                <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Asistencia">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Asistencia">
+              <MappingFragment StoreEntitySet="Asistencia">
+                <ScalarProperty Name="sueldo" ColumnName="sueldo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Activo_biologico">
+            <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Activo_biologico">
+              <MappingFragment StoreEntitySet="Activo_biologico">
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="valor_neto" ColumnName="valor_neto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="depreciacion_diaria" ColumnName="depreciacion_diaria" />
+                <ScalarProperty Name="depreciacion_acumulada" ColumnName="depreciacion_acumulada" />
+                <ScalarProperty Name="tasa_depreciacion" ColumnName="tasa_depreciacion" />
+                <ScalarProperty Name="valor_inicial" ColumnName="valor_inicial" />
+                <ScalarProperty Name="raza" ColumnName="raza" />
+                <ScalarProperty Name="fecha_fin_empadre" ColumnName="fecha_fin_empadre" />
+                <ScalarProperty Name="fecha_inicio_empadre" ColumnName="fecha_inicio_empadre" />
+                <ScalarProperty Name="numero_parto" ColumnName="numero_parto" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+                <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

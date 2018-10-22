@@ -29,5 +29,7 @@ namespace SenorQuinuapata.GestionCostos.Entities.Request
         public int? mortalidad { get; set; }
 
         public int? venta { get; set; }
+
+        public int? activo { get; set; }
     }
 }

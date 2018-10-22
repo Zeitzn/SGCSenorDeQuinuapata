@@ -70,7 +70,7 @@
                                     <a><i class="fa fa-edit"></i> Registro<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="@Url.Action("RegisterIngreso","Departamento")">Ingresos</a></li>
-                                        <li><a href="@Url.Action("Create","Consumo")">Consumo</a></li>                                       
+                                        <li><a href="@Url.Action("Create","Consumo")">Consumo</a></li>
                                     </ul>
 
                                 </li>
@@ -80,6 +80,7 @@
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=1 })">Lactancia</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=2 })">Recría</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=3 })">Engorde</a></li>
+                                        <li><a href="@Url.Action("Movimientos","Departamento", new { id=7 })">Activos Biológicos</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=4 })">Descarte</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=5 })">Mortalidad</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=6 })">Ventas</a></li>
@@ -99,6 +100,18 @@
                                 <li>
                                     <a href="@Url.Action("Index","Consumo")"><i class="fa fa-edit"></i> Consumo</a>
 
+                                </li>
+                                @*<li>
+                                    <a href="@Url.Action("Index","Persona")"><i class="fa fa-edit"></i> Personal</a>
+
+                                </li>*@
+                                <li>
+                                    <a><i class="fa fa-edit"></i> Personal <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="@Url.Action("Index","Persona")">Lista</a></li>
+                                        <li><a href="@Url.Action("Asistencia","Persona")">Asistencia</a></li>
+                                        
+                                    </ul>
                                 </li>
 
                             </ul>

@@ -15,6 +15,12 @@
         <AssociationConnector Association="bd_sgcquinuapataModel.fk_producto_consumo" />
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Flujo_unidades_departamento" Width="1.5" PointX="0.75" PointY="0.5" />
         <AssociationConnector Association="bd_sgcquinuapataModel.fk_departaento_flujo_unidades_departamento" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Cargo" Width="1.5" PointX="3.375" PointY="8.5" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Persona" Width="1.5" PointX="5.625" PointY="8" />
+        <AssociationConnector Association="bd_sgcquinuapataModel.fk_persona_cargo" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Asistencia" Width="1.5" PointX="7.875" PointY="8.625" />
+        <AssociationConnector Association="bd_sgcquinuapataModel.fk_asistencia_persona" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.Activo_biologico" Width="1.5" PointX="0.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,10 +22,10 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             try
             {
                 var result = new List<ProductoResponse>();
-                using (db)
+                using (var ctx = new bd_sgcquinuapataEntities())
                 {
                     
-                    result = db.Database.SqlQuery<ProductoResponse>("sp_producto_list").ToList();
+                    result = ctx.Database.SqlQuery<ProductoResponse>("sp_producto_list").ToList();
 
                 }
                 return result;

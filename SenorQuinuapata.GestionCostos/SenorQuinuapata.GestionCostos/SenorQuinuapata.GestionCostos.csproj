@@ -213,11 +213,22 @@
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="bd_sgcquinuapataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="bd_sgcquinuapataDataSetCostos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\bd_sgcquinuapataDataSetAsistencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_sgcquinuapataDataSetAsistencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +245,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ReportConsumoViewModel.cs" />
+    <Compile Include="Helpers\ReportAsistenciaViewModel.cs" />
     <Compile Include="Helpers\ReportViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ConsumoViewModel.cs" />
@@ -241,6 +253,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IngresoViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PersonaViewModel.cs" />
     <Compile Include="Models\ProductoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -4572,6 +4585,20 @@
     <Content Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.xsc">
       <DependentUpon>bd_sgcquinuapataDataSetFlujosUnidades.xsd</DependentUpon>
     </Content>
+    <Content Include="DataSets\bd_sgcquinuapataDataSetAsistencia.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSetAsistencia.xsd</DependentUpon>
+    </Content>
+    <Content Include="bd_sgcquinuapataDataSet.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="bd_sgcquinuapataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_sgcquinuapataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bd_sgcquinuapataDataSet.xss">
+      <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
+    </Content>
     <Content Include="bd_sgcquinuapataDataSetCostos.xsc">
       <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
     </Content>
@@ -4582,6 +4609,14 @@
     </None>
     <Content Include="bd_sgcquinuapataDataSetCostos.xss">
       <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\bd_sgcquinuapataDataSetAsistencia.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_sgcquinuapataDataSetAsistencia.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DataSets\bd_sgcquinuapataDataSetAsistencia.xss">
+      <DependentUpon>bd_sgcquinuapataDataSetAsistencia.xsd</DependentUpon>
     </Content>
     <None Include="DataSets\bd_sgcquinuapataDataSetFlujosUnidades.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -4650,6 +4685,10 @@
     <Content Include="Views\Consumo\Index.cshtml" />
     <Content Include="Views\Departamento\RegisterIngreso.cshtml" />
     <Content Include="Views\Consumo\Create.cshtml" />
+    <Content Include="Views\Persona\Index.cshtml" />
+    <Content Include="Views\Persona\Create.cshtml" />
+    <Content Include="Views\Persona\Asistencia.cshtml" />
+    <Content Include="Views\Departamento\Activo_biologico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4690,9 +4729,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\ReportAsistencia.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportConsumoRecria.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportConsumoLactancia.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportDescarte.rdlc" />
     <EmbeddedResource Include="Reports\ReportEngorde.rdlc" />
-    <EmbeddedResource Include="Reports\ReportConsumoLactancia.rdlc" />
     <EmbeddedResource Include="Reports\ReportRecria.rdlc" />
     <EmbeddedResource Include="Reports\ReportLactancia.rdlc" />
   </ItemGroup>

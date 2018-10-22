@@ -26,6 +26,8 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
         private readonly bd_sgcquinuapataEntities db = new bd_sgcquinuapataEntities();
 
+
+        #region transaccional
         public ActionResult RegisterIngreso()
         {
             return View();
@@ -66,6 +68,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                     mortalidad=0,
                     descarte=0,
                     venta=0,
+                    activo=0,
                     fecha = request.fecha,
                     genero = request.genero,
 
@@ -86,15 +89,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                     _MovimientoDepartamentoBL.UpdateMovimientoDepartamento(mov.id, request.ingreso, request.salida);
                 }
 
-                //departamentoViewModel.flujoUnidadesDepartamento = new FlujoUnidadesDepartamentoRequest()
-                //{
-                //    fecha=request.fecha,
-                //    unidades_iniciales_proceso=request.ingreso,
-                //    unidades_
-
-                //};
-
-                //_FlujoUnidadesDepartamentoBL.RegisterFlujo(departamentoViewModel.flujoUnidadesDepartamento);
+              
 
             }
 
@@ -144,6 +139,8 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                         _ingreso.Ingreso.descarte = 0;
                                         _ingreso.Ingreso.mortalidad = 0;
                                         _ingreso.Ingreso.venta = 0;
+                                        _ingreso.Ingreso.activo = 0;
+
                                         break;
                                     case 3:
                                         _ingreso.Ingreso.codigo_destino = "EN001";
@@ -153,6 +150,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                         _ingreso.Ingreso.descarte = 0;
                                         _ingreso.Ingreso.mortalidad = 0;
                                         _ingreso.Ingreso.venta = 0;
+                                        _ingreso.Ingreso.activo = 0;
                                         break;
                                     case 4:
                                         _ingreso.Ingreso.codigo_destino = "DE001";
@@ -162,6 +160,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                         _ingreso.Ingreso.engorde = 0;                                       
                                         _ingreso.Ingreso.mortalidad = 0;
                                         _ingreso.Ingreso.venta = 0;
+                                        _ingreso.Ingreso.activo = 0;
                                         break;
                                     case 5:
                                         _ingreso.Ingreso.codigo_destino = "MO001";
@@ -171,6 +170,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                         _ingreso.Ingreso.engorde = 0;
                                         _ingreso.Ingreso.descarte = 0;
                                         _ingreso.Ingreso.venta = 0;
+                                        _ingreso.Ingreso.activo = 0;
                                         break;
                                     default:
                                         break;
@@ -275,6 +275,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.mortalidad = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         case 4:
                                             _ingreso.Ingreso.codigo_destino = "DE001";
@@ -284,6 +285,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.mortalidad = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         case 5:
                                             _ingreso.Ingreso.codigo_destino = "MO001";
@@ -293,6 +295,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         case 6:
                                             _ingreso.Ingreso.codigo_destino = "VE001";
@@ -302,6 +305,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.mortalidad = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         default:
                                             break;
@@ -407,6 +411,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.mortalidad = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         case 5:
                                             _ingreso.Ingreso.codigo_destino = "MO001";
@@ -416,6 +421,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         case 6:
                                             _ingreso.Ingreso.codigo_destino = "VE001";
@@ -425,6 +431,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.mortalidad = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         default:
                                             break;
@@ -490,8 +497,6 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                     int? salida = request.ingreso;
                     int? saldo, _salida, _saldo = 0;
 
-
-
                     foreach (var item in _MovimientoDepartamentoBL.ListMovimientoDepartamentoReverse(_origen))
                     {
 
@@ -530,6 +535,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.venta = 0;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         case 6:
                                             _ingreso.Ingreso.codigo_destino = "VE001";
@@ -539,6 +545,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                                             _ingreso.Ingreso.engorde = 0;
                                             _ingreso.Ingreso.descarte = 0;
                                             _ingreso.Ingreso.venta = request.ingreso;
+                                            _ingreso.Ingreso.activo = 0;
                                             break;
                                         default:
                                             break;
@@ -603,13 +610,46 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
         }
 
+        public string RegisterActivoBiologico(int id_movimiento,string genero, int cantidad, string ubicacion,string raza)
+        {
+            string message;
+
+            try
+            {
+                _MovimientoDepartamentoBL.RegisterActivoBiologico(id_movimiento,genero,cantidad,ubicacion,raza);
+
+                message = "success";
+            }
+            catch (Exception)
+            {
+
+                message = "error";
+            }
+
+
+            return message;
+        }
+
+        #endregion
+
+
+        #region no transaccional
 
         public ActionResult Movimientos(int id)
         {
             DepartamentoViewModel movimientos = new DepartamentoViewModel()
             {
-                ListMovimientoDepartamento = _MovimientoDepartamentoBL.ListMovimientoDepartamento(id)
-            };
+                ListMovimientoDepartamento = _MovimientoDepartamentoBL.ListMovimientoDepartamento(id),
+                ListActivoBiologico = _MovimientoDepartamentoBL.ListActivoBiologico()
+        };
+
+            ViewBag.Departamento = id;
+
+            if (id==7)
+            {
+              
+                return View("Activo_biologico",movimientos);
+            }
 
             if (id == 5 || id == 6)
             {
@@ -619,7 +659,12 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             return View(movimientos);
         }
 
-        #region prueba
+        
+        #endregion
+
+        #region Reportes
+
+        //PRUEBA
         public ActionResult Lista()
         {
 
@@ -760,6 +805,33 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 {
                     FileName = "~/Reports/ReportConsumoLactancia.rdlc",
                     ReportTitle = "ReporteConsumoLactancia",
+                    Format = ReportConsumoViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportConsumoViewModel.Parameter { Name = "fecha_inicio", Value = fecha_inicial.ToString() });
+                //reportViewModel.Parameters.Add(new ReportConsumoViewModel.Parameter { Name = "fecha_fin", Value = fecha_final.ToString() });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportConsumoViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+            else if (id_departamento == 2 && tipo_reporte == 2)
+            {
+                var oList = _DepartamentoBL.ListReportCostoUnitarioDepartamento(2, fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportConsumoViewModel()
+                {
+                    FileName = "~/Reports/ReportConsumoRecria.rdlc",
+                    ReportTitle = "ReporteConsumoRecria",
                     Format = ReportConsumoViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };
