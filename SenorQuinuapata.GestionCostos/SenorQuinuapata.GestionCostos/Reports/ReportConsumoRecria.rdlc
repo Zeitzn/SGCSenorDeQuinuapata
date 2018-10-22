@@ -5586,7 +5586,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -6274,6 +6273,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -7758,7 +7758,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>1.3. Valuación de productos finales en proceso y perdidos por mortalidad del Departamento III (Recría)</Value>
+                <Value>1.3. Valuación de productos finales en proceso y perdidos por mortalidad del Departamento II (Recría)</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>White</Color>
@@ -8980,7 +8980,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Valuación de productos finales en proceso a costo incurrido en el Departamento II (Recría)</Value>
+                <Value>Valuación de productos finales en proceso a costo incurridos en el Departamento II (Recría)</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontWeight>Bold</FontWeight>

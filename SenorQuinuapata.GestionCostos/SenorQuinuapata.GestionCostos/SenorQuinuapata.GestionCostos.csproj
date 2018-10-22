@@ -4732,6 +4732,9 @@
     <EmbeddedResource Include="Reports\ReportAsistencia.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportConsumoEngorde.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportConsumoRecria.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>

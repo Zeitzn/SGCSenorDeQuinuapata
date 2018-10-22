@@ -851,6 +851,33 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 return File(renderedBytes, reportViewModel.LastmimeType);
 
             }
+            else if (id_departamento == 3 && tipo_reporte == 2)
+            {
+                var oList = _DepartamentoBL.ListReportCostoUnitarioDepartamento(3, fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportConsumoViewModel()
+                {
+                    FileName = "~/Reports/ReportConsumoEngorde.rdlc",
+                    ReportTitle = "ReporteConsumoEngorde",
+                    Format = ReportConsumoViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportConsumoViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
             else
             {
                 return RedirectToAction("Home/Index");
