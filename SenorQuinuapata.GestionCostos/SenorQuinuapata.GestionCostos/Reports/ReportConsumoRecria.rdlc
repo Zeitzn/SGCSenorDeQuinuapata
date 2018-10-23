@@ -1663,7 +1663,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.29559cm</Top>
+        <Top>3.07198cm</Top>
         <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>22.23667cm</Width>
@@ -1713,8 +1713,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>0.74281cm</Top>
-        <Left>0cm</Left>
+        <Top>1.5192cm</Top>
         <Height>0.6cm</Height>
         <Width>22.85526cm</Width>
         <ZIndex>1</ZIndex>
@@ -2850,7 +2849,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>11.74316cm</Top>
+        <Top>12.51955cm</Top>
         <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>15.8873cm</Width>
@@ -4004,7 +4003,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>15.94953cm</Top>
+        <Top>16.72592cm</Top>
         <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>15.8873cm</Width>
@@ -4055,7 +4054,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>9.93531cm</Top>
+        <Top>10.7117cm</Top>
         <Height>0.6cm</Height>
         <Width>22.85526cm</Width>
         <ZIndex>4</ZIndex>
@@ -4089,7 +4088,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>10.92337cm</Top>
+        <Top>11.69976cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
@@ -4098,7 +4097,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -5226,7 +5225,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>22.27622cm</Top>
+        <Top>23.05261cm</Top>
         <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>15.8873cm</Width>
@@ -5278,7 +5277,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>20.72344cm</Top>
+        <Top>21.49983cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
@@ -5287,7 +5286,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -5883,7 +5882,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>35.16282cm</Top>
+        <Top>35.93921cm</Top>
         <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>10.06708cm</Width>
@@ -5934,7 +5933,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>34.38643cm</Top>
+        <Top>35.16282cm</Top>
         <Height>0.6cm</Height>
         <Width>22.85526cm</Width>
         <ZIndex>9</ZIndex>
@@ -5968,7 +5967,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>1.5192cm</Top>
+        <Top>2.29559cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
@@ -5977,7 +5976,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -6273,7 +6272,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -7648,7 +7646,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>6.34446cm</Top>
+        <Top>7.12085cm</Top>
         <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>22.23667cm</Width>
@@ -7700,7 +7698,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>5.56807cm</Top>
+        <Top>6.34446cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
@@ -7709,7 +7707,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -7735,7 +7733,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>15.17314cm</Top>
+        <Top>15.94953cm</Top>
         <Left>0.48773cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
@@ -7744,7 +7742,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -7769,7 +7767,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>19.48585cm</Top>
+        <Top>20.26224cm</Top>
         <Height>0.6cm</Height>
         <Width>22.85526cm</Width>
         <ZIndex>14</ZIndex>
@@ -7803,7 +7801,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>21.49983cm</Top>
+        <Top>22.27622cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
@@ -7812,7 +7810,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -8940,8 +8938,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>26.52887cm</Top>
-        <Left>0.48773cm</Left>
+        <Top>27.30526cm</Top>
+        <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>15.8873cm</Width>
         <ZIndex>16</ZIndex>
@@ -8992,8 +8990,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>25.75248cm</Top>
-        <Left>0.48773cm</Left>
+        <Top>26.52887cm</Top>
+        <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
         <ZIndex>17</ZIndex>
@@ -9001,7 +8999,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -10129,8 +10127,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>30.80519cm</Top>
-        <Left>0.48773cm</Left>
+        <Top>31.58158cm</Top>
+        <Left>0.61859cm</Left>
         <Height>3cm</Height>
         <Width>15.8873cm</Width>
         <ZIndex>18</ZIndex>
@@ -10181,8 +10179,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>30.0288cm</Top>
-        <Left>0.48773cm</Left>
+        <Top>30.80519cm</Top>
+        <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>22.23667cm</Width>
         <ZIndex>19</ZIndex>
@@ -10190,7 +10188,131 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>DarkGreen</BackgroundColor>
+          <BackgroundColor>SeaGreen</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Fields!fecha_inicial.Value, "dd/MM/yyyy")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.52845cm</Top>
+        <Left>3.52306cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.29375cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Fecha inicial:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>0.52845cm</Top>
+        <Left>0.48773cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.85894cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Fecha final:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.52845cm</Top>
+        <Left>7.4477cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.42063cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Fields!fecha_final.Value, "dd/MM/yyyy")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>0.52845cm</Top>
+        <Left>10.04471cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.4525cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -10229,7 +10351,6 @@
           </Paragraphs>
           <rd:DefaultName>Textbox121</rd:DefaultName>
           <Top>0.4049cm</Top>
-          <Left>0cm</Left>
           <Height>1.22749cm</Height>
           <Width>23.21213cm</Width>
           <Style>
@@ -10249,6 +10370,53 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>1.32292cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Fuente:</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> Base de Datos Institucional</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.30854cm</Top>
+          <Left>0.61859cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.81271cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -10265,7 +10433,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>4d56392c-3f63-41b4-863c-73c3476e83d5</rd:DataSourceID>
+      <rd:DataSourceID>3c1f9114-ace1-40bd-827e-34c8181cfa97</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -10390,6 +10558,14 @@
         <Field Name="unidades_finales_proceso_lactancia">
           <DataField>unidades_finales_proceso_lactancia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="fecha_inicial">
+          <DataField>fecha_inicial</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="fecha_final">
+          <DataField>fecha_final</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

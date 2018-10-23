@@ -20,6 +20,11 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Implementation
         {
             _PersonaDA.RegisterPersona(persona);
         }
+
+        public void ResetAsistencia()
+        {
+            _PersonaDA.ResetAsistencia();
+        }
         #endregion
 
 

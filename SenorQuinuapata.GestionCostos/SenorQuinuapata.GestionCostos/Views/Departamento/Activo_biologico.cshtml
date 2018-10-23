@@ -22,7 +22,7 @@
             <td>DEPRECIACION DIARIA</td>
             <td>ESTADO</td>
             <td>VALOR NETO</td>
-            <td>ENVIAR</td>
+            <td>ACCION</td>
         </tr>
     </thead>
     <tfoot>
@@ -42,22 +42,64 @@
             <td>DEPRECIACION DIARIA</td>
             <td>ESTADO</td>
             <td>VALOR NETO</td>
-            <td>ENVIAR</td>
+            <td>ACCION</td>
         </tr>
     </tfoot>
 
     <tbody>
         @foreach (var item in Model.ListActivoBiologico)
         {
-        <tr>
+        <tr @((item.estado).Equals("Activo")? "class=text-success":"class=text-danger" )>
+
             <td class="text-center">@item.codigo</td>
             <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_ingreso)</td>
             <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_salida)</td>
             <td class="text-center">@item.ubicacion</td>
             <td class="text-center">@item.genero</td>
-            <td class="text-center">@item.numero_parto</td>
-            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</td>
-            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</td>
+            <td class="text-center">
+
+                <input type="text" name="name" value="@item.numero_parto" id="numero_parto_@item.id" onkeyup="UpdateParto(@item.id)"/>
+
+            </td>
+            @*<td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</td>
+            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</td>*@
+
+            <td class="text-center">
+                @if (item.fecha_inicio_empadre == null)
+                {
+
+                    <input type="date" class="" id="id_inicio_@item.id" />
+
+                    <a class="glyphicon glyphicon-check" href="#" onclick="UpdateFecha('Inicio',@item.id)">Asignar</a>
+
+
+                }
+                @if (item.fecha_inicio_empadre != null)
+                {
+                    <p>@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</p>
+                }
+
+
+            </td>
+            <td class="text-center">
+                @if (item.fecha_fin_empadre == null)
+                {
+
+                    <input type="date" class="" id="id_fin_@item.id" />
+
+                    <a class="glyphicon glyphicon-check" href="#" onclick="UpdateFecha('Fin',@item.id)">Asignar</a>
+
+
+                }
+                @if (item.fecha_fin_empadre != null)
+                {
+                    <p>@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</p>
+                }
+            </td>
+
+
+
+
             <td>@item.raza</td>
             <td class="text-right">S/ @item.valor_inicial</td>
             <td class="text-center">@item.tasa_depreciacion %</td>
@@ -66,14 +108,124 @@
             <td>@item.estado</td>
             <td class="text-right">S/ @item.valor_neto</td>
             <td class="text-center">
-                <a href="#" class="text-primary">Descarte</a>
-                <br />
-                -
-                <br />
-                <a href="#" class="text-danger">Mortalidad</a>
+
+                @if (item.estado == "Activo")
+                {
+                    <a href="#" class="text-primary" onclick="disabledActivo(@item.id)">Inhabilitar</a>
+                    @*<label>-</label>*@<br />
+                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id)">Eliminar</a>
+                }
+                @if (item.estado == "Inactivo")
+                {
+
+                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id)">Eliminar</a>
+                }
+
             </td>
-            
+
         </tr>
         }
     </tbody>
 </table>
+
+
+
+@section scripts{
+<script>
+    function UpdateFecha(campo, id) {
+        var fecha;
+
+        if (campo == 'Inicio') {
+
+            fecha = $("#id_inicio_" + id).val();
+        }
+        else if (campo == 'Fin') {
+            fecha = $("#id_fin_" + id).val();
+        }
+        else {
+            fecha = null;
+        }
+
+        $.ajax({
+            method:'get',
+            url: '/Departamento/UpdateFecha/?fecha=' + fecha + '&&campo='+campo+'&&id=' + id,
+            type: 'json',
+            success: function (data) {
+                if (data == 'success') {
+                    location.reload();
+                }
+                else if (data == 'error') {
+                    alert('Por favor elija una fecha.');
+                }
+                else {
+                    alert(data);
+                }
+               
+            }
+            
+
+        })
+
+
+    }
+
+
+    function UpdateParto(id) {
+        var cantidad = $("#numero_parto_"+id).val();
+     
+
+        $.ajax({
+            method: 'get',
+            url: '/Departamento/UpdateParto/?cantidad=' + cantidad + '&&id=' + id,
+            type: 'json',
+            success: function (data) {
+                if (data == 'error') {
+                    alert('Solo números positivos');
+                }               
+
+            }
+
+
+        })
+    }
+
+    function disabledActivo(id) {
+        $.ajax({
+            method: 'get',
+            url: '/Departamento/DisableActivo/'+id,
+            type: 'json',
+            success: function (data) {
+                if (data == 'success') {
+                    alert("El activo ha sido inhabilitado con éxito.")
+                    location.reload();
+                } else {
+                    alert("Ha ocurrido un error en la operación, por favor inténtelo nuevamente.")
+                }
+
+            }
+
+        })
+    }
+    function deleteActivo(id) {
+        $.ajax({
+            method: 'get',
+            url: '/Departamento/DeleteActivo/' + id,
+            type: 'json',
+            success: function (data) {
+                if (data == 'success') {
+                    alert("El activo ha sido eliminado con éxito.")
+                    location.reload();
+                } else {
+                    alert("Ha ocurrido un error en la operación, por favor inténtelo nuevamente.")
+                }
+
+            }
+
+        })
+    }
+        
+       
+
+</script>    
+    
+}

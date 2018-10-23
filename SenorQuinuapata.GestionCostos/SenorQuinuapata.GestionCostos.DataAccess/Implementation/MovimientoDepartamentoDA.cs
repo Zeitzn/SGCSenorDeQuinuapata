@@ -26,7 +26,13 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 using (var ctx= new bd_sgcquinuapataEntities())
                 {
 
+
                     result = ctx.Database.SqlQuery<ActivoBiologicoResponse>("sp_activo_biologico_list").ToList();
+
+                    if (result==null)
+                    {
+                        return result;
+                    }
 
                 }
                 return result;
@@ -204,6 +210,95 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
 
         #region transaccional
 
+        public void UpdateFecha(DateTime fecha, string campo, int id)
+        {
+            try
+            {
+                
+
+                using (db)
+                {
+                    var result = db.Activo_biologico.Where(x => x.id == id).FirstOrDefault();
+
+                    if (campo=="Fin")
+                    {
+                        result.fecha_fin_empadre = fecha;
+                    }
+                    else
+                    {
+                        result.fecha_inicio_empadre = fecha;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+               string msg=e.Message;
+            }
+        }
+
+        public void DisableActivo(int id)
+        {
+            try
+            {
+
+
+                using (db)
+                {
+                    var result = db.Activo_biologico.Where(x => x.id == id).FirstOrDefault();
+
+                    result.estado = "Inactivo";
+
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                string msg = e.Message;
+            }
+        }
+
+        public void DeleteActivo(int id)
+        {
+            try
+            {
+
+
+                using (db)
+                {
+                    var result = db.Activo_biologico.Where(x => x.id == id).FirstOrDefault();
+
+                    db.Activo_biologico.Remove(result);
+
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                string msg = e.Message;
+            }
+        }
+
+        public void UpdateParto(int cantidad, int id)
+        {
+            try
+            {
+
+
+                using (db)
+                {
+                    var result = db.Activo_biologico.Where(x => x.id == id).FirstOrDefault();
+
+                    result.numero_parto = cantidad;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                string msg = e.Message;
+            }
+        }
+
         public void UpdateDescarte(int id_movimiento, int cantidad)
         {
             try
@@ -241,9 +336,9 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                         depreciacion_acumulada=activo.depreciacion_acumulada,
                         depreciacion_diaria=activo.depreciacion_diaria,
                         estado=activo.estado,
-                        fecha_fin_empadre=activo.fecha_fin_empadre,
+                        //fecha_fin_empadre=activo.fecha_fin_empadre,
                         fecha_ingreso=activo.fecha_ingreso,
-                        fecha_inicio_empadre=activo.fecha_inicio_empadre,
+                        //fecha_inicio_empadre=activo.fecha_inicio_empadre,
                         fecha_salida=activo.fecha_salida,
                         genero=activo.genero,
                         numero_parto=activo.numero_parto,

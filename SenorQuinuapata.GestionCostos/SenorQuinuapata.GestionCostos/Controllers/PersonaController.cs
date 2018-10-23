@@ -56,6 +56,14 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             return RedirectToAction("Asistencia");
         }
 
+        
+        public ActionResult ResetAsistencia()
+        {
+            _PersonaBL.ResetAsistencia();
+
+            return RedirectToAction("Asistencia");
+        }
+
         #endregion
 
         #region no transaccional

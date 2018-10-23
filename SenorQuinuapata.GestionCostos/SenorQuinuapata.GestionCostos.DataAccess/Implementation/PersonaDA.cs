@@ -93,6 +93,31 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                 db.Dispose();
             }
         }
+
+        public void ResetAsistencia()
+        {
+            try
+            {
+                
+                using (db)
+                {
+                   var persona = db.Persona.ToList();
+
+                    foreach (var item in persona)
+                    {
+                        item.asistencia = "F";
+                        
+                    }
+
+                    db.SaveChanges();
+                    
+                }
+            }
+            catch (Exception e)
+            {
+                string error = e.Message;
+            }
+        }
         #endregion
 
         #region no transaccional

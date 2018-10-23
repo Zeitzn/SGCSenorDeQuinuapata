@@ -49,6 +49,7 @@
 
 <hr />
 <p class="text-success">Fecha de Hoy: @DateTime.Now.ToShortDateString()</p>
+<label class="text-primary">Reiniciar Asistencia </label><button class="glyphicon glyphicon-refresh btn btn-success btn-sm" onclick="resetAsistencia()"></button>
 <table class="table table-bordered table-hover small" id="table">
     <thead>
         <tr>
@@ -89,3 +90,31 @@
         }
     </tbody>
 </table>
+
+
+@section scripts{
+
+<script>
+
+    function resetAsistencia() {
+        
+        var r = confirm("Atención! este función solo debe ser utilizada una vez al iniciar la jornada laboral para el control de asistencia respectivo, de ser ese el caso dar click en 'Aceptar', de lo contrario 'Cancelar'");
+
+        if (r == true) {
+            $.ajax({
+
+                method: 'get',
+                url: '/Persona/ResetAsistencia',
+                success: function () {
+                    location.reload();
+                }
+
+            })
+        } else {
+            return false;
+        }
+    }
+
+</script>
+    
+}

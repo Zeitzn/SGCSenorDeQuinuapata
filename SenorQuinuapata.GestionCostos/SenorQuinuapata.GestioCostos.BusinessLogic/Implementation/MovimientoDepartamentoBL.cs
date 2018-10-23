@@ -61,8 +61,8 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
                 valor_neto = 25,
                 fecha_ingreso = fecha_actual,
                 fecha_salida = fecha_actual,
-                fecha_fin_empadre = fecha_actual,
-                fecha_inicio_empadre = fecha_actual,
+                //fecha_fin_empadre = fecha_actual,
+                //fecha_inicio_empadre = fecha_actual,
                 genero = genero,
                 observacion = ""
                 
@@ -110,7 +110,26 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
             _MovimientoDepartamentoDA.RegisterMovimientoDepartamento(request);
         }
 
-       
+       public void UpdateFecha(DateTime fecha, string campo, int id)
+        {
+            _MovimientoDepartamentoDA.UpdateFecha(fecha,campo, id);
+        }
+
+        public void UpdateParto(int cantidad, int id)
+        {
+            _MovimientoDepartamentoDA.UpdateParto(cantidad, id);
+        }
+
+        public void DisableActivo(int id)
+        {
+            _MovimientoDepartamentoDA.DisableActivo(id);
+        }
+
+        public void DeleteActivo(int id)
+        {
+            _MovimientoDepartamentoDA.DeleteActivo(id);
+        }
+
 
         public void UpdateMovimientoDepartamento(int id,int? cantidad,int? salida)
         {

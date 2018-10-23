@@ -27,5 +27,14 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Interface
         void RegisterActivoBiologico(int id_movimiento, string genero, int cantidad,string ubicacion,string raza);
 
         IEnumerable<ActivoBiologicoResponse> ListActivoBiologico();
+
+        void UpdateFecha(DateTime fecha, string campo, int id);
+
+        void UpdateParto(int cantidad, int id);
+
+        void DisableActivo(int id);
+
+        void DeleteActivo(int id);
+
     }
 }

@@ -1348,7 +1348,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.4448cm</Top>
+        <Top>2.29147cm</Top>
         <Left>0.61859cm</Left>
         <Height>4.8cm</Height>
         <Width>13.85cm</Width>
@@ -1398,7 +1398,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>0.66841cm</Top>
+        <Top>1.51508cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>15.8873cm</Width>
@@ -2754,7 +2754,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>7.48584cm</Top>
+        <Top>8.33251cm</Top>
         <Left>0.61859cm</Left>
         <Height>3.6cm</Height>
         <Width>15.8873cm</Width>
@@ -2805,7 +2805,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox102</rd:DefaultName>
-        <Top>6.70945cm</Top>
+        <Top>7.55612cm</Top>
         <Left>0.61859cm</Left>
         <Height>0.6cm</Height>
         <Width>15.8873cm</Width>
@@ -2821,14 +2821,138 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Fields!fecha_inicial.Value, "dd/MM/yyyy")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.47962cm</Top>
+        <Left>3.60866cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.29375cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Fecha inicial:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>0.47962cm</Top>
+        <Left>0.57333cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.85894cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Fecha final:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.47962cm</Top>
+        <Left>7.5333cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.42063cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Fields!fecha_final.Value, "dd/MM/yyyy")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>0.47962cm</Top>
+        <Left>10.13031cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.4525cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.94721in</Height>
+    <Height>4.88471in</Height>
     <Style />
   </Body>
-  <Width>7.61817in</Width>
+  <Width>6.78484in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>1.95792cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2839,9 +2963,9 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>REPORTE</Value>
+                  <Value>FLUJO DE UNIDADES EN EL DEPARTAMENTO DE RECRÍA</Value>
                   <Style>
-                    <FontSize>18pt</FontSize>
+                    <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -2852,9 +2976,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox121</rd:DefaultName>
-          <Top>0.76888cm</Top>
+          <Top>0.34555cm</Top>
           <Height>1.14653cm</Height>
-          <Width>19.35015cm</Width>
+          <Width>17.23349cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2872,6 +2996,53 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>1.21708cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Fuente:</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> Base de Datos Institucional</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.17639cm</Top>
+          <Left>0.61859cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.81271cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -2888,7 +3059,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fa0c97d6-ec1f-48ad-9dbe-bfe75881393f</rd:DataSourceID>
+      <rd:DataSourceID>525b4170-65a2-4c19-b9b8-d089aafe9b99</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -2925,6 +3096,14 @@
         <Field Name="q_equivalente">
           <DataField>q_equivalente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="fecha_inicial">
+          <DataField>fecha_inicial</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="fecha_final">
+          <DataField>fecha_final</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

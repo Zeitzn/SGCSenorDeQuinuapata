@@ -23,6 +23,22 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="consumo_inicial_md_lactancia" DataSetColumn="consumo_inicial_md_lactancia" />
+              <Mapping SourceColumn="consumo_inicial_mod_lactancia" DataSetColumn="consumo_inicial_mod_lactancia" />
+              <Mapping SourceColumn="consumo_inicial_moi_lactancia" DataSetColumn="consumo_inicial_moi_lactancia" />
+              <Mapping SourceColumn="consumo_inicial_mi_lactancia" DataSetColumn="consumo_inicial_mi_lactancia" />
+              <Mapping SourceColumn="costo_agregado_md_lactancia" DataSetColumn="costo_agregado_md_lactancia" />
+              <Mapping SourceColumn="costo_agregado_mod_lactancia" DataSetColumn="costo_agregado_mod_lactancia" />
+              <Mapping SourceColumn="costo_agregado_moi_lactancia" DataSetColumn="costo_agregado_moi_lactancia" />
+              <Mapping SourceColumn="costo_agregado_mi_lactancia" DataSetColumn="costo_agregado_mi_lactancia" />
+              <Mapping SourceColumn="consumo_inicial_md_recria" DataSetColumn="consumo_inicial_md_recria" />
+              <Mapping SourceColumn="consumo_inicial_mod_recria" DataSetColumn="consumo_inicial_mod_recria" />
+              <Mapping SourceColumn="consumo_inicial_moi_recria" DataSetColumn="consumo_inicial_moi_recria" />
+              <Mapping SourceColumn="consumo_inicial_mi_recria" DataSetColumn="consumo_inicial_mi_recria" />
+              <Mapping SourceColumn="costo_agregado_md_recria" DataSetColumn="costo_agregado_md_recria" />
+              <Mapping SourceColumn="costo_agregado_mod_recria" DataSetColumn="costo_agregado_mod_recria" />
+              <Mapping SourceColumn="costo_agregado_moi_recria" DataSetColumn="costo_agregado_moi_recria" />
+              <Mapping SourceColumn="costo_agregado_mi_recria" DataSetColumn="costo_agregado_mi_recria" />
               <Mapping SourceColumn="consumo_inicial_md_engorde" DataSetColumn="consumo_inicial_md_engorde" />
               <Mapping SourceColumn="consumo_inicial_mod_engorde" DataSetColumn="consumo_inicial_mod_engorde" />
               <Mapping SourceColumn="consumo_inicial_moi_engorde" DataSetColumn="consumo_inicial_moi_engorde" />
@@ -44,11 +60,24 @@
               <Mapping SourceColumn="total_flujo_engorde" DataSetColumn="total_flujo_engorde" />
               <Mapping SourceColumn="total_flujo_descarte" DataSetColumn="total_flujo_descarte" />
               <Mapping SourceColumn="q_equivalente" DataSetColumn="q_equivalente" />
+              <Mapping SourceColumn="q_equivalente_lactancia" DataSetColumn="q_equivalente_lactancia" />
+              <Mapping SourceColumn="q_equivalente_recria" DataSetColumn="q_equivalente_recria" />
+              <Mapping SourceColumn="q_equivalente_engorde" DataSetColumn="q_equivalente_engorde" />
+              <Mapping SourceColumn="unidades_recibidas_lactancia" DataSetColumn="unidades_recibidas_lactancia" />
+              <Mapping SourceColumn="unidades_recibidas_recria" DataSetColumn="unidades_recibidas_recria" />
               <Mapping SourceColumn="unidades_recibidas_engorde" DataSetColumn="unidades_recibidas_engorde" />
-              <Mapping SourceColumn="unidades_transferidas_ventas" DataSetColumn="unidades_transferidas_ventas" />
               <Mapping SourceColumn="unidades_recibidas_activo" DataSetColumn="unidades_recibidas_activo" />
+              <Mapping SourceColumn="unidades_transferidas_ventas" DataSetColumn="unidades_transferidas_ventas" />
               <Mapping SourceColumn="unidades_transferidas_mortalidad" DataSetColumn="unidades_transferidas_mortalidad" />
+              <Mapping SourceColumn="unidades_transferidas_mortalidad_lactancia" DataSetColumn="unidades_transferidas_mortalidad_lactancia" />
+              <Mapping SourceColumn="unidades_transferidas_mortalidad_recria" DataSetColumn="unidades_transferidas_mortalidad_recria" />
+              <Mapping SourceColumn="unidades_transferidas_mortalidad_engorde" DataSetColumn="unidades_transferidas_mortalidad_engorde" />
               <Mapping SourceColumn="unidades_finales_proceso" DataSetColumn="unidades_finales_proceso" />
+              <Mapping SourceColumn="unidades_finales_proceso_lactancia" DataSetColumn="unidades_finales_proceso_lactancia" />
+              <Mapping SourceColumn="unidades_finales_proceso_recria" DataSetColumn="unidades_finales_proceso_recria" />
+              <Mapping SourceColumn="unidades_finales_proceso_engorde" DataSetColumn="unidades_finales_proceso_engorde" />
+              <Mapping SourceColumn="fecha_inicial" DataSetColumn="fecha_inicial" />
+              <Mapping SourceColumn="fecha_final" DataSetColumn="fecha_final" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -111,6 +140,8 @@
               <Mapping SourceColumn="unidades_finales_proceso" DataSetColumn="unidades_finales_proceso" />
               <Mapping SourceColumn="unidades_finales_proceso_lactancia" DataSetColumn="unidades_finales_proceso_lactancia" />
               <Mapping SourceColumn="unidades_finales_proceso_recria" DataSetColumn="unidades_finales_proceso_recria" />
+              <Mapping SourceColumn="fecha_inicial" DataSetColumn="fecha_inicial" />
+              <Mapping SourceColumn="fecha_final" DataSetColumn="fecha_final" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -146,6 +177,8 @@
               <Mapping SourceColumn="unidades_transferidas_recria" DataSetColumn="unidades_transferidas_recria" />
               <Mapping SourceColumn="unidades_transferidas_mortalidad" DataSetColumn="unidades_transferidas_mortalidad" />
               <Mapping SourceColumn="unidades_finales_proceso" DataSetColumn="unidades_finales_proceso" />
+              <Mapping SourceColumn="fecha_inicial" DataSetColumn="fecha_inicial" />
+              <Mapping SourceColumn="fecha_final" DataSetColumn="fecha_final" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -194,6 +227,8 @@
               <Mapping SourceColumn="unidades_transferidas_mortalidad_lactancia" DataSetColumn="unidades_transferidas_mortalidad_lactancia" />
               <Mapping SourceColumn="unidades_finales_proceso" DataSetColumn="unidades_finales_proceso" />
               <Mapping SourceColumn="unidades_finales_proceso_lactancia" DataSetColumn="unidades_finales_proceso_lactancia" />
+              <Mapping SourceColumn="fecha_inicial" DataSetColumn="fecha_inicial" />
+              <Mapping SourceColumn="fecha_final" DataSetColumn="fecha_final" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -208,6 +243,22 @@
         <xs:element name="sp_costo_unitario_departamento_descarte_list" msprop:Generator_TableClassName="sp_costo_unitario_departamento_descarte_listDataTable" msprop:Generator_TableVarName="tablesp_costo_unitario_departamento_descarte_list" msprop:Generator_TablePropName="sp_costo_unitario_departamento_descarte_list" msprop:Generator_RowDeletingName="sp_costo_unitario_departamento_descarte_listRowDeleting" msprop:Generator_RowChangingName="sp_costo_unitario_departamento_descarte_listRowChanging" msprop:Generator_RowEvHandlerName="sp_costo_unitario_departamento_descarte_listRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_costo_unitario_departamento_descarte_listRowDeleted" msprop:Generator_UserTableName="sp_costo_unitario_departamento_descarte_list" msprop:Generator_RowChangedName="sp_costo_unitario_departamento_descarte_listRowChanged" msprop:Generator_RowEvArgName="sp_costo_unitario_departamento_descarte_listRowChangeEvent" msprop:Generator_RowClassName="sp_costo_unitario_departamento_descarte_listRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="consumo_inicial_md_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_md_lactancia" msprop:Generator_ColumnPropNameInRow="consumo_inicial_md_lactancia" msprop:Generator_ColumnPropNameInTable="consumo_inicial_md_lactanciaColumn" msprop:Generator_UserColumnName="consumo_inicial_md_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_mod_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_mod_lactancia" msprop:Generator_ColumnPropNameInRow="consumo_inicial_mod_lactancia" msprop:Generator_ColumnPropNameInTable="consumo_inicial_mod_lactanciaColumn" msprop:Generator_UserColumnName="consumo_inicial_mod_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_moi_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_moi_lactancia" msprop:Generator_ColumnPropNameInRow="consumo_inicial_moi_lactancia" msprop:Generator_ColumnPropNameInTable="consumo_inicial_moi_lactanciaColumn" msprop:Generator_UserColumnName="consumo_inicial_moi_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_mi_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_mi_lactancia" msprop:Generator_ColumnPropNameInRow="consumo_inicial_mi_lactancia" msprop:Generator_ColumnPropNameInTable="consumo_inicial_mi_lactanciaColumn" msprop:Generator_UserColumnName="consumo_inicial_mi_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_md_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_md_lactancia" msprop:Generator_ColumnPropNameInRow="costo_agregado_md_lactancia" msprop:Generator_ColumnPropNameInTable="costo_agregado_md_lactanciaColumn" msprop:Generator_UserColumnName="costo_agregado_md_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_mod_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_mod_lactancia" msprop:Generator_ColumnPropNameInRow="costo_agregado_mod_lactancia" msprop:Generator_ColumnPropNameInTable="costo_agregado_mod_lactanciaColumn" msprop:Generator_UserColumnName="costo_agregado_mod_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_moi_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_moi_lactancia" msprop:Generator_ColumnPropNameInRow="costo_agregado_moi_lactancia" msprop:Generator_ColumnPropNameInTable="costo_agregado_moi_lactanciaColumn" msprop:Generator_UserColumnName="costo_agregado_moi_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_mi_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_mi_lactancia" msprop:Generator_ColumnPropNameInRow="costo_agregado_mi_lactancia" msprop:Generator_ColumnPropNameInTable="costo_agregado_mi_lactanciaColumn" msprop:Generator_UserColumnName="costo_agregado_mi_lactancia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_md_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_md_recria" msprop:Generator_ColumnPropNameInRow="consumo_inicial_md_recria" msprop:Generator_ColumnPropNameInTable="consumo_inicial_md_recriaColumn" msprop:Generator_UserColumnName="consumo_inicial_md_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_mod_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_mod_recria" msprop:Generator_ColumnPropNameInRow="consumo_inicial_mod_recria" msprop:Generator_ColumnPropNameInTable="consumo_inicial_mod_recriaColumn" msprop:Generator_UserColumnName="consumo_inicial_mod_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_moi_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_moi_recria" msprop:Generator_ColumnPropNameInRow="consumo_inicial_moi_recria" msprop:Generator_ColumnPropNameInTable="consumo_inicial_moi_recriaColumn" msprop:Generator_UserColumnName="consumo_inicial_moi_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="consumo_inicial_mi_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_mi_recria" msprop:Generator_ColumnPropNameInRow="consumo_inicial_mi_recria" msprop:Generator_ColumnPropNameInTable="consumo_inicial_mi_recriaColumn" msprop:Generator_UserColumnName="consumo_inicial_mi_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_md_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_md_recria" msprop:Generator_ColumnPropNameInRow="costo_agregado_md_recria" msprop:Generator_ColumnPropNameInTable="costo_agregado_md_recriaColumn" msprop:Generator_UserColumnName="costo_agregado_md_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_mod_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_mod_recria" msprop:Generator_ColumnPropNameInRow="costo_agregado_mod_recria" msprop:Generator_ColumnPropNameInTable="costo_agregado_mod_recriaColumn" msprop:Generator_UserColumnName="costo_agregado_mod_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_moi_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_moi_recria" msprop:Generator_ColumnPropNameInRow="costo_agregado_moi_recria" msprop:Generator_ColumnPropNameInTable="costo_agregado_moi_recriaColumn" msprop:Generator_UserColumnName="costo_agregado_moi_recria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_agregado_mi_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncosto_agregado_mi_recria" msprop:Generator_ColumnPropNameInRow="costo_agregado_mi_recria" msprop:Generator_ColumnPropNameInTable="costo_agregado_mi_recriaColumn" msprop:Generator_UserColumnName="costo_agregado_mi_recria" type="xs:decimal" minOccurs="0" />
               <xs:element name="consumo_inicial_md_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_md_engorde" msprop:Generator_ColumnPropNameInRow="consumo_inicial_md_engorde" msprop:Generator_ColumnPropNameInTable="consumo_inicial_md_engordeColumn" msprop:Generator_UserColumnName="consumo_inicial_md_engorde" type="xs:decimal" minOccurs="0" />
               <xs:element name="consumo_inicial_mod_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_mod_engorde" msprop:Generator_ColumnPropNameInRow="consumo_inicial_mod_engorde" msprop:Generator_ColumnPropNameInTable="consumo_inicial_mod_engordeColumn" msprop:Generator_UserColumnName="consumo_inicial_mod_engorde" type="xs:decimal" minOccurs="0" />
               <xs:element name="consumo_inicial_moi_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconsumo_inicial_moi_engorde" msprop:Generator_ColumnPropNameInRow="consumo_inicial_moi_engorde" msprop:Generator_ColumnPropNameInTable="consumo_inicial_moi_engordeColumn" msprop:Generator_UserColumnName="consumo_inicial_moi_engorde" type="xs:decimal" minOccurs="0" />
@@ -229,11 +280,24 @@
               <xs:element name="total_flujo_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_flujo_engorde" msprop:Generator_ColumnPropNameInRow="total_flujo_engorde" msprop:Generator_ColumnPropNameInTable="total_flujo_engordeColumn" msprop:Generator_UserColumnName="total_flujo_engorde" type="xs:int" minOccurs="0" />
               <xs:element name="total_flujo_descarte" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_flujo_descarte" msprop:Generator_ColumnPropNameInRow="total_flujo_descarte" msprop:Generator_ColumnPropNameInTable="total_flujo_descarteColumn" msprop:Generator_UserColumnName="total_flujo_descarte" type="xs:int" minOccurs="0" />
               <xs:element name="q_equivalente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnq_equivalente" msprop:Generator_ColumnPropNameInRow="q_equivalente" msprop:Generator_ColumnPropNameInTable="q_equivalenteColumn" msprop:Generator_UserColumnName="q_equivalente" type="xs:int" minOccurs="0" />
+              <xs:element name="q_equivalente_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnq_equivalente_lactancia" msprop:Generator_ColumnPropNameInRow="q_equivalente_lactancia" msprop:Generator_ColumnPropNameInTable="q_equivalente_lactanciaColumn" msprop:Generator_UserColumnName="q_equivalente_lactancia" type="xs:int" minOccurs="0" />
+              <xs:element name="q_equivalente_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnq_equivalente_recria" msprop:Generator_ColumnPropNameInRow="q_equivalente_recria" msprop:Generator_ColumnPropNameInTable="q_equivalente_recriaColumn" msprop:Generator_UserColumnName="q_equivalente_recria" type="xs:int" minOccurs="0" />
+              <xs:element name="q_equivalente_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnq_equivalente_engorde" msprop:Generator_ColumnPropNameInRow="q_equivalente_engorde" msprop:Generator_ColumnPropNameInTable="q_equivalente_engordeColumn" msprop:Generator_UserColumnName="q_equivalente_engorde" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_recibidas_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_recibidas_lactancia" msprop:Generator_ColumnPropNameInRow="unidades_recibidas_lactancia" msprop:Generator_ColumnPropNameInTable="unidades_recibidas_lactanciaColumn" msprop:Generator_UserColumnName="unidades_recibidas_lactancia" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_recibidas_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_recibidas_recria" msprop:Generator_ColumnPropNameInRow="unidades_recibidas_recria" msprop:Generator_ColumnPropNameInTable="unidades_recibidas_recriaColumn" msprop:Generator_UserColumnName="unidades_recibidas_recria" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_recibidas_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_recibidas_engorde" msprop:Generator_ColumnPropNameInRow="unidades_recibidas_engorde" msprop:Generator_ColumnPropNameInTable="unidades_recibidas_engordeColumn" msprop:Generator_UserColumnName="unidades_recibidas_engorde" type="xs:int" minOccurs="0" />
-              <xs:element name="unidades_transferidas_ventas" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_ventas" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_ventas" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_ventasColumn" msprop:Generator_UserColumnName="unidades_transferidas_ventas" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_recibidas_activo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_recibidas_activo" msprop:Generator_ColumnPropNameInRow="unidades_recibidas_activo" msprop:Generator_ColumnPropNameInTable="unidades_recibidas_activoColumn" msprop:Generator_UserColumnName="unidades_recibidas_activo" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_transferidas_ventas" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_ventas" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_ventas" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_ventasColumn" msprop:Generator_UserColumnName="unidades_transferidas_ventas" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_transferidas_mortalidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_mortalidad" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_mortalidad" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_mortalidadColumn" msprop:Generator_UserColumnName="unidades_transferidas_mortalidad" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_transferidas_mortalidad_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_mortalidad_lactancia" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_mortalidad_lactancia" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_mortalidad_lactanciaColumn" msprop:Generator_UserColumnName="unidades_transferidas_mortalidad_lactancia" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_transferidas_mortalidad_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_mortalidad_recria" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_mortalidad_recria" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_mortalidad_recriaColumn" msprop:Generator_UserColumnName="unidades_transferidas_mortalidad_recria" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_transferidas_mortalidad_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_mortalidad_engorde" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_mortalidad_engorde" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_mortalidad_engordeColumn" msprop:Generator_UserColumnName="unidades_transferidas_mortalidad_engorde" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_finales_proceso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso" msprop:Generator_ColumnPropNameInTable="unidades_finales_procesoColumn" msprop:Generator_UserColumnName="unidades_finales_proceso" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_finales_proceso_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso_lactancia" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso_lactancia" msprop:Generator_ColumnPropNameInTable="unidades_finales_proceso_lactanciaColumn" msprop:Generator_UserColumnName="unidades_finales_proceso_lactancia" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_finales_proceso_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso_recria" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso_recria" msprop:Generator_ColumnPropNameInTable="unidades_finales_proceso_recriaColumn" msprop:Generator_UserColumnName="unidades_finales_proceso_recria" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades_finales_proceso_engorde" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso_engorde" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso_engorde" msprop:Generator_ColumnPropNameInTable="unidades_finales_proceso_engordeColumn" msprop:Generator_UserColumnName="unidades_finales_proceso_engorde" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_inicial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_inicial" msprop:Generator_ColumnPropNameInRow="fecha_inicial" msprop:Generator_ColumnPropNameInTable="fecha_inicialColumn" msprop:Generator_UserColumnName="fecha_inicial" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_final" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_final" msprop:Generator_ColumnPropNameInRow="fecha_final" msprop:Generator_ColumnPropNameInTable="fecha_finalColumn" msprop:Generator_UserColumnName="fecha_final" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -283,6 +347,8 @@
               <xs:element name="unidades_finales_proceso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso" msprop:Generator_ColumnPropNameInTable="unidades_finales_procesoColumn" msprop:Generator_UserColumnName="unidades_finales_proceso" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_finales_proceso_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso_lactancia" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso_lactancia" msprop:Generator_ColumnPropNameInTable="unidades_finales_proceso_lactanciaColumn" msprop:Generator_UserColumnName="unidades_finales_proceso_lactancia" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_finales_proceso_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso_recria" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso_recria" msprop:Generator_ColumnPropNameInTable="unidades_finales_proceso_recriaColumn" msprop:Generator_UserColumnName="unidades_finales_proceso_recria" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_inicial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_inicial" msprop:Generator_ColumnPropNameInRow="fecha_inicial" msprop:Generator_ColumnPropNameInTable="fecha_inicialColumn" msprop:Generator_UserColumnName="fecha_inicial" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_final" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_final" msprop:Generator_ColumnPropNameInRow="fecha_final" msprop:Generator_ColumnPropNameInTable="fecha_finalColumn" msprop:Generator_UserColumnName="fecha_final" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -305,6 +371,8 @@
               <xs:element name="unidades_transferidas_recria" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_recria" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_recria" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_recriaColumn" msprop:Generator_UserColumnName="unidades_transferidas_recria" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_transferidas_mortalidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_mortalidad" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_mortalidad" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_mortalidadColumn" msprop:Generator_UserColumnName="unidades_transferidas_mortalidad" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_finales_proceso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso" msprop:Generator_ColumnPropNameInTable="unidades_finales_procesoColumn" msprop:Generator_UserColumnName="unidades_finales_proceso" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_inicial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_inicial" msprop:Generator_ColumnPropNameInRow="fecha_inicial" msprop:Generator_ColumnPropNameInTable="fecha_inicialColumn" msprop:Generator_UserColumnName="fecha_inicial" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_final" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_final" msprop:Generator_ColumnPropNameInRow="fecha_final" msprop:Generator_ColumnPropNameInTable="fecha_finalColumn" msprop:Generator_UserColumnName="fecha_final" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -340,6 +408,8 @@
               <xs:element name="unidades_transferidas_mortalidad_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_transferidas_mortalidad_lactancia" msprop:Generator_ColumnPropNameInRow="unidades_transferidas_mortalidad_lactancia" msprop:Generator_ColumnPropNameInTable="unidades_transferidas_mortalidad_lactanciaColumn" msprop:Generator_UserColumnName="unidades_transferidas_mortalidad_lactancia" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_finales_proceso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso" msprop:Generator_ColumnPropNameInTable="unidades_finales_procesoColumn" msprop:Generator_UserColumnName="unidades_finales_proceso" type="xs:int" minOccurs="0" />
               <xs:element name="unidades_finales_proceso_lactancia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnunidades_finales_proceso_lactancia" msprop:Generator_ColumnPropNameInRow="unidades_finales_proceso_lactancia" msprop:Generator_ColumnPropNameInTable="unidades_finales_proceso_lactanciaColumn" msprop:Generator_UserColumnName="unidades_finales_proceso_lactancia" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_inicial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_inicial" msprop:Generator_ColumnPropNameInRow="fecha_inicial" msprop:Generator_ColumnPropNameInTable="fecha_inicialColumn" msprop:Generator_UserColumnName="fecha_inicial" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_final" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_final" msprop:Generator_ColumnPropNameInRow="fecha_final" msprop:Generator_ColumnPropNameInTable="fecha_finalColumn" msprop:Generator_UserColumnName="fecha_final" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -630,6 +630,90 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             return message;
         }
 
+        public JsonResult UpdateFecha(DateTime fecha, string campo,int id)
+        {
+            string message;
+            try
+            {
+                if (fecha!=null)
+                {
+                    _MovimientoDepartamentoBL.UpdateFecha(fecha, campo, id);
+                    message = "success";
+                }
+                else
+                {
+                    message = "error";
+                }
+               
+            }
+            catch(Exception e)
+            {
+                message = e.Message;
+            }
+
+            return Json(message, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult UpdateParto(int cantidad, int id)
+        {
+            string message;
+            try
+            {
+                if (cantidad >=0)
+                {
+                    _MovimientoDepartamentoBL.UpdateParto(cantidad, id);
+                    message = "success";
+                }
+                else
+                {
+                    message = "error";
+                }
+
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+
+            return Json(message, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult DisableActivo(int id)
+        {
+            string message;
+            try
+            {               
+                    _MovimientoDepartamentoBL.DisableActivo(id);
+                    message = "success";
+               
+
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+
+            return Json(message, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult DeleteActivo(int id)
+        {
+            string message;
+            try
+            {
+                _MovimientoDepartamentoBL.DeleteActivo(id);
+                message = "success";
+
+
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+
+            return Json(message, JsonRequestBehavior.AllowGet);
+        }
+
         #endregion
 
 

@@ -25,5 +25,9 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
         public int? unidades_recibidas_engorde { get; set; }
         public int? unidades_recibidas_activo { get; set; }
         public int? q_equivalente { get; set; }
+
+        //INTERVALO DE FECHAS
+        public DateTime? fecha_inicial { get; set; }
+        public DateTime? fecha_final { get; set; }
     }
 }

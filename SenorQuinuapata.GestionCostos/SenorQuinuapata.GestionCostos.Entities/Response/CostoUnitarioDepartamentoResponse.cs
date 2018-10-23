@@ -43,6 +43,17 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
         public decimal? costo_agregado_mi_engorde { get; set; }
         public decimal? costo_agregado_moi_engorde { get; set; }
 
+        //ENGORDE
+        public decimal? consumo_inicial_md_descarte { get; set; }
+        public decimal? consumo_inicial_mod_descarte { get; set; }
+        public decimal? consumo_inicial_mi_descarte { get; set; }
+        public decimal? consumo_inicial_moi_descarte { get; set; }
+
+        public decimal? costo_agregado_md_descarte { get; set; }
+        public decimal? costo_agregado_mod_descarte { get; set; }
+        public decimal? costo_agregado_mi_descarte { get; set; }
+        public decimal? costo_agregado_moi_descarte { get; set; }
+
         //UNIDADES RECIBIDAS Y TRANSFERIDAS
         public int? unidades_transferidas_recria { get; set; }
         public int? unidades_transferidas_mortalidad { get; set; }
@@ -53,6 +64,7 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
         public int? unidades_recibidas_lactancia { get; set; }
         public int? unidades_recibidas_recria { get; set; }
         public int? unidades_recibidas_activo { get; set; }
+        public int? unidades_recibidas_engorde { get; set; }
 
 
         //DATOS GENERALES
@@ -73,10 +85,14 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
         public int? unidades_transferidas_mortalidad_engorde { get; set; }
         
         public int? unidades_transferidas_ventas_recria { get; set; }
-        public int? unidades_transferidasventas_engorde { get; set; }
+        public int? unidades_transferidas_ventas_engorde { get; set; }
 
         public int? unidades_finales_proceso_lactancia { get; set; }
         public int? unidades_finales_proceso_recria { get; set; }
         public int? unidades_finales_proceso_engorde { get; set; }
+
+        //INTERVALO DE FECHAS
+        public DateTime? fecha_inicial { get; set; }
+        public DateTime? fecha_final { get; set; }
     }
 }

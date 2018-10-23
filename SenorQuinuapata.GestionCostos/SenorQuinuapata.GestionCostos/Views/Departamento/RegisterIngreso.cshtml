@@ -25,7 +25,8 @@
                 </div>*@
             <div class="form-group">
                 <label>Origen</label>
-                <select class="form-control" name="origen">
+                <select class="form-control" name="origen" onchange="showOptions(this.value)" required>
+                    <option>---- Seleccionar ----</option>
                     <option value="Nace">Nace</option>
                     <option value="1">Lactancia</option>
                     <option value="2">Recría</option>
@@ -47,14 +48,15 @@
                 </div>*@
             <div class="form-group">
                 <label>Destino</label>
-                <select class="form-control" name="id_departamento">
-                    <option value="1">Lactancia</option>
+                <select class="form-control" name="id_departamento" id="id_departamento" required>
+                    <option>---- Seleccionar ----</option>
+                    @*<option value="1">Lactancia</option>
                     <option value="2">Recría</option>
                     <option value="3">Engorde</option>
                     <option value="4">Descarte</option>
                     <option value="5">Mortalidad</option>
                     <option value="6">Venta</option>
-                    <option value="7">Reproductor (Activo biológico)</option>
+                    <option value="7">Reproductor (Activo biológico)</option>*@
                 </select>
             </div>
             @*<div class="form-group">
@@ -63,10 +65,11 @@
             </div>*@
             <div class="form-group">
                 <label>Género</label>
-                <select class="form-control" name="genero">
-                    <option value="Gazapo">Gazapo</option>
+                <select class="form-control" name="genero" id="genero" required>
+                    <option>---- Seleccionar ----</option>
+                    @*<option value="Gazapo">Gazapo</option>
                     <option value="Hembra">Hembra</option>
-                    <option value="Macho">Macho</option>
+                    <option value="Macho">Macho</option>*@
                 </select>
             </div>
             <div class="form-group">
@@ -85,3 +88,91 @@
 
 </div>
 
+
+
+@section scripts{
+
+<script>
+
+    function showOptions(data) {
+
+        
+        var text;
+        var genero;
+        if (data == "Nace") {
+
+            text = '<option value="1">Lactancia</option>';
+            genero = '<option value="Gazapo">Gazapo</option>';
+
+            $("#id_departamento").html(text);
+            $("#genero").html(genero);
+        }
+
+        if (data == 1) {
+
+            text = '<option value="2">Recría</option>' +
+                '<option value="5">Mortalidad</option>';
+
+            genero = '<option value="Hembra">Hembra</option>' +
+                    '<option value="Macho">Macho</option>';
+
+            $("#id_departamento").html(text);
+            $("#genero").html(genero);
+        }
+        if (data == 2) {
+
+            text = '<option value="3">Engorde</option>' +
+                '<option value="5">Mortalidad</option>' +
+                '<option value="6">Venta</option>';
+
+            genero = '<option value="Hembra">Hembra</option>' +
+                '<option value="Macho">Macho</option>';
+
+            $("#id_departamento").html(text);
+            $("#genero").html(genero);
+        }
+        if (data == 3) {
+
+            text = '<option value="4">Descarte</option>' +
+                '<option value="5">Mortalidad</option>' +
+                '<option value="6">Venta</option>';
+
+            genero = '<option value="Hembra">Hembra</option>' +
+                '<option value="Macho">Macho</option>';
+
+            $("#id_departamento").html(text);
+            $("#genero").html(genero);
+        }
+        if (data == 4) {
+
+            text = '<option value="5">Mortalidad</option>' +
+                '<option value="6">Venta</option>';
+
+            genero = '<option value="Hembra">Hembra</option>' +
+                '<option value="Macho">Macho</option>';
+
+            $("#id_departamento").html(text);
+            $("#genero").html(genero);
+        }
+    }
+
+
+
+    //<option value="Nace">Nace</option>
+    //    <option value="1">Lactancia</option>
+    //    <option value="2">Recría</option>
+    //    <option value="3">Engorde</option>
+    //    <option value="4">Descarte</option>
+
+
+    //<option value="1">Lactancia</option>
+    //<option value="2">Recría</option>
+    //<option value="3">Engorde</option>
+    //<option value="4">Descarte</option>
+    //<option value="5">Mortalidad</option>
+    //<option value="6">Venta</option>
+    //<option value="7">Reproductor (Activo biológico)</option>
+
+</script>    
+    
+}

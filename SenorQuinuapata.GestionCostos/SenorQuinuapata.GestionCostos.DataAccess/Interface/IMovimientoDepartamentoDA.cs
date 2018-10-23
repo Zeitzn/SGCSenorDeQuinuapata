@@ -30,6 +30,13 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
 
         IEnumerable<ActivoBiologicoResponse> ListActivoBiologico();
 
+        void UpdateFecha(DateTime fecha, string campo,int id);
+
+        void UpdateParto(int cantidad, int id);
+
+        void DisableActivo(int id);
+
+        void DeleteActivo(int id);
 
 
 

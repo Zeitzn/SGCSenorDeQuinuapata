@@ -384,6 +384,38 @@ namespace SenorQuinuapata.GestionCostos {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class sp_costo_unitario_departamento_descarte_listDataTable : global::System.Data.TypedTableBase<sp_costo_unitario_departamento_descarte_listRow> {
             
+            private global::System.Data.DataColumn columnconsumo_inicial_md_lactancia;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_mod_lactancia;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_moi_lactancia;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_mi_lactancia;
+            
+            private global::System.Data.DataColumn columncosto_agregado_md_lactancia;
+            
+            private global::System.Data.DataColumn columncosto_agregado_mod_lactancia;
+            
+            private global::System.Data.DataColumn columncosto_agregado_moi_lactancia;
+            
+            private global::System.Data.DataColumn columncosto_agregado_mi_lactancia;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_md_recria;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_mod_recria;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_moi_recria;
+            
+            private global::System.Data.DataColumn columnconsumo_inicial_mi_recria;
+            
+            private global::System.Data.DataColumn columncosto_agregado_md_recria;
+            
+            private global::System.Data.DataColumn columncosto_agregado_mod_recria;
+            
+            private global::System.Data.DataColumn columncosto_agregado_moi_recria;
+            
+            private global::System.Data.DataColumn columncosto_agregado_mi_recria;
+            
             private global::System.Data.DataColumn columnconsumo_inicial_md_engorde;
             
             private global::System.Data.DataColumn columnconsumo_inicial_mod_engorde;
@@ -426,15 +458,41 @@ namespace SenorQuinuapata.GestionCostos {
             
             private global::System.Data.DataColumn columnq_equivalente;
             
-            private global::System.Data.DataColumn columnunidades_recibidas_engorde;
+            private global::System.Data.DataColumn columnq_equivalente_lactancia;
             
-            private global::System.Data.DataColumn columnunidades_transferidas_ventas;
+            private global::System.Data.DataColumn columnq_equivalente_recria;
+            
+            private global::System.Data.DataColumn columnq_equivalente_engorde;
+            
+            private global::System.Data.DataColumn columnunidades_recibidas_lactancia;
+            
+            private global::System.Data.DataColumn columnunidades_recibidas_recria;
+            
+            private global::System.Data.DataColumn columnunidades_recibidas_engorde;
             
             private global::System.Data.DataColumn columnunidades_recibidas_activo;
             
+            private global::System.Data.DataColumn columnunidades_transferidas_ventas;
+            
             private global::System.Data.DataColumn columnunidades_transferidas_mortalidad;
             
+            private global::System.Data.DataColumn columnunidades_transferidas_mortalidad_lactancia;
+            
+            private global::System.Data.DataColumn columnunidades_transferidas_mortalidad_recria;
+            
+            private global::System.Data.DataColumn columnunidades_transferidas_mortalidad_engorde;
+            
             private global::System.Data.DataColumn columnunidades_finales_proceso;
+            
+            private global::System.Data.DataColumn columnunidades_finales_proceso_lactancia;
+            
+            private global::System.Data.DataColumn columnunidades_finales_proceso_recria;
+            
+            private global::System.Data.DataColumn columnunidades_finales_proceso_engorde;
+            
+            private global::System.Data.DataColumn columnfecha_inicial;
+            
+            private global::System.Data.DataColumn columnfecha_final;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -467,6 +525,134 @@ namespace SenorQuinuapata.GestionCostos {
             protected sp_costo_unitario_departamento_descarte_listDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_md_lactanciaColumn {
+                get {
+                    return this.columnconsumo_inicial_md_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_mod_lactanciaColumn {
+                get {
+                    return this.columnconsumo_inicial_mod_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_moi_lactanciaColumn {
+                get {
+                    return this.columnconsumo_inicial_moi_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_mi_lactanciaColumn {
+                get {
+                    return this.columnconsumo_inicial_mi_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_md_lactanciaColumn {
+                get {
+                    return this.columncosto_agregado_md_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_mod_lactanciaColumn {
+                get {
+                    return this.columncosto_agregado_mod_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_moi_lactanciaColumn {
+                get {
+                    return this.columncosto_agregado_moi_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_mi_lactanciaColumn {
+                get {
+                    return this.columncosto_agregado_mi_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_md_recriaColumn {
+                get {
+                    return this.columnconsumo_inicial_md_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_mod_recriaColumn {
+                get {
+                    return this.columnconsumo_inicial_mod_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_moi_recriaColumn {
+                get {
+                    return this.columnconsumo_inicial_moi_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn consumo_inicial_mi_recriaColumn {
+                get {
+                    return this.columnconsumo_inicial_mi_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_md_recriaColumn {
+                get {
+                    return this.columncosto_agregado_md_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_mod_recriaColumn {
+                get {
+                    return this.columncosto_agregado_mod_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_moi_recriaColumn {
+                get {
+                    return this.columncosto_agregado_moi_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn costo_agregado_mi_recriaColumn {
+                get {
+                    return this.columncosto_agregado_mi_recria;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -639,17 +825,49 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn unidades_recibidas_engordeColumn {
+            public global::System.Data.DataColumn q_equivalente_lactanciaColumn {
                 get {
-                    return this.columnunidades_recibidas_engorde;
+                    return this.columnq_equivalente_lactancia;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn unidades_transferidas_ventasColumn {
+            public global::System.Data.DataColumn q_equivalente_recriaColumn {
                 get {
-                    return this.columnunidades_transferidas_ventas;
+                    return this.columnq_equivalente_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn q_equivalente_engordeColumn {
+                get {
+                    return this.columnq_equivalente_engorde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_recibidas_lactanciaColumn {
+                get {
+                    return this.columnunidades_recibidas_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_recibidas_recriaColumn {
+                get {
+                    return this.columnunidades_recibidas_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_recibidas_engordeColumn {
+                get {
+                    return this.columnunidades_recibidas_engorde;
                 }
             }
             
@@ -663,6 +881,14 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_transferidas_ventasColumn {
+                get {
+                    return this.columnunidades_transferidas_ventas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn unidades_transferidas_mortalidadColumn {
                 get {
                     return this.columnunidades_transferidas_mortalidad;
@@ -671,9 +897,73 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_transferidas_mortalidad_lactanciaColumn {
+                get {
+                    return this.columnunidades_transferidas_mortalidad_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_transferidas_mortalidad_recriaColumn {
+                get {
+                    return this.columnunidades_transferidas_mortalidad_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_transferidas_mortalidad_engordeColumn {
+                get {
+                    return this.columnunidades_transferidas_mortalidad_engorde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn unidades_finales_procesoColumn {
                 get {
                     return this.columnunidades_finales_proceso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_finales_proceso_lactanciaColumn {
+                get {
+                    return this.columnunidades_finales_proceso_lactancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_finales_proceso_recriaColumn {
+                get {
+                    return this.columnunidades_finales_proceso_recria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidades_finales_proceso_engordeColumn {
+                get {
+                    return this.columnunidades_finales_proceso_engorde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_inicialColumn {
+                get {
+                    return this.columnfecha_inicial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_finalColumn {
+                get {
+                    return this.columnfecha_final;
                 }
             }
             
@@ -715,6 +1005,22 @@ namespace SenorQuinuapata.GestionCostos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public sp_costo_unitario_departamento_descarte_listRow Addsp_costo_unitario_departamento_descarte_listRow(
+                        decimal consumo_inicial_md_lactancia, 
+                        decimal consumo_inicial_mod_lactancia, 
+                        decimal consumo_inicial_moi_lactancia, 
+                        decimal consumo_inicial_mi_lactancia, 
+                        decimal costo_agregado_md_lactancia, 
+                        decimal costo_agregado_mod_lactancia, 
+                        decimal costo_agregado_moi_lactancia, 
+                        decimal costo_agregado_mi_lactancia, 
+                        decimal consumo_inicial_md_recria, 
+                        decimal consumo_inicial_mod_recria, 
+                        decimal consumo_inicial_moi_recria, 
+                        decimal consumo_inicial_mi_recria, 
+                        decimal costo_agregado_md_recria, 
+                        decimal costo_agregado_mod_recria, 
+                        decimal costo_agregado_moi_recria, 
+                        decimal costo_agregado_mi_recria, 
                         decimal consumo_inicial_md_engorde, 
                         decimal consumo_inicial_mod_engorde, 
                         decimal consumo_inicial_moi_engorde, 
@@ -736,13 +1042,42 @@ namespace SenorQuinuapata.GestionCostos {
                         int total_flujo_engorde, 
                         int total_flujo_descarte, 
                         int q_equivalente, 
+                        int q_equivalente_lactancia, 
+                        int q_equivalente_recria, 
+                        int q_equivalente_engorde, 
+                        int unidades_recibidas_lactancia, 
+                        int unidades_recibidas_recria, 
                         int unidades_recibidas_engorde, 
-                        int unidades_transferidas_ventas, 
                         int unidades_recibidas_activo, 
+                        int unidades_transferidas_ventas, 
                         int unidades_transferidas_mortalidad, 
-                        int unidades_finales_proceso) {
+                        int unidades_transferidas_mortalidad_lactancia, 
+                        int unidades_transferidas_mortalidad_recria, 
+                        int unidades_transferidas_mortalidad_engorde, 
+                        int unidades_finales_proceso, 
+                        int unidades_finales_proceso_lactancia, 
+                        int unidades_finales_proceso_recria, 
+                        int unidades_finales_proceso_engorde, 
+                        System.DateTime fecha_inicial, 
+                        System.DateTime fecha_final) {
                 sp_costo_unitario_departamento_descarte_listRow rowsp_costo_unitario_departamento_descarte_listRow = ((sp_costo_unitario_departamento_descarte_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        consumo_inicial_md_lactancia,
+                        consumo_inicial_mod_lactancia,
+                        consumo_inicial_moi_lactancia,
+                        consumo_inicial_mi_lactancia,
+                        costo_agregado_md_lactancia,
+                        costo_agregado_mod_lactancia,
+                        costo_agregado_moi_lactancia,
+                        costo_agregado_mi_lactancia,
+                        consumo_inicial_md_recria,
+                        consumo_inicial_mod_recria,
+                        consumo_inicial_moi_recria,
+                        consumo_inicial_mi_recria,
+                        costo_agregado_md_recria,
+                        costo_agregado_mod_recria,
+                        costo_agregado_moi_recria,
+                        costo_agregado_mi_recria,
                         consumo_inicial_md_engorde,
                         consumo_inicial_mod_engorde,
                         consumo_inicial_moi_engorde,
@@ -764,11 +1099,24 @@ namespace SenorQuinuapata.GestionCostos {
                         total_flujo_engorde,
                         total_flujo_descarte,
                         q_equivalente,
+                        q_equivalente_lactancia,
+                        q_equivalente_recria,
+                        q_equivalente_engorde,
+                        unidades_recibidas_lactancia,
+                        unidades_recibidas_recria,
                         unidades_recibidas_engorde,
-                        unidades_transferidas_ventas,
                         unidades_recibidas_activo,
+                        unidades_transferidas_ventas,
                         unidades_transferidas_mortalidad,
-                        unidades_finales_proceso};
+                        unidades_transferidas_mortalidad_lactancia,
+                        unidades_transferidas_mortalidad_recria,
+                        unidades_transferidas_mortalidad_engorde,
+                        unidades_finales_proceso,
+                        unidades_finales_proceso_lactancia,
+                        unidades_finales_proceso_recria,
+                        unidades_finales_proceso_engorde,
+                        fecha_inicial,
+                        fecha_final};
                 rowsp_costo_unitario_departamento_descarte_listRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_costo_unitario_departamento_descarte_listRow);
                 return rowsp_costo_unitario_departamento_descarte_listRow;
@@ -791,6 +1139,22 @@ namespace SenorQuinuapata.GestionCostos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnconsumo_inicial_md_lactancia = base.Columns["consumo_inicial_md_lactancia"];
+                this.columnconsumo_inicial_mod_lactancia = base.Columns["consumo_inicial_mod_lactancia"];
+                this.columnconsumo_inicial_moi_lactancia = base.Columns["consumo_inicial_moi_lactancia"];
+                this.columnconsumo_inicial_mi_lactancia = base.Columns["consumo_inicial_mi_lactancia"];
+                this.columncosto_agregado_md_lactancia = base.Columns["costo_agregado_md_lactancia"];
+                this.columncosto_agregado_mod_lactancia = base.Columns["costo_agregado_mod_lactancia"];
+                this.columncosto_agregado_moi_lactancia = base.Columns["costo_agregado_moi_lactancia"];
+                this.columncosto_agregado_mi_lactancia = base.Columns["costo_agregado_mi_lactancia"];
+                this.columnconsumo_inicial_md_recria = base.Columns["consumo_inicial_md_recria"];
+                this.columnconsumo_inicial_mod_recria = base.Columns["consumo_inicial_mod_recria"];
+                this.columnconsumo_inicial_moi_recria = base.Columns["consumo_inicial_moi_recria"];
+                this.columnconsumo_inicial_mi_recria = base.Columns["consumo_inicial_mi_recria"];
+                this.columncosto_agregado_md_recria = base.Columns["costo_agregado_md_recria"];
+                this.columncosto_agregado_mod_recria = base.Columns["costo_agregado_mod_recria"];
+                this.columncosto_agregado_moi_recria = base.Columns["costo_agregado_moi_recria"];
+                this.columncosto_agregado_mi_recria = base.Columns["costo_agregado_mi_recria"];
                 this.columnconsumo_inicial_md_engorde = base.Columns["consumo_inicial_md_engorde"];
                 this.columnconsumo_inicial_mod_engorde = base.Columns["consumo_inicial_mod_engorde"];
                 this.columnconsumo_inicial_moi_engorde = base.Columns["consumo_inicial_moi_engorde"];
@@ -812,16 +1176,61 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columntotal_flujo_engorde = base.Columns["total_flujo_engorde"];
                 this.columntotal_flujo_descarte = base.Columns["total_flujo_descarte"];
                 this.columnq_equivalente = base.Columns["q_equivalente"];
+                this.columnq_equivalente_lactancia = base.Columns["q_equivalente_lactancia"];
+                this.columnq_equivalente_recria = base.Columns["q_equivalente_recria"];
+                this.columnq_equivalente_engorde = base.Columns["q_equivalente_engorde"];
+                this.columnunidades_recibidas_lactancia = base.Columns["unidades_recibidas_lactancia"];
+                this.columnunidades_recibidas_recria = base.Columns["unidades_recibidas_recria"];
                 this.columnunidades_recibidas_engorde = base.Columns["unidades_recibidas_engorde"];
-                this.columnunidades_transferidas_ventas = base.Columns["unidades_transferidas_ventas"];
                 this.columnunidades_recibidas_activo = base.Columns["unidades_recibidas_activo"];
+                this.columnunidades_transferidas_ventas = base.Columns["unidades_transferidas_ventas"];
                 this.columnunidades_transferidas_mortalidad = base.Columns["unidades_transferidas_mortalidad"];
+                this.columnunidades_transferidas_mortalidad_lactancia = base.Columns["unidades_transferidas_mortalidad_lactancia"];
+                this.columnunidades_transferidas_mortalidad_recria = base.Columns["unidades_transferidas_mortalidad_recria"];
+                this.columnunidades_transferidas_mortalidad_engorde = base.Columns["unidades_transferidas_mortalidad_engorde"];
                 this.columnunidades_finales_proceso = base.Columns["unidades_finales_proceso"];
+                this.columnunidades_finales_proceso_lactancia = base.Columns["unidades_finales_proceso_lactancia"];
+                this.columnunidades_finales_proceso_recria = base.Columns["unidades_finales_proceso_recria"];
+                this.columnunidades_finales_proceso_engorde = base.Columns["unidades_finales_proceso_engorde"];
+                this.columnfecha_inicial = base.Columns["fecha_inicial"];
+                this.columnfecha_final = base.Columns["fecha_final"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnconsumo_inicial_md_lactancia = new global::System.Data.DataColumn("consumo_inicial_md_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_md_lactancia);
+                this.columnconsumo_inicial_mod_lactancia = new global::System.Data.DataColumn("consumo_inicial_mod_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_mod_lactancia);
+                this.columnconsumo_inicial_moi_lactancia = new global::System.Data.DataColumn("consumo_inicial_moi_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_moi_lactancia);
+                this.columnconsumo_inicial_mi_lactancia = new global::System.Data.DataColumn("consumo_inicial_mi_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_mi_lactancia);
+                this.columncosto_agregado_md_lactancia = new global::System.Data.DataColumn("costo_agregado_md_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_md_lactancia);
+                this.columncosto_agregado_mod_lactancia = new global::System.Data.DataColumn("costo_agregado_mod_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_mod_lactancia);
+                this.columncosto_agregado_moi_lactancia = new global::System.Data.DataColumn("costo_agregado_moi_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_moi_lactancia);
+                this.columncosto_agregado_mi_lactancia = new global::System.Data.DataColumn("costo_agregado_mi_lactancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_mi_lactancia);
+                this.columnconsumo_inicial_md_recria = new global::System.Data.DataColumn("consumo_inicial_md_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_md_recria);
+                this.columnconsumo_inicial_mod_recria = new global::System.Data.DataColumn("consumo_inicial_mod_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_mod_recria);
+                this.columnconsumo_inicial_moi_recria = new global::System.Data.DataColumn("consumo_inicial_moi_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_moi_recria);
+                this.columnconsumo_inicial_mi_recria = new global::System.Data.DataColumn("consumo_inicial_mi_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumo_inicial_mi_recria);
+                this.columncosto_agregado_md_recria = new global::System.Data.DataColumn("costo_agregado_md_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_md_recria);
+                this.columncosto_agregado_mod_recria = new global::System.Data.DataColumn("costo_agregado_mod_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_mod_recria);
+                this.columncosto_agregado_moi_recria = new global::System.Data.DataColumn("costo_agregado_moi_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_moi_recria);
+                this.columncosto_agregado_mi_recria = new global::System.Data.DataColumn("costo_agregado_mi_recria", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncosto_agregado_mi_recria);
                 this.columnconsumo_inicial_md_engorde = new global::System.Data.DataColumn("consumo_inicial_md_engorde", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconsumo_inicial_md_engorde);
                 this.columnconsumo_inicial_mod_engorde = new global::System.Data.DataColumn("consumo_inicial_mod_engorde", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -864,16 +1273,58 @@ namespace SenorQuinuapata.GestionCostos {
                 base.Columns.Add(this.columntotal_flujo_descarte);
                 this.columnq_equivalente = new global::System.Data.DataColumn("q_equivalente", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnq_equivalente);
+                this.columnq_equivalente_lactancia = new global::System.Data.DataColumn("q_equivalente_lactancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnq_equivalente_lactancia);
+                this.columnq_equivalente_recria = new global::System.Data.DataColumn("q_equivalente_recria", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnq_equivalente_recria);
+                this.columnq_equivalente_engorde = new global::System.Data.DataColumn("q_equivalente_engorde", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnq_equivalente_engorde);
+                this.columnunidades_recibidas_lactancia = new global::System.Data.DataColumn("unidades_recibidas_lactancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_recibidas_lactancia);
+                this.columnunidades_recibidas_recria = new global::System.Data.DataColumn("unidades_recibidas_recria", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_recibidas_recria);
                 this.columnunidades_recibidas_engorde = new global::System.Data.DataColumn("unidades_recibidas_engorde", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_recibidas_engorde);
-                this.columnunidades_transferidas_ventas = new global::System.Data.DataColumn("unidades_transferidas_ventas", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidades_transferidas_ventas);
                 this.columnunidades_recibidas_activo = new global::System.Data.DataColumn("unidades_recibidas_activo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_recibidas_activo);
+                this.columnunidades_transferidas_ventas = new global::System.Data.DataColumn("unidades_transferidas_ventas", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_transferidas_ventas);
                 this.columnunidades_transferidas_mortalidad = new global::System.Data.DataColumn("unidades_transferidas_mortalidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_transferidas_mortalidad);
+                this.columnunidades_transferidas_mortalidad_lactancia = new global::System.Data.DataColumn("unidades_transferidas_mortalidad_lactancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_transferidas_mortalidad_lactancia);
+                this.columnunidades_transferidas_mortalidad_recria = new global::System.Data.DataColumn("unidades_transferidas_mortalidad_recria", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_transferidas_mortalidad_recria);
+                this.columnunidades_transferidas_mortalidad_engorde = new global::System.Data.DataColumn("unidades_transferidas_mortalidad_engorde", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_transferidas_mortalidad_engorde);
                 this.columnunidades_finales_proceso = new global::System.Data.DataColumn("unidades_finales_proceso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_finales_proceso);
+                this.columnunidades_finales_proceso_lactancia = new global::System.Data.DataColumn("unidades_finales_proceso_lactancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_finales_proceso_lactancia);
+                this.columnunidades_finales_proceso_recria = new global::System.Data.DataColumn("unidades_finales_proceso_recria", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_finales_proceso_recria);
+                this.columnunidades_finales_proceso_engorde = new global::System.Data.DataColumn("unidades_finales_proceso_engorde", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_finales_proceso_engorde);
+                this.columnfecha_inicial = new global::System.Data.DataColumn("fecha_inicial", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_inicial);
+                this.columnfecha_final = new global::System.Data.DataColumn("fecha_final", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_final);
+                this.columnconsumo_inicial_md_lactancia.ReadOnly = true;
+                this.columnconsumo_inicial_mod_lactancia.ReadOnly = true;
+                this.columnconsumo_inicial_moi_lactancia.ReadOnly = true;
+                this.columnconsumo_inicial_mi_lactancia.ReadOnly = true;
+                this.columncosto_agregado_md_lactancia.ReadOnly = true;
+                this.columncosto_agregado_mod_lactancia.ReadOnly = true;
+                this.columncosto_agregado_moi_lactancia.ReadOnly = true;
+                this.columncosto_agregado_mi_lactancia.ReadOnly = true;
+                this.columnconsumo_inicial_md_recria.ReadOnly = true;
+                this.columnconsumo_inicial_mod_recria.ReadOnly = true;
+                this.columnconsumo_inicial_moi_recria.ReadOnly = true;
+                this.columnconsumo_inicial_mi_recria.ReadOnly = true;
+                this.columncosto_agregado_md_recria.ReadOnly = true;
+                this.columncosto_agregado_mod_recria.ReadOnly = true;
+                this.columncosto_agregado_moi_recria.ReadOnly = true;
+                this.columncosto_agregado_mi_recria.ReadOnly = true;
                 this.columnconsumo_inicial_md_engorde.ReadOnly = true;
                 this.columnconsumo_inicial_mod_engorde.ReadOnly = true;
                 this.columnconsumo_inicial_moi_engorde.ReadOnly = true;
@@ -895,11 +1346,24 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columntotal_flujo_engorde.ReadOnly = true;
                 this.columntotal_flujo_descarte.ReadOnly = true;
                 this.columnq_equivalente.ReadOnly = true;
+                this.columnq_equivalente_lactancia.ReadOnly = true;
+                this.columnq_equivalente_recria.ReadOnly = true;
+                this.columnq_equivalente_engorde.ReadOnly = true;
+                this.columnunidades_recibidas_lactancia.ReadOnly = true;
+                this.columnunidades_recibidas_recria.ReadOnly = true;
                 this.columnunidades_recibidas_engorde.ReadOnly = true;
-                this.columnunidades_transferidas_ventas.ReadOnly = true;
                 this.columnunidades_recibidas_activo.ReadOnly = true;
+                this.columnunidades_transferidas_ventas.ReadOnly = true;
                 this.columnunidades_transferidas_mortalidad.ReadOnly = true;
+                this.columnunidades_transferidas_mortalidad_lactancia.ReadOnly = true;
+                this.columnunidades_transferidas_mortalidad_recria.ReadOnly = true;
+                this.columnunidades_transferidas_mortalidad_engorde.ReadOnly = true;
                 this.columnunidades_finales_proceso.ReadOnly = true;
+                this.columnunidades_finales_proceso_lactancia.ReadOnly = true;
+                this.columnunidades_finales_proceso_recria.ReadOnly = true;
+                this.columnunidades_finales_proceso_engorde.ReadOnly = true;
+                this.columnfecha_inicial.ReadOnly = true;
+                this.columnfecha_final.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1118,6 +1582,10 @@ namespace SenorQuinuapata.GestionCostos {
             private global::System.Data.DataColumn columnunidades_finales_proceso_lactancia;
             
             private global::System.Data.DataColumn columnunidades_finales_proceso_recria;
+            
+            private global::System.Data.DataColumn columnfecha_inicial;
+            
+            private global::System.Data.DataColumn columnfecha_final;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1498,6 +1966,22 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_inicialColumn {
+                get {
+                    return this.columnfecha_inicial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_finalColumn {
+                get {
+                    return this.columnfecha_final;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1576,7 +2060,9 @@ namespace SenorQuinuapata.GestionCostos {
                         int unidades_transferidas_mortalidad_recria, 
                         int unidades_finales_proceso, 
                         int unidades_finales_proceso_lactancia, 
-                        int unidades_finales_proceso_recria) {
+                        int unidades_finales_proceso_recria, 
+                        System.DateTime fecha_inicial, 
+                        System.DateTime fecha_final) {
                 sp_costo_unitario_departamento_engorde_listRow rowsp_costo_unitario_departamento_engorde_listRow = ((sp_costo_unitario_departamento_engorde_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         consumo_inicial_md_lactancia,
@@ -1621,7 +2107,9 @@ namespace SenorQuinuapata.GestionCostos {
                         unidades_transferidas_mortalidad_recria,
                         unidades_finales_proceso,
                         unidades_finales_proceso_lactancia,
-                        unidades_finales_proceso_recria};
+                        unidades_finales_proceso_recria,
+                        fecha_inicial,
+                        fecha_final};
                 rowsp_costo_unitario_departamento_engorde_listRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_costo_unitario_departamento_engorde_listRow);
                 return rowsp_costo_unitario_departamento_engorde_listRow;
@@ -1687,6 +2175,8 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnunidades_finales_proceso = base.Columns["unidades_finales_proceso"];
                 this.columnunidades_finales_proceso_lactancia = base.Columns["unidades_finales_proceso_lactancia"];
                 this.columnunidades_finales_proceso_recria = base.Columns["unidades_finales_proceso_recria"];
+                this.columnfecha_inicial = base.Columns["fecha_inicial"];
+                this.columnfecha_final = base.Columns["fecha_final"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1778,6 +2268,10 @@ namespace SenorQuinuapata.GestionCostos {
                 base.Columns.Add(this.columnunidades_finales_proceso_lactancia);
                 this.columnunidades_finales_proceso_recria = new global::System.Data.DataColumn("unidades_finales_proceso_recria", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_finales_proceso_recria);
+                this.columnfecha_inicial = new global::System.Data.DataColumn("fecha_inicial", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_inicial);
+                this.columnfecha_final = new global::System.Data.DataColumn("fecha_final", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_final);
                 this.columnconsumo_inicial_md_lactancia.ReadOnly = true;
                 this.columnconsumo_inicial_mod_lactancia.ReadOnly = true;
                 this.columnconsumo_inicial_moi_lactancia.ReadOnly = true;
@@ -1821,6 +2315,8 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnunidades_finales_proceso.ReadOnly = true;
                 this.columnunidades_finales_proceso_lactancia.ReadOnly = true;
                 this.columnunidades_finales_proceso_recria.ReadOnly = true;
+                this.columnfecha_inicial.ReadOnly = true;
+                this.columnfecha_final.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1986,6 +2482,10 @@ namespace SenorQuinuapata.GestionCostos {
             
             private global::System.Data.DataColumn columnunidades_finales_proceso;
             
+            private global::System.Data.DataColumn columnfecha_inicial;
+            
+            private global::System.Data.DataColumn columnfecha_final;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public sp_costo_unitario_departamento_lactancia_listDataTable() {
@@ -2149,6 +2649,22 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_inicialColumn {
+                get {
+                    return this.columnfecha_inicial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_finalColumn {
+                get {
+                    return this.columnfecha_final;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2200,7 +2716,9 @@ namespace SenorQuinuapata.GestionCostos {
                         int q_equivalente, 
                         int unidades_transferidas_recria, 
                         int unidades_transferidas_mortalidad, 
-                        int unidades_finales_proceso) {
+                        int unidades_finales_proceso, 
+                        System.DateTime fecha_inicial, 
+                        System.DateTime fecha_final) {
                 sp_costo_unitario_departamento_lactancia_listRow rowsp_costo_unitario_departamento_lactancia_listRow = ((sp_costo_unitario_departamento_lactancia_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         consumo_inicial_md_lactancia,
@@ -2218,7 +2736,9 @@ namespace SenorQuinuapata.GestionCostos {
                         q_equivalente,
                         unidades_transferidas_recria,
                         unidades_transferidas_mortalidad,
-                        unidades_finales_proceso};
+                        unidades_finales_proceso,
+                        fecha_inicial,
+                        fecha_final};
                 rowsp_costo_unitario_departamento_lactancia_listRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_costo_unitario_departamento_lactancia_listRow);
                 return rowsp_costo_unitario_departamento_lactancia_listRow;
@@ -2257,6 +2777,8 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnunidades_transferidas_recria = base.Columns["unidades_transferidas_recria"];
                 this.columnunidades_transferidas_mortalidad = base.Columns["unidades_transferidas_mortalidad"];
                 this.columnunidades_finales_proceso = base.Columns["unidades_finales_proceso"];
+                this.columnfecha_inicial = base.Columns["fecha_inicial"];
+                this.columnfecha_final = base.Columns["fecha_final"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2294,6 +2816,10 @@ namespace SenorQuinuapata.GestionCostos {
                 base.Columns.Add(this.columnunidades_transferidas_mortalidad);
                 this.columnunidades_finales_proceso = new global::System.Data.DataColumn("unidades_finales_proceso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_finales_proceso);
+                this.columnfecha_inicial = new global::System.Data.DataColumn("fecha_inicial", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_inicial);
+                this.columnfecha_final = new global::System.Data.DataColumn("fecha_final", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_final);
                 this.columnconsumo_inicial_md_lactancia.ReadOnly = true;
                 this.columnconsumo_inicial_mod_lactancia.ReadOnly = true;
                 this.columnconsumo_inicial_moi_lactancia.ReadOnly = true;
@@ -2310,6 +2836,8 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnunidades_transferidas_recria.ReadOnly = true;
                 this.columnunidades_transferidas_mortalidad.ReadOnly = true;
                 this.columnunidades_finales_proceso.ReadOnly = true;
+                this.columnfecha_inicial.ReadOnly = true;
+                this.columnfecha_final.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2500,6 +3028,10 @@ namespace SenorQuinuapata.GestionCostos {
             private global::System.Data.DataColumn columnunidades_finales_proceso;
             
             private global::System.Data.DataColumn columnunidades_finales_proceso_lactancia;
+            
+            private global::System.Data.DataColumn columnfecha_inicial;
+            
+            private global::System.Data.DataColumn columnfecha_final;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -2768,6 +3300,22 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_inicialColumn {
+                get {
+                    return this.columnfecha_inicial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fecha_finalColumn {
+                get {
+                    return this.columnfecha_final;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2832,7 +3380,9 @@ namespace SenorQuinuapata.GestionCostos {
                         int unidades_transferidas_mortalidad, 
                         int unidades_transferidas_mortalidad_lactancia, 
                         int unidades_finales_proceso, 
-                        int unidades_finales_proceso_lactancia) {
+                        int unidades_finales_proceso_lactancia, 
+                        System.DateTime fecha_inicial, 
+                        System.DateTime fecha_final) {
                 sp_costo_unitario_departamento_recria_listRow rowsp_costo_unitario_departamento_recria_listRow = ((sp_costo_unitario_departamento_recria_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         consumo_inicial_md_lactancia,
@@ -2863,7 +3413,9 @@ namespace SenorQuinuapata.GestionCostos {
                         unidades_transferidas_mortalidad,
                         unidades_transferidas_mortalidad_lactancia,
                         unidades_finales_proceso,
-                        unidades_finales_proceso_lactancia};
+                        unidades_finales_proceso_lactancia,
+                        fecha_inicial,
+                        fecha_final};
                 rowsp_costo_unitario_departamento_recria_listRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_costo_unitario_departamento_recria_listRow);
                 return rowsp_costo_unitario_departamento_recria_listRow;
@@ -2915,6 +3467,8 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnunidades_transferidas_mortalidad_lactancia = base.Columns["unidades_transferidas_mortalidad_lactancia"];
                 this.columnunidades_finales_proceso = base.Columns["unidades_finales_proceso"];
                 this.columnunidades_finales_proceso_lactancia = base.Columns["unidades_finales_proceso_lactancia"];
+                this.columnfecha_inicial = base.Columns["fecha_inicial"];
+                this.columnfecha_final = base.Columns["fecha_final"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2978,6 +3532,10 @@ namespace SenorQuinuapata.GestionCostos {
                 base.Columns.Add(this.columnunidades_finales_proceso);
                 this.columnunidades_finales_proceso_lactancia = new global::System.Data.DataColumn("unidades_finales_proceso_lactancia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades_finales_proceso_lactancia);
+                this.columnfecha_inicial = new global::System.Data.DataColumn("fecha_inicial", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_inicial);
+                this.columnfecha_final = new global::System.Data.DataColumn("fecha_final", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_final);
                 this.columnconsumo_inicial_md_lactancia.ReadOnly = true;
                 this.columnconsumo_inicial_mod_lactancia.ReadOnly = true;
                 this.columnconsumo_inicial_moi_lactancia.ReadOnly = true;
@@ -3007,6 +3565,8 @@ namespace SenorQuinuapata.GestionCostos {
                 this.columnunidades_transferidas_mortalidad_lactancia.ReadOnly = true;
                 this.columnunidades_finales_proceso.ReadOnly = true;
                 this.columnunidades_finales_proceso_lactancia.ReadOnly = true;
+                this.columnfecha_inicial.ReadOnly = true;
+                this.columnfecha_final.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3145,6 +3705,278 @@ namespace SenorQuinuapata.GestionCostos {
             internal sp_costo_unitario_departamento_descarte_listRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablesp_costo_unitario_departamento_descarte_list = ((sp_costo_unitario_departamento_descarte_listDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_md_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_md_lactancia\' de la tabla \'sp_costo_unita" +
+                                "rio_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_mod_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_mod_lactancia\' de la tabla \'sp_costo_unit" +
+                                "ario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_moi_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_moi_lactancia\' de la tabla \'sp_costo_unit" +
+                                "ario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_mi_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_mi_lactancia\' de la tabla \'sp_costo_unita" +
+                                "rio_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_md_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_md_lactancia\' de la tabla \'sp_costo_unitar" +
+                                "io_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_mod_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_mod_lactancia\' de la tabla \'sp_costo_unita" +
+                                "rio_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_moi_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_moi_lactancia\' de la tabla \'sp_costo_unita" +
+                                "rio_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_mi_lactancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_mi_lactancia\' de la tabla \'sp_costo_unitar" +
+                                "io_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_md_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_md_recria\' de la tabla \'sp_costo_unitario" +
+                                "_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_mod_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_mod_recria\' de la tabla \'sp_costo_unitari" +
+                                "o_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_moi_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_moi_recria\' de la tabla \'sp_costo_unitari" +
+                                "o_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal consumo_inicial_mi_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumo_inicial_mi_recria\' de la tabla \'sp_costo_unitario" +
+                                "_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_md_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_md_recria\' de la tabla \'sp_costo_unitario_" +
+                                "departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_mod_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_mod_recria\' de la tabla \'sp_costo_unitario" +
+                                "_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_moi_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_moi_recria\' de la tabla \'sp_costo_unitario" +
+                                "_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal costo_agregado_mi_recria {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costo_agregado_mi_recria\' de la tabla \'sp_costo_unitario_" +
+                                "departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_recriaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3506,6 +4338,91 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int q_equivalente_lactancia {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'q_equivalente_lactancia\' de la tabla \'sp_costo_unitario_d" +
+                                "epartamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int q_equivalente_recria {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'q_equivalente_recria\' de la tabla \'sp_costo_unitario_depa" +
+                                "rtamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int q_equivalente_engorde {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_engordeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'q_equivalente_engorde\' de la tabla \'sp_costo_unitario_dep" +
+                                "artamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_engordeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_recibidas_lactancia {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_recibidas_lactancia\' de la tabla \'sp_costo_unita" +
+                                "rio_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_recibidas_recria {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_recibidas_recria\' de la tabla \'sp_costo_unitario" +
+                                "_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int unidades_recibidas_engorde {
                 get {
                     try {
@@ -3518,23 +4435,6 @@ namespace SenorQuinuapata.GestionCostos {
                 }
                 set {
                     this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_engordeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int unidades_transferidas_ventas {
-                get {
-                    try {
-                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_ventas\' de la tabla \'sp_costo_unita" +
-                                "rio_departamento_descarte_list\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn] = value;
                 }
             }
             
@@ -3557,6 +4457,23 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_transferidas_ventas {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_ventas\' de la tabla \'sp_costo_unita" +
+                                "rio_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int unidades_transferidas_mortalidad {
                 get {
                     try {
@@ -3569,6 +4486,57 @@ namespace SenorQuinuapata.GestionCostos {
                 }
                 set {
                     this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_transferidas_mortalidad_lactancia {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_mortalidad_lactancia\' de la tabla \'" +
+                                "sp_costo_unitario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_transferidas_mortalidad_recria {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_mortalidad_recria\' de la tabla \'sp_" +
+                                "costo_unitario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_transferidas_mortalidad_engorde {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_engordeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_transferidas_mortalidad_engorde\' de la tabla \'sp" +
+                                "_costo_unitario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_engordeColumn] = value;
                 }
             }
             
@@ -3587,6 +4555,283 @@ namespace SenorQuinuapata.GestionCostos {
                 set {
                     this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_procesoColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_finales_proceso_lactancia {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_lactanciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_finales_proceso_lactancia\' de la tabla \'sp_costo" +
+                                "_unitario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_lactanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_finales_proceso_recria {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_recriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_finales_proceso_recria\' de la tabla \'sp_costo_un" +
+                                "itario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_recriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int unidades_finales_proceso_engorde {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_engordeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades_finales_proceso_engorde\' de la tabla \'sp_costo_u" +
+                                "nitario_departamento_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_engordeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_inicial {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_descarte_list.fecha_inicialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_inicial\' de la tabla \'sp_costo_unitario_departament" +
+                                "o_descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.fecha_inicialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_final {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_descarte_list.fecha_finalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_final\' de la tabla \'sp_costo_unitario_departamento_" +
+                                "descarte_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_descarte_list.fecha_finalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_md_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_md_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_mod_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_mod_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_moi_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_moi_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_mi_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_mi_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_md_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_md_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_mod_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_mod_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_moi_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_moi_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_mi_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_mi_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_md_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_md_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_md_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_mod_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_mod_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mod_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_moi_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_moi_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_moi_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconsumo_inicial_mi_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconsumo_inicial_mi_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.consumo_inicial_mi_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_md_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_md_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_md_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_mod_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_mod_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mod_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_moi_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_moi_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_moi_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscosto_agregado_mi_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcosto_agregado_mi_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.costo_agregado_mi_recriaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3843,6 +5088,66 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isq_equivalente_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setq_equivalente_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isq_equivalente_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setq_equivalente_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isq_equivalente_engordeNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_engordeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setq_equivalente_engordeNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.q_equivalente_engordeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_recibidas_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_recibidas_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_recibidas_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_recibidas_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isunidades_recibidas_engordeNull() {
                 return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_engordeColumn);
             }
@@ -3851,18 +5156,6 @@ namespace SenorQuinuapata.GestionCostos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setunidades_recibidas_engordeNull() {
                 this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_recibidas_engordeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isunidades_transferidas_ventasNull() {
-                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setunidades_transferidas_ventasNull() {
-                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3879,6 +5172,18 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_transferidas_ventasNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_transferidas_ventasNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_ventasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isunidades_transferidas_mortalidadNull() {
                 return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidadColumn);
             }
@@ -3891,6 +5196,42 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_transferidas_mortalidad_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_transferidas_mortalidad_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_transferidas_mortalidad_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_transferidas_mortalidad_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_transferidas_mortalidad_engordeNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_engordeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_transferidas_mortalidad_engordeNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_transferidas_mortalidad_engordeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isunidades_finales_procesoNull() {
                 return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_procesoColumn);
             }
@@ -3899,6 +5240,66 @@ namespace SenorQuinuapata.GestionCostos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setunidades_finales_procesoNull() {
                 this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_procesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_finales_proceso_lactanciaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_lactanciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_finales_proceso_lactanciaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_lactanciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_finales_proceso_recriaNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_recriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_finales_proceso_recriaNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_recriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidades_finales_proceso_engordeNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_engordeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidades_finales_proceso_engordeNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.unidades_finales_proceso_engordeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_inicialNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.fecha_inicialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_inicialNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.fecha_inicialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_finalNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_descarte_list.fecha_finalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_finalNull() {
+                this[this.tablesp_costo_unitario_departamento_descarte_list.fecha_finalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4649,6 +6050,40 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_inicial {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_engorde_list.fecha_inicialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_inicial\' de la tabla \'sp_costo_unitario_departament" +
+                                "o_engorde_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_engorde_list.fecha_inicialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_final {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_engorde_list.fecha_finalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_final\' de la tabla \'sp_costo_unitario_departamento_" +
+                                "engorde_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_engorde_list.fecha_finalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isconsumo_inicial_md_lactanciaNull() {
                 return this.IsNull(this.tablesp_costo_unitario_departamento_engorde_list.consumo_inicial_md_lactanciaColumn);
             }
@@ -5162,6 +6597,30 @@ namespace SenorQuinuapata.GestionCostos {
             public void Setunidades_finales_proceso_recriaNull() {
                 this[this.tablesp_costo_unitario_departamento_engorde_list.unidades_finales_proceso_recriaColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_inicialNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_engorde_list.fecha_inicialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_inicialNull() {
+                this[this.tablesp_costo_unitario_departamento_engorde_list.fecha_inicialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_finalNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_engorde_list.fecha_finalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_finalNull() {
+                this[this.tablesp_costo_unitario_departamento_engorde_list.fecha_finalColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -5452,6 +6911,40 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_inicial {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_lactancia_list.fecha_inicialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_inicial\' de la tabla \'sp_costo_unitario_departament" +
+                                "o_lactancia_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_lactancia_list.fecha_inicialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_final {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_lactancia_list.fecha_finalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_final\' de la tabla \'sp_costo_unitario_departamento_" +
+                                "lactancia_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_lactancia_list.fecha_finalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isconsumo_inicial_md_lactanciaNull() {
                 return this.IsNull(this.tablesp_costo_unitario_departamento_lactancia_list.consumo_inicial_md_lactanciaColumn);
             }
@@ -5640,6 +7133,30 @@ namespace SenorQuinuapata.GestionCostos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setunidades_finales_procesoNull() {
                 this[this.tablesp_costo_unitario_departamento_lactancia_list.unidades_finales_procesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_inicialNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_lactancia_list.fecha_inicialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_inicialNull() {
+                this[this.tablesp_costo_unitario_departamento_lactancia_list.fecha_inicialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_finalNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_lactancia_list.fecha_finalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_finalNull() {
+                this[this.tablesp_costo_unitario_departamento_lactancia_list.fecha_finalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6152,6 +7669,40 @@ namespace SenorQuinuapata.GestionCostos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_inicial {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_recria_list.fecha_inicialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_inicial\' de la tabla \'sp_costo_unitario_departament" +
+                                "o_recria_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_recria_list.fecha_inicialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fecha_final {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablesp_costo_unitario_departamento_recria_list.fecha_finalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_final\' de la tabla \'sp_costo_unitario_departamento_" +
+                                "recria_list\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_costo_unitario_departamento_recria_list.fecha_finalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isconsumo_inicial_md_lactanciaNull() {
                 return this.IsNull(this.tablesp_costo_unitario_departamento_recria_list.consumo_inicial_md_lactanciaColumn);
             }
@@ -6497,6 +8048,30 @@ namespace SenorQuinuapata.GestionCostos {
             public void Setunidades_finales_proceso_lactanciaNull() {
                 this[this.tablesp_costo_unitario_departamento_recria_list.unidades_finales_proceso_lactanciaColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_inicialNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_recria_list.fecha_inicialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_inicialNull() {
+                this[this.tablesp_costo_unitario_departamento_recria_list.fecha_inicialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_finalNull() {
+                return this.IsNull(this.tablesp_costo_unitario_departamento_recria_list.fecha_finalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_finalNull() {
+                this[this.tablesp_costo_unitario_departamento_recria_list.fecha_finalColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -6760,6 +8335,22 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetCostosTableAdapte
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "sp_costo_unitario_departamento_descarte_list";
+            tableMapping.ColumnMappings.Add("consumo_inicial_md_lactancia", "consumo_inicial_md_lactancia");
+            tableMapping.ColumnMappings.Add("consumo_inicial_mod_lactancia", "consumo_inicial_mod_lactancia");
+            tableMapping.ColumnMappings.Add("consumo_inicial_moi_lactancia", "consumo_inicial_moi_lactancia");
+            tableMapping.ColumnMappings.Add("consumo_inicial_mi_lactancia", "consumo_inicial_mi_lactancia");
+            tableMapping.ColumnMappings.Add("costo_agregado_md_lactancia", "costo_agregado_md_lactancia");
+            tableMapping.ColumnMappings.Add("costo_agregado_mod_lactancia", "costo_agregado_mod_lactancia");
+            tableMapping.ColumnMappings.Add("costo_agregado_moi_lactancia", "costo_agregado_moi_lactancia");
+            tableMapping.ColumnMappings.Add("costo_agregado_mi_lactancia", "costo_agregado_mi_lactancia");
+            tableMapping.ColumnMappings.Add("consumo_inicial_md_recria", "consumo_inicial_md_recria");
+            tableMapping.ColumnMappings.Add("consumo_inicial_mod_recria", "consumo_inicial_mod_recria");
+            tableMapping.ColumnMappings.Add("consumo_inicial_moi_recria", "consumo_inicial_moi_recria");
+            tableMapping.ColumnMappings.Add("consumo_inicial_mi_recria", "consumo_inicial_mi_recria");
+            tableMapping.ColumnMappings.Add("costo_agregado_md_recria", "costo_agregado_md_recria");
+            tableMapping.ColumnMappings.Add("costo_agregado_mod_recria", "costo_agregado_mod_recria");
+            tableMapping.ColumnMappings.Add("costo_agregado_moi_recria", "costo_agregado_moi_recria");
+            tableMapping.ColumnMappings.Add("costo_agregado_mi_recria", "costo_agregado_mi_recria");
             tableMapping.ColumnMappings.Add("consumo_inicial_md_engorde", "consumo_inicial_md_engorde");
             tableMapping.ColumnMappings.Add("consumo_inicial_mod_engorde", "consumo_inicial_mod_engorde");
             tableMapping.ColumnMappings.Add("consumo_inicial_moi_engorde", "consumo_inicial_moi_engorde");
@@ -6781,11 +8372,24 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetCostosTableAdapte
             tableMapping.ColumnMappings.Add("total_flujo_engorde", "total_flujo_engorde");
             tableMapping.ColumnMappings.Add("total_flujo_descarte", "total_flujo_descarte");
             tableMapping.ColumnMappings.Add("q_equivalente", "q_equivalente");
+            tableMapping.ColumnMappings.Add("q_equivalente_lactancia", "q_equivalente_lactancia");
+            tableMapping.ColumnMappings.Add("q_equivalente_recria", "q_equivalente_recria");
+            tableMapping.ColumnMappings.Add("q_equivalente_engorde", "q_equivalente_engorde");
+            tableMapping.ColumnMappings.Add("unidades_recibidas_lactancia", "unidades_recibidas_lactancia");
+            tableMapping.ColumnMappings.Add("unidades_recibidas_recria", "unidades_recibidas_recria");
             tableMapping.ColumnMappings.Add("unidades_recibidas_engorde", "unidades_recibidas_engorde");
-            tableMapping.ColumnMappings.Add("unidades_transferidas_ventas", "unidades_transferidas_ventas");
             tableMapping.ColumnMappings.Add("unidades_recibidas_activo", "unidades_recibidas_activo");
+            tableMapping.ColumnMappings.Add("unidades_transferidas_ventas", "unidades_transferidas_ventas");
             tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad", "unidades_transferidas_mortalidad");
+            tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad_lactancia", "unidades_transferidas_mortalidad_lactancia");
+            tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad_recria", "unidades_transferidas_mortalidad_recria");
+            tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad_engorde", "unidades_transferidas_mortalidad_engorde");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso", "unidades_finales_proceso");
+            tableMapping.ColumnMappings.Add("unidades_finales_proceso_lactancia", "unidades_finales_proceso_lactancia");
+            tableMapping.ColumnMappings.Add("unidades_finales_proceso_recria", "unidades_finales_proceso_recria");
+            tableMapping.ColumnMappings.Add("unidades_finales_proceso_engorde", "unidades_finales_proceso_engorde");
+            tableMapping.ColumnMappings.Add("fecha_inicial", "fecha_inicial");
+            tableMapping.ColumnMappings.Add("fecha_final", "fecha_final");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7022,6 +8626,8 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetCostosTableAdapte
             tableMapping.ColumnMappings.Add("unidades_finales_proceso", "unidades_finales_proceso");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso_lactancia", "unidades_finales_proceso_lactancia");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso_recria", "unidades_finales_proceso_recria");
+            tableMapping.ColumnMappings.Add("fecha_inicial", "fecha_inicial");
+            tableMapping.ColumnMappings.Add("fecha_final", "fecha_final");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7231,6 +8837,8 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetCostosTableAdapte
             tableMapping.ColumnMappings.Add("unidades_transferidas_recria", "unidades_transferidas_recria");
             tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad", "unidades_transferidas_mortalidad");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso", "unidades_finales_proceso");
+            tableMapping.ColumnMappings.Add("fecha_inicial", "fecha_inicial");
+            tableMapping.ColumnMappings.Add("fecha_final", "fecha_final");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7453,6 +9061,8 @@ namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetCostosTableAdapte
             tableMapping.ColumnMappings.Add("unidades_transferidas_mortalidad_lactancia", "unidades_transferidas_mortalidad_lactancia");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso", "unidades_finales_proceso");
             tableMapping.ColumnMappings.Add("unidades_finales_proceso_lactancia", "unidades_finales_proceso_lactancia");
+            tableMapping.ColumnMappings.Add("fecha_inicial", "fecha_inicial");
+            tableMapping.ColumnMappings.Add("fecha_final", "fecha_final");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

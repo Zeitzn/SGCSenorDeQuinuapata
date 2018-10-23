@@ -15,8 +15,8 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
         public string ubicacion { get; set; }
         public string genero { get; set; }
         public int numero_parto { get; set; }
-        public DateTime fecha_inicio_empadre { get; set; }
-        public DateTime fecha_fin_empadre { get; set; }
+        public DateTime? fecha_inicio_empadre { get; set; }
+        public DateTime? fecha_fin_empadre { get; set; }
         public string raza { get; set; }
         public decimal valor_inicial { get; set; }
         public decimal tasa_depreciacion { get; set; }

@@ -15,5 +15,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
         void MarcarAsistencia(int id);
         IEnumerable<AsistenciaResponse> ReportAsistencia(int mes);
         PersonaResponse GetPersonaByDni(string dni);
+
+        void ResetAsistencia();
     }
 }
