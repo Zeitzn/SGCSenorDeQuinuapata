@@ -23,10 +23,12 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Implementation
             if (consumo.tipo=="mi")
             {
                 consumo.mi = consumo.total;
+                consumo.md = 0;
             }
             else
             {
                 consumo.md = consumo.total;
+                consumo.mi = 0;
             }
 
             _ConsumoDA.RegisterConsumo(consumo);

@@ -4596,6 +4596,9 @@
     <Content Include="bd_sgcquinuapataDataSet.xss">
       <DependentUpon>bd_sgcquinuapataDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="bd_sgcquinuapataDataSetFlujosUnidades.xsc">
+      <DependentUpon>bd_sgcquinuapataDataSetFlujosUnidades.xsd</DependentUpon>
+    </Content>
     <Content Include="bd_sgcquinuapataDataSetCostos.xsc">
       <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
     </Content>
@@ -4606,9 +4609,6 @@
     </None>
     <Content Include="bd_sgcquinuapataDataSetCostos.xss">
       <DependentUpon>bd_sgcquinuapataDataSetCostos.xsd</DependentUpon>
-    </Content>
-    <Content Include="bd_sgcquinuapataDataSetFlujosUnidades.xsc">
-      <DependentUpon>bd_sgcquinuapataDataSetFlujosUnidades.xsd</DependentUpon>
     </Content>
     <None Include="bd_sgcquinuapataDataSetFlujosUnidades.xsd">
       <Generator>MSDataSetGenerator</Generator>

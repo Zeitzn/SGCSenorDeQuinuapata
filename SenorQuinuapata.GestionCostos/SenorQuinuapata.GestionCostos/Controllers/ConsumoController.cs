@@ -37,16 +37,16 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         [HttpPost]
         public ActionResult Create(ConsumoRequest consumo)
         {
-            try
-            {
+            //try
+            //{
                 _ConsumoBL.RegisterConsumo(consumo);
 
                 return RedirectToAction("Create");
-            }
-            catch
-            {
-                return View();
-            }
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
 
         
