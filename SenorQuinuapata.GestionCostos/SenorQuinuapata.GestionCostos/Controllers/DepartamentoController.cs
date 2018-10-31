@@ -638,7 +638,10 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 if (fecha!=null)
                 {
                     _MovimientoDepartamentoBL.UpdateFecha(fecha, campo, id);
-                    message = "success";
+
+
+                   
+                        message = "success";
                 }
                 else
                 {
@@ -696,14 +699,33 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             return Json(message, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult DeleteActivo(int id)
+        [HttpGet]
+        public JsonResult DeleteActivo(int id, string genero)
         {
             string message;
             try
             {
                 _MovimientoDepartamentoBL.DeleteActivo(id);
-                message = "success";
 
+                IngresoViewModel _ingreso = new IngresoViewModel();
+                _ingreso.Ingreso = new IngresoRequest()
+                {
+                    codigo_destino = "DE001",
+                    codigo_origen = "AB001",
+                    lactancia = 0,
+                    engorde = 0,
+                    recria = 0,
+                    mortalidad = 0,
+                    descarte = 1,
+                    venta = 0,
+                    activo = 0,
+                    fecha = DateTime.Now,
+                    genero = genero,
+                };
+                
+                _IngresoBL.RegisterIngreso(_ingreso.Ingreso);
+
+                message = "success";
 
             }
             catch (Exception e)
@@ -715,7 +737,6 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         }
 
         #endregion
-
 
         #region no transaccional
 
@@ -748,7 +769,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
         #region Reportes
 
-        //PRUEBA
+        
         public ActionResult Lista()
         {
 
@@ -768,25 +789,22 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             string fecha_final = fecha_fin.ToShortDateString();
 
 
-            //REPORTES DE FLUJO DE UNIDADES
+            //INFORME DE FLUJO DE UNIDADES (1)
+            //FLUJO DE UNIDADES Y COSTOS (2)
+            //INFORME DE COSTOS (3)
 
-            if (id_departamento==1 && tipo_reporte==1)
+            if (tipo_reporte==1)
             {
                 var oList = _DepartamentoBL.ListReportFlujoUnidades(1,fecha_inicial,fecha_final);
 
                 var reportViewModel = new ReportViewModel()
                 {
-                    FileName = "~/Reports/ReportLactancia.rdlc",
-                    ReportTitle = "ReporteLactancia",
+                    FileName = "~/Reports/ReportFlujoUnidades.rdlc",
+                    ReportTitle = "Flujo de unidades",
                     Format = ReportViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };
-
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
-
-                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            
                 reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
 
                 var renderedBytes = reportViewModel.RenderReport();
@@ -797,6 +815,33 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 return File(renderedBytes, reportViewModel.LastmimeType);
 
             }
+
+
+            else if (tipo_reporte == 3)
+            {
+                var oList = _DepartamentoBL.ListReportInformeConsumo(fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportConsumoViewModel()
+                {
+                    FileName = "~/Reports/ReportCostos.rdlc",
+                    ReportTitle = "Infome de costos",
+                    Format = ReportConsumoViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+              
+                reportViewModel.ReportDataSets.Add(new ReportConsumoViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+
+
             else if (id_departamento == 2 && tipo_reporte == 1)
             {
                 var oList = _DepartamentoBL.ListReportFlujoUnidades(2, fecha_inicial, fecha_final);
@@ -888,7 +933,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 var reportViewModel = new ReportConsumoViewModel()
                 {
                     FileName = "~/Reports/ReportConsumoLactancia.rdlc",
-                    ReportTitle = "ReporteConsumoLactancia",
+                    ReportTitle = "Lactancia",
                     Format = ReportConsumoViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };
@@ -915,7 +960,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 var reportViewModel = new ReportConsumoViewModel()
                 {
                     FileName = "~/Reports/ReportConsumoRecria.rdlc",
-                    ReportTitle = "ReporteConsumoRecria",
+                    ReportTitle = "Recria",
                     Format = ReportConsumoViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };
@@ -942,7 +987,35 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 var reportViewModel = new ReportConsumoViewModel()
                 {
                     FileName = "~/Reports/ReportConsumoEngorde.rdlc",
-                    ReportTitle = "ReporteConsumoEngorde",
+                    ReportTitle = "Engorde",
+                    Format = ReportConsumoViewModel.ReportFormat.Excel,
+                    ViewAsAttachment = true,
+                };
+
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+
+                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+                reportViewModel.ReportDataSets.Add(new ReportConsumoViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+
+                var renderedBytes = reportViewModel.RenderReport();
+
+                if (reportViewModel.ViewAsAttachment)
+                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+
+                return File(renderedBytes, reportViewModel.LastmimeType);
+
+            }
+
+            else if (id_departamento == 4 && tipo_reporte == 2)
+            {
+                var oList = _DepartamentoBL.ListReportCostoUnitarioDepartamento(4, fecha_inicial, fecha_final);
+
+                var reportViewModel = new ReportConsumoViewModel()
+                {
+                    FileName = "~/Reports/ReportConsumoDescarte.rdlc",
+                    ReportTitle = "Descarte",
                     Format = ReportConsumoViewModel.ReportFormat.Excel,
                     ViewAsAttachment = true,
                 };

@@ -35,5 +35,6 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.DataBase
         public virtual DbSet<Persona> Persona { get; set; }
         public virtual DbSet<Asistencia> Asistencia { get; set; }
         public virtual DbSet<Activo_biologico> Activo_biologico { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
     }
 }

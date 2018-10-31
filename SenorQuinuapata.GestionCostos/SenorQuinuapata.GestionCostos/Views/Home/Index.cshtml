@@ -3,43 +3,131 @@
 }
 
 <div class="row">
-    <div class="col-md-6">
+    <h3>Generar Reportes</h3>
+    <hr />
+
+    <div class="col-md-4 well border-blue">
+        <h4>Flujo de unidades y consumo</h4>
+        <hr />
         <form action="/Departamento/ReportFlujoUnidades" method="get">
 
             <div class="form-group">
                 <label>Departamento:</label>
-                <select class="form-control" name="id_departamento">
+                <select class="form-control" name="id_departamento" required>
+                    <option value="">---Seleccionar--</option>
                     <option value="1">Lactancia</option>
                     <option value="2">Recría</option>
                     <option value="3">Engorde</option>
                     <option value="4">Descarte</option>
                 </select>
             </div>
+
+            <input type="hidden" name="tipo_reporte" value="2" />
+            @*<div class="form-group">
+                    <label>Reporte:</label>
+                    <select class="form-control" name="tipo_reporte">
+                        <option value="1">Flujo de unidades</option>
+                        <option value="2">Consumo</option>
+                    </select>
+                </div>*@
             <div class="form-group">
-                <label>Reporte:</label>
-                <select class="form-control" name="tipo_reporte">
-                    <option value="1">Flujo de unidades</option>
-                    <option value="2">Consumo</option>
-                </select>
-            </div>
-            <div class="form-group">
-                
+
                 <div class="row">
                     <div class="col-md-6">
                         <label>Fecha inicial:</label>
-                        <input type="date" name="fecha_inicio" value="" class="form-control" />
+                        <input type="date" name="fecha_inicio" value="" class="form-control" required />
                     </div>
                     <div class="col-md-6">
                         <label>Fecha final:</label>
-                        <input type="date" name="fecha_fin" value="" class="form-control"/>
+                        <input type="date" name="fecha_fin" value="" class="form-control" required/>
                     </div>
                 </div>
             </div>
 
 
             <div class="form-group">
-                <input type="submit" name="name" value="Generar" class="btn btn-primary" />
+                <input type="submit" name="name" value="Generar" class="btn btn-success" />
             </div>
         </form>
+    </div>
+
+    <div class="col-md-4 well border-blue">
+        <h4>Informes</h4>
+        <hr />
+        <form action="/Departamento/ReportFlujoUnidades" method="get">
+            @* id_departamento necsario para evitar error en el envio de parametros, pero no para realizar la consulta *@
+            <input type="hidden" name="id_departamento" value="1" />
+            <div class="form-group">
+                <label>Tipo de informe:</label>
+                <select  class="form-control" name="tipo_reporte" required>
+                    <option value="">---Seleccionar--</option>
+                    <option value="1">Producción</option>
+                    <option value="3">Costos</option>
+                   
+                </select>
+            </div>
+          
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Fecha inicial:</label>
+                        <input type="date" name="fecha_inicio" value="" class="form-control" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Fecha final:</label>
+                        <input type="date" name="fecha_fin" value="" class="form-control" required/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" name="name" value="Generar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-4 well border-blue">
+        <h4>Asistencia</h4>
+        <hr />
+
+        <form action="/Persona/ReportAsistencia" method="get">
+
+           
+                <div class="form-group">
+
+
+                    <select class="form-control" name="mes" required>
+                        <option value="">---Seleccionar--</option>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+
+
+                </div>
+           
+
+          
+                <div class="form-group">
+                    <input type="submit" name="name" value="Generar" class="btn btn-success btn-sm" />
+                </div>
+            
+
+
+
+
+        </form>
+
     </div>
 </div>

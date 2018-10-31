@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace SenorQuinuapata.GestionCostos.Controllers
 {
+    [Authorize]
     public class IngresoController : Controller
     {
         private readonly IngresoBL _IngresoBL = new IngresoBL();

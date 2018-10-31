@@ -47,11 +47,16 @@
         <div class="form-group">
             <label>Cargo:</label>
             <select class="form-control" name="id_cargo" required>
-                <option value="">--Seleccionar--</option>
-                <option value="1">Ayuda</option>
+
+                <option value="" selected>--Seleccionar--</option>
+                @foreach (var item in ViewBag.Cargo)
+                {
+                    <option value="@item.id">@item.descripcion</option>
+                }
+                @*<option value="1">Ayuda</option>
                 <option value="2">Filmon</option>
                 <option value="3">Ingeniero</option>
-                <option value="4">Veterinario</option>
+                <option value="4">Veterinario</option>*@
             </select>
         </div>
 

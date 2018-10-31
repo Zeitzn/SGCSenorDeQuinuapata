@@ -287,6 +287,8 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
             
             private global::System.Data.DataColumn columnsueldo;
             
+            private global::System.Data.DataColumn columndescripcion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public sp_asistencia_persona_listDataTable() {
@@ -354,6 +356,14 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sp_asistencia_persona_listRow Addsp_asistencia_persona_listRow(string nombre_completo, string estado, System.DateTime fecha, decimal sueldo) {
+            public sp_asistencia_persona_listRow Addsp_asistencia_persona_listRow(string nombre_completo, string estado, System.DateTime fecha, decimal sueldo, string descripcion) {
                 sp_asistencia_persona_listRow rowsp_asistencia_persona_listRow = ((sp_asistencia_persona_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nombre_completo,
                         estado,
                         fecha,
-                        sueldo};
+                        sueldo,
+                        descripcion};
                 rowsp_asistencia_persona_listRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_asistencia_persona_listRow);
                 return rowsp_asistencia_persona_listRow;
@@ -422,6 +433,7 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
                 this.columnestado = base.Columns["estado"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnsueldo = base.Columns["sueldo"];
+                this.columndescripcion = base.Columns["descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,9 +447,12 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
                 base.Columns.Add(this.columnfecha);
                 this.columnsueldo = new global::System.Data.DataColumn("sueldo", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsueldo);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
                 this.columnnombre_completo.ReadOnly = true;
                 this.columnnombre_completo.MaxLength = 152;
                 this.columnestado.MaxLength = 1;
+                this.columndescripcion.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -648,6 +663,23 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_asistencia_persona_list.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'sp_asistencia_persona_list\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_asistencia_persona_list.descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isnombre_completoNull() {
                 return this.IsNull(this.tablesp_asistencia_persona_list.nombre_completoColumn);
             }
@@ -692,6 +724,18 @@ namespace SenorQuinuapata.GestionCostos.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsueldoNull() {
                 this[this.tablesp_asistencia_persona_list.sueldoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tablesp_asistencia_persona_list.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tablesp_asistencia_persona_list.descripcionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -858,6 +902,7 @@ namespace SenorQuinuapata.GestionCostos.DataSets.bd_sgcquinuapataDataSetAsistenc
             tableMapping.ColumnMappings.Add("estado", "estado");
             tableMapping.ColumnMappings.Add("fecha", "fecha");
             tableMapping.ColumnMappings.Add("sueldo", "sueldo");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

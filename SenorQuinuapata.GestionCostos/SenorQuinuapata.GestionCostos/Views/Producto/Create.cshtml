@@ -12,8 +12,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-group">
-            <label>Código:</label>
-            <input type="text" name="codigo" class="form-control" value="@ViewBag.Codigo" />
+            
+            <input type="hidden" name="codigo" class="form-control" value="@ViewBag.Codigo" />
         </div>
 
         <div class="form-group">

@@ -1,0 +1,69 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.RegisterViewModel
+@{
+
+    ViewBag.Title = "Registrarse";
+}
+
+<h4>Registrar nuevo usuario.</h4>
+
+<div class="col-md-6">
+
+
+    @if (TempData["Success"] != null)
+    {
+
+        <div class="alert alert-success">
+            <p>@TempData["Success"]</p>
+        </div>
+    }
+
+    @using (Html.BeginForm("Create", "Usuario", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+            <label>Correo electrónico:</label>
+
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+            <label>Contraseña:</label>
+
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })*@
+            <label>Confirmar contraseña:</label>
+
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+
+        </div>
+
+        <div class="form-group">
+            <label>Rol:</label>
+            @*<select class="form-control" name="rol" required>
+            <option value="">--- Seleccionar ---</option>
+            <option value="1">Administador</option>
+            <option value="2">Veterinario</option>
+        </select>*@
+
+            @*@Html.DropDownList("rol", ViewBag.roles as IEnumerable<SelectListItem>, "--- Seleccionar ---", htmlAttributes: new { @class = "form-control", name="rol" })*@
+            @Html.DropDownList("rol", (SelectList)ViewBag.roles, "--- Seleccionar ---", htmlAttributes: new { @class = "form-control", required="true"})
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="submit" class="btn btn-primary" value="Registrarse" />
+
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -17,11 +17,11 @@
             <td>SALDO</td>
             <td>% AVANCE</td>
             <td>Q. EQUIVALENTE</td>
-            <td>C/U MD</td>
+            @*<td>C/U MD</td>
             <td>C/U MOD</td>
             <td>C/U CIF</td>
             <td>C/U TOTAL</td>
-            <td>C/U COSTO TOTAL</td>
+            <td>C/U COSTO TOTAL</td>*@
             @if (ViewBag.Departamento == 3)
             {
                 <td>ENVIAR A ACTIVOS</td>
@@ -40,11 +40,11 @@
             <td>SALDO</td>
             <td>% AVANCE</td>
             <td>Q. EQUIVALENTE</td>
-            <td>C/U MD</td>
+            @*<td>C/U MD</td>
             <td>C/U MOD</td>
             <td>C/U CIF</td>
             <td>C/U TOTAL</td>
-            <td>C/U COSTO TOTAL</td>
+            <td>C/U COSTO TOTAL</td>*@
             @if (ViewBag.Departamento == 3)
             {
                 <td>ENVIAR A ACTIVOS</td>
@@ -66,11 +66,11 @@
             <td class="text-center">@item.saldo</td>
             <td class="text-center">@item.avance %</td>
             <td class="text-center">@item.q_equivalente</td>
-            <td class="text-right">@item.cu_md</td>
+            @*<td class="text-right">@item.cu_md</td>
             <td class="text-right">@item.cu_mod</td>
             <td class="text-right">@item.cu_cif</td>
             <td class="text-right">@item.cu_total</td>
-            <td class="text-right">@item.costo_total</td>
+            <td class="text-right">@item.costo_total</td>*@
             @if (ViewBag.Departamento == 3)
             {
                 if (item.saldo > 0)
@@ -135,8 +135,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Ubicación:</label>
-                        <select class="form-control" name="ubicacion" id="id_ubicacion" required>
+                        <label>Número de Poza:</label>
+                        @*<select class="form-control" name="ubicacion" id="id_ubicacion" required>
                             <option value="">-- Seleccionar --</option>
                             <option value="01">Poza 01</option>
                             <option value="02">Poza 02</option>
@@ -148,8 +148,12 @@
                             <option value="08">Poza 08</option>
                             <option value="09">Poza 09</option>
                             <option value="10">Poza 10</option>
-                        </select>
+                        </select>*@
+
+                        <input type="number" name="ubicacion" id="id_ubicacion" required class="form-control"/>
                     </div>
+
+                    
 
                     <div class="form-group">
                         <label>Cantidad:</label>
@@ -162,7 +166,7 @@
                 }
             </div>
             <div class="modal-footer">
-                <button type="button"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 
             </div>
         </div>

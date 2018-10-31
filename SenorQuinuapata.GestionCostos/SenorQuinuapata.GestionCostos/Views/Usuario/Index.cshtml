@@ -1,0 +1,50 @@
+﻿@model SenorQuinuapata.GestionCostos.Models.UsuarioViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Usuarios</h4>
+
+
+<a href="/Usuario/Create" class="btn btn-primary btn-sm">Registrar</a>
+<hr />
+
+<table class="table table-bordered table-hover small text-center" id="table">
+    <thead>
+
+        <tr>
+            <td>USUARIO</td>
+            <td>ROL</td>
+            <td>ACCIÓN</td>
+        </tr>
+
+    </thead>
+    <tfoot>
+
+        <tr>
+            <td>USUARIO</td>
+            <td>ROL</td>
+            <td>ACCIÓN</td>
+        </tr>
+
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in Model.ListUsuario)
+        {
+        <tr>
+            <td>@item.Email</td>
+            <td>@item.Rol</td>
+            <td>
+
+                
+                <a href="#" class="btn btn-danger btn-xs">Eliminar</a>
+
+            </td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>
+

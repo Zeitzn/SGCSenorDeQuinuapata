@@ -24,6 +24,10 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
         {
             return _DepartamentoDA.ListReportFlujoUnidades(id_departamento,fecha_inicial,fecha_final);
         }
+        public IEnumerable<CostoUnitarioDepartamentoResponse> ListReportInformeConsumo(string fecha_inicial, string fecha_final)
+        {
+            return _DepartamentoDA.ListReportInformeConsumo(fecha_inicial, fecha_final);
+        }
 
         public IEnumerable<CostoUnitarioDepartamentoResponse> ListReportCostoUnitarioDepartamento(int id_departamento, string fecha_inicial, string fecha_final)
         {

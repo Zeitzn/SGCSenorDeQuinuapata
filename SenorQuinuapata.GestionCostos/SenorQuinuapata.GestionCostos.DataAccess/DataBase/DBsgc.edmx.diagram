@@ -21,6 +21,7 @@
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Asistencia" Width="1.5" PointX="7.875" PointY="8.625" />
         <AssociationConnector Association="bd_sgcquinuapataModel.fk_asistencia_persona" />
         <EntityTypeShape EntityType="bd_sgcquinuapataModel.Activo_biologico" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="bd_sgcquinuapataModel.AspNetRoles" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

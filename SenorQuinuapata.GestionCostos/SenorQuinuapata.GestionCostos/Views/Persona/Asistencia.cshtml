@@ -4,17 +4,11 @@
 }
 <h2>Asistencia de personal</h2>
 
-<form action="/Persona/ReportAsistencia" method="get">
-    <h6>@*Asistencia Mensual*@</h6>
-    
+@*<form action="/Persona/ReportAsistencia" method="get">
+  
     <div class="col-md-2">
         <div class="form-group">
-            @*<div class="col-md-3">
-                <label>DNI del Personal:</label>
-            </div>
-            <div class="col-md-6">
-                <input type="text" name="dni" value="" class="form-control" />
-            </div>*@
+           
            
                 <select class="form-control" name="mes">
                     <option value="">-- Mes --</option>
@@ -40,12 +34,11 @@
         <div class="form-group">
             <input type="submit" name="name" value="Generar" class="btn btn-danger btn-sm" />
         </div>
-    </div>
-        
+    </div>     
 
     
 
-</form>
+</form>*@
 
 <hr />
 <p class="text-success">Fecha de Hoy: @DateTime.Now.ToShortDateString()</p>
@@ -72,7 +65,7 @@
     <tbody>
         @foreach (var item in Model.ListPersona)
         {
-        <tr @((item.asistencia).Equals("A")? "class=text-success":"" )>
+        <tr @*@((item.asistencia).Equals("A")? "class=text-success":"" )*@>
             <td class="text-center">@item.dni</td>
             <td class="">@item.apellido_paterno @item.apellido_materno @item.nombres</td>
             <td class="text-center">@item.cargo</td>
@@ -80,7 +73,7 @@
             <td class="text-center">
                 @if ((item.asistencia).Equals("F"))
                 {
-                    <a href="@Url.Action("MarcarAsistencia","Persona", new { id=item.id })" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-check"></span></a>
+                    <a href="@Url.Action("MarcarAsistencia","Persona", new { id=item.id })" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-check"></span></a>
                 }
 
             </td>

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using SenorQuinuapata.GestioCostos.BusinessLogic.Implementation;
 using SenorQuinuapata.GestionCostos.Models;
 
 namespace SenorQuinuapata.GestionCostos.Controllers
@@ -17,6 +18,9 @@ namespace SenorQuinuapata.GestionCostos.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext userContext;
+
+        private readonly RolBL _RolBL = new RolBL();
 
         public AccountController()
         {
@@ -136,7 +140,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles ="Admin")]
         public ActionResult Register()
         {
             return View();
@@ -147,23 +151,35 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model,string rol)
         {
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+            
+                
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
+                    var _rol = _RolBL.GetRol(rol);                    
                     
+                    await UserManager.AddToRoleAsync(user.Id,_rol.rol);
+
+                    //System.Web.Security.Roles.AddUsersToRole()
+                    //var userRole=await UserManager.AddToRoleAsync()
+
+                    TempData["Success"] = "El usuario fue registrado con éxito";
+
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
                     // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar correo electrónico con este vínculo
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Register", "Account");
                 }
                 AddErrors(result);
             }

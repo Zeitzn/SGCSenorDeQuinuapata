@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SenorQuinuapata.GestionCostos.DataAccess.DataBase.Persona>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+
+    <a href="/Personal/Create" class="btn btn-primary btn-sm">Registrar</a>
+</p>
+<table class="table table-bordered table-hover small" id="table">
+    <thead>
+        <tr>
+            <th>
+                NOMBRES
+            </th>
+            <th>
+                APELLIDO PATERNO
+            </th>
+            <th>
+               APELLIDO MATERNO
+            </th>           
+            <th>
+                DNI
+            </th>
+            <th>
+                TELÉFONO
+            </th>
+           
+            <th>
+                CARGO
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>
+                NOMBRES
+            </th>
+            <th>
+                APELLIDO PATERNO
+            </th>
+            <th>
+                APELLIDO MATERNO
+            </th>
+            <th>
+                DNI
+            </th>
+            <th>
+                TELÉFONO
+            </th>
+
+            <th>
+                CARGO
+            </th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido_paterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido_materno)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.dni)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo.descripcion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                    @*@Html.ActionLink("Details", "Details", new { id=item.id }) |*@
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

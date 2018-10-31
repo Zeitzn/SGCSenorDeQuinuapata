@@ -51,7 +51,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
         #endregion
 
         #region reportes
-        public IEnumerable<FlujoUnidadesDepartamentoResponse> ListReportFlujoUnidades(int id_departamento,string fecha_inicial,string fecha_final)
+        public IEnumerable<FlujoUnidadesDepartamentoResponse> ListReportFlujoUnidades(int tipo_reporte,string fecha_inicial,string fecha_final)
         {
             var result = new List<FlujoUnidadesDepartamentoResponse>();
 
@@ -59,46 +59,73 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             {
                 using (var ctx = db)
                 {
-                    if (id_departamento==1)
+                    if (tipo_reporte == 1)
                     {
-                        result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_lactancia_list @fecha_inicial, @fecha_final",
+                        //result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_lactancia_list @fecha_inicial, @fecha_final",
 
-                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                        result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_informe_flujo_unidades_list @fecha_inicial, @fecha_final",
+                       new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
                         new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
                         ).ToList();
                     }
-                    else if (id_departamento == 2)
-                    {
-                        result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_recria_list @fecha_inicial, @fecha_final",
+                    //else if (tipo_reporte == 2)
+                    //{
+                    //    result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_informe_costos_produccion_list @fecha_inicial, @fecha_final",
 
-                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
-                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+                    //    new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                    //    new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
-                        ).ToList();
-                    }
-                    else if (id_departamento == 3)
-                    {
-                        result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_engorde_list @fecha_inicial, @fecha_final",
+                    //    ).ToList();
+                    //}
+                    //else if (id_departamento == 3)
+                    //{
+                    //    result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_engorde_list @fecha_inicial, @fecha_final",
 
-                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
-                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+                    //    new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                    //    new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
-                        ).ToList();
-                    }
-                    else if (id_departamento == 4)
-                    {
-                        result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_descarte_list @fecha_inicial, @fecha_final",
+                    //    ).ToList();
+                    //}
+                    //else if (id_departamento == 4)
+                    //{
+                    //    result = ctx.Database.SqlQuery<FlujoUnidadesDepartamentoResponse>("sp_flujo_unidades_departamento_descarte_list @fecha_inicial, @fecha_final",
 
-                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
-                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+                    //    new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                    //    new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
 
-                        ).ToList();
-                    }
+                    //    ).ToList();
+                    //}
                     else
                     {
                         result = null;
                     }
+                    
+
+                }
+
+                return result;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+        }
+        public IEnumerable<CostoUnitarioDepartamentoResponse> ListReportInformeConsumo(string fecha_inicial, string fecha_final)
+        {
+            var result = new List<CostoUnitarioDepartamentoResponse>();
+
+            try
+            {
+                using (var ctx = db)
+                {
+                   
+                        result = ctx.Database.SqlQuery<CostoUnitarioDepartamentoResponse>("sp_informe_costos_produccion_list @fecha_inicial, @fecha_final",
+
+                        new SqlParameter("@fecha_inicial", Convert.ToDateTime(fecha_inicial)),
+                        new SqlParameter("@fecha_final", Convert.ToDateTime(fecha_final))
+
+                        ).ToList();
                     
 
                 }

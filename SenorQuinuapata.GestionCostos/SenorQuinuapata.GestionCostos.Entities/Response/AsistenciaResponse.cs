@@ -12,5 +12,6 @@ namespace SenorQuinuapata.GestionCostos.Entities.Response
         public DateTime fecha { get; set; }
         public string estado { get; set; }
         public decimal sueldo { get; set; }
+        public string descripcion { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BuenaVista.Caja.Web.Helper;
 using SenorQuinuapata.GestioCostos.BusinessLogic.Implementation;
+using SenorQuinuapata.GestionCostos.DataAccess.DataBase;
 using SenorQuinuapata.GestionCostos.Entities.Request;
 using SenorQuinuapata.GestionCostos.Models;
 using System;
@@ -10,15 +11,20 @@ using System.Web.Mvc;
 
 namespace SenorQuinuapata.GestionCostos.Controllers
 {
+    [Authorize]
     public class PersonaController : Controller
     {
         private readonly PersonaBL _PersonaBL = new PersonaBL();
+
+        private bd_sgcquinuapataEntities db = new bd_sgcquinuapataEntities();
+
 
         #region transaccional
         public ActionResult Create()
         {
 
             ViewBag.SuccessRegister = "";
+            ViewBag.Cargo = db.Cargo.ToList();
             return View();
         }
 
@@ -82,49 +88,49 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         public ActionResult ReportAsistencia(int mes)
         {
 
-            string _mes = "";
+            //string _mes = "";
 
-            switch (mes)
-            {
-                case 1:
-                    _mes = "Enero";
-                    break;
-                case 2:
-                    _mes = "Febrero";
-                    break;
-                case 3:
-                    _mes = "Marzo";
-                    break;
-                case 4:
-                    _mes = "Abril";
-                    break;
-                case 5:
-                    _mes = "Mayo";
-                    break;
-                case 6:
-                    _mes = "Junio";
-                    break;
-                case 7:
-                    _mes = "Julio";
-                    break;
-                case 8:
-                    _mes = "Agosto";
-                    break;
-                case 9:
-                    _mes = "Setiembre";
-                    break;
-                case 10:
-                    _mes = "Octubre";
-                    break;
-                case 11:
-                    _mes = "Noviembre";
-                    break;
-                case 12:
-                    _mes = "Diciembre";
-                    break;
-                default:
-                    break;
-            }
+            //switch (mes)
+            //{
+            //    case 1:
+            //        _mes = "Enero";
+            //        break;
+            //    case 2:
+            //        _mes = "Febrero";
+            //        break;
+            //    case 3:
+            //        _mes = "Marzo";
+            //        break;
+            //    case 4:
+            //        _mes = "Abril";
+            //        break;
+            //    case 5:
+            //        _mes = "Mayo";
+            //        break;
+            //    case 6:
+            //        _mes = "Junio";
+            //        break;
+            //    case 7:
+            //        _mes = "Julio";
+            //        break;
+            //    case 8:
+            //        _mes = "Agosto";
+            //        break;
+            //    case 9:
+            //        _mes = "Setiembre";
+            //        break;
+            //    case 10:
+            //        _mes = "Octubre";
+            //        break;
+            //    case 11:
+            //        _mes = "Noviembre";
+            //        break;
+            //    case 12:
+            //        _mes = "Diciembre";
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             //PersonaViewModel _persona = new PersonaViewModel()
             //{

@@ -1,0 +1,82 @@
+﻿@model SenorQuinuapata.GestionCostos.DataAccess.DataBase.Persona
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_paterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_paterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_materno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_materno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.asistencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.asistencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

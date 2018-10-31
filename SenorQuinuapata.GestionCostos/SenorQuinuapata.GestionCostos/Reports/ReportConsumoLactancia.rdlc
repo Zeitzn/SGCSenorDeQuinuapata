@@ -85,14 +85,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="pp_md">
+                    <Textbox Name="pp_mod_lactancia">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Sum(Fields!pp_md.Value)),"F2")</Value>
+                              <Value>=Sum(Fields!pp_md_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -101,7 +101,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>pp_md</rd:DefaultName>
+                      <rd:DefaultName>pp_mod_lactancia</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -137,14 +137,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="costo_agregado_md_lactancia">
+                    <Textbox Name="Textbox76">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Sum(Fields!costo_agregado_md_lactancia.Value)),"F2")</Value>
+                              <Value>=Fields!costo_agregado_md_lactancia.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -153,7 +153,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>costo_agregado_md_lactancia</rd:DefaultName>
+                      <rd:DefaultName>Textbox76</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -189,14 +189,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox40">
+                    <Textbox Name="Textbox69">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Sum(Fields!pp_md.Value)+Sum(Fields!costo_agregado_md_lactancia.Value)),"F2")</Value>
+                              <Value>=(Fields!costo_agregado_md_lactancia.Value)+(Sum(Fields!pp_md_lactancia.Value))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -207,7 +207,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <rd:DefaultName>Textbox69</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -250,7 +250,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!q_equivalente.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad.Value</Value>
+                              <Value>=Fields!q_equivalente_lactancia.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -295,14 +295,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox41">
+                    <Textbox Name="Textbox111">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_md.Value)+Sum(Fields!costo_agregado_md_lactancia.Value))/(Fields!q_equivalente.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad.Value)),"F2")</Value>
+                              <Value>=((Fields!costo_agregado_md_lactancia.Value)+(Sum(Fields!pp_md_lactancia.Value)))/(Fields!q_equivalente_lactancia.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -311,7 +311,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -352,14 +352,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="pp_mod">
+                    <Textbox Name="pp_mod_lactancia1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Sum(Fields!pp_mod.Value)),"F2")</Value>
+                              <Value>=Sum(Fields!pp_mod_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -368,7 +368,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>pp_mod</rd:DefaultName>
+                      <rd:DefaultName>pp_mod_lactancia1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -404,14 +404,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="costo_agregado_mod_lactancia">
+                    <Textbox Name="Textbox75">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Sum(Fields!costo_agregado_mod_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))),"F2")</Value>
+                              <Value>=(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))*Fields!costo_agregado_mod_lactancia.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -420,7 +420,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>costo_agregado_mod_lactancia</rd:DefaultName>
+                      <rd:DefaultName>Textbox75</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -456,14 +456,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox39">
+                    <Textbox Name="Textbox74">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Sum(Fields!pp_mod.Value)+(Sum(Fields!costo_agregado_mod_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)))),"F2")</Value>
+                              <Value>=((Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))*Fields!costo_agregado_mod_lactancia.Value)+(Sum(Fields!pp_mod_lactancia.Value))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -474,7 +474,274 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox39</rd:DefaultName>
+                      <rd:DefaultName>Textbox69</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="q_equivalente10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>q_equivalente</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox81">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(((Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))*Fields!costo_agregado_mod_lactancia.Value)+(Sum(Fields!pp_mod_lactancia.Value)))/(Fields!q_equivalente_lactancia.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox79">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!pp_moi_lactancia.Value+Fields!pp_mi_lactancia.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox79</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox78">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox75</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox70">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value)+(Fields!pp_moi_lactancia.Value+Fields!pp_mi_lactancia.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox69</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -517,7 +784,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
+                              <Value>=Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -562,14 +829,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox47">
+                    <Textbox Name="Textbox72">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_mod.Value)+(Sum(Fields!costo_agregado_mod_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))))/(Fields!q_equivalente.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad.Value)),"F2")</Value>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value)+(Fields!pp_moi_lactancia.Value+Fields!pp_mi_lactancia.Value))/(Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -578,7 +845,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -619,118 +886,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox2">
+                    <Textbox Name="Textbox80">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((Fields!pp_moi.Value+Fields!pp_mi.Value),"F2")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox36">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format((Sum(Fields!costo_agregado_moi_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value),"F2")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox36</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox38">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format(((Sum(Fields!costo_agregado_moi_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value)+(Fields!pp_moi.Value+Fields!pp_mi.Value)),"F2")</Value>
+                              <Value>=(Fields!pp_moi_lactancia.Value+Fields!pp_mi_lactancia.Value)+(Sum(Fields!pp_mod_lactancia.Value))+(Sum(Fields!pp_md_lactancia.Value))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -741,7 +904,115 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox38</rd:DefaultName>
+                      <rd:DefaultName>Textbox80</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox73">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value)+((Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))*Fields!costo_agregado_mod_lactancia.Value)+(Fields!costo_agregado_md_lactancia.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox73</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox77">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value)+((Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))*Fields!costo_agregado_mod_lactancia.Value)+(Fields!costo_agregado_md_lactancia.Value))+((Fields!pp_moi_lactancia.Value+Fields!pp_mi_lactancia.Value)+(Sum(Fields!pp_mod_lactancia.Value))+(Sum(Fields!pp_md_lactancia.Value)))</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox73</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -784,8 +1055,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
-                              <Style />
+                              <Value>=Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -829,71 +1102,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox42">
+                    <Textbox Name="Textbox82">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((((Sum(Fields!costo_agregado_moi_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value)+(Fields!pp_moi.Value+Fields!pp_mi.Value))/(Fields!q_equivalente.Value+Fields!unidades_transferidas_recria.Value+Fields!unidades_transferidas_mortalidad.Value)),"F2")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox144">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format(((Fields!pp_moi.Value+Fields!pp_mi.Value)+(Sum(Fields!pp_mod.Value))+(Sum(Fields!pp_md.Value))),"F2")</Value>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value)+((Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))*Fields!costo_agregado_mod_lactancia.Value)+(Fields!costo_agregado_md_lactancia.Value))+((Fields!pp_moi_lactancia.Value+Fields!pp_mi_lactancia.Value)+(Sum(Fields!pp_mod_lactancia.Value))+(Sum(Fields!pp_md_lactancia.Value))))/(Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -904,219 +1120,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox144</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox151">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format(((Sum(Fields!costo_agregado_moi_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value)+(Sum(Fields!costo_agregado_mod_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)))+(Sum(Fields!costo_agregado_md_lactancia.Value))),"F2")</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox151</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox153">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format((((Sum(Fields!costo_agregado_moi_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value)+(Fields!pp_moi.Value+Fields!pp_mi.Value))+(Sum(Fields!pp_mod.Value)+(Sum(Fields!costo_agregado_mod_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))))+(Sum(Fields!pp_md.Value)+Sum(Fields!costo_agregado_md_lactancia.Value))),"F2")</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox151</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="q_equivalente9">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>q_equivalente</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox159">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format(((((Sum(Fields!costo_agregado_moi_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value)+(Fields!pp_moi.Value+Fields!pp_mi.Value))+(Sum(Fields!pp_mod.Value)+(Sum(Fields!costo_agregado_mod_lactancia.Value)*(Fields!total_flujo_lactancia.Value/(Fields!total_flujo_lactancia.Value+Fields!total_flujo_recria.Value+Fields!total_flujo_engorde.Value+Fields!total_flujo_descarte.Value))))+(Sum(Fields!pp_md.Value)+Sum(Fields!costo_agregado_md_lactancia.Value)))/(Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)),"F2")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox159</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -1859,14 +1863,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox53">
+                    <Textbox Name="Textbox114">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1875,7 +1879,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -1911,14 +1915,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox242">
+                    <Textbox Name="Textbox154">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value))</Value>
+                              <Value>=((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_recria.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1927,7 +1931,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox242</rd:DefaultName>
+                      <rd:DefaultName>Textbox154</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2020,14 +2024,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox50">
+                    <Textbox Name="Textbox138">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2036,7 +2040,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2072,14 +2076,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox166">
+                    <Textbox Name="Textbox158">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Sum(Fields!unidades_transferidas_recria.Value))*(Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))</Value>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_recria.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2088,7 +2092,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox166</rd:DefaultName>
+                      <rd:DefaultName>Textbox154</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2181,14 +2185,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox52">
+                    <Textbox Name="Textbox141">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2197,7 +2201,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2233,14 +2237,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox244">
+                    <Textbox Name="Textbox55">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value))</Value>
+                              <Value>=(Sum(Fields!unidades_transferidas_recria.Value))*((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2249,7 +2253,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox242</rd:DefaultName>
+                      <rd:DefaultName>Textbox55</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2344,15 +2348,17 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox162">
+                    <Textbox Name="Textbox147">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) + (Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) + (Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
-                              <Style />
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + ((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Fields!costo_agregado_md_lactancia.Value) + ((Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value) + Sum(Fields!pp_md_lactancia.Value))) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2360,7 +2366,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox159</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2396,15 +2402,17 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox245">
+                    <Textbox Name="Textbox54">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Format(((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) + (Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) + (Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value))</Value>
-                              <Style />
+                              <Value>=(Sum(Fields!unidades_transferidas_recria.Value))*(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + ((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Fields!costo_agregado_md_lactancia.Value) + ((Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value) + Sum(Fields!pp_md_lactancia.Value))) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2412,7 +2420,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox242</rd:DefaultName>
+                      <rd:DefaultName>Textbox54</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3001,7 +3009,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!q_equivalente.Value)</Value>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3046,14 +3054,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox44">
+                    <Textbox Name="Textbox134">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3062,7 +3070,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3105,7 +3113,168 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ct_incurrido_md.Value)</Value>
+                              <Value>=((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!q_equivalente_lactancia.Value))</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ct_incurrido_md</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="q_equivalente9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>q_equivalente2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox139">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ct_incurrido_md2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!q_equivalente_lactancia.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3162,7 +3331,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!q_equivalente.Value)</Value>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3171,7 +3340,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>q_equivalente7</rd:DefaultName>
+                      <rd:DefaultName>q_equivalente2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -3207,14 +3376,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox49">
+                    <Textbox Name="Textbox142">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3223,7 +3392,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3259,14 +3428,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ct_incurrido_mod">
+                    <Textbox Name="ct_incurrido_md3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ct_incurrido_mod.Value)</Value>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!q_equivalente_lactancia.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3275,7 +3444,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ct_incurrido_mod</rd:DefaultName>
+                      <rd:DefaultName>ct_incurrido_md</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3323,168 +3492,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!q_equivalente.Value)</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>q_equivalente8</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox51">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="ct_incurrido_moi">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!ct_incurrido_moi.Value)+Sum(Fields!ct_incurrido_mi.Value)</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>ct_incurrido_moi</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox114">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!unidades_finales_proceso.Value)</Value>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -3495,7 +3503,61 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox110</rd:DefaultName>
+                      <rd:DefaultName>q_equivalente2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox146">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + ((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Fields!costo_agregado_md_lactancia.Value) + ((Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value) + Sum(Fields!pp_md_lactancia.Value))) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3531,15 +3593,17 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox160">
+                    <Textbox Name="ct_incurrido_md4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) + (Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) + (Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
-                              <Style />
+                              <Value>=(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + ((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Fields!costo_agregado_md_lactancia.Value) + ((Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value) + Sum(Fields!pp_md_lactancia.Value))) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!q_equivalente_lactancia.Value))</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -3547,7 +3611,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox159</rd:DefaultName>
+                      <rd:DefaultName>ct_incurrido_md</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3579,58 +3643,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox228">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=(Sum(Fields!ct_incurrido_moi.Value)+Sum(Fields!ct_incurrido_mi.Value))+(Sum(Fields!ct_incurrido_mod.Value))+(Sum(Fields!ct_incurrido_md.Value))</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox228</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -4223,7 +4236,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4268,14 +4281,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox43">
+                    <Textbox Name="Textbox137">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4284,7 +4297,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -4320,14 +4333,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox175">
+                    <Textbox Name="Textbox57">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value))</Value>
+                              <Value>=((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4336,7 +4349,168 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox175</rd:DefaultName>
+                      <rd:DefaultName>Textbox57</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="unidades_finales_proceso7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>unidades_finales_proceso</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox140">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox61">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value))</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox57</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -4384,7 +4558,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4393,7 +4567,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_finales_proceso1</rd:DefaultName>
+                      <rd:DefaultName>unidades_finales_proceso</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -4429,14 +4603,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox48">
+                    <Textbox Name="Textbox145">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4445,7 +4619,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -4481,14 +4655,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox180">
+                    <Textbox Name="Textbox50">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value))</Value>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4497,7 +4671,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox175</rd:DefaultName>
+                      <rd:DefaultName>Textbox50</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -4545,168 +4719,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>unidades_finales_proceso2</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Green</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox45">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox181">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=(Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value))</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox175</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox3">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -4717,7 +4730,61 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <rd:DefaultName>unidades_finales_proceso</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Green</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox143">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + ((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Fields!costo_agregado_md_lactancia.Value) + ((Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value) + Sum(Fields!pp_md_lactancia.Value))) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -4753,14 +4820,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox163">
+                    <Textbox Name="Textbox52">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) + (Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) + (Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")</Value>
+                              <Value>=(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + ((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Fields!costo_agregado_md_lactancia.Value) + ((Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value) + Sum(Fields!pp_md_lactancia.Value))) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4769,59 +4836,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox159</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox182">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=(Format(((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) + (Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) + (Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value))</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox175</rd:DefaultName>
+                      <rd:DefaultName>Textbox50</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -5399,14 +5414,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox176">
+                    <Textbox Name="Textbox35">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value)))+(Sum(Fields!ct_incurrido_md.Value))+((Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value)))</Value>
+                              <Value>=(((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_recria.Value)))+(Sum(Fields!ct_incurrido_md_lactancia.Value))+(((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -5415,7 +5430,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox176</rd:DefaultName>
+                      <rd:DefaultName>Textbox35</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -5456,14 +5471,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox183">
+                    <Textbox Name="Textbox36">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value)))+(Sum(Fields!ct_incurrido_mod.Value))+((Sum(Fields!unidades_transferidas_recria.Value))*(Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2")))</Value>
+                              <Value>=(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_recria.Value)))+(Sum(Fields!ct_incurrido_mod_lactancia.Value))+(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -5472,7 +5487,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox176</rd:DefaultName>
+                      <rd:DefaultName>Textbox35</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -5513,14 +5528,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox177">
+                    <Textbox Name="Textbox49">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value)))+(Sum(Fields!ct_incurrido_moi.Value)+Sum(Fields!ct_incurrido_mi.Value))+((Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value)))</Value>
+                              <Value>=(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)))+(Fields!ct_incurrido_moi_lactancia.Value+Fields!ct_incurrido_mi_lactancia.Value)+((Sum(Fields!unidades_transferidas_recria.Value))*((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value)))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -5529,7 +5544,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox176</rd:DefaultName>
+                      <rd:DefaultName>Textbox49</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -5570,14 +5585,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox178">
+                    <Textbox Name="Textbox48">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value)))+(Sum(Fields!ct_incurrido_moi.Value)+Sum(Fields!ct_incurrido_mi.Value))+((Format((((Sum(Fields!costo_agregado_moi_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi.Value + Fields!pp_mi.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value))))+(((Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value)))+(Sum(Fields!ct_incurrido_mod.Value))+((Sum(Fields!unidades_transferidas_recria.Value))*(Format(((Sum(Fields!pp_mod.Value) + (Sum(Fields!costo_agregado_mod_lactancia.Value) * (Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)))) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))))+(((Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_mortalidad.Value)))+(Sum(Fields!ct_incurrido_md.Value))+((Format(((Sum(Fields!pp_md.Value) + Sum(Fields!costo_agregado_md_lactancia.Value)) / (Fields!q_equivalente.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad.Value)), "F2"))*(Sum(Fields!unidades_transferidas_recria.Value))))</Value>
+                              <Value>=((((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)))+(Fields!ct_incurrido_moi_lactancia.Value+Fields!ct_incurrido_mi_lactancia.Value)+((Sum(Fields!unidades_transferidas_recria.Value))*((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_lactancia.Value + Fields!costo_agregado_mi_lactancia.Value) + (Fields!pp_moi_lactancia.Value + Fields!pp_mi_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))))+((((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_recria.Value)))+(Sum(Fields!ct_incurrido_mod_lactancia.Value))+(((((Fields!total_flujo_lactancia.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_lactancia.Value) + Sum(Fields!pp_mod_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value))))+((((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_recria.Value)))+(Sum(Fields!ct_incurrido_md_lactancia.Value))+(((Fields!costo_agregado_md_lactancia.Value + Sum(Fields!pp_md_lactancia.Value)) / (Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_recria.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value))*(Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value))))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -5586,7 +5601,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox176</rd:DefaultName>
+                      <rd:DefaultName>Textbox48</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -5618,7 +5633,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -6187,7 +6201,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_iniciales_proceso.Value)</Value>
+                              <Value>=Sum(Fields!unidades_iniciales_proceso_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -6566,7 +6580,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_finales_proceso.Value)</Value>
+                              <Value>=Sum(Fields!unidades_finales_proceso_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -6675,7 +6689,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -6732,7 +6746,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_agregados_nacidos.Value + Fields!unidades_iniciales_proceso.Value</Value>
+                              <Value>=Fields!unidades_agregados_nacidos.Value + Fields!unidades_iniciales_proceso_lactancia.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -6786,7 +6800,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!unidades_finales_proceso.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
+                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!unidades_finales_proceso_lactancia.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -7600,7 +7614,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!q_equivalente.Value)</Value>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -7652,7 +7666,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!q_equivalente.Value)</Value>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -7704,7 +7718,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!q_equivalente.Value)</Value>
+                              <Value>=Sum(Fields!q_equivalente_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -7761,7 +7775,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -7813,7 +7827,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -7858,14 +7872,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="unidades_transferidas_mortalidad3">
+                    <Textbox Name="unidades_transferidas_mortalidad4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_transferidas_mortalidad.Value)</Value>
+                              <Value>=Sum(Fields!unidades_transferidas_mortalidad_lactancia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -7874,7 +7888,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>unidades_transferidas_mortalidad3</rd:DefaultName>
+                      <rd:DefaultName>unidades_transferidas_mortalidad2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Green</Color>
@@ -7922,7 +7936,61 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!q_equivalente.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
+                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox110</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox136">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -7976,61 +8044,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!q_equivalente.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox110</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>DarkGreen</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox134">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!q_equivalente.Value + Fields!unidades_transferidas_mortalidad.Value</Value>
+                              <Value>=Fields!unidades_transferidas_recria.Value + Fields!q_equivalente_lactancia.Value + Fields!unidades_transferidas_mortalidad_lactancia.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -8660,7 +8674,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>7f3447f5-4be4-4cfa-917f-8d5888cf84e9</rd:DataSourceID>
+      <rd:DataSourceID>d2c2597f-9b08-4f8a-971a-d0a7b2ab00cb</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -8718,24 +8732,24 @@
           <DataField>total_flujo_descarte</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="q_equivalente">
-          <DataField>q_equivalente</DataField>
+        <Field Name="q_equivalente_lactancia">
+          <DataField>q_equivalente_lactancia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_transferidas_recria">
           <DataField>unidades_transferidas_recria</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_transferidas_mortalidad">
-          <DataField>unidades_transferidas_mortalidad</DataField>
+        <Field Name="unidades_transferidas_mortalidad_lactancia">
+          <DataField>unidades_transferidas_mortalidad_lactancia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_finales_proceso">
-          <DataField>unidades_finales_proceso</DataField>
+        <Field Name="unidades_finales_proceso_lactancia">
+          <DataField>unidades_finales_proceso_lactancia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_iniciales_proceso">
-          <DataField>unidades_iniciales_proceso</DataField>
+        <Field Name="unidades_iniciales_proceso_lactancia">
+          <DataField>unidades_iniciales_proceso_lactancia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_agregados_nacidos">
@@ -8750,36 +8764,36 @@
           <DataField>fecha_final</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="pp_mod">
-          <DataField>pp_mod</DataField>
+        <Field Name="pp_mod_lactancia">
+          <DataField>pp_mod_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="pp_moi">
-          <DataField>pp_moi</DataField>
+        <Field Name="pp_moi_lactancia">
+          <DataField>pp_moi_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="pp_md">
-          <DataField>pp_md</DataField>
+        <Field Name="pp_md_lactancia">
+          <DataField>pp_md_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="pp_mi">
-          <DataField>pp_mi</DataField>
+        <Field Name="pp_mi_lactancia">
+          <DataField>pp_mi_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="ct_incurrido_mod">
-          <DataField>ct_incurrido_mod</DataField>
+        <Field Name="ct_incurrido_mod_lactancia">
+          <DataField>ct_incurrido_mod_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="ct_incurrido_moi">
-          <DataField>ct_incurrido_moi</DataField>
+        <Field Name="ct_incurrido_moi_lactancia">
+          <DataField>ct_incurrido_moi_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="ct_incurrido_md">
-          <DataField>ct_incurrido_md</DataField>
+        <Field Name="ct_incurrido_md_lactancia">
+          <DataField>ct_incurrido_md_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="ct_incurrido_mi">
-          <DataField>ct_incurrido_mi</DataField>
+        <Field Name="ct_incurrido_mi_lactancia">
+          <DataField>ct_incurrido_mi_lactancia</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>

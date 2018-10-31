@@ -10,6 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/assets/template/images/favicon.png" type="image/png" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -17,13 +18,13 @@
     <link href="~/assets/personalizados/css/login.css" rel="stylesheet" />
 </head>
 <body>
-    
-    
+
+
     <div class="login-box" style="border:1px solid #e3e3e3;padding-left:14px;background-color: #fff">
         <div class="login-box-body">
             <div class="form-group text-center">
                 @*<a>*@
-                    <img src="~/assets/images/cooperativa.jpg" class="img-responsive logo">
+                <img src="~/assets/images/cooperativa.jpg" class="img-responsive logo">
                 @*</a>*@
             </div>
             <p class="login-box-msg"><b>Ingresar al sistema<span class=""></span></b></p>
@@ -33,14 +34,14 @@
 
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon" style="color:#000000"><i class="glyphicon glyphicon-user"></i></span>
-                    @*<input type="text" class="form-control" id="txtUsuario" placeholder="Usuario" required>*@
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Correo electrónico" })
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="color:#000000"><i class="glyphicon glyphicon-user"></i></span>
+                        @*<input type="text" class="form-control" id="txtUsuario" placeholder="Usuario" required>*@
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Correo electrónico", id = "id_email" })
+                    </div>
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
                 </div>
-                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
-            </div>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon" style="color:#000000"><i class="glyphicon glyphicon-lock"></i></span>
@@ -56,26 +57,37 @@
                         <button id="btnIngresar" type="submit" class="btn btn-primary btn-block-p tip">Ingresar</button>
                     </div>
 
-                    
+
 
 
                 </div>
 
 
                 @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-            <p>
-                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-            </p>*@
+                    <p>
+                        @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                    </p>*@
             }
         </div>
     </div>
 
-            
-  
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+
+
+    @*@section Scripts {*@
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#id_email").focus();
+        });
+
+    </script>
+    @* } *@
+
+
+
 </body>
 </html>
 

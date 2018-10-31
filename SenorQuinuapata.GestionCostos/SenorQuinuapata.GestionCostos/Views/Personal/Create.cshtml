@@ -1,0 +1,111 @@
+﻿@model SenorQuinuapata.GestionCostos.DataAccess.DataBase.Persona
+
+@{
+    ViewBag.Title = "Registrar";
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal col-md-6">
+    <h2>Registrar Nuevo Personal</h2>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.nombres, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>Nombres:</label>
+      
+            @Html.EditorFor(model => model.nombres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombres, "", new { @class = "text-danger",autofocus="True" })
+       
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.apellido_paterno, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>Apellido paterno:</label>
+       
+            @Html.EditorFor(model => model.apellido_paterno, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.apellido_paterno, "", new { @class = "text-danger" })
+      
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.apellido_materno, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>Apellido materno:</label>
+       
+            @Html.EditorFor(model => model.apellido_materno, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.apellido_materno, "", new { @class = "text-danger" })
+       
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.dni, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>DNI:</label>
+      
+            @Html.EditorFor(model => model.dni, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dni, "", new { @class = "text-danger" })
+       
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.direccion, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>Dirección:</label>
+       
+            @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+     
+    </div>
+
+
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.telefono, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>Teléfono:</label>
+        
+            @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+       
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.id_cargo, "id_cargo", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label>Cargo:</label>
+       
+            @Html.DropDownList("id_cargo", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.id_cargo, "", new { @class = "text-danger" })
+        
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.asistencia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.asistencia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.asistencia, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Crear" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Volver a la lista", "Index")
+</div>
+
+
+@section scripts{
+    
+<script>
+
+    $("#nombres").focus();
+
+</script>
+    
+}

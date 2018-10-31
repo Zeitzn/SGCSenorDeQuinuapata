@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SenorQuinuapata.GestionCostos.Entities.Response;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SenorQuinuapata.GestionCostos.Models
@@ -109,4 +110,15 @@ namespace SenorQuinuapata.GestionCostos.Models
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
     }
+
+
+    //LISTAR USUARIO
+    public class UsuarioViewModel
+    {
+        public IEnumerable<UsuarioResponse> ListUsuario { get; set; }
+        //public string Id { get; set; }
+        //public string Email { get; set; }
+        //public string Rol { get; set; }
+    }
+
 }

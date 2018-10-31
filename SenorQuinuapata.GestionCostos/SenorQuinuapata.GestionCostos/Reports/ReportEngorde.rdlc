@@ -83,7 +83,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!unidades_iniciales_proceso.Value)</Value>
+                              <Value>=Sum(Fields!unidades_iniciales_proceso_engorde.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -846,7 +846,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unidades_iniciales_proceso.Value + Fields!unidades_recibidas_recria.Value</Value>
+                              <Value>=Fields!unidades_iniciales_proceso_engorde.Value + Fields!unidades_recibidas_recria.Value</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2509,6 +2509,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3432,31 +3433,139 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="bd_sgcquinuapataDataSetFlujosUnidades">
+    <DataSource Name="bd_sgcquinuapataDataSetCostos">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3f36b971-9d18-420e-b2d5-42a9ead995ab</rd:DataSourceID>
+      <rd:DataSourceID>ee589368-0cb6-4d20-ac7f-fbd32b7a4571</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>bd_sgcquinuapataDataSetFlujosUnidades</DataSourceName>
+        <DataSourceName>bd_sgcquinuapataDataSetCostos</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="unidades_iniciales_proceso">
-          <DataField>unidades_iniciales_proceso</DataField>
+        <Field Name="costo_agregado_mi_lactancia">
+          <DataField>costo_agregado_mi_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_md_lactancia">
+          <DataField>costo_agregado_md_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_moi_lactancia">
+          <DataField>costo_agregado_moi_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_mod_lactancia">
+          <DataField>costo_agregado_mod_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_md_recria">
+          <DataField>costo_agregado_md_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_mod_recria">
+          <DataField>costo_agregado_mod_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_moi_recria">
+          <DataField>costo_agregado_moi_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_mi_recria">
+          <DataField>costo_agregado_mi_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_md_engorde">
+          <DataField>costo_agregado_md_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_mi_engorde">
+          <DataField>costo_agregado_mi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_mod_engorde">
+          <DataField>costo_agregado_mod_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costo_agregado_moi_engorde">
+          <DataField>costo_agregado_moi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="total_flujo_lactancia">
+          <DataField>total_flujo_lactancia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="total_flujo_recria">
+          <DataField>total_flujo_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="total_flujo_engorde">
+          <DataField>total_flujo_engorde</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="total_flujo_descarte">
+          <DataField>total_flujo_descarte</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="q_equivalente_recria">
+          <DataField>q_equivalente_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_recibidas_lactancia">
+          <DataField>unidades_recibidas_lactancia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_transferidas_engorde">
+          <DataField>unidades_transferidas_engorde</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_transferidas_ventas_recria">
+          <DataField>unidades_transferidas_ventas_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_transferidas_mortalidad_recria">
+          <DataField>unidades_transferidas_mortalidad_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_finales_proceso_recria">
+          <DataField>unidades_finales_proceso_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_iniciales_proceso_recria">
+          <DataField>unidades_iniciales_proceso_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="q_equivalente_lactancia">
+          <DataField>q_equivalente_lactancia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_transferidas_mortalidad_lactancia">
+          <DataField>unidades_transferidas_mortalidad_lactancia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_transferidas_recria">
+          <DataField>unidades_transferidas_recria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_finales_proceso_lactancia">
+          <DataField>unidades_finales_proceso_lactancia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_agregados_nacidos">
+          <DataField>unidades_agregados_nacidos</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="q_equivalente">
+          <DataField>q_equivalente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_recibidas_recria">
           <DataField>unidades_recibidas_recria</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="unidades_transferidas_ventas">
-          <DataField>unidades_transferidas_ventas</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_transferidas_descarte">
@@ -3467,17 +3576,133 @@
           <DataField>unidades_transferidas_activo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="unidades_finales_proceso">
-          <DataField>unidades_finales_proceso</DataField>
+        <Field Name="unidades_transferidas_ventas">
+          <DataField>unidades_transferidas_ventas</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="unidades_transferidas_mortalidad">
           <DataField>unidades_transferidas_mortalidad</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="q_equivalente">
-          <DataField>q_equivalente</DataField>
+        <Field Name="unidades_finales_proceso">
+          <DataField>unidades_finales_proceso</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="unidades_iniciales_proceso_engorde">
+          <DataField>unidades_iniciales_proceso_engorde</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="pp_mod_engorde">
+          <DataField>pp_mod_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_moi_engorde">
+          <DataField>pp_moi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_md_engorde">
+          <DataField>pp_md_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_mi_engorde">
+          <DataField>pp_mi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_incurrido_mod_engorde">
+          <DataField>ct_incurrido_mod_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_incurrido_moi_engorde">
+          <DataField>ct_incurrido_moi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_incurrido_md_engorde">
+          <DataField>ct_incurrido_md_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_incurrido_mi_engorde">
+          <DataField>ct_incurrido_mi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_final_mod_engorde">
+          <DataField>pp_final_mod_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_final_moi_engorde">
+          <DataField>pp_final_moi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_final_md_engorde">
+          <DataField>pp_final_md_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="pp_final_mi_engorde">
+          <DataField>pp_final_mi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_final_mod_engorde">
+          <DataField>ct_final_mod_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_final_moi_engorde">
+          <DataField>ct_final_moi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_final_md_engorde">
+          <DataField>ct_final_md_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ct_final_mi_engorde">
+          <DataField>ct_final_mi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_mod_engorde">
+          <DataField>cu_mod_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_moi_engorde">
+          <DataField>cu_moi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_md_engorde">
+          <DataField>cu_md_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_mi_engorde">
+          <DataField>cu_mi_engorde</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_mod_lactancia">
+          <DataField>cu_mod_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_moi_lactancia">
+          <DataField>cu_moi_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_md_lactancia">
+          <DataField>cu_md_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_mi_lactancia">
+          <DataField>cu_mi_lactancia</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_mod_recria">
+          <DataField>cu_mod_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_moi_recria">
+          <DataField>cu_moi_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_md_recria">
+          <DataField>cu_md_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cu_mi_recria">
+          <DataField>cu_mi_recria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="fecha_inicial">
           <DataField>fecha_inicial</DataField>
@@ -3489,12 +3714,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>bd_sgcquinuapataDataSetFlujosUnidades</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetFlujosUnidades.xsd</rd:SchemaPath>
-        <rd:TableName>sp_flujo_unidades_departamento_engorde_list</rd:TableName>
+        <rd:DataSetName>bd_sgcquinuapataDataSetCostos</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HUAMAN\Documents\GitHub\SGCSenorDeQuinuapata\SenorQuinuapata.GestionCostos\SenorQuinuapata.GestionCostos\bd_sgcquinuapataDataSetCostos.xsd</rd:SchemaPath>
+        <rd:TableName>sp_costo_unitario_departamento_engorde_list</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>sp_flujo_unidades_departamento_engorde_listTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>sp_costo_unitario_departamento_engorde_listTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

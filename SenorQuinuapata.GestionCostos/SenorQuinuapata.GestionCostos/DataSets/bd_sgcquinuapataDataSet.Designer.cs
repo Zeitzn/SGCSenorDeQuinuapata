@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SenorQuinuapata.GestionCostos {
+namespace SenorQuinuapata.GestionCostos.DataSets {
     
     
     /// <summary>
@@ -238,7 +238,7 @@ namespace SenorQuinuapata.GestionCostos {
         }
     }
 }
-namespace SenorQuinuapata.GestionCostos.bd_sgcquinuapataDataSetTableAdapters {
+namespace SenorQuinuapata.GestionCostos.DataSets.bd_sgcquinuapataDataSetTableAdapters {
     
     
     /// <summary>

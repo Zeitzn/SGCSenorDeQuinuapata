@@ -16,10 +16,10 @@
             <td>FECHA INICIAL DE EMPADRE</td>
             <td>FECHA FIN DE EMPADRE</td>
             <td>RAZA</td>
-            <td>VALOR</td>
+            @*<td>VALOR</td>
             <td>TASA DE DEPRECIACIÓN</td>
             <td>DEPRECIACIÓN ACUMULADA</td>
-            <td>DEPRECIACION DIARIA</td>
+            <td>DEPRECIACION DIARIA</td>*@
             <td>ESTADO</td>
             <td>VALOR NETO</td>
             <td>ACCION</td>
@@ -36,10 +36,10 @@
             <td>FECHA INICIAL DE EMPADRE</td>
             <td>FECHA FIN DE EMPADRE</td>
             <td>RAZA</td>
-            <td>VALOR</td>
+            @*<td>VALOR</td>
             <td>TASA DE DEPRECIACIÓN</td>
             <td>DEPRECIACIÓN ACUMULADA</td>
-            <td>DEPRECIACION DIARIA</td>
+            <td>DEPRECIACION DIARIA</td>*@
             <td>ESTADO</td>
             <td>VALOR NETO</td>
             <td>ACCION</td>
@@ -101,10 +101,10 @@
 
 
             <td>@item.raza</td>
-            <td class="text-right">S/ @item.valor_inicial</td>
+            @*<td class="text-right">S/ @item.valor_inicial</td>
             <td class="text-center">@item.tasa_depreciacion %</td>
             <td class="text-right">S/ @item.depreciacion_acumulada</td>
-            <td class="text-right">S/ @item.depreciacion_diaria</td>
+            <td class="text-right">S/ @item.depreciacion_diaria</td>*@
             <td>@item.estado</td>
             <td class="text-right">S/ @item.valor_neto</td>
             <td class="text-center">
@@ -113,12 +113,12 @@
                 {
                     <a href="#" class="text-primary" onclick="disabledActivo(@item.id)">Inhabilitar</a>
                     @*<label>-</label>*@<br />
-                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id)">Eliminar</a>
+                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id,'@item.genero')">Eliminar</a>
                 }
                 @if (item.estado == "Inactivo")
                 {
 
-                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id)">Eliminar</a>
+                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id,'@item.genero')">Eliminar</a>
                 }
 
             </td>
@@ -206,23 +206,36 @@
 
         })
     }
-    function deleteActivo(id) {
-        $.ajax({
-            method: 'get',
-            url: '/Departamento/DeleteActivo/' + id,
-            type: 'json',
-            success: function (data) {
-                if (data == 'success') {
-                    alert("El activo ha sido eliminado con éxito.")
-                    location.reload();
-                } else {
-                    alert("Ha ocurrido un error en la operación, por favor inténtelo nuevamente.")
+
+    function deleteActivo(id, genero) {
+
+        var gen = genero;
+        console.log(gen)
+
+        var r = confirm("¿Está seguro que desea eliminar este registro?, si da click en 'Aceptar' el Activo sera transferido al departamento de Descarte.");
+
+        if (r == true) {
+            $.ajax({
+                method: 'get',
+                url: '/Departamento/DeleteActivo/?id=' + id+'&&genero='+genero,
+                type: 'json',
+                success: function (data) {
+                    if (data == 'success') {
+                        alert("El activo ha sido eliminado con éxito.")
+                        location.reload();
+                    } else {
+                        alert("Ha ocurrido un error en la operación, por favor inténtelo nuevamente.")
+                    }
+
                 }
 
-            }
-
-        })
+            })
+        } else {
+            return false;
+        }
     }
+
+    
         
        
 

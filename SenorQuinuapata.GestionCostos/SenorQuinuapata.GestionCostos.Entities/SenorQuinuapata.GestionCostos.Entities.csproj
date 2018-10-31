@@ -60,6 +60,8 @@
     <Compile Include="Response\MovimientoDepartamentoResponse.cs" />
     <Compile Include="Response\PersonaResponse.cs" />
     <Compile Include="Response\ProductoResponse.cs" />
+    <Compile Include="Response\RolResponse.cs" />
+    <Compile Include="Response\UsuarioResponse.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

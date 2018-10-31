@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="~/assets/template/images/favicon.ico" type="image/ico" />
+    <link rel="icon" href="~/assets/template/images/favicon.png" type="image/png" />
     <title>@ViewBag.Title</title>
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
@@ -41,7 +41,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                        <a href="/Home/Index" class="site_title">@*<i class="fa fa-paw"></i>*@ <img src="~/assets/images/cooperativa.jpg" alt="Alternate Text" class="img-responsive" width="100%"/> <span>SGC COOPAC</span></a>
                     </div>
                     <div class="clearfix"></div>
                     <!-- menu profile quick info -->
@@ -54,6 +54,10 @@
                             <h2>@User.Identity.GetUserName()</h2>
                         </div>
                     </div>
+
+                    
+
+                    
                     <!-- /menu profile quick info -->
                     <br />
                     <!-- sidebar menu -->
@@ -67,15 +71,14 @@
                                 </li>
                                 <li>
                                     @*<a href="@Url.Action("Index","Departamento")"><i class="fa fa-edit"></i> Operaciones</a>*@
-                                    <a><i class="fa fa-edit"></i> Registro<span class="fa fa-chevron-down"></span></a>
+                                    <a> Registro<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="@Url.Action("RegisterIngreso","Departamento")">Ingresos</a></li>
                                         <li><a href="@Url.Action("Create","Consumo")">Consumo</a></li>
                                     </ul>
-
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Departamentos <span class="fa fa-chevron-down"></span></a>
+                                    <a> Departamentos <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=1 })">Lactancia</a></li>
                                         <li><a href="@Url.Action("Movimientos","Departamento", new { id=2 })">Recría</a></li>
@@ -88,32 +91,42 @@
                                 </li>
 
                                 <li>
-                                    <a href="@Url.Action("Index","Ingreso")"><i class="fa fa-edit"></i> Ingresos</a>
+                                    <a href="@Url.Action("Index","Ingreso")"> Ingresos</a>
 
                                 </li>
 
                                 <li>
-                                    <a href="@Url.Action("Index","Producto")"><i class="fa fa-edit"></i> Productos</a>
+                                    <a href="@Url.Action("Index","Producto")">Productos</a>
 
                                 </li>
 
                                 <li>
-                                    <a href="@Url.Action("Index","Consumo")"><i class="fa fa-edit"></i> Consumo</a>
+                                    <a href="@Url.Action("Index","Consumo")"> Consumo</a>
 
                                 </li>
                                 @*<li>
-                                    <a href="@Url.Action("Index","Persona")"><i class="fa fa-edit"></i> Personal</a>
+            <a href="@Url.Action("Index","Persona")"><i class="fa fa-edit"></i> Personal</a>
 
-                                </li>*@
+        </li>*@
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Personal <span class="fa fa-chevron-down"></span></a>
+                                    <a>Personal <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="@Url.Action("Index","Persona")">Lista</a></li>
+                                        <li><a href="@Url.Action("Index","Personal")">Lista</a></li>
+                                        <li><a href="@Url.Action("Index","Cargo")">Cargos</a></li>
                                         <li><a href="@Url.Action("Asistencia","Persona")">Asistencia</a></li>
-                                        
+
                                     </ul>
                                 </li>
 
+
+
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Index","Usuario")">Usuarios</a>
+
+                                    </li>
+                                }
                             </ul>
                         </div>
 
@@ -161,14 +174,9 @@
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="javascript:;"> Perfil</a></li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="javascript:;">Help</a></li>
+                                   
+                                    
+                                   
                                     <li>
 
                                         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
@@ -183,70 +191,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li role="presentation" class="dropdown">
-                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                </a>
-                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="~/assets/template/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="~/assets/template/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="~/assets/template/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="image"><img src="~/assets/template/images/img.jpg" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="text-center">
-                                            <a>
-                                                <strong>See All Alerts</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
+                           
                         </ul>
                     </nav>
                 </div>
