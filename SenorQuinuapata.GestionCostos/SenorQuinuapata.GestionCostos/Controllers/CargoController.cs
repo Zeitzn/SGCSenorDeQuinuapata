@@ -47,7 +47,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,descripcion,sueldo")] Cargo cargo)
+        public ActionResult Create([Bind(Include = "id,descripcion,sueldo,tipo")] Cargo cargo)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,descripcion,sueldo")] Cargo cargo)
+        public ActionResult Edit([Bind(Include = "id,descripcion,sueldo,tipo")] Cargo cargo)
         {
             if (ModelState.IsValid)
             {

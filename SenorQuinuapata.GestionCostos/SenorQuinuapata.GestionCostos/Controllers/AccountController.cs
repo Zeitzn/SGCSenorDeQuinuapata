@@ -140,9 +140,13 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
         //
         // GET: /Account/Register
-        [Authorize(Roles ="Admin")]
+        [AllowAnonymous]
         public ActionResult Register()
         {
+
+            userContext = new ApplicationDbContext();
+            var roles = userContext.Roles.ToList();
+            ViewBag.roles2 = new SelectList(roles, "Id", "Name");
             return View();
         }
 

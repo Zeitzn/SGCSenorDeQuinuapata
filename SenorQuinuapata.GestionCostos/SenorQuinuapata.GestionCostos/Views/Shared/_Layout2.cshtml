@@ -63,14 +63,44 @@
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
-                            <h3>General</h3>
+                            <h3>Menú</h3>
                             <ul class="nav side-menu">
-                                <li>
-                                    <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Principal</a>
+
+
+
+                                @if (User.IsInRole("Gerente"))
+                                {
+                                    @Html.Partial("_PartialMenuAdmin");
+                                }
+                                @if (User.IsInRole("Responsable de producción"))
+                                {
+                                    @Html.Partial("_PartialMenuRespProd");
+                                }
+                                @if (User.IsInRole("Contador"))
+                                {
+                                    @Html.Partial("_PartialMenuContador");
+                                }
+                                @if (User.IsInRole("Veterinario"))
+                                {
+                                    @Html.Partial("_PartialMenuVeterinario");
+                                }
+
+
+                                @*<li>
+                                    <a href="@Url.Action("Index","Home")">Reportes</a>
 
                                 </li>
                                 <li>
-                                    @*<a href="@Url.Action("Index","Departamento")"><i class="fa fa-edit"></i> Operaciones</a>*@
+                                    <a>Personal <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="@Url.Action("Index","Personal")">Lista de personal</a></li>
+                                        <li><a href="@Url.Action("Index","Cargo")">Cargos</a></li>
+                                        <li><a href="@Url.Action("Asistencia","Persona")">Asistencia de personal</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
                                     <a> Registro<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="@Url.Action("RegisterIngreso","Departamento")">Ingresos</a></li>
@@ -104,19 +134,8 @@
                                     <a href="@Url.Action("Index","Consumo")"> Consumo</a>
 
                                 </li>
-                                @*<li>
-            <a href="@Url.Action("Index","Persona")"><i class="fa fa-edit"></i> Personal</a>
 
-        </li>*@
-                                <li>
-                                    <a>Personal <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="@Url.Action("Index","Personal")">Lista</a></li>
-                                        <li><a href="@Url.Action("Index","Cargo")">Cargos</a></li>
-                                        <li><a href="@Url.Action("Asistencia","Persona")">Asistencia</a></li>
 
-                                    </ul>
-                                </li>
 
 
 
@@ -126,7 +145,7 @@
                                         <a href="@Url.Action("Index","Usuario")">Usuarios</a>
 
                                     </li>
-                                }
+                                }*@
                             </ul>
                         </div>
 
@@ -205,7 +224,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                   Desarrollado por <a href="https://www.facebook.com/isachuaman" target="_blank">Isac Huamán Pineda</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>

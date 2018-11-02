@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SenorQuinuapata.GestionCostos.DataAccess.DataBase.Cargo>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cargos";
 }
 
 
@@ -9,18 +9,41 @@
 <p>
     @Html.ActionLink("Registrar", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sueldo)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-bordered table-hover small" id="table">
 
-@foreach (var item in Model) {
+    <thead>
+        <tr>
+            <th>
+                DESCRIPCIÓN
+            </th>
+            <th>
+                SUELDO
+            </th>
+            <th>
+                TIPO
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>
+                DESCRIPCIÓN
+            </th>
+            <th>
+                SUELDO
+            </th>
+            <th>
+                TIPO
+            </th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+
+
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.descripcion)
@@ -29,11 +52,14 @@
             @Html.DisplayFor(modelItem => item.sueldo)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-         
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
         </td>
     </tr>
-}
+    }
 
 </table>

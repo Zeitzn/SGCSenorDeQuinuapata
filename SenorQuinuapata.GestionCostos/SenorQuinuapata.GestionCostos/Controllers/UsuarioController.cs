@@ -11,8 +11,10 @@ using SenorQuinuapata.GestioCostos.BusinessLogic.Implementation;
 using SenorQuinuapata.GestionCostos.Entities.Response;
 using SenorQuinuapata.GestionCostos.Models;
 
+
 namespace SenorQuinuapata.GestionCostos.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
         private ApplicationDbContext userContext;
@@ -45,12 +47,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
             return View(_listUsuario);
         }
-
-
-
-
-
-        [Authorize(Roles = "Admin")]
+      
         public ActionResult Create()
         {
             userContext = new ApplicationDbContext();
@@ -105,6 +102,25 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             {
                 _userManager = value;
             }
+        }
+
+
+        public ActionResult Delete(string id)
+        {
+
+            using (var userContext = new ApplicationDbContext())
+            {
+                var objUser = (from p in userContext.Users
+                               where p.Id == id
+                               select p).FirstOrDefault();
+
+                userContext.Users.Remove(objUser);
+
+                userContext.SaveChanges();
+
+               
+            }
+            return RedirectToAction("Index");
         }
     }
 }

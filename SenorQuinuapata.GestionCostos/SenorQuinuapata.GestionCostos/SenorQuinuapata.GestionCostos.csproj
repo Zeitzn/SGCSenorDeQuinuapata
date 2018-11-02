@@ -4737,6 +4737,10 @@
     <Content Include="Views\Personal\Index.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Shared\_PartialMenuAdmin.cshtml" />
+    <Content Include="Views\Shared\_PartialMenuRespProd.cshtml" />
+    <Content Include="Views\Shared\_PartialMenuContador.cshtml" />
+    <Content Include="Views\Shared\_PartialMenuVeterinario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

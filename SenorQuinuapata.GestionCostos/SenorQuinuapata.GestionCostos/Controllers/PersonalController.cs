@@ -10,6 +10,7 @@ using SenorQuinuapata.GestionCostos.DataAccess.DataBase;
 
 namespace SenorQuinuapata.GestionCostos.Controllers
 {
+    [Authorize]
     public class PersonalController : Controller
     {
         private bd_sgcquinuapataEntities db = new bd_sgcquinuapataEntities();

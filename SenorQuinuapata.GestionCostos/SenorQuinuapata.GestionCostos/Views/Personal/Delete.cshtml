@@ -1,7 +1,7 @@
 ﻿@model SenorQuinuapata.GestionCostos.DataAccess.DataBase.Persona
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Personal";
 }
 
 
@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombres)
+           Nombres:
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.apellido_paterno)
+           Apellido paterno:
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.apellido_materno)
+            Apellido materno:
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.direccion)
+           Dirección:
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dni)
+           DNI:
         </dt>
 
         <dd>
@@ -51,23 +51,17 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.telefono)
+           Teléfono:
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.telefono)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.asistencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.asistencia)
-        </dd>
+       
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cargo.descripcion)
+           Cargo:
         </dt>
 
         <dd>
@@ -80,8 +74,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar a la lista", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
         </div>
     }
 </div>

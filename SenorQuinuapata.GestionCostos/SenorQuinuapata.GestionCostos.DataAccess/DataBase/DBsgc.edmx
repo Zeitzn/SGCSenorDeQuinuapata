@@ -51,6 +51,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="50" />
           <Property Name="sueldo" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="tipo" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Consumo">
           <Key>
@@ -458,6 +459,7 @@
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="sueldo" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="Persona" Relationship="bd_sgcquinuapataModel.fk_persona_cargo" FromRole="Cargo" ToRole="Persona" />
+          <Property Name="tipo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Persona">
           <Key>
@@ -643,6 +645,7 @@
           <EntitySetMapping Name="Cargo">
             <EntityTypeMapping TypeName="bd_sgcquinuapataModel.Cargo">
               <MappingFragment StoreEntitySet="Cargo">
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="sueldo" ColumnName="sueldo" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="id" ColumnName="id" />

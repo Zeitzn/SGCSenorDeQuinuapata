@@ -1,18 +1,17 @@
 ﻿@model SenorQuinuapata.GestionCostos.DataAccess.DataBase.Cargo
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Cargo";
 }
 
-<h2>Delete</h2>
 
 <h3>¿Está seguro que desea eliminar este registro?</h3>
 <div>
-    <h4>Cargo</h4>
+ 
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
+            Descripción:
         </dt>
 
         <dd>
@@ -20,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.sueldo)
+            Sueldo (S/):
         </dt>
 
         <dd>
@@ -33,8 +32,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar a la lista", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
         </div>
     }
 </div>
