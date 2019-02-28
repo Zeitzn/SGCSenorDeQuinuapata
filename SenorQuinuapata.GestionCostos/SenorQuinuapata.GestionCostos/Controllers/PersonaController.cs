@@ -56,10 +56,16 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             }
         }
 
-        public ActionResult MarcarAsistencia(int id)
+        [HttpGet]
+        public JsonResult MarcarAsistencia(int id,string fecha)
         {
-            _PersonaBL.MarcarAsistencia(id);
-            return RedirectToAction("Asistencia");
+            _PersonaBL.MarcarAsistencia(id,fecha);
+
+            string msg = "success";
+
+            //return RedirectToAction("Asistencia");
+
+            return Json(msg, JsonRequestBehavior.AllowGet);
         }
 
         
@@ -85,7 +91,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
 
 
-        public ActionResult ReportAsistencia(int mes)
+        public ActionResult ReportAsistencia(int mes,int anio)
         {
 
             //string _mes = "";
@@ -137,7 +143,7 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             //    GetPersona = _PersonaBL.GetPersonaByDni(dni)
             //};
 
-            var oList = _PersonaBL.ReportAsistencia(mes);
+            var oList = _PersonaBL.ReportAsistencia(mes, anio);
 
             var reportViewModel = new ReportAsistenciaViewModel()
             {

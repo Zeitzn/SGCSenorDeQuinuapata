@@ -24,7 +24,7 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Interface
 
         bool MakeMovimiento(MovimientoDepartamentoRequest request, IngresoRequest _ingreso, string origen);
 
-        void RegisterActivoBiologico(int id_movimiento, string genero, int cantidad,string ubicacion,string raza);
+        void RegisterActivoBiologico(int id_movimiento, string genero, int cantidad,string ubicacion,string raza,DateTime fecha);
 
         IEnumerable<ActivoBiologicoResponse> ListActivoBiologico();
 
@@ -35,6 +35,8 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Interface
         void DisableActivo(int id);
 
         void DeleteActivo(int id);
+
+        string GenerateCostos(DateTime fecha);
 
     }
 }

@@ -4,110 +4,175 @@
 }
 <h2>Asistencia de personal</h2>
 
-@*<form action="/Persona/ReportAsistencia" method="get">
-  
-    <div class="col-md-2">
-        <div class="form-group">
-           
-           
-                <select class="form-control" name="mes">
-                    <option value="">-- Mes --</option>
-                    <option value="1">Enero</option>
-                    <option value="2">Febrero</option>
-                    <option value="3">Marzo</option>
-                    <option value="4">Abril</option>
-                    <option value="5">Mayo</option>
-                    <option value="6">Junio</option>
-                    <option value="7">Julio</option>
-                    <option value="8">Agosto</option>
-                    <option value="9">Septiembre</option>
-                    <option value="10">Octubre</option>
-                    <option value="11">Noviembre</option>
-                    <option value="12">Diciembre</option>
-                </select>
-            
+@*<div class="">
+    <button class="btn btn-primary" onclick="generateCostosAsistencia()">Generar costos</button>
+</div>*@
 
-        </div>        
-    </div>
-
-    <div class="col-md-6">
+<div class="row well">
+    <div class="col-md-3">
         <div class="form-group">
-            <input type="submit" name="name" value="Generar" class="btn btn-danger btn-sm" />
+            <label>Fecha:</label>
+            <input type="date" name="fecha_costo" class="form-control" value="" id="id_fecha_costo" />
         </div>
-    </div>     
+        <button class="btn btn-primary" onclick="generateCostosAsistencia()" id="btn_generar">Generar costos</button>
+    </div>
+    <div class="col-md-3">
+        <div class="alert-warning well">
+            <label>Atención!</label>
+            <p>Usar esta función solo cuando haya finalizado el registro de datos.</p>
+        </div>
+        
+    </div>
+</div>
 
-    
 
-</form>*@
 
 <hr />
-<p class="text-success">Fecha de Hoy: @DateTime.Now.ToShortDateString()</p>
-<label class="text-primary">Reiniciar Asistencia </label><button class="glyphicon glyphicon-refresh btn btn-success btn-sm" onclick="resetAsistencia()"></button>
-<table class="table table-bordered table-hover small" id="table">
-    <thead>
-        <tr>
-            <td class="text-center">DNI</td>
-            <td class="text-center">NOMBRE COMPLETO</td>
-            <td class="text-center">CARGO</td>
-            <td class="text-center">ASISTENCIA</td>
-            <td class="text-center">MARCAR</td>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <td class="text-center">DNI</td>
-            <td class="text-center">NOMBRE COMPLETO</td>
-            <td class="text-center">CARGO</td>
-            <td class="text-center">ASISTENCIA</td>
-            <td class="text-center">MARCAR</td>
-        </tr>
-    </tfoot>
-    <tbody>
-        @foreach (var item in Model.ListPersona)
-        {
-        <tr @*@((item.asistencia).Equals("A")? "class=text-success":"" )*@>
-            <td class="text-center">@item.dni</td>
-            <td class="">@item.apellido_paterno @item.apellido_materno @item.nombres</td>
-            <td class="text-center">@item.cargo</td>
-            <td class="text-center">@item.asistencia</td>
-            <td class="text-center">
-                @if ((item.asistencia).Equals("F"))
+@*<p class="text-success">Fecha: @DateTime.Now.ToShortDateString()</p>*@
+<div class="row">
+    <div class="col-md-3">
+        <label>Fecha de Asistencia:</label>
+        <input type="date" class="form-control" name="fecha_asistencia" value="" required  id="id_fecha_asistencia"/>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <label class="text-primary">Reiniciar Asistencia </label><button class="glyphicon glyphicon-refresh btn btn-success btn-sm" onclick="resetAsistencia()"></button>
+    </div>
+</div>
+
+<div id="tableField">
+
+    <table class="table table-bordered table-hover small" id="table">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td class="text-center">DNI</td>
+                <td class="text-center">NOMBRE COMPLETO</td>
+                <td class="text-center">CARGO</td>
+                <td class="text-center">ASISTENCIA</td>
+                <td class="text-center">MARCAR</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>#</td>
+                <td class="text-center">DNI</td>
+                <td class="text-center">NOMBRE COMPLETO</td>
+                <td class="text-center">CARGO</td>
+                <td class="text-center">ASISTENCIA</td>
+                <td class="text-center">MARCAR</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @if (Model.ListPersona != null)
+            {
+                foreach (var item in Model.ListPersona)
                 {
-                    <a href="@Url.Action("MarcarAsistencia","Persona", new { id=item.id })" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-check"></span></a>
+                    <tr @*@((item.asistencia).Equals("A")? "class=text-success":"" )*@>
+                        <td>@i</td>
+                        <td class="text-center">@item.dni</td>
+                        <td class="">@item.apellido_paterno @item.apellido_materno @item.nombres</td>
+                        <td class="text-center">@item.cargo</td>
+                        <td class="text-center">@item.asistencia</td>
+                        <td class="text-center">
+                            @if ((item.asistencia).Equals("F"))
+                            {
+                                <a @*href="@Url.Action("MarcarAsistencia","Persona", new { id=item.id })"*@ onclick="checkAsistencia(@item.id)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-check"></span></a>
+                            }
+
+                        </td>
+
+                    </tr>
+                    i++;
                 }
+            }
+        </tbody>
+    </table>
 
-            </td>
-
-        </tr>
-
-        }
-    </tbody>
-</table>
-
+</div>
 
 @section scripts{
 
-<script>
+    <script>
 
-    function resetAsistencia() {
-        
-        var r = confirm("Atención! este función solo debe ser utilizada una vez al iniciar la jornada laboral para el control de asistencia respectivo, de ser ese el caso dar click en 'Aceptar', de lo contrario 'Cancelar'");
+        function resetAsistencia() {
 
-        if (r == true) {
-            $.ajax({
+            var r = confirm("Atención! este función solo debe ser utilizada una vez al iniciar la jornada laboral para el control de asistencia respectivo, de ser ese el caso dar click en 'Aceptar', de lo contrario 'Cancelar'");
 
-                method: 'get',
-                url: '/Persona/ResetAsistencia',
-                success: function () {
-                    location.reload();
-                }
+            if (r == true) {
+                $.ajax({
 
-            })
-        } else {
-            return false;
+                    method: 'get',
+                    url: '/Persona/ResetAsistencia',
+                    success: function () {
+                        location.reload();
+                    }
+
+                })
+            } else {
+                return false;
+            }
         }
-    }
 
-</script>
-    
+        function generateCostosAsistencia() {
+            var conf = confirm("¿Está seguro que ya ha culminado con el registrode datos?");
+
+            var fecha_costo = $("#id_fecha_costo").val();       
+
+            if (conf) {
+                if (fecha_costo == "") {
+
+                    alert("Seleccione la fecha")
+                }
+                else {
+                    $.ajax({
+                        method: "get",
+                        type: "json",
+                        url: "/Departamento/GenerateCostos/?fecha_costo=" + fecha_costo,
+                        success: function (data) {
+                            if (data == "success") {
+                                alert("Los costos se han generado con éxito");
+                                location.reload();
+                            } else {
+                                alert("A ocurrido un error al momento de generar los costos, por favor comuniquese con el responsable del sistema");
+                            }
+                        }
+
+
+                    });
+                }
+            }
+        }
+
+        function checkAsistencia(id) {
+            var fecha = $("#id_fecha_asistencia").val();
+
+            if (fecha == "") {
+                alert("Elija la fecha de asistencia")
+            }else{
+                $.ajax({
+                    method: "get",
+                    type: "json",
+                    url: "/Persona/MarcarAsistencia/?id=" + id + "&&fecha=" + fecha,
+                    success: function (data) {
+
+                        if (data == "success") {
+                            alert("Asistencia registrada");
+                            $("#tableField").load(" #tableField>*", "");
+                        }
+                    }
+
+                })
+            }
+        }
+
+    </script>
+
 }

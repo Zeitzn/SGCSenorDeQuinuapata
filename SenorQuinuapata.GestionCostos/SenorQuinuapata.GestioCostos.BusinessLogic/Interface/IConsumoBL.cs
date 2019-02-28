@@ -13,5 +13,9 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Interface
         IEnumerable<ConsumoResponse> List();
 
         void RegisterConsumo(ConsumoRequest producto);
+
+        ConsumoResponse GetConsumoById(int id);
+
+        void UpdateConsumo(int id_consumo, decimal costo_total, string tipo);
     }
 }

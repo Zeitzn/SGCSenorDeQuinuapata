@@ -13,5 +13,9 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
         IEnumerable<ConsumoResponse> List();
 
         void RegisterConsumo(ConsumoRequest consumo);
+
+        ConsumoResponse GetConsumoById(int id);
+
+        void Updateconsumo(ConsumoRequest consumo);
     }
 }

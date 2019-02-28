@@ -4367,7 +4367,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox294">
+                    <Textbox Name="Textbox297">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -4417,6 +4417,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4428,7 +4429,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Fields!cu_md_recria.Value + (((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value)) * Fields!unidades_transferidas_engorde.Value) + Fields!pp_final_md_engorde.Value) / Sum(Fields!total_flujo_engorde.Value))*(Sum(Fields!unidades_finales_proceso.Value))</Value>
+                              <Value>=Fields!ct_final_md_engorde.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -4534,7 +4535,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox295">
+                    <Textbox Name="Textbox320">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -4584,6 +4585,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4595,7 +4597,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Fields!cu_mod_recria.Value + (((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value)) * Fields!unidades_transferidas_engorde.Value) + Fields!pp_final_mod_engorde.Value) / Sum(Fields!total_flujo_engorde.Value))*(Sum(Fields!unidades_finales_proceso.Value))</Value>
+                              <Value>=Fields!ct_final_mod_engorde.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -4701,7 +4703,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox296">
+                    <Textbox Name="Textbox322">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -4751,6 +4753,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4762,7 +4765,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((((Fields!cu_moi_recria.Value + Fields!cu_mi_recria.Value) + ((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value)) * Fields!unidades_transferidas_engorde.Value) + (Fields!pp_final_moi_engorde.Value + Fields!pp_final_mi_engorde.Value)) / Sum(Fields!total_flujo_engorde.Value))*(Sum(Fields!unidades_finales_proceso.Value))</Value>
+                              <Value>=Fields!ct_final_moi_engorde.Value+Fields!ct_final_mi_engorde.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -4869,7 +4872,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox298">
+                    <Textbox Name="Textbox326">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -4920,6 +4923,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

@@ -3,49 +3,164 @@
     ViewBag.Title = "Consumo";
 }
 
+<h4>Consumo</h4>
 
 @*<a href="~/Producto/Create" class="btn btn-primary btn-sm">Nuevo</a>
 <hr />*@
 
-<table id="table" class="table table-bordered small">
-    <thead>
-        <tr>
-            <td>#</td>
-            <td>FECHA</td>
-            <td>CANTIDAD</td>
-            <td>CODIGO</td>
-            <td>DESCRIPCIÓN</td>
-            <td>CODIGO DE DESTINO</td>
-            <td>MD</td>
-            <td>MI</td>            
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <td>#</td>
-            <td>FECHA</td>
-            <td>CANTIDAD</td>
-            <td>CODIGO</td>
-            <td>DESCRIPCIÓN</td>
-            <td>CODIGO DE DESTINO</td>
-            <td>MD</td>
-            <td>MI</td>
-        </tr>
-    </tfoot>
-    <tbody>
-        @foreach (var item in Model.ListConsumo)
-        {
-        <tr>
-            <td class="text-center">@item.id</td>
-            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha)</td>
-            <td class="text-center">@item.cantidad</td>
-            <td class="text-center">@item.codigo_producto</td>
-            <td>@item.nombre_producto</td>
-            <td class="text-center">@item.codigo_departamento</td>
-            <td class="text-right">@item.md</td>
-            <td class="text-right">@item.mi</td>
-        </tr>
-        }
+<div id="dataField">
+    <table id="table" class="table table-bordered small">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>FECHA</td>
+                <td>CANTIDAD</td>
+                <td>DESCRIPCIÓN</td>
+                <td>CODIGO DE DESTINO</td>
+                <td>MATERIAL DIRECTO</td>
+                <td>MATERIAL INDIRECTO</td>
+                <td>MODIFICAR</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>#</td>
+                <td>FECHA</td>
+                <td>CANTIDAD</td>
+                <td>DESCRIPCIÓN</td>
+                <td>CODIGO DE DESTINO</td>
+                <td>MATERIAL DIRECTO</td>
+                <td>MATERIAL INDIRECTO</td>
+                <td>MODIFICAR</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @foreach (var item in Model.ListConsumo)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha)</td>
+                    <td class="text-center">@item.cantidad</td>
+                    @*<td class="text-center">@item.codigo_producto</td>*@
+                    <td>@item.nombre_producto</td>
+                    <td class="text-center">@item.codigo_departamento</td>
+                    <td class="text-right">@item.md</td>
+                    <td class="text-right">@item.mi</td>
+                    <td class="text-center"><button onclick="modalUpdateConsumo(@item.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-edit"></span> </button></td>
+                </tr>
+                i++;
+            }
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modalUpdateConsumo">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modificar Consumo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+
+                    <h4 id="id_nombre"></h4>
+                    <hr />
+                    <input type="hidden" name="id_consumo" value="" id="id_consumo"/>
+                    <div class="form-group">
+                        <label>Elemento de costo:</label>
+                        <select class="form-control" name="tipo" required id="id_tipo">
+                            <option value="">----- Seleccionar -----</option>
+                            <option value="md">Material Directo</option>
+                            <option value="mi">Material Indirecto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Costo Total (S/):</label>
+                    <input type="number" name="costo_total" value="" id="id_costo_total" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" onclick="updateConsumo()">Guardar</button>
+                </div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+<script>
+
+    function modalUpdateConsumo(id) {
+
+
+        $.ajax({
+            method: 'post',
+            type: 'json',
+            url: '/Consumo/GetConsumoById/' + id,
+            success: function (data) {
+
+                console.log(data);
+
+                $("#id_consumo").val(data.id);
+                $("#id_nombre").html(data.nombre_producto);
+
+                if (data.mi > 0) {
+                    $("#id_tipo").val('mi')
+                    $("#id_costo_total").val(data.mi)
+                }
+                if (data.md > 0) {
+                    $("#id_tipo").val('md')
+                    $("#id_costo_total").val(data.md)
+                }
+
+               
+
+                $("#modalUpdateConsumo").modal("show");
+            }
+
+
+        })
+
+    }
+
+    function updateConsumo() {
+        var costo_total = $("#id_costo_total").val();
+        var tipo = $("#id_tipo").val();
+        var id_consumo = $("#id_consumo").val();
+
+        $.ajax({
+            method: 'get',
+            type: 'json',
+            url: './Consumo/UpdateConsumo/?costo_total=' + costo_total + '&&tipo=' + tipo + '&&id_consumo=' + id_consumo,
+            success: function(data){
+
+                alert('El registro a sido modificado con éxito, por favor proceda a generar los costos nuevamente')
+
+                location.reload()
+            }
+
+        })
+    }
+
+
+ </script>    
+    
+}

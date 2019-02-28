@@ -20,6 +20,9 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Implementation
 
         public void RegisterConsumo(ConsumoRequest consumo)
         {
+
+            //consumo.fecha = DateTime.Now;
+
             if (consumo.tipo=="mi")
             {
                 consumo.mi = consumo.total;
@@ -32,6 +35,33 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Implementation
             }
 
             _ConsumoDA.RegisterConsumo(consumo);
+        }
+
+        public ConsumoResponse GetConsumoById(int id)
+        {
+            return _ConsumoDA.GetConsumoById(id);
+        }
+
+
+        public void UpdateConsumo(int id_consumo,decimal costo_total,string tipo)
+        {
+
+            ConsumoRequest consumo = new ConsumoRequest();
+
+            consumo.id = id_consumo;
+
+            if (tipo == "mi")
+            {
+                consumo.mi = costo_total;
+                consumo.md = 0;
+            }
+            else
+            {
+                consumo.md = costo_total;
+                consumo.mi = 0;
+            }
+
+            _ConsumoDA.Updateconsumo(consumo);
         }
     }
 }

@@ -1,0 +1,217 @@
+﻿@model SenorQuinuapata.GestionCostos.Entities.Request.MovimientoDepartamentoRequest
+@{
+    ViewBag.Title = "Registrar movimientos";
+}
+
+<div class="col-md-6">
+    <div class="small well">
+        <h4 style="color:darkgreen">Registrar Producción</h4>
+
+        @using (Html.BeginForm("Register", "Departamento", FormMethod.Post, new { id = "ingreso-form" }))
+
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label>Fecha:</label>
+                <input type="date" name="fecha" class="form-control" value="" required />
+            </div>
+
+            <div id="form-load">
+                <div class="form-group">
+                    <label>Origen:</label>
+                    <select class="form-control" name="origen" onchange="showOptions(this.value)" id="origen" required>
+                        <option value="">---- Seleccionar ----</option>
+                        <option value="Nace">Nace</option>
+                        <option value="1">Lactancia</option>
+                        <option value="2">Recría</option>
+                        <option value="3">Engorde</option>
+                        <option value="4">Descarte</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Destino:</label>
+                    <select class="form-control" name="id_departamento" id="id_departamento" required>
+                        <option value="">---- Seleccionar ----</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Género:</label>
+                    <select class="form-control" name="genero" id="genero" required>
+                        <option value="">---- Seleccionar ----</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cantidad:</label>
+
+                    @Html.EditorFor(model => model.ingreso, new { htmlAttributes = new { @class = "form-control", required = "true" } })
+                    @Html.ValidationMessageFor(model => model.ingreso, "", new { @class = "text-danger" })
+                </div>
+            </div>
+           
+           
+
+            <div class="form-group">
+
+                <input type="submit" name="name" value="Registrar" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+
+</div>
+
+<div class="col-md-3">
+    <div class="alert-warning well">
+        <label>Atención!</label>
+        <p>Usar esta función solo cuando haya finalizado el registro de datos.</p>
+    </div>
+    <div class="form-group">
+        <label>Fecha:</label>
+        <input type="date" name="fecha_costo" class="form-control" value="" id="id_fecha_costo" />
+    </div>
+    <button class="btn btn-primary" onclick="generateCostos()">Generar costos</button>
+</div>
+
+
+@section scripts{
+
+    <script>
+
+        function showOptions(data) {
+
+
+            var text;
+            var genero;
+            if (data == "Nace") {
+
+                text = '<option value="1">Lactancia</option>';
+                genero = '<option value="Gazapo">Gazapo</option>';
+
+                $("#id_departamento").html(text);
+                $("#genero").html(genero);
+            }
+
+            if (data == 1) {
+
+                text = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="2">Recría</option>' +
+                    '<option value="5">Mortalidad</option>';
+
+                genero = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="Gazapo">Gazapo</option>' +
+                    '<option value="Hembra">Hembra</option>' +
+                    '<option value="Macho">Macho</option>';
+
+                $("#id_departamento").html(text);
+                $("#genero").html(genero);
+            }
+            if (data == 2) {
+
+                text = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="3">Engorde</option>' +
+                    '<option value="5">Mortalidad</option>' +
+                    '<option value="6">Venta</option>';
+
+                genero = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="Hembra">Hembra</option>' +
+                    '<option value="Macho">Macho</option>';
+
+                $("#id_departamento").html(text);
+                $("#genero").html(genero);
+            }
+            if (data == 3) {
+
+                text = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="4">Descarte</option>' +
+                    '<option value="5">Mortalidad</option>' +
+                    '<option value="6">Venta</option>';
+
+                genero = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="Hembra">Hembra</option>' +
+                    '<option value="Macho">Macho</option>';
+
+                $("#id_departamento").html(text);
+                $("#genero").html(genero);
+            }
+            if (data == 4) {
+
+                text = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="5">Mortalidad</option>' +
+                    '<option value="6">Venta</option>';
+
+                genero = '<option value="">---- Seleccionar ----</option>' +
+                    '<option value="Hembra">Hembra</option>' +
+                    '<option value="Macho">Macho</option>';
+
+                $("#id_departamento").html(text);
+                $("#genero").html(genero);
+            }
+        }
+
+
+
+        $("#ingreso-form").on("submit", function (e) {
+
+            var cantidad = $("#ingreso").val();
+            var departamento = $("#id_departamento option:selected").text();
+
+            var send = confirm("¿Esta seguro que desea registrar " + cantidad + " cuyes en el departamento de " + departamento + "?");
+            e.preventDefault()
+            if (send) {
+                //$("#ingreso-form").on("submit");
+                $.ajax({
+                    method: 'post',
+                    url: $("#ingreso-form").attr('action'),
+                    data: $("#ingreso-form").serialize(),
+                    success: function (data) {
+                        console.log(data)
+                        $("#origen").val('')
+                        $("#id_departamento").html('<option value="">---- Seleccionar ----</option>')
+                        $("#genero").html('<option value="">---- Seleccionar ----</option>')
+                        $("#ingreso").val('')
+                    }
+                })
+            }
+            //else {
+            //    e.preventDefault();
+            //}
+
+        });
+
+        function generateCostos() {
+            var conf = confirm("¿Está seguro que ya ha culminado con el registro de datos?");
+            var fecha_costo = $("#id_fecha_costo").val();
+            if (conf) {               
+
+                if (fecha_costo == "") {
+
+                    alert("Seleccione la fecha")
+                }
+                else {
+                    $.ajax({
+                            method: "get",
+                            type: "json",
+                            url: "/Departamento/GenerateCostos/?fecha_costo=" + fecha_costo,
+                            success: function (data) {
+                                if (data == "success") {
+                                    alert("Los costos se han generado con éxito");
+                                    location.reload();
+                                } else {
+                                    alert("A ocurrido un error al momento de generar los costos, por favor comuniquese con el responsable del sistema");
+                                }
+                            }
+
+
+                        });
+                }
+                
+            }
+        }
+
+    </script>
+
+}

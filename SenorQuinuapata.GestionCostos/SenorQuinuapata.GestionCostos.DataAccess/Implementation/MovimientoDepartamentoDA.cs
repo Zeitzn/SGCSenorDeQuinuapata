@@ -210,6 +210,42 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
 
         #region transaccional
 
+        public string GenerateCostos(DateTime fecha)
+        {
+            string msg = "";
+            try
+            {
+                using (var ctx = new bd_sgcquinuapataEntities())
+                {
+                    //DateTime fecha = DateTime.Now;
+
+                    string _fecha = fecha.ToShortDateString();
+
+                   var a= ctx.Database.SqlQuery<MovimientoDepartamentoResponse>("sp_generar_costos @fecha",
+
+                        new SqlParameter("@fecha", Convert.ToDateTime(_fecha))
+
+
+                        ).ToList();
+
+                    if (a != null)
+                    {
+                        msg = "success";
+                    }
+
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                msg = e.Message;
+
+            }
+
+            return msg;
+        }
+
         public void UpdateFecha(DateTime fecha, string campo, int id)
         {
             try

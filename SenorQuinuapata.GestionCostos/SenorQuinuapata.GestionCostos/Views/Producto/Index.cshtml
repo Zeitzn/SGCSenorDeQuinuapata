@@ -3,6 +3,7 @@
     ViewBag.Title = "Productos";
 }
 
+<h4>Productos</h4>
 
 <a href="~/Producto/Create" class="btn btn-primary btn-sm">Nuevo</a>
 <hr />
@@ -28,7 +29,7 @@
         @foreach (var item in Model.ListIProducto)
         {
             <tr>
-                <td>@item.id</td>
+                <td class="text-center">@item.id</td>
                 @*<td>@item.codigo</td>*@
                 <td>@item.nombre</td>
 

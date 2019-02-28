@@ -44,7 +44,12 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
 
         #region transaccional
 
-        public void RegisterActivoBiologico(int id_movimiento, string genero, int cantidad,string ubicacion,string raza)
+        public string GenerateCostos(DateTime fecha)
+        {
+            return _MovimientoDepartamentoDA.GenerateCostos(fecha);
+        }
+
+        public void RegisterActivoBiologico(int id_movimiento, string genero, int cantidad,string ubicacion,string raza,DateTime fecha)
         {
 
             DateTime fecha_actual = DateTime.Now;
@@ -59,7 +64,8 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
                 depreciacion_acumulada = 0,
                 estado = "Activo",
                 valor_neto = 25,
-                fecha_ingreso = fecha_actual,
+                //fecha_ingreso = fecha_actual,
+                fecha_ingreso = fecha,
                 fecha_salida = fecha_actual,
                 //fecha_fin_empadre = fecha_actual,
                 //fecha_inicio_empadre = fecha_actual,
@@ -70,7 +76,8 @@ namespace SenorQuinuapata.GestionCostos.BusinessLogic.Implementation
 
             IngresoRequest _ingreso = new IngresoRequest()
             {
-                fecha=fecha_actual,
+                //fecha=fecha_actual,
+                fecha=fecha,
                 activo = cantidad,
                 codigo_destino = "AB001",
                 codigo_origen = "EN001",

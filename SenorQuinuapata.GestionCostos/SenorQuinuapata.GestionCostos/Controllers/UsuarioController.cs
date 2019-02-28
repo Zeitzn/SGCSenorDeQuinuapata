@@ -81,6 +81,10 @@ namespace SenorQuinuapata.GestionCostos.Controllers
                 }
                 AddErrors(result);
             }
+            TempData["error"] = "La contraseña debe contener números, letras mayúsculas, minúsculas y caractéres especiales.";
+            userContext = new ApplicationDbContext();
+            var roles = userContext.Roles.ToList();
+            ViewBag.roles = new SelectList(roles, "Id", "Name");
 
             return View(model);
         }

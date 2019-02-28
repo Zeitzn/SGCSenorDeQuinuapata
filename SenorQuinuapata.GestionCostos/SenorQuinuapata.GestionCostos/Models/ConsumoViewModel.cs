@@ -9,5 +9,7 @@ namespace SenorQuinuapata.GestionCostos.Models
     public class ConsumoViewModel
     {
         public IEnumerable<ConsumoResponse> ListConsumo { get; set; }
+
+        public ConsumoResponse Consumo { get; set; }
     }
 }

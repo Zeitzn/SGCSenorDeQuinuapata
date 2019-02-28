@@ -257,6 +257,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DecimalModelBinder.cs" />
     <Compile Include="Helpers\ReportConsumoViewModel.cs" />
     <Compile Include="Helpers\ReportAsistenciaViewModel.cs" />
     <Compile Include="Helpers\ReportViewModel.cs" />
@@ -325,6 +326,7 @@
     <Content Include="assets\template\build\js\custom.js" />
     <Content Include="assets\template\build\js\custom.min.js" />
     <Content Include="assets\template\images\american-express.png" />
+    <Content Include="assets\template\images\avatar.png" />
     <Content Include="assets\template\images\cropper.jpg" />
     <Content Include="assets\template\images\favicon.ico" />
     <Content Include="assets\template\images\favicon.png" />
@@ -4719,7 +4721,7 @@
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Producto\Create.cshtml" />
     <Content Include="Views\Consumo\Index.cshtml" />
-    <Content Include="Views\Departamento\RegisterIngreso.cshtml" />
+    <Content Include="Views\Departamento\Register.cshtml" />
     <Content Include="Views\Consumo\Create.cshtml" />
     <Content Include="Views\Persona\Index.cshtml" />
     <Content Include="Views\Persona\Create.cshtml" />

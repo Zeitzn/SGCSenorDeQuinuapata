@@ -1911,14 +1911,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox154">
+                    <Textbox Name="Textbox317">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Fields!costo_agregado_md_recria.Value)+(Sum(Fields!pp_md_recria.Value)))/(Fields!unidades_transferidas_ventas_recria.Value+Fields!unidades_transferidas_mortalidad_recria.Value+Fields!unidades_transferidas_engorde.Value+Fields!q_equivalente_recria.Value))+((((Sum(Fields!cu_md_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+(Sum(Fields!pp_final_md_recria.Value)))/(Fields!total_flujo_recria.Value))</Value>
+                              <Value>=(Fields!cu_md_recria.Value)+((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -1929,7 +1929,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox306</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -1965,14 +1965,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox155">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Fields!costo_agregado_md_recria.Value)+(Sum(Fields!pp_md_recria.Value)))/(Fields!unidades_transferidas_ventas_recria.Value+Fields!unidades_transferidas_mortalidad_recria.Value+Fields!unidades_transferidas_engorde.Value+Fields!q_equivalente_recria.Value))+((((Sum(Fields!cu_md_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+(Sum(Fields!pp_final_md_recria.Value)))/(Fields!total_flujo_recria.Value)))*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
+                              <Value>=((Fields!cu_md_recria.Value)+((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -1983,7 +1983,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox155</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2078,14 +2078,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox189">
+                    <Textbox Name="Textbox321">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Sum(Fields!pp_mod_recria.Value))+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value))/(Fields!unidades_transferidas_ventas_recria.Value+Fields!unidades_transferidas_mortalidad_recria.Value+Fields!unidades_transferidas_engorde.Value+Fields!q_equivalente_recria.Value))+((((Sum(Fields!cu_mod_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+(Sum(Fields!pp_final_mod_recria.Value)))/(Fields!total_flujo_recria.Value))</Value>
+                              <Value>=(Fields!cu_mod_recria.Value)+((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -2096,7 +2096,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox306</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2132,14 +2132,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox198">
+                    <Textbox Name="Textbox33">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Sum(Fields!pp_mod_recria.Value))+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value))/(Fields!unidades_transferidas_ventas_recria.Value+Fields!unidades_transferidas_mortalidad_recria.Value+Fields!unidades_transferidas_engorde.Value+Fields!q_equivalente_recria.Value))+((((Sum(Fields!cu_mod_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+(Sum(Fields!pp_final_mod_recria.Value)))/(Fields!total_flujo_recria.Value)))*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
+                              <Value>=((Fields!cu_mod_recria.Value)+((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -2150,7 +2150,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox155</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2245,14 +2245,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox190">
+                    <Textbox Name="Textbox325">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value))/(Fields!unidades_transferidas_ventas_recria.Value+Fields!unidades_transferidas_mortalidad_recria.Value+Fields!unidades_transferidas_engorde.Value+Fields!q_equivalente_recria.Value))+((((Fields!cu_moi_lactancia.Value+Fields!cu_mi_lactancia.Value)*(Fields!unidades_recibidas_lactancia.Value))+(Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value))/(Fields!total_flujo_recria.Value))</Value>
+                              <Value>=(Fields!cu_mi_recria.Value)+(Fields!cu_moi_recria.Value)+(((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -2263,7 +2263,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox306</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2299,14 +2299,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox156">
+                    <Textbox Name="Textbox34">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value))/(Fields!unidades_transferidas_ventas_recria.Value+Fields!unidades_transferidas_mortalidad_recria.Value+Fields!unidades_transferidas_engorde.Value+Fields!q_equivalente_recria.Value))+((((Fields!cu_moi_lactancia.Value+Fields!cu_mi_lactancia.Value)*(Fields!unidades_recibidas_lactancia.Value))+(Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value))/(Fields!total_flujo_recria.Value)))*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
+                              <Value>=((Fields!cu_mi_recria.Value)+(Fields!cu_moi_recria.Value)+(((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -2317,7 +2317,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox155</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2413,14 +2413,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox191">
+                    <Textbox Name="Textbox56">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))))/(Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value))+(((((Fields!cu_moi_lactancia.Value+Fields!cu_mi_lactancia.Value)*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_mod_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_md_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value)))+((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)+(Sum(Fields!pp_final_mod_recria.Value))+(Sum(Fields!pp_final_md_recria.Value))))/(Fields!total_flujo_recria.Value))</Value>
+                              <Value>=(((((Fields!cu_moi_lactancia.Value+Fields!cu_mi_lactancia.Value)*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_mod_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_md_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value)))+((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)+(Sum(Fields!pp_final_mod_recria.Value))+(Sum(Fields!pp_final_md_recria.Value))))/(Fields!total_flujo_recria.Value))+(((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))))/(Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -2432,7 +2432,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox56</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -2468,14 +2468,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox157">
+                    <Textbox Name="Textbox36">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))))/(Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value))+(((((Fields!cu_moi_lactancia.Value+Fields!cu_mi_lactancia.Value)*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_mod_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_md_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value)))+((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)+(Sum(Fields!pp_final_mod_recria.Value))+(Sum(Fields!pp_final_md_recria.Value))))/(Fields!total_flujo_recria.Value)))*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
+                              <Value>=((((((Fields!cu_moi_lactancia.Value+Fields!cu_mi_lactancia.Value)*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_mod_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value))+((Sum(Fields!cu_md_lactancia.Value))*(Fields!unidades_recibidas_lactancia.Value)))+((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)+(Sum(Fields!pp_final_mod_recria.Value))+(Sum(Fields!pp_final_md_recria.Value))))/(Fields!total_flujo_recria.Value))+(((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))))/(Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)))*(Sum(Fields!unidades_transferidas_ventas_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -2487,7 +2487,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox155</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3101,14 +3101,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox192">
+                    <Textbox Name="Textbox318">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((Fields!costo_agregado_md_recria.Value + Sum(Fields!pp_md_recria.Value)) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + (((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value)</Value>
+                              <Value>=Fields!cu_md_recria.Value + ((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3119,7 +3119,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox306</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3155,14 +3155,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox147">
+                    <Textbox Name="Textbox59">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Fields!costo_agregado_md_recria.Value + Sum(Fields!pp_md_recria.Value)) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + (((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value))*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
+                              <Value>=(Fields!cu_md_recria.Value + ((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3173,7 +3173,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox147</rd:DefaultName>
+                      <rd:DefaultName>Textbox59</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3268,14 +3268,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox193">
+                    <Textbox Name="Textbox323">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((Sum(Fields!pp_mod_recria.Value) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + (((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value)</Value>
+                              <Value>=Fields!cu_mod_recria.Value + ((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3286,7 +3286,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox306</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3322,14 +3322,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox151">
+                    <Textbox Name="Textbox62">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Sum(Fields!pp_mod_recria.Value) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + (((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value))*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
+                              <Value>=(Fields!cu_mod_recria.Value + ((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3340,7 +3340,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox147</rd:DefaultName>
+                      <rd:DefaultName>Textbox59</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3435,14 +3435,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox194">
+                    <Textbox Name="Textbox326">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value)) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + ((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value)</Value>
+                              <Value>=Fields!cu_mi_recria.Value + Fields!cu_moi_recria.Value + (((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3453,7 +3453,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox306</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3489,14 +3489,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox148">
+                    <Textbox Name="Textbox63">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value)) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + ((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value))*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
+                              <Value>=(Fields!cu_mi_recria.Value + Fields!cu_moi_recria.Value + (((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3507,7 +3507,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox147</rd:DefaultName>
+                      <rd:DefaultName>Textbox59</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3603,14 +3603,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox196">
+                    <Textbox Name="Textbox72">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value) + Fields!costo_agregado_md_recria.Value) + ((Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value)) + Sum(Fields!pp_mod_recria.Value) + Sum(Fields!pp_md_recria.Value))) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + (((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value)) + ((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value) + Sum(Fields!pp_final_mod_recria.Value) + Sum(Fields!pp_final_md_recria.Value))) / Fields!total_flujo_recria.Value)</Value>
+                              <Value>=(((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value)) + ((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value) + Sum(Fields!pp_final_mod_recria.Value) + Sum(Fields!pp_final_md_recria.Value))) / Fields!total_flujo_recria.Value) + (((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value) + Fields!costo_agregado_md_recria.Value) + ((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value)) + Sum(Fields!pp_mod_recria.Value) + Sum(Fields!pp_md_recria.Value))) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -3622,7 +3622,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox154</rd:DefaultName>
+                      <rd:DefaultName>Textbox56</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -3658,14 +3658,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox149">
+                    <Textbox Name="Textbox64">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value) + ((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value) + Fields!costo_agregado_md_recria.Value) + ((Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value)) + Sum(Fields!pp_mod_recria.Value) + Sum(Fields!pp_md_recria.Value))) / (Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)) + (((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value)) + ((Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value) + Sum(Fields!pp_final_mod_recria.Value) + Sum(Fields!pp_final_md_recria.Value))) / Fields!total_flujo_recria.Value))*(Sum(Fields!unidades_transferidas_engorde.Value))</Value>
+                              <Value>=((Fields!cu_mi_recria.Value + Fields!cu_moi_recria.Value + (((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_engorde.Value)))+((Fields!cu_mod_recria.Value + ((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_engorde.Value)))+((Fields!cu_md_recria.Value + ((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value)*(Sum(Fields!unidades_transferidas_engorde.Value)))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -3677,7 +3677,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox147</rd:DefaultName>
+                      <rd:DefaultName>Textbox59</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>DarkGreen</Color>
@@ -6801,7 +6801,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value)</Value>
+                              <Value>=Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value)</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -7077,7 +7077,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))</Value>
+                              <Value>=(Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -7187,7 +7187,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value)))</Value>
+                              <Value>=(((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value)))</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -7297,7 +7297,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_final_moi_recria.Value) + Sum(Fields!pp_final_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))))/(Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)</Value>
+                              <Value>=((((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_moi_recria.Value + Fields!costo_agregado_mi_recria.Value)+((Fields!total_flujo_recria.Value / (Fields!total_flujo_lactancia.Value + Fields!total_flujo_recria.Value + Fields!total_flujo_engorde.Value + Fields!total_flujo_descarte.Value)) * Fields!costo_agregado_mod_recria.Value)+(Fields!costo_agregado_md_recria.Value))+((Sum(Fields!pp_moi_recria.Value) + Sum(Fields!pp_mi_recria.Value))+(Sum(Fields!pp_mod_recria.Value))+(Sum(Fields!pp_md_recria.Value))))/(Fields!unidades_transferidas_ventas_recria.Value + Fields!unidades_transferidas_mortalidad_recria.Value + Fields!unidades_transferidas_engorde.Value + Fields!q_equivalente_recria.Value)</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>

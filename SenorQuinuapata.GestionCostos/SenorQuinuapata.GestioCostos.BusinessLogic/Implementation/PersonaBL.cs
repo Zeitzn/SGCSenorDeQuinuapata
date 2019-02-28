@@ -34,18 +34,18 @@ namespace SenorQuinuapata.GestioCostos.BusinessLogic.Implementation
             return _PersonaDA.List();
         }
 
-        public void MarcarAsistencia(int id)
+        public void MarcarAsistencia(int id, string fecha)
         {
-            _PersonaDA.MarcarAsistencia(id);
+            _PersonaDA.MarcarAsistencia(id,fecha);
         }
 
-        public IEnumerable<AsistenciaResponse> ReportAsistencia(int mes)
+        public IEnumerable<AsistenciaResponse> ReportAsistencia(int mes, int anio)
         {
-            string fecha_actual = DateTime.Now.ToString();
+            //string fecha_actual = DateTime.Now.ToString();
 
-            string _anio = fecha_actual.Substring(6, 4);
+            //string _anio = fecha_actual.Substring(6, 4);
 
-            int anio = Convert.ToInt32(_anio);
+            //int anio = Convert.ToInt32(_anio);
 
             return _PersonaDA.ReportAsistencia(mes,anio);
         }

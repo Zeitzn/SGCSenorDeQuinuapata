@@ -53,7 +53,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             }
         }
 
-        public void MarcarAsistencia(int id)
+        public void MarcarAsistencia(int id, string fecha)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                     db.Asistencia.Add(new Asistencia()
                     {
                         id_persona = id,
-                        fecha = DateTime.Now,
+                        fecha = Convert.ToDateTime(fecha),
                         sueldo=Convert.ToDecimal(sueldo/31),
                         estado="A"
                     });

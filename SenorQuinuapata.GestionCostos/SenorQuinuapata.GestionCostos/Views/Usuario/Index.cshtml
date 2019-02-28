@@ -1,18 +1,19 @@
 ﻿@model SenorQuinuapata.GestionCostos.Models.UsuarioViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Usuarios";
 }
 
 <h4>Usuarios</h4>
 
 
-<a href="/Usuario/Create" class="btn btn-primary btn-sm">Registrar</a>
+<a href="~/Usuario/Create" class="btn btn-primary btn-sm">Registrar</a>
 <hr />
 
 <table class="table table-bordered table-hover small text-center" id="table">
     <thead>
 
         <tr>
+            <td>#</td>
             <td>USUARIO</td>
             <td>ROL</td>
             <td>ACCIÓN</td>
@@ -22,6 +23,7 @@
     <tfoot>
 
         <tr>
+            <td>#</td>
             <td>USUARIO</td>
             <td>ROL</td>
             <td>ACCIÓN</td>
@@ -30,21 +32,26 @@
     </tfoot>
 
     <tbody>
+        @{
+            int i = 1;
+        }
         @foreach (var item in Model.ListUsuario)
         {
-        <tr>
-            <td>@item.Email</td>
-            <td>@item.Rol</td>
-            <td>
+            <tr>
+                <td>@i</td>
+                <td>@item.Email</td>
+                <td>@item.Rol</td>
+                <td>
 
 
-                @*<a href="@Url.Action("Delete","Usuario")" class="btn btn-danger btn-xs">Eliminar</a>*@
-                <button type="button" class="btn btn-danger btn-xs" onclick="cargarDatos('@item.Id')">
-                    Eliminar
-                </button>
+                    @*<a href="@Url.Action("Delete","Usuario")" class="btn btn-danger btn-xs">Eliminar</a>*@
+                    <button type="button" class="btn btn-danger btn-xs" onclick="cargarDatos('@item.Id')">
+                        Eliminar
+                    </button>
 
-            </td>
-        </tr>
+                </td>
+            </tr>
+            i++;
         }
 
 

@@ -1,10 +1,13 @@
-﻿
-<li>
-    <a href="@Url.Action("Index","Home")">Reportes</a>
-
+﻿<li>
+    <a> Registrar<span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+        <li><a href="@Url.Action("Register","Departamento")">Producción</a></li>
+        <li><a href="@Url.Action("Create","Consumo")">Consumo</a></li>
+    </ul>
 </li>
+
 <li>
-    <a>Personal <span class="fa fa-chevron-down"></span></a>
+    <a>Gestión de Personal <span class="fa fa-chevron-down"></span></a>
     <ul class="nav child_menu">
         <li><a href="@Url.Action("Index","Personal")">Lista de personal</a></li>
         <li><a href="@Url.Action("Index","Cargo")">Cargos</a></li>
@@ -14,19 +17,17 @@
 </li>
 
 <li>
-    <a> Registro<span class="fa fa-chevron-down"></span></a>
-    <ul class="nav child_menu">
-        <li><a href="@Url.Action("RegisterIngreso","Departamento")">Ingresos</a></li>
-        <li><a href="@Url.Action("Create","Consumo")">Consumo</a></li>
-    </ul>
+    <a href="@Url.Action("Index","Producto")">Productos</a>
+
 </li>
+
 <li>
     <a> Departamentos <span class="fa fa-chevron-down"></span></a>
     <ul class="nav child_menu">
         <li><a href="@Url.Action("Movimientos","Departamento", new { id=1 })">Lactancia</a></li>
         <li><a href="@Url.Action("Movimientos","Departamento", new { id=2 })">Recría</a></li>
         <li><a href="@Url.Action("Movimientos","Departamento", new { id=3 })">Engorde</a></li>
-        <li><a href="@Url.Action("Movimientos","Departamento", new { id=7 })">Activos Biológicos</a></li>
+        <li><a href="@Url.Action("Movimientos","Departamento", new { id=7 })">Reproductores</a></li>
         <li><a href="@Url.Action("Movimientos","Departamento", new { id=4 })">Descarte</a></li>
         <li><a href="@Url.Action("Movimientos","Departamento", new { id=5 })">Mortalidad</a></li>
         <li><a href="@Url.Action("Movimientos","Departamento", new { id=6 })">Ventas</a></li>
@@ -34,12 +35,7 @@
 </li>
 
 <li>
-    <a href="@Url.Action("Index","Ingreso")"> Ingresos</a>
-
-</li>
-
-<li>
-    <a href="@Url.Action("Index","Producto")">Productos</a>
+    <a href="@Url.Action("Index","Home")">Reportes</a>
 
 </li>
 
@@ -48,9 +44,11 @@
 
 </li>
 
+<li>
+    <a href="@Url.Action("Index","Ingreso")"> Ingresos</a>
 
+</li>
 
-    <li>
-        <a href="@Url.Action("Index","Usuario")">Usuarios</a>
-
-    </li>
+<li>
+   <a href="@Url.Action("Index","Usuario")">Gestión de Usuarios</a>
+</li>

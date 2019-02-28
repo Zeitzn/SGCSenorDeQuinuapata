@@ -1,25 +1,23 @@
 ﻿@model SenorQuinuapata.GestionCostos.Models.DepartamentoViewModel
 @{
-    ViewBag.Title = "Movimientos";
+    ViewBag.Title = "Reproductores";
 }
-<h2>Activos Biológicos</h2>
+<h2>Reproductores</h2>
 
 <table class="table table-bordered table-hover small" id="table">
     <thead>
         <tr>
+            <td>#</td>
             <td>CÓDIGO</td>
             <td>FECHA DE INGRESO</td>
-            <td>FECHA FINAL</td>
+            <td>FECHA ACTUAL</td>
             <td>UBICACION</td>
             <td>GÉNERO</td>
             <td>NÚMERO DE PARTO</td>
             <td>FECHA INICIAL DE EMPADRE</td>
             <td>FECHA FIN DE EMPADRE</td>
-            <td>RAZA</td>
-            @*<td>VALOR</td>
-            <td>TASA DE DEPRECIACIÓN</td>
-            <td>DEPRECIACIÓN ACUMULADA</td>
-            <td>DEPRECIACION DIARIA</td>*@
+            <td>LINEA</td>
+           
             <td>ESTADO</td>
             <td>VALOR NETO</td>
             <td>ACCION</td>
@@ -27,19 +25,17 @@
     </thead>
     <tfoot>
         <tr>
+            <td>#</td>
             <td>CÓDIGO</td>
             <td>FECHA DE INGRESO</td>
-            <td>FECHA FINAL</td>
+            <td>FECHA ACTUAL</td>
             <td>UBICACION</td>
             <td>GÉNERO</td>
             <td>NÚMERO DE PARTO</td>
             <td>FECHA INICIAL DE EMPADRE</td>
             <td>FECHA FIN DE EMPADRE</td>
-            <td>RAZA</td>
-            @*<td>VALOR</td>
-            <td>TASA DE DEPRECIACIÓN</td>
-            <td>DEPRECIACIÓN ACUMULADA</td>
-            <td>DEPRECIACION DIARIA</td>*@
+            <td>LINEA</td>
+            
             <td>ESTADO</td>
             <td>VALOR NETO</td>
             <td>ACCION</td>
@@ -47,83 +43,87 @@
     </tfoot>
 
     <tbody>
+        @{
+            int i = 1;
+        }
         @foreach (var item in Model.ListActivoBiologico)
         {
-        <tr @((item.estado).Equals("Activo")? "class=text-success":"class=text-danger" )>
+            <tr @((item.estado).Equals("Activo") ? "class=text-success" : "class=text-danger" )>
+                <td>@i</td>
+                <td class="text-center">@item.codigo</td>
+                <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_ingreso)</td>
+                <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_salida)</td>
+                <td class="text-center">@item.ubicacion</td>
+                <td class="text-center">@item.genero</td>
+                <td class="text-center">
 
-            <td class="text-center">@item.codigo</td>
-            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_ingreso)</td>
-            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_salida)</td>
-            <td class="text-center">@item.ubicacion</td>
-            <td class="text-center">@item.genero</td>
-            <td class="text-center">
+                    <input type="text" name="name" value="@item.numero_parto" id="numero_parto_@item.id" onkeyup="UpdateParto(@item.id)" />
 
-                <input type="text" name="name" value="@item.numero_parto" id="numero_parto_@item.id" onkeyup="UpdateParto(@item.id)"/>
+                </td>
+                @*<td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</td>
+                <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</td>*@
 
-            </td>
-            @*<td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</td>
-            <td class="text-center">@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</td>*@
+                <td class="text-center">
+                    @if (item.fecha_inicio_empadre == null)
+                    {
 
-            <td class="text-center">
-                @if (item.fecha_inicio_empadre == null)
-                {
+                        <input type="date" class="" id="id_inicio_@item.id" />
 
-                    <input type="date" class="" id="id_inicio_@item.id" />
-
-                    <a class="glyphicon glyphicon-check" href="#" onclick="UpdateFecha('Inicio',@item.id)">Asignar</a>
-
-
-                }
-                @if (item.fecha_inicio_empadre != null)
-                {
-                    <p>@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</p>
-                }
+                        <a class="glyphicon glyphicon-check" href="#" onclick="UpdateFecha('Inicio',@item.id)">Asignar</a>
 
 
-            </td>
-            <td class="text-center">
-                @if (item.fecha_fin_empadre == null)
-                {
-
-                    <input type="date" class="" id="id_fin_@item.id" />
-
-                    <a class="glyphicon glyphicon-check" href="#" onclick="UpdateFecha('Fin',@item.id)">Asignar</a>
+                    }
+                    @if (item.fecha_inicio_empadre != null)
+                    {
+                        <p>@string.Format("{0:dd/MM/yyyy}", item.fecha_inicio_empadre)</p>
+                    }
 
 
-                }
-                @if (item.fecha_fin_empadre != null)
-                {
-                    <p>@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</p>
-                }
-            </td>
+                </td>
+                <td class="text-center">
+                    @if (item.fecha_fin_empadre == null)
+                    {
+
+                        <input type="date" class="" id="id_fin_@item.id" />
+
+                        <a class="glyphicon glyphicon-check" href="#" onclick="UpdateFecha('Fin',@item.id)">Asignar</a>
+
+
+                    }
+                    @if (item.fecha_fin_empadre != null)
+                    {
+                        <p>@string.Format("{0:dd/MM/yyyy}", item.fecha_fin_empadre)</p>
+                    }
+                </td>
 
 
 
 
-            <td>@item.raza</td>
-            @*<td class="text-right">S/ @item.valor_inicial</td>
-            <td class="text-center">@item.tasa_depreciacion %</td>
-            <td class="text-right">S/ @item.depreciacion_acumulada</td>
-            <td class="text-right">S/ @item.depreciacion_diaria</td>*@
-            <td>@item.estado</td>
-            <td class="text-right">S/ @item.valor_neto</td>
-            <td class="text-center">
+                <td>@item.raza</td>
+                @*<td class="text-right">S/ @item.valor_inicial</td>
+                <td class="text-center">@item.tasa_depreciacion %</td>
+                <td class="text-right">S/ @item.depreciacion_acumulada</td>
+                <td class="text-right">S/ @item.depreciacion_diaria</td>*@
+                <td>@item.estado</td>
+                <td class="text-right">S/ @item.valor_neto</td>
+                <td class="text-center">
 
-                @if (item.estado == "Activo")
-                {
-                    <a href="#" class="text-primary" onclick="disabledActivo(@item.id)">Inhabilitar</a>
-                    @*<label>-</label>*@<br />
-                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id,'@item.genero')">Eliminar</a>
-                }
-                @if (item.estado == "Inactivo")
-                {
+                    @if (item.estado == "Activo")
+                    {
+                        <a href="#" class="text-primary" onclick="disabledActivo(@item.id)">Inhabilitar</a>
+                        @*<label>-</label>*@<br />
+                        <a href="#" class="text-danger" onclick="deleteActivo(@item.id,'@item.genero')">Eliminar</a>
+                    }
+                    @if (item.estado == "Inactivo")
+                    {
 
-                    <a href="#" class="text-danger" onclick="deleteActivo(@item.id,'@item.genero')">Eliminar</a>
-                }
+                        <a href="#" class="text-danger" onclick="deleteActivo(@item.id,'@item.genero')">Eliminar</a>
+                    }
 
-            </td>
+                </td>
 
-        </tr>
+            </tr>
+            i++;
         }
     </tbody>
 </table>
@@ -190,21 +190,27 @@
     }
 
     function disabledActivo(id) {
-        $.ajax({
-            method: 'get',
-            url: '/Departamento/DisableActivo/'+id,
-            type: 'json',
-            success: function (data) {
-                if (data == 'success') {
-                    alert("El activo ha sido inhabilitado con éxito.")
-                    location.reload();
-                } else {
-                    alert("Ha ocurrido un error en la operación, por favor inténtelo nuevamente.")
+
+        var send = confirm("¿Estás seguro que deseas inhabiltiar a este reproductor?")
+
+        if (send) {
+            $.ajax({
+                method: 'get',
+                url: '/Departamento/DisableActivo/' + id,
+                type: 'json',
+                success: function (data) {
+                    if (data == 'success') {
+                        alert("El activo ha sido inhabilitado con éxito.")
+                        location.reload();
+                    } else {
+                        alert("Ha ocurrido un error en la operación, por favor inténtelo nuevamente.")
+                    }
+
                 }
 
-            }
-
-        })
+            })
+        }
+        
     }
 
     function deleteActivo(id, genero) {

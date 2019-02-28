@@ -38,6 +38,8 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
 
         void DeleteActivo(int id);
 
+        string GenerateCostos(DateTime fecha);
+
 
 
     }

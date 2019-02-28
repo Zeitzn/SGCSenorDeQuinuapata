@@ -5,7 +5,7 @@
 
 <div class="col-md-6">
     <div class="small well">
-        <h4 style="color:darkgreen">Consumo de la Producción</h4>
+        <h4 style="color:darkgreen">Registrar consumo</h4>
         @using (Html.BeginForm("Create", "Consumo", FormMethod.Post, new { id = "consumo-form" }))
 
         {
@@ -13,22 +13,23 @@
 
             <div class="form-group">
                 <label>Elemento de costo:</label>
-                <select class="form-control" name="tipo">
-                    <option value="md">MD</option>
-                    <option value="mi">MI</option>
+                <select class="form-control" name="tipo" required id="tipo">
+                    <option value="">----- Seleccionar -----</option>
+                    <option value="md">Material Directo</option>
+                    <option value="mi">Material Indirecto</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label>Fecha:</label>
-                <input type="date" class="form-control" name="fecha" value="" />
+                <input type="date" class="form-control" name="fecha" value="" required id="fecha"/>
             </div>
 
             <div class="form-group">
                 <label>Producto:</label>
                 <div class="col-md-12">
                     <div class="col-md-10">
-                        <input type="text" class="form-control pull-left" name="nombre_producto" value="" id="id_nombre_producto" disabled/>
+                        <input type="text" class="form-control pull-left" name="nombre_producto" value="" id="id_nombre_producto" disabled required />
                         <input type="hidden" name="id_producto" value="" id="id_id_producto" />
                     </div>
 
@@ -40,37 +41,38 @@
 
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 <label>Código del producto:</label>
-                <input type="text" class="form-control" name="codigo_producto" value="" id="id_codigo_producto" disabled/>
-            </div>
+                <input type="text" class="form-control" name="codigo_producto" value="" id="id_codigo_producto" disabled required />
+            </div>*@
 
             <div class="form-group">
                 <label>Cantidad:</label>
-                <input type="number" class="form-control" name="cantidad" value="" id="id_cantidad" />
+                <input type="number" class="form-control" name="cantidad" value="" id="id_cantidad" required step="0.01"/>
             </div>
 
             <div class="form-group">
-                <label>Costo Unitario:</label>
-                <input type="number" class="form-control" name="costo_unitario" value="" id="id_cu" />
+                <label>Costo Unitario (S/) :</label>
+                <input type="number" class="form-control" name="costo_unitario" value="" id="id_cu" required step="0.01"/>
             </div>
 
             <div class="form-group">
-                <label>Costo Total:</label>
-                <input type="text" class="form-control" name="" value="" id="id_ct" disabled/>
+                <label>Costo Total (S/):</label>
+                <input type="number" class="form-control" name="" value="" id="id_ct" disabled required step="0.01" />
                 <input type="hidden" class="form-control" name="total" value="" id="id_costo_total" />
             </div>
 
             <div class="form-group">
                 <label>Destino:</label>
-                <select class="form-control" name="id_departamento">
+                <select class="form-control" name="id_departamento" id="id_departamento" required>
+                    <option value="">----- Seleccionar -----</option>
                     <option value="1">Lactancia</option>
                     <option value="2">Recría</option>
                     <option value="3">Engorde</option>
                     <option value="4">Descarte</option>
                     @*<option value="7">Reproductor (Activo biológico)</option>*@
                 </select>
-            </div>            
+            </div>
 
             <div class="form-group">
 
@@ -83,6 +85,18 @@
 
 </div>
 
+
+<div class="col-md-3">
+    <div class="alert-warning well">
+        <label>Atención!</label>
+        <p>Usar esta función solo cuando haya finalizado el registro de datos.</p>
+    </div>
+    <div class="form-group">
+        <label>Fecha:</label>
+        <input type="date" name="fecha_costo" class="form-control" value="" id="id_fecha_costo"/>
+    </div>
+    <button class="btn btn-primary" onclick="generateCostos()" id="btn_generar">Generar costos</button>
+</div>
 
 
 
@@ -104,11 +118,11 @@
                             <th>
                                 #
                             </th>
-                            <th>
+                            @*<th>
                                 NOMBRE
-                            </th>
+                            </th>*@
                             <th>
-                                DESCRIPCIÓN
+                                PRODUCTO
                             </th>
                             <th class="text-center">SELECCIONAR</th>
                         </tr>
@@ -118,11 +132,11 @@
                             <th>
                                 #
                             </th>
-                            <th>
+                            @*<th>
                                 NOMBRE
-                            </th>
+                            </th>*@
                             <th>
-                                DESCRIPCIÓN
+                                PRODUCTO
                             </th>
                             <th class="text-center">SELECCIONAR</th>
                         </tr>
@@ -136,9 +150,9 @@
                             <td>
                                 @i
                             </td>
-                            <td>
+                            @*<td>
                                 @item.codigo
-                            </td>
+                            </td>*@
                             <td>
                                 @item.nombre
                             </td>
@@ -177,11 +191,99 @@
             var cu = $("#id_cu").val();
             var cant = $("#id_cantidad").val();
 
-            $("#id_ct").val(cu * cant);
-            $("#id_costo_total").val(cu * cant);
+            var total = parseFloat(cu*cant)
+
+            $("#id_ct").val(total);
+            $("#id_costo_total").val(total);
         })
 
+        $("#consumo-form").on("submit", function (e) {
+
+            var cantidad = $("#id_ct").val();
+            var departamento = $("#id_departamento option:selected").text();
+
+            var send = confirm("¿Esta seguro que desea registrar S/" + cantidad + " de consumo en el departamento de " + departamento + " ?");
+
+            if (send) {
+
+                var tipo = $("#tipo").val();
+                var cantidad = $("#id_cantidad").val();
+                var total = $("#id_costo_total").val();
+                var id_producto = $("#id_id_producto").val();
+                var id_departamento = $("#id_departamento").val();
+
+                //var data = {
+
+                //    tipo: JSON.stringify(tipo),
+                //    cantidad: JSON.stringify(cantidad),
+                //    total: JSON.stringify(total),
+                //    id_producto: JSON.stringify(id_producto),
+                //    id_departamento: JSON.stringify(id_departamento)
+
+                //}               
+               
+                $.ajax({
+                    //url: '/Consumo/Create/?cantidad=' + cantidad + '&&fecha=' + fecha + '&&id_departamento=' + id_departamento + '&&id_producto='+id_producto+'&&tipo='+tipo+'&&total='+total,
+                    url: '/Consumo/Create/',
+                    method: 'post',                   
+                    data: JSON.stringify({
+
+                        tipo: tipo,
+                        cantidad: cantidad,
+                        total: total,
+                        id_producto: id_producto,
+                        id_departamento: id_departamento
+
+                    }),   
+                    success: function (data) {
+                        alert("Registro exitoso");
+                    }
+
+                })
+
+                 //$("#ingreso-form").on("submit");
+            } else {
+                e.preventDefault();
+            }
+
+        });
+
+
+        function generateCostos() {
+            var conf = confirm("¿Está seguro que ya ha culminado con el registro de datos?");
+
+            var fecha_costo = $("#id_fecha_costo").val();       
+
+            if (conf) {
+                //console.log(fecha_costo)
+                if (fecha_costo == "") {
+
+                    alert("Seleccione la fecha")
+                }
+                else {
+                    $.ajax({
+                        method: "get",
+                        type: "json",
+                        url: "/Departamento/GenerateCostos/?fecha_costo=" + fecha_costo,
+                        success: function (data) {
+                            if (data == "success") {
+                                alert("Los costos se han generado con éxito");
+                                location.reload();
+                            } else {
+                                alert("A ocurrido un error al momento de generar los costos, por favor comuniquese con el responsable del sistema");
+                            }
+                        }
+
+
+                    });
+                }
+                
+            }
+        }
+
     </script>
+
+   
 
 
 }

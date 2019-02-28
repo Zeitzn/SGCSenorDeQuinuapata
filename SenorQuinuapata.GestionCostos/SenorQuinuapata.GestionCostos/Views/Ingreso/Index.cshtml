@@ -3,12 +3,13 @@
     ViewBag.Title = "Ingresos";
 }
 
-
+<h4>Ingresos</h4>
 <table class="table table-bordered small" id="table">
     <thead>
         <tr>
+            <td>#</td>
             <td>FECHA</td>
-            <td>EDAD</td>
+            @*<td>EDAD</td>*@
             <td>GÉNERO</td>
             <td>CÓDIGO ORIGEN</td>
             <td>CÓDIGO DESTINO</td>
@@ -24,8 +25,9 @@
     </thead>
     <tfoot>
         <tr>
+            <td>#</td>
             <td>FECHA</td>
-            <td>EDAD</td>
+            @*<td>EDAD</td>*@
             <td>GÉNERO</td>
             <td>CÓDIGO ORIGEN</td>
             <td>CÓDIGO DESTINO</td>
@@ -41,23 +43,29 @@
     </tfoot>
 
     <tbody>
+        @{
+            int i = 1;
+        }
         @foreach (var item in Model.ListIngreso)
         {
-        <tr>
-            <td>@item.fecha</td>
-            <td>@item.edad</td>
-            <td>@item.genero</td>
-            <td>@item.codigo_origen</td>
-            <td>@item.codigo_destino</td>
-            <td>@item.lactancia</td>
-            <td>@item.recria</td>
-            <td>@item.engorde</td>
-            <td>@item.activo</td>
-            <td>@item.descarte</td>
-            <td>@item.venta</td>
-            <td>@item.mortalidad</td>
+            <tr>
+                <td>@i</td>
+                <td>
+                    @string.Format("{0:dd/MM/yyyy}", @item.fecha)</td>
+                @*<td>@item.edad</td>*@
+<td>@item.genero</td>
+                <td>@item.codigo_origen</td>
+                <td>@item.codigo_destino</td>
+                <td>@item.lactancia</td>
+                <td>@item.recria</td>
+                <td>@item.engorde</td>
+                <td>@item.activo</td>
+                <td>@item.descarte</td>
+                <td>@item.venta</td>
+                <td>@item.mortalidad</td>
 
-        </tr>
+            </tr>
+            i++;
         }
 
 

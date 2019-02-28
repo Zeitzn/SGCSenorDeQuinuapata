@@ -143,7 +143,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!sueldo.Value)</Value>
+                              <Value>=Fields!sueldo.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>

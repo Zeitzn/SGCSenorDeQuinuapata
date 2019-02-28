@@ -37,16 +37,52 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         [HttpPost]
         public ActionResult Create(ConsumoRequest consumo)
         {
-            //try
-            //{
+            //var msg = "ff";
+            try
+            {
                 _ConsumoBL.RegisterConsumo(consumo);
 
                 return RedirectToAction("Create");
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
+            }
+            catch
+            {
+                ViewBag.ListProductos = _ProductoBL.List();
+                return View();
+
+            }
+
+            //return Json(msg, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult GetConsumoById(int id)
+        {
+            ConsumoViewModel data = new ConsumoViewModel()
+            {
+                Consumo = _ConsumoBL.GetConsumoById(id)
+            };
+
+            return Json(data.Consumo, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult UpdateConsumo(decimal costo_total,int id_consumo,string tipo)
+        {
+            string msg;
+            try
+            {
+
+                _ConsumoBL.UpdateConsumo(id_consumo, costo_total, tipo);
+
+                msg = "success";
+            }
+            catch (Exception e)
+            {
+                msg = "error";
+            }
+
+            return Json(msg, JsonRequestBehavior.AllowGet);
         }
 
         

@@ -4,16 +4,19 @@
     ViewBag.Title = "Personal";
 }
 
-
+<h4>Lista de personal</h4>
 
 <p>
     @*@Html.ActionLink("Create New", "Create")*@
 
-    <a href="/Personal/Create" class="btn btn-primary btn-sm">Registrar</a>
+    <a href="~/Personal/Create" class="btn btn-primary btn-sm">Registrar</a>
 </p>
 <table class="table table-bordered table-hover small" id="table">
     <thead>
         <tr>
+            <th>
+                #
+            </th>
             <th>
                 NOMBRES
             </th>
@@ -38,6 +41,7 @@
     </thead>
     <tfoot>
         <tr>
+            <th>#</th>
             <th>
                 NOMBRES
             </th>
@@ -62,9 +66,15 @@
     </tfoot>
 
     <tbody>
+        @{
+            int i = 1;
+        }
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @i
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.nombres)
                 </td>
@@ -74,14 +84,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.apellido_materno)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.dni)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.telefono)
                 </td>
-               
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Cargo.descripcion)
                 </td>
@@ -91,6 +101,7 @@
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
                 </td>
             </tr>
+            i++;
         }
     </tbody>
 

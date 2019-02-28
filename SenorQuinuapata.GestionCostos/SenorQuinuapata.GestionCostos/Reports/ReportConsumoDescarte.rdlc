@@ -3238,7 +3238,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Fields!cu_md_engorde.Value + ((((Fields!cu_md_recria.Value + (((Sum(Fields!cu_md_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_md_recria.Value)) / Fields!total_flujo_recria.Value)) * Fields!unidades_transferidas_engorde.Value) + Fields!pp_final_md_engorde.Value) / Sum(Fields!total_flujo_engorde.Value))) * Fields!unidades_transferidas_descarte.Value) + Fields!pp_final_md_descarte.Value) / Sum(Fields!total_flujo_descarte.Value))*(Sum(Fields!unidades_finales_proceso.Value))</Value>
+                              <Value>=Fields!ct_final_md_descarte.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3405,7 +3405,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=((((Fields!cu_mod_engorde.Value + ((((Fields!cu_mod_recria.Value + (((Sum(Fields!cu_mod_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + Sum(Fields!pp_final_mod_recria.Value)) / Fields!total_flujo_recria.Value)) * Fields!unidades_transferidas_engorde.Value) + Fields!pp_final_mod_engorde.Value) / Sum(Fields!total_flujo_engorde.Value))) * Fields!unidades_transferidas_descarte.Value) + Fields!pp_final_mod_descarte.Value) / Sum(Fields!total_flujo_descarte.Value))*(Sum(Fields!unidades_finales_proceso.Value))</Value>
+                              <Value>=Fields!ct_final_mod_descarte.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3572,7 +3572,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(((((Fields!cu_moi_engorde.Value + Fields!cu_mi_engorde.Value) + (((((Fields!cu_moi_recria.Value + Fields!cu_mi_recria.Value) + ((((Fields!cu_moi_lactancia.Value + Fields!cu_mi_lactancia.Value) * Fields!unidades_recibidas_lactancia.Value) + (Fields!pp_final_moi_recria.Value + Fields!pp_final_mi_recria.Value)) / Fields!total_flujo_recria.Value)) * Fields!unidades_transferidas_engorde.Value) + (Fields!pp_final_moi_engorde.Value + Fields!pp_final_mi_engorde.Value)) / Sum(Fields!total_flujo_engorde.Value))) * Fields!unidades_transferidas_descarte.Value) + (Fields!pp_final_moi_descarte.Value + Fields!pp_final_mi_descarte.Value)) / Sum(Fields!total_flujo_descarte.Value))*(Sum(Fields!unidades_finales_proceso.Value))</Value>
+                              <Value>=Fields!ct_final_mi_descarte.Value+Fields!ct_final_moi_descarte.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                               </Style>
@@ -3615,6 +3615,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -12112,8 +12113,8 @@
           <rd:DefaultName>Textbox121</rd:DefaultName>
           <Top>0.85469cm</Top>
           <Left>3.07459cm</Left>
-          <Height>1.22749cm</Height>
-          <Width>17.77364cm</Width>
+          <Height>1.7897cm</Height>
+          <Width>18.38218cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -12188,7 +12189,6 @@
           </Style>
         </Textbox>
         <Line Name="Line3">
-          <Top>0cm</Top>
           <Left>0.04494cm</Left>
           <Height>0cm</Height>
           <Width>24.08525cm</Width>

@@ -12,7 +12,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Interface
     {
         void RegisterPersona(PersonaRequest persona);
         IEnumerable<PersonaResponse> List();
-        void MarcarAsistencia(int id);
+        void MarcarAsistencia(int id, string fecha);
         IEnumerable<AsistenciaResponse> ReportAsistencia(int mes, int anio);
         PersonaResponse GetPersonaByDni(string dni);
         void ResetAsistencia();

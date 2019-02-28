@@ -38,7 +38,7 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
                             mortalidad = x.mortalidad,
                             recria = x.recria,
                             venta=x.venta
-                        }).OrderByDescending(c => c.id).ToList()
+                        }).OrderByDescending(c => c.fecha).ToList()
                         
                         );
                 }

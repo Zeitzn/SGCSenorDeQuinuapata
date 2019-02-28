@@ -4,15 +4,17 @@
     ViewBag.Title = "Cargos";
 }
 
-
+<h4>Cargos</h4>
 
 <p>
-    @Html.ActionLink("Registrar", "Create")
+    @*@Html.ActionLink("Registrar", "Create")*@
+    <a href="~/Cargo/Create" class="btn btn-primary btn-sm">Registrar</a>
 </p>
 <table class="table table-bordered table-hover small" id="table">
 
     <thead>
         <tr>
+            <th>#</th>
             <th>
                 DESCRIPCIÓN
             </th>
@@ -27,6 +29,7 @@
     </thead>
     <tfoot>
         <tr>
+            <th>#</th>
             <th>
                 DESCRIPCIÓN
             </th>
@@ -41,25 +44,29 @@
     </tfoot>
 
 
-
+    @{
+        int i = 1;
+    }
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sueldo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tipo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+        <tr>
+            <td>@i</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sueldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
 
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
-        </td>
-    </tr>
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+            </td>
+        </tr>
+        i++;
     }
 
 </table>

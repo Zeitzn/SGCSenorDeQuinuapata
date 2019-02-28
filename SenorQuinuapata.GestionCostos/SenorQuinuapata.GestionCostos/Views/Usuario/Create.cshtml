@@ -16,6 +16,13 @@
             <p>@TempData["Success"]</p>
         </div>
     }
+    @if (TempData["error"] != null)
+    {
+
+        <div class="alert alert-danger">
+            <p>@TempData["error"]</p>
+        </div>
+    }
 
     @using (Html.BeginForm("Create", "Usuario", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
@@ -47,13 +54,13 @@
         <div class="form-group">
             <label>Rol:</label>
             @*<select class="form-control" name="rol" required>
-            <option value="">--- Seleccionar ---</option>
-            <option value="1">Administador</option>
-            <option value="2">Veterinario</option>
-        </select>*@
+                    <option value="">--- Seleccionar ---</option>
+                    <option value="1">Administador</option>
+                    <option value="2">Veterinario</option>
+                </select>*@
 
             @*@Html.DropDownList("rol", ViewBag.roles as IEnumerable<SelectListItem>, "--- Seleccionar ---", htmlAttributes: new { @class = "form-control", name="rol" })*@
-            @Html.DropDownList("rol", (SelectList)ViewBag.roles, "--- Seleccionar ---", htmlAttributes: new { @class = "form-control", required="true"})
+            @Html.DropDownList("rol", (SelectList)ViewBag.roles, "--- Seleccionar ---", htmlAttributes: new { @class = "form-control", required = "True" })
 
         </div>
 

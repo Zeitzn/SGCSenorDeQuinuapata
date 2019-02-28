@@ -28,7 +28,31 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
 
         #region transaccional
-        public ActionResult RegisterIngreso()
+
+        [HttpGet]
+        public JsonResult GenerateCostos(string fecha_costo)
+        {
+            string message = "";
+
+            DateTime _fecha_costo = Convert.ToDateTime(fecha_costo);
+
+            try
+            {
+                _MovimientoDepartamentoBL.GenerateCostos(_fecha_costo);
+
+                message = "success";
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+                
+            }
+
+            return Json(message, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public ActionResult Register()
         {
             return View();
         }
@@ -36,9 +60,12 @@ namespace SenorQuinuapata.GestionCostos.Controllers
         [HttpPost]
         public ActionResult Register(MovimientoDepartamentoRequest request/*,string movimiento*/, string origen/*, string destino*/)
         {
-            request.fecha = DateTime.Now;
+            //request.fecha = DateTime.Now;
 
-            string fecha_actual = DateTime.Now.ToShortDateString();
+            //string fecha_actual = DateTime.Now.ToShortDateString();
+
+           
+            string fecha_actual = Convert.ToDateTime((request.fecha)).ToShortDateString();
 
             DepartamentoViewModel departamentoViewModel = new DepartamentoViewModel();            
 
@@ -606,17 +633,17 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             //}
 
 
-            return RedirectToAction("RegisterIngreso");
+            return RedirectToAction("Register");
 
         }
 
-        public string RegisterActivoBiologico(int id_movimiento,string genero, int cantidad, string ubicacion,string raza)
+        public string RegisterActivoBiologico(int id_movimiento,string genero, int cantidad, string ubicacion,string raza,DateTime fecha)
         {
             string message;
 
             try
             {
-                _MovimientoDepartamentoBL.RegisterActivoBiologico(id_movimiento,genero,cantidad,ubicacion,raza);
+                _MovimientoDepartamentoBL.RegisterActivoBiologico(id_movimiento,genero,cantidad,ubicacion,raza,fecha);
 
                 message = "success";
             }
@@ -742,11 +769,14 @@ namespace SenorQuinuapata.GestionCostos.Controllers
 
         public ActionResult Movimientos(int id)
         {
+
+            ViewBag.Departamento = id;
+
             DepartamentoViewModel movimientos = new DepartamentoViewModel()
             {
                 ListMovimientoDepartamento = _MovimientoDepartamentoBL.ListMovimientoDepartamento(id),
                 ListActivoBiologico = _MovimientoDepartamentoBL.ListActivoBiologico()
-        };
+            };
 
             ViewBag.Departamento = id;
 
@@ -842,87 +872,87 @@ namespace SenorQuinuapata.GestionCostos.Controllers
             }
 
 
-            else if (id_departamento == 2 && tipo_reporte == 1)
-            {
-                var oList = _DepartamentoBL.ListReportFlujoUnidades(2, fecha_inicial, fecha_final);
+            //else if (id_departamento == 2 && tipo_reporte == 1)
+            //{
+            //    var oList = _DepartamentoBL.ListReportFlujoUnidades(2, fecha_inicial, fecha_final);
 
-                var reportViewModel = new ReportViewModel()
-                {
-                    FileName = "~/Reports/ReportRecria.rdlc",
-                    ReportTitle = "ReporteRecria",
-                    Format = ReportViewModel.ReportFormat.Excel,
-                    ViewAsAttachment = true,
-                };
+            //    var reportViewModel = new ReportViewModel()
+            //    {
+            //        FileName = "~/Reports/ReportRecria.rdlc",
+            //        ReportTitle = "ReporteRecria",
+            //        Format = ReportViewModel.ReportFormat.Excel,
+            //        ViewAsAttachment = true,
+            //    };
 
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
 
-                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
-                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            //    //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            //    reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
 
-                var renderedBytes = reportViewModel.RenderReport();
+            //    var renderedBytes = reportViewModel.RenderReport();
 
-                if (reportViewModel.ViewAsAttachment)
-                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+            //    if (reportViewModel.ViewAsAttachment)
+            //        Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
 
-                return File(renderedBytes, reportViewModel.LastmimeType);
+            //    return File(renderedBytes, reportViewModel.LastmimeType);
 
-            }
-            else if (id_departamento == 3 && tipo_reporte == 1)
-            {
-                var oList = _DepartamentoBL.ListReportFlujoUnidades(3, fecha_inicial, fecha_final);
+            //}
+            //else if (id_departamento == 3 && tipo_reporte == 1)
+            //{
+            //    var oList = _DepartamentoBL.ListReportFlujoUnidades(3, fecha_inicial, fecha_final);
 
-                var reportViewModel = new ReportViewModel()
-                {
-                    FileName = "~/Reports/ReportEngorde.rdlc",
-                    ReportTitle = "ReporteEngorde",
-                    Format = ReportViewModel.ReportFormat.Excel,
-                    ViewAsAttachment = true,
-                };
+            //    var reportViewModel = new ReportViewModel()
+            //    {
+            //        FileName = "~/Reports/ReportEngorde.rdlc",
+            //        ReportTitle = "ReporteEngorde",
+            //        Format = ReportViewModel.ReportFormat.Excel,
+            //        ViewAsAttachment = true,
+            //    };
 
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
 
-                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
-                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            //    //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            //    reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
 
-                var renderedBytes = reportViewModel.RenderReport();
+            //    var renderedBytes = reportViewModel.RenderReport();
 
-                if (reportViewModel.ViewAsAttachment)
-                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+            //    if (reportViewModel.ViewAsAttachment)
+            //        Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
 
-                return File(renderedBytes, reportViewModel.LastmimeType);
+            //    return File(renderedBytes, reportViewModel.LastmimeType);
 
-            }
-            else if (id_departamento == 4 && tipo_reporte == 1)
-            {
-                var oList = _DepartamentoBL.ListReportFlujoUnidades(4, fecha_inicial, fecha_final);
+            //}
+            //else if (id_departamento == 4 && tipo_reporte == 1)
+            //{
+            //    var oList = _DepartamentoBL.ListReportFlujoUnidades(4, fecha_inicial, fecha_final);
 
-                var reportViewModel = new ReportViewModel()
-                {
-                    FileName = "~/Reports/ReportDescarte.rdlc",
-                    ReportTitle = "ReporteDescarte",
-                    Format = ReportViewModel.ReportFormat.Excel,
-                    ViewAsAttachment = true,
-                };
+            //    var reportViewModel = new ReportViewModel()
+            //    {
+            //        FileName = "~/Reports/ReportDescarte.rdlc",
+            //        ReportTitle = "ReporteDescarte",
+            //        Format = ReportViewModel.ReportFormat.Excel,
+            //        ViewAsAttachment = true,
+            //    };
 
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
-                //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "mes", Value = _mes });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "nombres", Value = docente._Docente.nombres });
+            //    //reportViewModel.Parameters.Add(new ReportViewModel.Parameter { Name = "apellidos", Value = docente._Docente.apellidos });
 
-                //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
-                reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            //    //reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
+            //    reportViewModel.ReportDataSets.Add(new ReportViewModel.ReportDataSet() { DataSetData = oList, DatasetName = "DataSet1" });
 
-                var renderedBytes = reportViewModel.RenderReport();
+            //    var renderedBytes = reportViewModel.RenderReport();
 
-                if (reportViewModel.ViewAsAttachment)
-                    Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
+            //    if (reportViewModel.ViewAsAttachment)
+            //        Response.AddHeader("content-disposition", reportViewModel.ReporExportFileName);
 
-                return File(renderedBytes, reportViewModel.LastmimeType);
+            //    return File(renderedBytes, reportViewModel.LastmimeType);
 
-            }
+            //}
 
             //REPORTES DE CONSUMO
 

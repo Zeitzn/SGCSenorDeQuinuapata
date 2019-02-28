@@ -36,6 +36,31 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             }
         }
 
+        public ConsumoResponse GetConsumoById(int id)
+        {
+            try
+            {
+                var result =new ConsumoResponse();
+                using (db)
+                {
+
+                  Consumo  data = db.Consumo.Where(x => x.id == id).FirstOrDefault();
+
+                    result.id = data.id;
+                    result.md = data.md;
+                    result.mi = data.mi;
+                    result.nombre_producto = data.Producto.nombre;
+                    result.tipo = data.tipo;
+                    
+
+                }
+                return result;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+        }
 
         #endregion
 
@@ -63,6 +88,34 @@ namespace SenorQuinuapata.GestionCostos.DataAccess.Implementation
             finally
             {
 
+                db.Dispose();
+            }
+        }
+
+        public void Updateconsumo(ConsumoRequest consumo)
+        {
+            try
+            {
+                
+                using (db)
+                {
+
+                    Consumo data = db.Consumo.Where(x => x.id == consumo.id).FirstOrDefault();
+
+
+                    data.mi = consumo.mi;
+                    data.md = consumo.md;
+
+                    db.SaveChanges();
+
+                    
+
+
+                }
+               
+            }
+            finally
+            {
                 db.Dispose();
             }
         }
